@@ -58,7 +58,7 @@ Reproduction (from repository root, authenticated model CLIs required):
 
 ```sh
 python3 compat/corpus/tools/acquire_models.py --claude /path/to/claude --codex /path/to/codex
-CARGO_TARGET_DIR=/tmp/corpus-real-build HB_PYTHON_SOURCE=/path/to/Python-3.13.7 cargo build --release --offline -p vide-hb
+CARGO_TARGET_DIR=/tmp/corpus-real-build HB_PYTHON_SOURCE=/path/to/Python-3.13.7 cargo build --release --offline
 python3 compat/corpus/tools/measure.py --hb /tmp/corpus-real-build/release/hb --blender /path/to/Blender --timeout 3600
 PYTHONDONTWRITEBYTECODE=1 python3 compat/corpus/tools/audit.py --check
 python3 compat/corpus/tools/assert_error_parity.py

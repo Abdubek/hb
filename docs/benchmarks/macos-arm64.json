@@ -1,0 +1,261 @@
+{
+  "kind": "Local process microbenchmark; no agent success or render parity score",
+  "measured_at_utc": "2026-10-25T20:48:26Z",
+  "system": {
+    "os": "Darwin",
+    "release": "24.5.0",
+    "architecture": "arm64",
+    "cpu": "Apple M2 Pro",
+    "memory_bytes": 17179869184
+  },
+  "runs": 10,
+  "warmups_per_task_and_engine": 1,
+  "hb": {
+    "version": "0.18.0",
+    "binary_bytes": 8679648,
+    "binary_sha256": "2fdbe07d7f52e0f22b9f8eb77d4e452b87cbd95deca4a1fe9ca586ecbfbe30e4"
+  },
+  "tasks": {
+    "import_bpy": {
+      "hb": {
+        "median_ms": 32.576,
+        "median_peak_rss_bytes": 17162240.0,
+        "samples": [
+          {
+            "wall_ms": 32.804,
+            "peak_rss_bytes": 16875520
+          },
+          {
+            "wall_ms": 32.271,
+            "peak_rss_bytes": 17170432
+          },
+          {
+            "wall_ms": 30.233,
+            "peak_rss_bytes": 16859136
+          },
+          {
+            "wall_ms": 34.856,
+            "peak_rss_bytes": 17432576
+          },
+          {
+            "wall_ms": 44.436,
+            "peak_rss_bytes": 17350656
+          },
+          {
+            "wall_ms": 29.153,
+            "peak_rss_bytes": 16728064
+          },
+          {
+            "wall_ms": 32.349,
+            "peak_rss_bytes": 17235968
+          },
+          {
+            "wall_ms": 35.479,
+            "peak_rss_bytes": 17350656
+          },
+          {
+            "wall_ms": 37.169,
+            "peak_rss_bytes": 17154048
+          },
+          {
+            "wall_ms": 31.342,
+            "peak_rss_bytes": 16990208
+          }
+        ]
+      },
+      "blender": {
+        "median_ms": 706.409,
+        "median_peak_rss_bytes": 235855872.0,
+        "samples": [
+          {
+            "wall_ms": 694.253,
+            "peak_rss_bytes": 236339200
+          },
+          {
+            "wall_ms": 696.207,
+            "peak_rss_bytes": 234242048
+          },
+          {
+            "wall_ms": 716.612,
+            "peak_rss_bytes": 237912064
+          },
+          {
+            "wall_ms": 750.539,
+            "peak_rss_bytes": 236109824
+          },
+          {
+            "wall_ms": 696.017,
+            "peak_rss_bytes": 235274240
+          },
+          {
+            "wall_ms": 723.13,
+            "peak_rss_bytes": 237780992
+          },
+          {
+            "wall_ms": 973.679,
+            "peak_rss_bytes": 238469120
+          },
+          {
+            "wall_ms": 772.597,
+            "peak_rss_bytes": 234618880
+          },
+          {
+            "wall_ms": 692.166,
+            "peak_rss_bytes": 235601920
+          },
+          {
+            "wall_ms": 649.667,
+            "peak_rss_bytes": 235159552
+          }
+        ]
+      }
+    },
+    "cube_to_glb": {
+      "hb": {
+        "median_ms": 31.946,
+        "median_peak_rss_bytes": 17235968.0,
+        "samples": [
+          {
+            "wall_ms": 32.287,
+            "peak_rss_bytes": 17235968
+          },
+          {
+            "wall_ms": 31.871,
+            "peak_rss_bytes": 17154048
+          },
+          {
+            "wall_ms": 32.021,
+            "peak_rss_bytes": 17285120
+          },
+          {
+            "wall_ms": 33.128,
+            "peak_rss_bytes": 17235968
+          },
+          {
+            "wall_ms": 30.653,
+            "peak_rss_bytes": 17104896
+          },
+          {
+            "wall_ms": 33.27,
+            "peak_rss_bytes": 17383424
+          },
+          {
+            "wall_ms": 29.435,
+            "peak_rss_bytes": 17137664
+          },
+          {
+            "wall_ms": 32.038,
+            "peak_rss_bytes": 17203200
+          },
+          {
+            "wall_ms": 30.535,
+            "peak_rss_bytes": 17317888
+          },
+          {
+            "wall_ms": 29.711,
+            "peak_rss_bytes": 17252352
+          }
+        ]
+      },
+      "blender": {
+        "median_ms": 689.612,
+        "median_peak_rss_bytes": 250429440.0,
+        "samples": [
+          {
+            "wall_ms": 700.711,
+            "peak_rss_bytes": 250347520
+          },
+          {
+            "wall_ms": 691.079,
+            "peak_rss_bytes": 251428864
+          },
+          {
+            "wall_ms": 683.925,
+            "peak_rss_bytes": 249724928
+          },
+          {
+            "wall_ms": 674.794,
+            "peak_rss_bytes": 251740160
+          },
+          {
+            "wall_ms": 688.146,
+            "peak_rss_bytes": 250494976
+          },
+          {
+            "wall_ms": 713.265,
+            "peak_rss_bytes": 250101760
+          },
+          {
+            "wall_ms": 724.875,
+            "peak_rss_bytes": 250150912
+          },
+          {
+            "wall_ms": 681.485,
+            "peak_rss_bytes": 250363904
+          },
+          {
+            "wall_ms": 709.658,
+            "peak_rss_bytes": 250937344
+          },
+          {
+            "wall_ms": 682.792,
+            "peak_rss_bytes": 252657664
+          }
+        ]
+      }
+    },
+    "hb_cube_preview_512": {
+      "hb": {
+        "median_ms": 87.682,
+        "median_peak_rss_bytes": 20594688.0,
+        "samples": [
+          {
+            "wall_ms": 87.142,
+            "peak_rss_bytes": 20709376
+          },
+          {
+            "wall_ms": 87.521,
+            "peak_rss_bytes": 20594688
+          },
+          {
+            "wall_ms": 87.549,
+            "peak_rss_bytes": 20430848
+          },
+          {
+            "wall_ms": 87.371,
+            "peak_rss_bytes": 20381696
+          },
+          {
+            "wall_ms": 87.903,
+            "peak_rss_bytes": 20709376
+          },
+          {
+            "wall_ms": 87.815,
+            "peak_rss_bytes": 20594688
+          },
+          {
+            "wall_ms": 86.656,
+            "peak_rss_bytes": 20414464
+          },
+          {
+            "wall_ms": 89.489,
+            "peak_rss_bytes": 20611072
+          },
+          {
+            "wall_ms": 87.949,
+            "peak_rss_bytes": 20709376
+          },
+          {
+            "wall_ms": 87.94,
+            "peak_rss_bytes": 20447232
+          }
+        ]
+      }
+    }
+  },
+  "blender": {
+    "version": "Blender 5.2.3 LTS",
+    "executable_bytes": 182930560
+  },
+  "method": "Sequential fresh processes, one warmup then recorded samples; filesystem caches are warm. Wall time includes process startup and shutdown. HB run also saves a scene revision. Both exports clear the default scene and build the same cube; Blender uses one thread. Peak RSS is wait4 ru_maxrss for the child process. Blender executable size excludes its required libraries/data; HB size is its complete executable. No Blender rendering comparison."
+}

@@ -1,0 +1,2429 @@
+{
+  "kind": "Static checker acceptance only; no runtime, geometry, render or Blender error-parity claim",
+  "measured_at_utc": "2026-10-25T20:50:46Z",
+  "hb_version": "0.18.0",
+  "binary_sha256": "2fdbe07d7f52e0f22b9f8eb77d4e452b87cbd95deca4a1fe9ca586ecbfbe30e4",
+  "corpus_index_sha256": "26164577251d57e643a48dc1c8e52c8b15c13ea23388492f49cb417b73299d7a",
+  "scripts": 400,
+  "preflight_accepted": 8,
+  "by_origin": {
+    "blender-stackexchange": {
+      "scripts": 92,
+      "preflight_accepted": 7
+    },
+    "claude": {
+      "scripts": 150,
+      "preflight_accepted": 0
+    },
+    "github-gist": {
+      "scripts": 8,
+      "preflight_accepted": 0
+    },
+    "gpt6": {
+      "scripts": 150,
+      "preflight_accepted": 1
+    }
+  },
+  "results": [
+    {
+      "file": "claude-001.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-002.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "claude-003.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-004.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "claude-005.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "claude-006.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/claude-007.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "invalid/claude-008.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "claude-009.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "invalid/claude-010.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "claude-011.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 13
+    },
+    {
+      "file": "claude-012.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "claude-013.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 13
+    },
+    {
+      "file": "claude-014.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 13
+    },
+    {
+      "file": "claude-015.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 26
+    },
+    {
+      "file": "claude-016.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-017.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-018.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-019.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "invalid/claude-020.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-021.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "claude-022.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "claude-023.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "claude-024.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "claude-025.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "claude-026.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 27
+    },
+    {
+      "file": "claude-027.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 24
+    },
+    {
+      "file": "claude-028.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 24
+    },
+    {
+      "file": "claude-029.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 27
+    },
+    {
+      "file": "claude-030.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 24
+    },
+    {
+      "file": "claude-031.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "claude-032.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-033.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "claude-034.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-035.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-036.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 50
+    },
+    {
+      "file": "invalid/claude-037.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 20
+    },
+    {
+      "file": "claude-038.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 24
+    },
+    {
+      "file": "claude-039.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 23
+    },
+    {
+      "file": "claude-040.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-041.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-042.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "claude-043.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "claude-044.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "claude-045.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-046.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 27
+    },
+    {
+      "file": "claude-047.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-048.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "claude-049.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 19
+    },
+    {
+      "file": "claude-050.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 19
+    },
+    {
+      "file": "invalid/claude-051.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "claude-052.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-053.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 20
+    },
+    {
+      "file": "invalid/claude-054.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 23
+    },
+    {
+      "file": "claude-055.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "claude-056.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 23
+    },
+    {
+      "file": "claude-057.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-058.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "claude-059.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "claude-060.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "claude-061.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-062.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-063.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "claude-064.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-065.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-066.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "claude-067.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-068.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-069.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-070.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-071.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "claude-072.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 13
+    },
+    {
+      "file": "claude-073.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "claude-074.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-075.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "claude-076.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 13
+    },
+    {
+      "file": "claude-077.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "claude-078.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "claude-079.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "claude-080.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "claude-081.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "claude-082.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-083.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 13
+    },
+    {
+      "file": "claude-084.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 22
+    },
+    {
+      "file": "claude-085.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 29
+    },
+    {
+      "file": "claude-086.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 18
+    },
+    {
+      "file": "claude-087.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-088.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-089.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-090.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-091.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-092.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 22
+    },
+    {
+      "file": "claude-093.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 15
+    },
+    {
+      "file": "claude-094.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-095.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-096.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-097.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "claude-098.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "claude-099.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "claude-100.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/claude-101.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 40
+    },
+    {
+      "file": "claude-102.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 26
+    },
+    {
+      "file": "claude-103.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 20
+    },
+    {
+      "file": "claude-104.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 26
+    },
+    {
+      "file": "invalid/claude-105.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 32
+    },
+    {
+      "file": "claude-106.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "claude-107.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "claude-108.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "claude-109.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 15
+    },
+    {
+      "file": "claude-110.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 32
+    },
+    {
+      "file": "claude-111.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "claude-112.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-113.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "claude-114.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "claude-115.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "claude-116.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 19
+    },
+    {
+      "file": "claude-117.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "claude-118.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-119.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "claude-120.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "claude-121.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 37
+    },
+    {
+      "file": "claude-122.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "invalid/claude-123.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 22
+    },
+    {
+      "file": "claude-124.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 19
+    },
+    {
+      "file": "claude-125.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 19
+    },
+    {
+      "file": "claude-126.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 441
+    },
+    {
+      "file": "claude-127.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 216
+    },
+    {
+      "file": "invalid/claude-128.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 22
+    },
+    {
+      "file": "claude-129.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 18
+    },
+    {
+      "file": "claude-130.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 53
+    },
+    {
+      "file": "claude-131.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 18
+    },
+    {
+      "file": "claude-132.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 72
+    },
+    {
+      "file": "claude-133.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 17
+    },
+    {
+      "file": "claude-134.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 45
+    },
+    {
+      "file": "claude-135.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "claude-136.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 46
+    },
+    {
+      "file": "claude-137.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "invalid/claude-138.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 22
+    },
+    {
+      "file": "claude-139.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 79
+    },
+    {
+      "file": "claude-140.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 38
+    },
+    {
+      "file": "claude-141.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 58
+    },
+    {
+      "file": "claude-142.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 20
+    },
+    {
+      "file": "claude-143.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 217
+    },
+    {
+      "file": "claude-144.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "claude-145.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 22
+    },
+    {
+      "file": "claude-146.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "claude-147.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "claude-148.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "claude-149.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 16
+    },
+    {
+      "file": "claude-150.py",
+      "origin": "claude",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "gpt6-001.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-002.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-003.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-004.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-005.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-006.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "invalid/gpt6-007.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "invalid/gpt6-008.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 15
+    },
+    {
+      "file": "invalid/gpt6-009.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "invalid/gpt6-010.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-011.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-012.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-013.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "gpt6-014.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-015.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "invalid/gpt6-016.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 15
+    },
+    {
+      "file": "invalid/gpt6-017.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/gpt6-018.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/gpt6-019.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "invalid/gpt6-020.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 17
+    },
+    {
+      "file": "gpt6-021.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "invalid/gpt6-022.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-023.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 16
+    },
+    {
+      "file": "gpt6-024.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "gpt6-025.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "gpt6-026.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "gpt6-027.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "gpt6-028.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "gpt6-029.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "gpt6-030.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 19
+    },
+    {
+      "file": "gpt6-031.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-032.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-033.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-034.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "gpt6-035.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-036.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-037.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-038.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "gpt6-039.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-040.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-041.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 2
+    },
+    {
+      "file": "gpt6-042.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "gpt6-043.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-044.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "gpt6-045.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "invalid/gpt6-046.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "invalid/gpt6-047.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "invalid/gpt6-048.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "invalid/gpt6-049.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "invalid/gpt6-050.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/gpt6-051.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/gpt6-052.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-053.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/gpt6-054.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/gpt6-055.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-056.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "gpt6-057.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "gpt6-058.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "gpt6-059.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 13
+    },
+    {
+      "file": "gpt6-060.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "gpt6-061.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "gpt6-062.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 28
+    },
+    {
+      "file": "gpt6-063.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "gpt6-064.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "gpt6-065.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "gpt6-066.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "gpt6-067.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "gpt6-068.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "gpt6-069.py",
+      "origin": "gpt6",
+      "accepted": true,
+      "errors": 0
+    },
+    {
+      "file": "gpt6-070.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-071.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 19
+    },
+    {
+      "file": "gpt6-072.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "gpt6-073.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "gpt6-074.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "gpt6-075.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "gpt6-076.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-077.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-078.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-079.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-080.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-081.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "gpt6-082.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "gpt6-083.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "gpt6-084.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "gpt6-085.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 22
+    },
+    {
+      "file": "gpt6-086.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "gpt6-087.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "gpt6-088.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "gpt6-089.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "gpt6-090.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "invalid/gpt6-091.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-092.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 15
+    },
+    {
+      "file": "invalid/gpt6-093.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "invalid/gpt6-094.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/gpt6-095.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 16
+    },
+    {
+      "file": "gpt6-096.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-097.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "gpt6-098.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-099.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "gpt6-100.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "invalid/gpt6-101.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "invalid/gpt6-102.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 40
+    },
+    {
+      "file": "invalid/gpt6-103.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 18
+    },
+    {
+      "file": "invalid/gpt6-104.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 18
+    },
+    {
+      "file": "invalid/gpt6-105.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 19
+    },
+    {
+      "file": "gpt6-106.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "gpt6-107.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "gpt6-108.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "gpt6-109.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "gpt6-110.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 18
+    },
+    {
+      "file": "invalid/gpt6-111.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-112.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-113.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-114.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-115.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 17
+    },
+    {
+      "file": "gpt6-116.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-117.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-118.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 15
+    },
+    {
+      "file": "gpt6-119.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-120.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "invalid/gpt6-121.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/gpt6-122.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "invalid/gpt6-123.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "invalid/gpt6-124.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "invalid/gpt6-125.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "gpt6-126.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-127.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "gpt6-128.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "gpt6-129.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "gpt6-130.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "invalid/gpt6-131.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-132.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-133.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-134.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/gpt6-135.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "gpt6-136.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "gpt6-137.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "gpt6-138.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "gpt6-139.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "gpt6-140.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "invalid/gpt6-141.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/gpt6-142.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/gpt6-143.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "invalid/gpt6-144.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "invalid/gpt6-145.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "gpt6-146.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "gpt6-147.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "gpt6-148.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "gpt6-149.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "gpt6-150.py",
+      "origin": "gpt6",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "gist-10db13a3319a3c6d1f42a64b40163ffe-BP_triangles_p2_s1.py",
+      "origin": "github-gist",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py",
+      "origin": "github-gist",
+      "accepted": false,
+      "errors": 70
+    },
+    {
+      "file": "gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py",
+      "origin": "github-gist",
+      "accepted": false,
+      "errors": 15
+    },
+    {
+      "file": "gist-3842f9f62b3426d07636a7cf273a875f-BP_triangles_p2_s2.py",
+      "origin": "github-gist",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "gist-72bd31e11a9921ef7e976d4815d6d6df-BP_triangles_p2_s0.py",
+      "origin": "github-gist",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "gist-8259636fa827e9c83c8119e2dd692f40-BP_triangles_p2_s3.py",
+      "origin": "github-gist",
+      "accepted": false,
+      "errors": 15
+    },
+    {
+      "file": "gist-9be9e2a0241bfb2f154d1eef6623b369-BP_triangles_p3_i3.py",
+      "origin": "github-gist",
+      "accepted": false,
+      "errors": 15
+    },
+    {
+      "file": "gist-dc0a619801458cb0aa421fc0a92c8423-BP_triangles_p3_i2.py",
+      "origin": "github-gist",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "stackexchange-107470-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 16
+    },
+    {
+      "file": "stackexchange-10919-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 17
+    },
+    {
+      "file": "stackexchange-118083-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "stackexchange-120659-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 21
+    },
+    {
+      "file": "invalid/stackexchange-120988-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "invalid/stackexchange-121012-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "invalid/stackexchange-123010-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "stackexchange-134700-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "stackexchange-135279-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "stackexchange-13702-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/stackexchange-13991-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 2
+    },
+    {
+      "file": "invalid/stackexchange-14203-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "stackexchange-14746-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "invalid/stackexchange-14914-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/stackexchange-14940-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "stackexchange-150881-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "stackexchange-152566-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "stackexchange-15541-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "stackexchange-160069-block-2.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "stackexchange-160913-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "stackexchange-161107-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "stackexchange-166856-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "stackexchange-167870-block-6.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "stackexchange-17755-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "invalid/stackexchange-18134-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 19
+    },
+    {
+      "file": "stackexchange-187270-block-2.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "stackexchange-19295-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 38
+    },
+    {
+      "file": "stackexchange-197449-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 18
+    },
+    {
+      "file": "stackexchange-198926-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "stackexchange-211543-block-6.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 17
+    },
+    {
+      "file": "stackexchange-212938-block-2.py",
+      "origin": "blender-stackexchange",
+      "accepted": true,
+      "errors": 0
+    },
+    {
+      "file": "stackexchange-219565-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "stackexchange-219566-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 2
+    },
+    {
+      "file": "stackexchange-220081-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "stackexchange-221496-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "stackexchange-221511-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "invalid/stackexchange-221597-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "stackexchange-227969-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "stackexchange-23088-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "stackexchange-239606-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/stackexchange-24139-block-2.py",
+      "origin": "blender-stackexchange",
+      "accepted": true,
+      "errors": 0
+    },
+    {
+      "file": "stackexchange-242921-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "stackexchange-24808-block-4.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 19
+    },
+    {
+      "file": "stackexchange-2509-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "invalid/stackexchange-26146-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 42
+    },
+    {
+      "file": "invalid/stackexchange-2639-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "invalid/stackexchange-271032-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 15
+    },
+    {
+      "file": "stackexchange-27632-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "stackexchange-27704-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "invalid/stackexchange-284622-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "stackexchange-286200-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "stackexchange-28683-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "stackexchange-30839-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "invalid/stackexchange-30977-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "invalid/stackexchange-313554-block-2.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "invalid/stackexchange-327248-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "stackexchange-330301-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": true,
+      "errors": 0
+    },
+    {
+      "file": "invalid/stackexchange-3460-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "stackexchange-35009-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "stackexchange-35011-block-3.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 17
+    },
+    {
+      "file": "invalid/stackexchange-3555-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 16
+    },
+    {
+      "file": "stackexchange-36668-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": true,
+      "errors": 0
+    },
+    {
+      "file": "invalid/stackexchange-36906-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "stackexchange-36915-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "stackexchange-36950-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 5
+    },
+    {
+      "file": "invalid/stackexchange-39346-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "stackexchange-39624-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "invalid/stackexchange-39675-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 141
+    },
+    {
+      "file": "invalid/stackexchange-40979-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/stackexchange-43076-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 10
+    },
+    {
+      "file": "stackexchange-43089-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": true,
+      "errors": 0
+    },
+    {
+      "file": "invalid/stackexchange-43090-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 4
+    },
+    {
+      "file": "stackexchange-44783-block-6.py",
+      "origin": "blender-stackexchange",
+      "accepted": true,
+      "errors": 0
+    },
+    {
+      "file": "invalid/stackexchange-45855-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "invalid/stackexchange-52117-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "invalid/stackexchange-53842-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "invalid/stackexchange-5445-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 16
+    },
+    {
+      "file": "invalid/stackexchange-5446-block-2.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "stackexchange-55424-block-3.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 14
+    },
+    {
+      "file": "invalid/stackexchange-6747-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 6
+    },
+    {
+      "file": "stackexchange-68133-block-3.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 1
+    },
+    {
+      "file": "invalid/stackexchange-69525-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 3
+    },
+    {
+      "file": "invalid/stackexchange-7089-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 9
+    },
+    {
+      "file": "stackexchange-71830-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 30
+    },
+    {
+      "file": "stackexchange-7455-block-5.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 7
+    },
+    {
+      "file": "invalid/stackexchange-7545-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 12
+    },
+    {
+      "file": "invalid/stackexchange-78846-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 2
+    },
+    {
+      "file": "stackexchange-7886-block-2.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 8
+    },
+    {
+      "file": "stackexchange-78949-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": true,
+      "errors": 0
+    },
+    {
+      "file": "invalid/stackexchange-79370-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 145
+    },
+    {
+      "file": "invalid/stackexchange-81425-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 11
+    },
+    {
+      "file": "stackexchange-8593-block-1.py",
+      "origin": "blender-stackexchange",
+      "accepted": false,
+      "errors": 3
+    }
+  ]
+}
