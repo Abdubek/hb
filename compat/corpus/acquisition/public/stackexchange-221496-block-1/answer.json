@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 17770930,
+    "reputation": 11030,
+    "user_id": 88681,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/f5dd57bce13a028b27847faadeaccef3?s=256&d=identicon&r=PG",
+    "display_name": "scurest",
+    "link": "https://blender.stackexchange.com/users/88681/scurest"
+  },
+  "is_accepted": true,
+  "score": 7,
+  "last_activity_date": 1620142561,
+  "creation_date": 1620142561,
+  "answer_id": 221496,
+  "question_id": 221480,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>I don't know how to do it with a bmesh, but it's easy with a regular mesh since <code>mesh.loops[i].vertex_index</code> is writable.</p>\n<pre><code>import bpy\n\nob = bpy.context.object\nassert ob.type == 'MESH'\n\n# If in edit mode, switch to object mode and switch back at the end\nwas_in_edit_mode = False\nif ob.mode == 'EDIT':\n    bpy.ops.object.mode_set(mode='OBJECT')\n    was_in_edit_mode = True\n\nme = ob.data\n\nfor poly in me.polygons:\n    if not poly.select:\n        continue\n\n    # Get loops for this poly\n    # Loop = corner of a poly\n    loop_start = poly.loop_start\n    loop_end = loop_start + poly.loop_total\n    loops = [me.loops[loopi] for loopi in range(loop_start, loop_end)]\n\n    # Get vertex indices for each loop\n    vidxs = [loop.vertex_index for loop in loops]\n\n    # Shift\n    vidxs = vidxs[1:] + vidxs[0:1]\n\n    # Write back\n    for i, loop in enumerate(loops):\n        loop.vertex_index = vidxs[i]\n\n# Not sure if you need this\nme.update()\n\nif was_in_edit_mode:\n    bpy.ops.object.mode_set(mode='EDIT')\n</code></pre>\n"
+}

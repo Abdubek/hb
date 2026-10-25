@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-152566-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/152566",
+      "author": "brockmann",
+      "author_url": "https://blender.stackexchange.com/users/31447/brockmann",
+      "license": "CC BY-SA 4.0",
+      "answer_id": 152566,
+      "code_block": 1,
+      "sha256": "5bba70e4faf6bd302d0de1c50dc87aafcc9cf90f33b8b289a5176afb181ecacc",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1568293794,
+      "last_edit_date": 1591782996,
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/152566/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-152566-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

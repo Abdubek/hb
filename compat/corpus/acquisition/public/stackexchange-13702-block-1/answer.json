@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 3274879,
+    "reputation": 10011,
+    "user_id": 2271,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/5SCGc.png?s=256",
+    "display_name": "pink vertex",
+    "link": "https://blender.stackexchange.com/users/2271/pink-vertex"
+  },
+  "is_accepted": true,
+  "score": 8,
+  "last_activity_date": 1404316794,
+  "last_edit_date": 1404316794,
+  "creation_date": 1404316473,
+  "answer_id": 13702,
+  "question_id": 13693,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>You might create a <a href=\"http://www.blender.org/documentation/blender_python_api_2_71_release/bpy.props.html\" rel=\"noreferrer\">custom property</a> and pass only a get method:</p>\n\n<pre><code>import bpy\n\n#default getter\ndef get_my_prop(self):\n    return self['my_prop']\n\n#omit the setter with a given getter to make it read-only\nbpy.types.Object.my_prop = bpy.props.StringProperty(get=get_my_prop)\n\nfor obj in bpy.context.selected_objects:\n    #assign the value directly\n    obj['my_prop'] = \"My Value\"\n</code></pre>\n\n<p>It looks like this in the properties panel in blender 2.71:\n<img src=\"https://i.sstatic.net/GzgmR.png\" alt=\"getter\"></p>\n"
+}

@@ -1,0 +1,169 @@
+{
+  "file": "claude-098.py",
+  "source_sha256": "6ef6931b853da6565d66ba94a39d121e6f61136024774015a94de156d22123ab",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.050760833983076736,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:19\",\"message\":\"bpy.ops.wm.read_factory_settings: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm.read_factory_settings for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:19\",\"message\":\"bpy.ops.wm: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:20\",\"message\":\"bpy.context.scene.unit_settings.system: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.unit_settings.system for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:20\",\"message\":\"bpy.context.scene.unit_settings: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.unit_settings for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:25\",\"message\":\"bpy.types.World.use_nodes=True: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:26\",\"message\":\"bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:26\",\"message\":\"bpy.types.World.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:43\",\"message\":\"bpy.types.Material.blend_method: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.blend_method for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:109\",\"message\":\"bpy.ops.object.shade_auto_smooth: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.shade_auto_smooth for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:165\",\"message\":\"bmesh.ops.inset_region: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:178\",\"message\":\"bmesh.ops.bevel: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:220\",\"message\":\"bmesh.ops.spin: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:223\",\"message\":\"bmesh.ops.remove_doubles: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:245\",\"message\":\"bpy.data.curves.new: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.curves.new for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:245\",\"message\":\"bpy.data.curves: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.curves for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:274\",\"message\":\"bpy.ops.object.convert: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.convert for tested paths and parameter limits; use hb capabilities for supported alternatives.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py\",\"ok\":false,\"timing\":{\"python_init_ms\":11.373667000000001,\"total_ms\":38.105291}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:19",
+        "message": "bpy.ops.wm.read_factory_settings: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.wm.read_factory_settings for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:19",
+        "message": "bpy.ops.wm: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:20",
+        "message": "bpy.context.scene.unit_settings.system: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.unit_settings.system for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:20",
+        "message": "bpy.context.scene.unit_settings: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.unit_settings for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:25",
+        "message": "bpy.types.World.use_nodes=True: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:26",
+        "message": "bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:26",
+        "message": "bpy.types.World.node_tree: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:43",
+        "message": "bpy.types.Material.blend_method: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.blend_method for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:109",
+        "message": "bpy.ops.object.shade_auto_smooth: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.shade_auto_smooth for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:165",
+        "message": "bmesh.ops.inset_region: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:178",
+        "message": "bmesh.ops.bevel: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:220",
+        "message": "bmesh.ops.spin: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:223",
+        "message": "bmesh.ops.remove_doubles: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:245",
+        "message": "bpy.data.curves.new: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.curves.new for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:245",
+        "message": "bpy.data.curves: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.curves for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py:274",
+        "message": "bpy.ops.object.convert: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.convert for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 11.373667000000001,
+      "total_ms": 38.105291
+    }
+  },
+  "blender_process": {
+    "returncode": 0,
+    "seconds": 0.6475668339990079,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-j1q4ru4t",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-j1q4ru4t\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py"
+    ],
+    "stdout": "ERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/149f1dae9ca2e7cd_essentials_brushes-curve_sculpt.blend.index.json].\nERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/c86e5b86cc9f3ed2_essentials_brushes-gp_draw.blend.index.json].\nERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/a7aa6760907291df_essentials_brushes-gp_sculpt.blend.index.json].\nERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/a9cf83d0d2deb682_essentials_brushes-gp_vertex.blend.index.json].\nERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/aa81872d85fdc84c_essentials_brushes-gp_weight.blend.index.json].\nERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/cea2b64d7a6958d5_essentials_brushes-mesh_sculpt.blend.index.json].\nERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/bb97d32da6f4f58b_essentials_brushes-mesh_texture.blend.index.json].\nERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/d0c7d2bdbcd57d78_essentials_brushes-mesh_vertex.blend.index.json].\nERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/d179d61a6ff48f42_essentials_brushes-mesh_weight.blend.index.json].\nERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/a90396910678f6fe_procedural_hair_node_assets.blend.index.json].\nERROR (ed.asset): source/blender/editors/asset/intern/asset_indexer.cc:587 write_contents: Index not created: couldn't create folder [/user-home/Library/Caches/Blender/asset-library-indices/d87b3a405450548d/192cd3a20733918d_smooth_by_angle.blend.index.json].\nExtensions: writing cache failed ([Errno 1] Operation not permitted: '/user-home/Library/Application Support/Blender').\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nWarning: Asset loading is unfinished\nclaude-098: washbasin built with 116 objects\nCORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py\", \"ok\": true}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n\nBlender quit\n",
+    "stderr": ""
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-098.py",
+    "ok": true
+  }
+}

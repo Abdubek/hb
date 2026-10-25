@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 9,
+  "last_activity_date": 1632001962,
+  "last_edit_date": 1632001962,
+  "creation_date": 1553531105,
+  "answer_id": 135279,
+  "question_id": 134996,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>Can add methods to the propertygroup definition</strong></p>\n<p>Something that is very handy IMO is the ability to add methods to the property group.</p>\n<p>Here I've added <code>copy</code> to make a copy of itself to the collection, and <code>add</code> to add an object to the collection. In both cases the object name is used as the collection item name.</p>\n<p>Remember that 2.8 uses annotations for properties.</p>\n<pre><code>import bpy\n\nclass ObjectCopy(bpy.types.PropertyGroup):\n    object: bpy.props.PointerProperty(type=bpy.types.Object)    \n\n    def copy(self):\n        self.object = self.id_data.copy()\n        self.name = self.object.name\n        return self.object\n\n    def add(self, ob):\n        self.object = ob\n        self.name = ob.name\n        return self.object\n\ndef register():\n    bpy.utils.register_class(ObjectCopy)\n    bpy.types.Object.copies = bpy.props.CollectionProperty(type=ObjectCopy)\n\ndef unregister():\n    bpy.utils.unregister_class(ObjectCopy)\n    del(bpy.types.Object.copies)\n    \nif __name__ == &quot;__main__&quot;:\n    register()\n</code></pre>\n<p>Some testing in the python console.</p>\n<pre><code>&gt;&gt;&gt; C.object.copies.clear()\n&gt;&gt;&gt; for o in C.selected_objects:\n...     C.object.copies.add().add(o)\n...     \nbpy.data.objects['Cube.002']\nbpy.data.objects['Cube.001']\nbpy.data.objects['Cube']\n\n&gt;&gt;&gt; C.object.copies.add().copy()\nbpy.data.objects['Cube.005']\n\n&gt;&gt;&gt; C.object.copies['Cube'].object\nbpy.data.objects['Cube']\n</code></pre>\n"
+}

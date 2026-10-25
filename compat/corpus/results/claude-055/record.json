@@ -1,0 +1,190 @@
+{
+  "file": "claude-055.py",
+  "source_sha256": "ae547db042643791a079f05a2702ba532c2b4cbcf122bcb128ba6332c68319a2",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.0508059159910772,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:14\",\"message\":\"bpy.ops.wm.read_factory_settings: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm.read_factory_settings for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:14\",\"message\":\"bpy.ops.wm: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:18\",\"message\":\"bpy.context.scene.render.engine: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.render.engine for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:23\",\"message\":\"bpy.context.scene.unit_settings.system: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.unit_settings.system for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:23\",\"message\":\"bpy.context.scene.unit_settings: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.unit_settings for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:59\",\"message\":\"bpy.types.Mesh.validate: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Mesh.validate for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:413\",\"message\":\"bpy.types.World.use_nodes=True: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:414\",\"message\":\"bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:414\",\"message\":\"bpy.types.World.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:415\",\"message\":\"bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:415\",\"message\":\"bpy.types.World.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:427\",\"message\":\"bpy.types.Light.angle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Light.angle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:454\",\"message\":\"bpy.types.Camera.dof.use_dof: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Camera.dof.use_dof for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:454\",\"message\":\"bpy.types.Camera.dof: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Camera.dof for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:460\",\"message\":\"bpy.types.Camera.dof.focus_distance: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Camera.dof.focus_distance for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:460\",\"message\":\"bpy.types.Camera.dof: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Camera.dof for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:461\",\"message\":\"bpy.types.Camera.dof.aperture_fstop: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Camera.dof.aperture_fstop for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:461\",\"message\":\"bpy.types.Camera.dof: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Camera.dof for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:465\",\"message\":\"bpy.types.Collection.all_objects: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Collection.all_objects for tested paths and parameter limits; use hb capabilities for supported alternatives.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py\",\"ok\":false,\"timing\":{\"python_init_ms\":11.683542,\"total_ms\":36.834417}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:14",
+        "message": "bpy.ops.wm.read_factory_settings: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.wm.read_factory_settings for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:14",
+        "message": "bpy.ops.wm: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:18",
+        "message": "bpy.context.scene.render.engine: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.render.engine for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:23",
+        "message": "bpy.context.scene.unit_settings.system: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.unit_settings.system for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:23",
+        "message": "bpy.context.scene.unit_settings: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.unit_settings for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:59",
+        "message": "bpy.types.Mesh.validate: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Mesh.validate for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:413",
+        "message": "bpy.types.World.use_nodes=True: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:414",
+        "message": "bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:414",
+        "message": "bpy.types.World.node_tree: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:415",
+        "message": "bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:415",
+        "message": "bpy.types.World.node_tree: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:427",
+        "message": "bpy.types.Light.angle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Light.angle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:454",
+        "message": "bpy.types.Camera.dof.use_dof: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Camera.dof.use_dof for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:454",
+        "message": "bpy.types.Camera.dof: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Camera.dof for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:460",
+        "message": "bpy.types.Camera.dof.focus_distance: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Camera.dof.focus_distance for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:460",
+        "message": "bpy.types.Camera.dof: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Camera.dof for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:461",
+        "message": "bpy.types.Camera.dof.aperture_fstop: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Camera.dof.aperture_fstop for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:461",
+        "message": "bpy.types.Camera.dof: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Camera.dof for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py:465",
+        "message": "bpy.types.Collection.all_objects: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Collection.all_objects for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 11.683542,
+      "total_ms": 36.834417
+    }
+  },
+  "blender_process": {
+    "returncode": 0,
+    "seconds": 0.5018683329981286,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-vz840pgh",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-vz840pgh\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py"
+    ],
+    "stdout": "Extensions: writing cache failed ([Errno 1] Operation not permitted: '/user-home/Library/Application Support/Blender').\nToy locomotive scene built: 171 objects\nCORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py\", \"ok\": true}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n\nBlender quit\n",
+    "stderr": ""
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-055.py",
+    "ok": true
+  }
+}

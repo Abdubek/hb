@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+claude-071: A picnic table with attached benches
+claude-072: A basketball hoop on a support pole and backboard
+claude-073: A tennis court with net and perimeter posts
+claude-074: A row of three beach umbrellas with lounge chairs
+claude-075: A rooftop HVAC unit with fan grilles and ducts

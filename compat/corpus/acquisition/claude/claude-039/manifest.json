@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-039.py",
+      "task": "A wheeled toolbox with drawers and handle",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "25891c328b9e7fc2378159f916a59afc6d0f2d0fe58a6fb585963c2f61ea61a3",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-039/1788912999227581000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 260.73146533966064
+}

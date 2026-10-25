@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 2331658,
+    "reputation": 29989,
+    "user_id": 1363,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/oskiS.png?s=256",
+    "display_name": "CodeManX",
+    "link": "https://blender.stackexchange.com/users/1363/codemanx"
+  },
+  "is_accepted": true,
+  "score": 8,
+  "last_activity_date": 1440860656,
+  "last_edit_date": 1440860656,
+  "creation_date": 1440860290,
+  "answer_id": 36668,
+  "question_id": 36647,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>To apply transformation really low-level, you should probably set the object's matrix directly and avoid <code>bpy.ops.object.transform_apply()</code> entirely:</p>\n\n<pre><code>import bpy\nfrom math import radians\nfrom mathutils import Euler, Matrix\n\neuler = Euler(map(radians, (0, 0, 45)), 'XYZ')\n\nob = bpy.context.object\n\nloc, rot, scale = ob.matrix_world.decompose()\n\nsmat = Matrix()\nfor i in range(3):\n    smat[i][i] = scale[i]\n\nmat = Matrix.Translation(loc) * euler.to_matrix().to_4x4() * smat\n\nob.matrix_world = mat\n</code></pre>\n\n<p>Change the last line to <code>ob.matrix_local = ob.matrix_parent_inverse * mat</code> if you want to set a rotation of <code>0\u00b0, 0\u00b0, 45\u00b0</code> (as seen in Object tab) even if the object is parented.</p>\n\n<p>The code might need further adjustments if drivers or modifiers are involved, non-uniform scaling in combination with parenting does not seems to work fine however.</p>\n"
+}

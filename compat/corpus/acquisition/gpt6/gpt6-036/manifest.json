@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-036.py",
+      "task": "A computer monitor on an articulated desk mount",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "8453bd849ef55fb3f3679b846020ec5bdfc13ae25ebbc77b279fcf9fe8ef2809",
+      "response": "acquisition/gpt6/gpt6-036/1788911726812493000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-037.py",
+      "task": "A toaster with two slots and side controls",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "3d91976a12e769e9d213206538947b4a94b48c34662d1b4a098273245be755da",
+      "response": "acquisition/gpt6/gpt6-036/1788911726812493000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-038.py",
+      "task": "A saucepan with lid, handle and knob",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "7b51a984920a4b8d94b7f87e85b16b78f389a0bf881e07124342c2e9976b0648",
+      "response": "acquisition/gpt6/gpt6-036/1788911726812493000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-039.py",
+      "task": "A wheeled toolbox with drawers and handle",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "c0c671249add545035c64d708755b1faf7952dc0f0f22630792363090e40e739",
+      "response": "acquisition/gpt6/gpt6-036/1788911726812493000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-040.py",
+      "task": "A garden wheelbarrow with tray, handles and supports",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "0a663c2b9a7f5d1170c23feccd835fa3336f8105033e2a5efe07d3960d4090c7",
+      "response": "acquisition/gpt6/gpt6-036/1788911726812493000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 344.5454041957855
+}

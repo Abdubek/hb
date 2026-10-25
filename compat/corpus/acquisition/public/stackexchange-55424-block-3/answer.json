@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 191753,
+    "reputation": 48653,
+    "user_id": 55,
+    "user_type": "registered",
+    "accept_rate": 40,
+    "profile_image": "https://i.sstatic.net/PsT5q.png?s=256",
+    "display_name": "ideasman42",
+    "link": "https://blender.stackexchange.com/users/55/ideasman42"
+  },
+  "is_accepted": true,
+  "score": 11,
+  "last_activity_date": 1527319625,
+  "last_edit_date": 1527319625,
+  "creation_date": 1465390942,
+  "answer_id": 55424,
+  "question_id": 55423,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><code>ID.items()</code> is going to give you <strong>custom-properties</strong>, which is lower level and bypasses properties created by <a href=\"https://docs.blender.org/api/blender_python_api_current/bpy.props.html\" rel=\"nofollow noreferrer\"><code>bpy.props</code></a>, I suspect you want to iterate over attributes, instead of custom-properties.</p>\n\n<p>You can do this instead:</p>\n\n<pre><code>scene = bpy.data.scenes[0]\nfor attr in dir(scene):\n    value = getattr(scene, attr)\n    if type(value) == bpy.types.CollectionProperty:\n        print(\"something\", attr, value)\n</code></pre>\n\n<p>The example above uses Python's <a href=\"https://docs.python.org/3/library/functions.html#dir\" rel=\"nofollow noreferrer\"><code>dir</code></a> and <a href=\"https://docs.python.org/3/library/functions.html#getattr\" rel=\"nofollow noreferrer\"><code>getattr</code></a> functions, you can also use a Blender specific method of introspecting properties.</p>\n\n<pre><code>scene = bpy.data.scene[0]\nfor attr in scene.bl_rna.properties.keys():\n    value = getattr(scene, attr)\n    if type(value) == bpy.types.CollectionProperty:\n        print(\"something\", attr, value)\n</code></pre>\n\n<p>This limits the properties to Blender's data-api, and wont include functions for example.</p>\n\n<hr>\n\n<p>Here is a working example based on the example in your question:</p>\n\n<pre><code>import bpy\nfrom bpy.props import StringProperty, CollectionProperty\n\nclass MyCollectionProperty(bpy.types.PropertyGroup):\n    name = StringProperty(default=\"\")\n\n\nbpy.utils.register_class(MyCollectionProperty)\nbpy.types.Scene.my_collection_prop = CollectionProperty(\n        type=MyCollectionProperty)\n\nscene = bpy.data.scenes[0]\nfor attr in dir(scene):\n    prop = getattr(scene, attr, None)\n    if isinstance(prop, bpy.types.bpy_prop_collection):\n        if bpy.types.Scene.bl_rna.properties[attr].fixed_type == MyCollectionProperty.bl_rna:\n            print(prop, \"found\")\n</code></pre>\n\n<p>This used Blender specific data-api introspection (<code>bl_rna</code>).</p>\n\n<p>Note: You may want to use <a href=\"http://docs.quantifiedcode.com/python-anti-patterns/readability/do_not_compare_types_use_isinstance.html\" rel=\"nofollow noreferrer\"><code>isinstance</code></a>.</p>\n"
+}

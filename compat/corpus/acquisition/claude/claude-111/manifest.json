@@ -1,0 +1,70 @@
+{
+  "scripts": [
+    {
+      "file": "claude-111.py",
+      "task": "A radial array of turbine blades around a central hub inside a mechanical housing",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "1fe90918d1984562264a513938eaa818e9a5aa1ed8950a20274c86032aa5b8ff",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-111/1788911881155314000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-112.py",
+      "task": "A parametric honeycomb partition wall with a doorway and a surrounding frame",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "d7d87aac5754ea6f7a00cdb3e3e9121ec7a44707c06ef772749f100f54c93c8c",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-111/1788911881155314000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-113.py",
+      "task": "A procedural brick wall with staggered courses, corner returns and a window opening",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "dddce3f80ce05020515b8cfa5409d75449688108996986d99be8c7248ad8a9ef",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-111/1788911881155314000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-114.py",
+      "task": "A circular auditorium with tiered seating, aisles and a central presentation platform",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "f2bb8023cdb6bc8b0a590c99a0f6b61d3bc27c3793c52e67a2c9fd1b5f9958a8",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-111/1788911881155314000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-115.py",
+      "task": "A modular cable tray installation with straight sections, junctions and wall brackets",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "fccd9372018cfcda3ed05698a323627dfa5e652de047456d21b5d5315dbe4391",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-111/1788911881155314000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 926.339427947998
+}

@@ -1,0 +1,164 @@
+{
+  "file": "invalid/stackexchange-6747-block-1.py",
+  "source_sha256": "4f3781e83ec3d39315fd5031a356f7541bc15fed7262d080982ab82c257d7b0d",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.023977542005013674,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:5\",\"message\":\"bpy.types.Modifier.canvas_settings.canvas_surfaces: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Modifier.canvas_settings.canvas_surfaces for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:5\",\"message\":\"bpy.types.Modifier.canvas_settings: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Modifier.canvas_settings for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:6\",\"message\":\"bpy.types.Modifier.canvas_settings.canvas_surfaces.point_cache: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Modifier.canvas_settings.canvas_surfaces.point_cache for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:10\",\"message\":\"bpy.data.scenes: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.scenes for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:14\",\"message\":\"bpy.ops.ptcache.bake: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.ptcache.bake for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:14\",\"message\":\"bpy.ops.ptcache: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.ptcache for tested paths and parameter limits; use hb capabilities for supported alternatives.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py\",\"ok\":false,\"timing\":{\"python_init_ms\":12.19525,\"total_ms\":13.729999999999999}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:5",
+        "message": "bpy.types.Modifier.canvas_settings.canvas_surfaces: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Modifier.canvas_settings.canvas_surfaces for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:5",
+        "message": "bpy.types.Modifier.canvas_settings: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Modifier.canvas_settings for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:6",
+        "message": "bpy.types.Modifier.canvas_settings.canvas_surfaces.point_cache: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Modifier.canvas_settings.canvas_surfaces.point_cache for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:10",
+        "message": "bpy.data.scenes: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.scenes for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:14",
+        "message": "bpy.ops.ptcache.bake: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.ptcache.bake for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:14",
+        "message": "bpy.ops.ptcache: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.ptcache for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 12.19525,
+      "total_ms": 13.729999999999999
+    }
+  },
+  "blender_process": {
+    "returncode": 1,
+    "seconds": 0.48518012498971075,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-642e02l4",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-642e02l4\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py"
+    ],
+    "stdout": "CORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py\", \"ok\": false, \"exception\": \"KeyError\", \"message\": \"'bpy_prop_collection[key]: key \\\"Dynamic Paint\\\" not found'\", \"line\": 4}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n",
+    "stderr": "Traceback (most recent call last):\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py\", line 11, in <module>\n    runpy.run_path(source, run_name=\"__main__\")\n  File \"<frozen runpy>\", line 291, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py\", line 4, in <module>\n    modifier=obj.modifiers['Dynamic Paint']\n             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nKeyError: 'bpy_prop_collection[key]: key \"Dynamic Paint\" not found'\n"
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py",
+    "ok": false,
+    "exception": "KeyError",
+    "message": "'bpy_prop_collection[key]: key \"Dynamic Paint\" not found'",
+    "line": 4
+  },
+  "runtime_process": {
+    "returncode": 1,
+    "seconds": 0.03055487500387244,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-642e02l4\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-642e02l4/scene.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"SCRIPT_ERROR\",\"doc\":\"docs/compatibility.md#errors\",\"frames\":[{\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py\",\"function\":\"<module>\",\"line\":3}],\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:3\",\"message\":\"'Cube'\",\"suggestion\":\"Correct the script and rerun; the scene was not saved.\"},\"ok\":false}\n",
+    "stderr": ""
+  },
+  "runtime": {
+    "error": {
+      "code": "SCRIPT_ERROR",
+      "doc": "docs/compatibility.md#errors",
+      "frames": [
+        {
+          "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py",
+          "function": "<module>",
+          "line": 3
+        }
+      ],
+      "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-6747-block-1.py:3",
+      "message": "'Cube'",
+      "suggestion": "Correct the script and rerun; the scene was not saved."
+    },
+    "ok": false
+  },
+  "runtime_probe_process": {
+    "returncode": 1,
+    "seconds": 0.03185241698520258,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-642e02l4\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-642e02l4/exception_probe.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-642e02l4/probe.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"SCRIPT_ERROR\",\"doc\":\"docs/compatibility.md#errors\",\"frames\":[{\"file\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-642e02l4/exception_probe.py\",\"function\":\"<module>\",\"line\":6}],\"location\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-642e02l4/exception_probe.py:6\",\"message\":\"'Cube'\",\"suggestion\":\"Correct the script and rerun; the scene was not saved.\"},\"ok\":false}\n",
+    "stderr": "CORPUS_HB_EXCEPTION={\"exception\": \"KeyError\", \"message\": \"'Cube'\", \"line\": 3}\n"
+  },
+  "runtime_exception": {
+    "exception": "KeyError",
+    "message": "'Cube'",
+    "line": 3
+  },
+  "error_parity": {
+    "hb_rejected": true,
+    "same_message": false,
+    "same_line": false,
+    "probe_matches_direct_run": true,
+    "same_exception_class": true,
+    "status": "different_error"
+  }
+}

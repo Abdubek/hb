@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-026.py",
+      "task": "A wooden pallet carrying six labeled crates",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "543bd16fc11393d65e9cd76e8e11162179039ecd2d21b3866e1a8734f387d1c3",
+      "response": "acquisition/gpt6/gpt6-026/1788911362878464000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-027.py",
+      "task": "A rolling office chair with five casters",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "36a8c1f59ea2037660673cec90a117ba0d1a660c08d5b4ef32e301c9f820d392",
+      "response": "acquisition/gpt6/gpt6-026/1788911362878464000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-028.py",
+      "task": "A freestanding floor lamp with adjustable arm",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "ee75dd35943cab796a2f93d67f03dfe1779f909d2ce9730791bde5385260ca59",
+      "response": "acquisition/gpt6/gpt6-026/1788911362878464000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-029.py",
+      "task": "A warehouse rack containing boxes and barrels",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "32a713bafbd0ed3a192d11cc3407d63877c61a68ffe90c5c21d078091a502a5b",
+      "response": "acquisition/gpt6/gpt6-026/1788911362878464000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-030.py",
+      "task": "A compact forklift with forks, mast and wheels",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "819f19cd3cc41c2fb617a819b9ab55e99b94df95de23630587e08a9ece7bc5cd",
+      "response": "acquisition/gpt6/gpt6-026/1788911362878464000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 396.74383878707886
+}

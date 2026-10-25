@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-133.py",
+      "task": "A small public library interior with reading tables, book stacks and skylights",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "a1a5a31c5a502114319506cda0f87e02d51b39a92a7aa1de9a68fd9928d14891",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-133/1788914006530445000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 422.5252661705017
+}

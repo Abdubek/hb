@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 974885,
+    "reputation": 44187,
+    "user_id": 12,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/P4M8V.png?s=256",
+    "display_name": "iKlsR",
+    "link": "https://blender.stackexchange.com/users/12/iklsr"
+  },
+  "is_accepted": true,
+  "score": 20,
+  "last_activity_date": 1428880170,
+  "last_edit_date": 1428880170,
+  "creation_date": 1386752761,
+  "answer_id": 5446,
+  "question_id": 5413,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>As a rule of thumb, you should try to avoid operator calls in scripts and use api functions directly as much as possible (if you do this, no need to override). So the snippet below is not needed.</p>\n\n<pre><code>for area in bpy.context.screen.areas:\n    if area.type == \"NODE_EDITOR\":\n        override = {'screen': bpy.context.screen, 'area': area}\nbpy.ops.node.select_all(override, action='DESELECT')\n</code></pre>\n\n<hr>\n\n<p>Through some experimenting, I found it's easier to not use <code>group_make</code> as the default <code>GroupInput</code> and <code>GroupOutput</code> nodes it creates can be a bit unwieldy and adding a <em>Socket</em> to a tree creates a template rather than an actual socket (the lists displayed in Interface panel).</p>\n\n<p>Rather, it's easier to create a new node group with <a href=\"http://www.blender.org/documentation/blender_python_api_2_74_release/bpy.types.BlendDataNodeTrees.html#bpy.types.BlendDataNodeTrees.new\" rel=\"noreferrer\"><code>bpy.data.node_groups.new</code></a> and work with that.</p>\n\n<pre><code>import bpy\n\ngroup = bpy.data.node_groups.new(type=\"ShaderNodeTree\", name=\"testgroup\")\ngroup.inputs.new(\"NodeSocketFloat\", \"Input One\")\ngroup.inputs.new(\"NodeSocketFloat\", \"Input Two\")\ninput_node = group.nodes.new(\"NodeGroupInput\")\ninput_node.location = (0, 0)\n\ngroup.outputs.new(\"NodeSocketFloat\", \"Out\")\noutput_node = group.nodes.new(\"NodeGroupOutput\")\noutput_node.location = (600, 0)\n\ngtr_math_node = group.nodes.new(type='ShaderNodeMath')\ngtr_math_node.operation = \"GREATER_THAN\"\ngtr_math_node.name = \"greater\"\ngtr_math_node.location = (200, 100)\ngroup.links.new(input_node.outputs[\"Input One\"], gtr_math_node.inputs[0])\n\nlss_math_node = group.nodes.new(type='ShaderNodeMath')\nlss_math_node.operation = \"LESS_THAN\"\nlss_math_node.name = \"less\"\nlss_math_node.location = (200,-100)\ngroup.links.new(input_node.outputs[\"Input Two\"], lss_math_node.inputs[1])\n\nadd_math_node = group.nodes.new(type='ShaderNodeMath')\nadd_math_node.operation = \"ADD\"\nadd_math_node.name = \"add\"\nadd_math_node.location = (400, 0)\n\ngroup.links.new(gtr_math_node.outputs[\"Value\"], add_math_node.inputs[0])\ngroup.links.new(lss_math_node.outputs[\"Value\"], add_math_node.inputs[1])\n\ngroup.links.new(add_math_node.outputs[\"Value\"], output_node.inputs[\"Out\"])\n\ntree = bpy.context.object.active_material.node_tree\ngroup_node = tree.nodes.new(\"ShaderNodeGroup\")\ngroup_node.node_tree = group\n</code></pre>\n\n<p>The above gives you</p>\n\n<p><img src=\"https://i.sstatic.net/qOL1m.png\" alt=\"enter image description here\"></p>\n"
+}

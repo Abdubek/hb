@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 191753,
+    "reputation": 48653,
+    "user_id": 55,
+    "user_type": "registered",
+    "accept_rate": 40,
+    "profile_image": "https://i.sstatic.net/PsT5q.png?s=256",
+    "display_name": "ideasman42",
+    "link": "https://blender.stackexchange.com/users/55/ideasman42"
+  },
+  "is_accepted": true,
+  "score": 17,
+  "last_activity_date": 1642488340,
+  "last_edit_date": 1642488340,
+  "creation_date": 1454019516,
+  "answer_id": 45855,
+  "question_id": 45845,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>You can make each submenu have its own context by setting a variable in the <code>UILayout</code>.</p>\n<p>The script can be made to work as expected with only minor changes.</p>\n<ul>\n<li>Define a context member for each menu, using <a href=\"https://www.blender.org/api/current/bpy.types.UILayout.html#bpy.types.UILayout.context_pointer_set\" rel=\"noreferrer\">UILayout.context_pointer_set</a></li>\n<li>In the menus draw function, access this variable directly.</li>\n</ul>\n<p>Modified example script:</p>\n<pre><code>import bpy\n\nclass CamerasSubMenu(bpy.types.Menu):\n    bl_label = &quot;Camera Properties&quot;\n    bl_idname = &quot;view3d.camera_properties_menu&quot;\n\n    # &lt;-- Line removed (menu's don't store properties)\n\n    def draw(self, context):\n        layout = self.layout\n\n        row = layout.row()\n        row.prop(context.my_camera, &quot;lens&quot;)  # &lt;-- Changed from original\n\n\nclass CamerasMenu(bpy.types.Menu):\n    bl_label = &quot;Cameras&quot;\n    bl_idname = &quot;view3d.cameras_menu&quot;\n\n    def draw(self, context):\n        layout = self.layout\n\n        for camera in bpy.data.cameras:\n\n            row = layout.row()\n\n            row.context_pointer_set(&quot;my_camera&quot;, camera)  # &lt;-- Added to original\n            row.menu(CamerasSubMenu.bl_idname, text=camera.name)\n            # &lt;-- Line removed (camera set above)\n\ndef register():\n    bpy.utils.register_class(CamerasSubMenu)\n    bpy.utils.register_class(CamerasMenu)\n\n\ndef unregister():\n    bpy.utils.unregister_class(CamerasMenu)\n    bpy.utils.unregister_class(CamerasSubMenu)\n\nif __name__ == &quot;__main__&quot;:\n    register()\n\n\nbpy.ops.wm.call_menu(name=CamerasMenu.bl_idname)      \n</code></pre>\n"
+}

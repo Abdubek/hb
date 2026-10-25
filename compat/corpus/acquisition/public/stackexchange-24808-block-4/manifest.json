@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-24808-block-4.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/24808",
+      "author": "Ray Mairlot",
+      "author_url": "https://blender.stackexchange.com/users/241/ray-mairlot",
+      "license": "CC BY-SA 4.0",
+      "answer_id": 24808,
+      "code_block": 4,
+      "sha256": "6105c712ddd5fdc3712f7665b7ad149d7c476168377f5bece644ea02e708949b",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1424020192,
+      "last_edit_date": 1657894832,
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/24808/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-24808-block-4/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

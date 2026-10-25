@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-142.py",
+      "task": "A courtyard housing block with balconies, external stairs and shared garden",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "b174147208114722a58bf1b0d9e53dd08e2aaf5bf9d2afdb7bd4c9f7e04cc38c",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-142/1788913847897957000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 565.3846752643585
+}

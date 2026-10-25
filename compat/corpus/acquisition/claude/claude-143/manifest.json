@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-143.py",
+      "task": "A timber train station canopy with repeating trusses and a glazed roof",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "efd98a4720eaa1508ebb762f6bb0e4126fa0f5ddb849543c1333e7aab6226b9d",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-143/1788913847898136000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 350.7701358795166
+}

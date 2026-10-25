@@ -1,0 +1,101 @@
+{
+  "selected_before_execution": true,
+  "repositories": [
+    {
+      "repository": "njanakiev/blender-scripting",
+      "commit": "477ba73c8578901066cc69be4e0d52fb31cf6530",
+      "stars": 823,
+      "observed_utc": "2026-09-09T02:41:22Z",
+      "local_directory": "compat/github/njanakiev",
+      "selection": "all nine standalone scripts under scripts; utility kept as dependency",
+      "sources": [
+        {
+          "path": "scripts/fisher_iris_visualization.py",
+          "sha256": "7254822dc55cbc49920a0bed070ff47b341a79f05cfd5e18ae806950005cd266"
+        },
+        {
+          "path": "scripts/metaballs.py",
+          "sha256": "363af8124b1857fe57690560f231cd1f6aac5478588ed5d2f60e568cac1e8cee"
+        },
+        {
+          "path": "scripts/parametric_torus.py",
+          "sha256": "91b8fd1dadaaf9ab5a92f570be245b13a96cc8e6c516da8f5d25299ab43996d5"
+        },
+        {
+          "path": "scripts/phyllotaxis_flower.py",
+          "sha256": "0ba37f94cd5f544d25d10b5ff0c9902df90cc8814bc028c2bc85ba341ffc4dae"
+        },
+        {
+          "path": "scripts/rugged_donut.py",
+          "sha256": "0337d931354d79b8a7517946b267df4819baf9566f1f8acde5b9ab6aa6bee3f7"
+        },
+        {
+          "path": "scripts/simple_sphere.py",
+          "sha256": "cdfe7988d895628717d548128be9c729a8bf9b3fd02e9ed44a81fb3269ebd94a"
+        },
+        {
+          "path": "scripts/tetrahedron_fractal.py",
+          "sha256": "087e6c038ad640afb15445b5fd8e67e97e67db567c30c7d3da96918275b00131"
+        },
+        {
+          "path": "scripts/voronoi_landscape.py",
+          "sha256": "e51411aae4c13e93f9d03b6dc53b7171532cc7dd6b98d86487bf23f889973653"
+        },
+        {
+          "path": "scripts/voronoi_sphere.py",
+          "sha256": "0d950b7a93ddd5681697d32bb54376f95e070a6667d035267be845ef975c23c7"
+        }
+      ]
+    },
+    {
+      "repository": "CGArtPython/blender_plus_python",
+      "commit": "8082843fa03ebed24f97bd806ae8f05f773e49e9",
+      "stars": 146,
+      "observed_utc": "2026-09-09T02:41:22Z",
+      "local_directory": "compat/github/cgart",
+      "selection": "lexicographically first ten *_done.py completed examples; excludes *_done_bpybb.py by filename rule",
+      "sources": [
+        {
+          "path": "art_projects/truchet_tiles/truchet_tiles_done.py",
+          "sha256": "716bccbf5e6b5b76056628569a196f4c941af8d1d57ba0d55cc8c68b3fe0efac"
+        },
+        {
+          "path": "automation/apply_color_palettes/apply_color_palettes_done.py",
+          "sha256": "79732b4485807d8857734dac16fb178795a022b7a50bf27a6a41abdfc68f4e70"
+        },
+        {
+          "path": "automation/basic_360_turntable_animation/basic_360_turntable_animation_done.py",
+          "sha256": "320e82c6b48af9307207a973d1ac11ef7e9a2c1de0d578e18495cd3035608f69"
+        },
+        {
+          "path": "brainstorming_reverse_key_lighting/script_done.py",
+          "sha256": "a1cb41e5996aabc7f1b38f76e2b351ad5bfae18df34162da32f17ea80b2c8c61"
+        },
+        {
+          "path": "color_slices/color_slices_part1_done.py",
+          "sha256": "4f70a6d68b73648487a491ac6c157bef1c387dff1d8fafac97ba7630c32f1164"
+        },
+        {
+          "path": "color_slices/color_slices_part2_done.py",
+          "sha256": "2b55cdd3b2e1c21261b725ddde41d2639c7aa9c328e8036f993ba6441421908d"
+        },
+        {
+          "path": "color_slices/color_slices_part3_done.py",
+          "sha256": "d522e6bfb2833ac01ddd497548dd912d7b8e1bc4d698eccdbd124dc9ed2f49ce"
+        },
+        {
+          "path": "color_slices/color_slices_part4_done.py",
+          "sha256": "606b4d7939b52fde92a06b69729a4d44b20fa864b5157687dd4e5ce36b53e8bc"
+        },
+        {
+          "path": "color_slices/color_slices_part5_done.py",
+          "sha256": "0101f759f17fcbd43ceaa3c32c5902b1e40b8e35d91b4021fd9b156492c22ddf"
+        },
+        {
+          "path": "color_slices/color_slices_part6_done.py",
+          "sha256": "668dad267dc592d05b37d1389d239cd6a5a355762e8ddac234344389bb0f948e"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+gpt6-111: A radial array of turbine blades around a central hub inside a mechanical housing
+gpt6-112: A parametric honeycomb partition wall with a doorway and a surrounding frame
+gpt6-113: A procedural brick wall with staggered courses, corner returns and a window opening
+gpt6-114: A circular auditorium with tiered seating, aisles and a central presentation platform
+gpt6-115: A modular cable tray installation with straight sections, junctions and wall brackets

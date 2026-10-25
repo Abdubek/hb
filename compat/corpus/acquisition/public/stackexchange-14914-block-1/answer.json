@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 2331658,
+    "reputation": 29989,
+    "user_id": 1363,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/oskiS.png?s=256",
+    "display_name": "CodeManX",
+    "link": "https://blender.stackexchange.com/users/1363/codemanx"
+  },
+  "is_accepted": true,
+  "score": 12,
+  "last_activity_date": 1407769159,
+  "creation_date": 1407769159,
+  "answer_id": 14914,
+  "question_id": 14910,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>It's better to not use operators, there is a sophisticated \"low-level\" API for the node interface:</p>\n\n<pre><code>import bpy\n\nscene = bpy.context.scene\nnodes = scene.node_tree.nodes\n\nrender_layers = nodes['Render Layers']\noutput_file = nodes.new(\"CompositorNodeOutputFile\")\noutput_file.base_path = \"//maFolder/\"\n\nscene.node_tree.links.new(\n    render_layers.outputs['Image'],\n    output_file.inputs['Image']\n)\n</code></pre>\n\n<p>You basically need to create a node and a link, and specify the input and output for the latter on creation to establish the connection.</p>\n"
+}

@@ -1,0 +1,390 @@
+{
+  "ok": false,
+  "invalid_scripts": 102,
+  "failures": [
+    {
+      "file": "invalid/claude-007.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-008.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-010.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-020.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-037.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-051.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-054.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-101.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-105.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-123.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-128.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/claude-138.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-006.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-007.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-008.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-009.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-016.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-017.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-018.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-019.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-020.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-046.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-047.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-048.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-049.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-050.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-051.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-052.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-053.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-054.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-091.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-092.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-093.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-094.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-095.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-101.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-102.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-103.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-104.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-105.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-111.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-112.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-113.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-114.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-115.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-121.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-122.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-123.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-124.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-125.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-131.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-132.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-133.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-134.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-135.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-141.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-142.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-143.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-144.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gpt6-145.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-120988-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-121012-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-123010-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-13991-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-14203-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-14914-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-14940-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-18134-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-221597-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-24139-block-2.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-26146-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-2639-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-271032-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-284622-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-30977-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-313554-block-2.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-3460-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-3555-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-36906-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-39675-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-40979-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-43076-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-43090-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-45855-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-52117-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-53842-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-5445-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-5446-block-2.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-6747-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-69525-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-7089-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-7545-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-78846-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-79370-block-1.py",
+      "status": "different_error"
+    },
+    {
+      "file": "invalid/stackexchange-81425-block-1.py",
+      "status": "different_error"
+    }
+  ]
+}

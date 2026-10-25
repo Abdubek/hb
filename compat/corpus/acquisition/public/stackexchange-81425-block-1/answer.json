@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 3037723,
+    "reputation": 56265,
+    "user_id": 935,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/06d003e2851b568e261efe011fcb0b74?s=256&d=identicon&r=PG",
+    "display_name": "sambler",
+    "link": "https://blender.stackexchange.com/users/935/sambler"
+  },
+  "is_accepted": true,
+  "score": 4,
+  "last_activity_date": 1497524752,
+  "creation_date": 1497524752,
+  "answer_id": 81425,
+  "question_id": 81395,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>You can set the active face in your loop with <code>bm.faces.active = face</code>.</p>\n\n<p>With what you have so far, you are looping through <strong>every</strong> face and doing select linked, even if you may have already unwrapped and hidden the face.</p>\n\n<p>The following script seems to do what you are trying to accomplish.</p>\n\n<pre><code>import bpy\nimport bmesh\n\nobj = bpy.context.object\nbpy.ops.object.mode_set(mode='EDIT')\nbpy.ops.mesh.select_mode(type='FACE')\nbpy.ops.mesh.select_all(action='DESELECT')\nbm = bmesh.from_edit_mesh(obj.data)\n\nfor face in bm.faces:\n    if not face.hide:\n        face.select = True\n        bm.faces.active = face\n        bpy.ops.mesh.select_linked(delimit={'SEAM'})\n        bpy.ops.uv.follow_active_quads(mode='EVEN')\n        bpy.ops.mesh.hide(unselected=False)\n\nbpy.ops.mesh.reveal()\nbpy.ops.mesh.select_all(action='SELECT')\nbpy.ops.uv.unwrap()\nbpy.ops.object.mode_set(mode='OBJECT')\nbm.free()\n</code></pre>\n"
+}

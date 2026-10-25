@@ -1,0 +1,9 @@
+stackexchange-43090-block-1.py
+
+Author: batFINGER
+Answer: https://blender.stackexchange.com/a/43090
+Revision history: https://blender.stackexchange.com/posts/43090/revisions
+License: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+
+One original code block, HTML-decoded. No repairs, added imports, or combined blocks.
+The licensed answer snapshot is retained in answer.json.

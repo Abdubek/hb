@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 9430826,
+    "reputation": 13028,
+    "user_id": 31447,
+    "user_type": "registered",
+    "accept_rate": 75,
+    "profile_image": "https://www.gravatar.com/avatar/7e9720798b41ceab22fb4286ddb77f1c?s=256&d=identicon&r=PG",
+    "display_name": "brockmann",
+    "link": "https://blender.stackexchange.com/users/31447/brockmann"
+  },
+  "is_accepted": true,
+  "score": 8,
+  "last_activity_date": 1624013018,
+  "last_edit_date": 1624013018,
+  "creation_date": 1624003382,
+  "answer_id": 227969,
+  "question_id": 227968,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>Iterate through all <a href=\"https://docs.blender.org/api/current/bpy.context.html?highlight=selected_objects#bpy.context.selected_objects\" rel=\"nofollow noreferrer\">objects in selection</a>, iterate through <a href=\"https://docs.blender.org/api/current/bpy.types.Object.html?highlight=slots#bpy.types.Object.material_slots\" rel=\"nofollow noreferrer\">all material slots using a nested loop</a> to get the material reference and finally set the <a href=\"https://docs.blender.org/api/current/bpy.types.Material.html?highlight=show_transparent_back#bpy.types.Material.show_transparent_back\" rel=\"nofollow noreferrer\">property</a>:</p>\n<pre><code>import bpy\n\nC = bpy.context\n\n# Iterate through all objects in selection\nfor ob in C.selected_objects:\n    if ob.type not in ('LIGHTS', 'CAMERA', 'VOLUME'): # OPTIONAL\n        # Iterate through all material slots\n        for slot in ob.material_slots:\n            if slot.material is not None:\n                # Set the property\n                slot.material.show_transparent_back = False\n                slot.material.diffuse_color = (1.0, 0.0, 0.0, 1.0)\n                slot.material.use_backface_culling = True\n                # ... whatever\n</code></pre>\n<p>In case some materials are assigned to several objects, you can also <a href=\"https://docs.python.org/3/tutorial/datastructures.html#sets\" rel=\"nofollow noreferrer\">create a set</a> out of unique materials and assign the value per item of the set instead of iterating through the same slots over and over again which will improve performance (<a href=\"https://blender.stackexchange.com/questions/227968/how-do-i-iterate-over-all-selected-objects-and-change-a-property-on-their-materi/227969#comment384732_227969\">thanks to @batFINGER</a>).</p>\n<pre><code>import bpy\n\nC = bpy.context\n\n# Create the set\nmats = set(slot.material for o in C.selected_objects for slot in o.material_slots)\n\n# Iterate through all unique materials\nfor mat in mats:\n    # Set the property\n    mat.show_transparent_back = False\n    mat.diffuse_color = (0.0, 1.0, 0.0, 1.0)\n    mat.use_backface_culling = True\n    # ... whatever\n</code></pre>\n<p><strong>Related</strong></p>\n<ul>\n<li><a href=\"https://blender.stackexchange.com/questions/215420/how-to-change-a-certain-parameter-of-all-principled-shaders-in-my-blend-file\">How to change a certain parameter of all principled shaders in my blend file?</a></li>\n<li><a href=\"https://blender.stackexchange.com/questions/23433/how-to-assign-a-new-material-to-an-object-in-the-scene-from-python\">How to assign a new material to an object in the scene from Python?</a></li>\n<li><a href=\"https://blender.stackexchange.com/questions/23436/control-cycles-material-nodes-and-material-properties-in-python\">Control Cycles material nodes and material properties in Python</a></li>\n</ul>\n"
+}

@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-052.py",
+      "task": "A round storage tank with access ladder and safety rail",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "87c20ce451493e19faee3c625b7c3f6a86328b846b0f1e7e56feda29557df04f",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-052/1788913657814872000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 221.70153379440308
+}

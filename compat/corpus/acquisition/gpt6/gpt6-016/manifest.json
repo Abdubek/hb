@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-016.py",
+      "task": "A bus shelter with roof, bench and transparent side panels",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "cc44fb928d167bcf26cfec96fa848e03f3a0a276c6d1d35158c6c7c28bcac2d7",
+      "response": "acquisition/gpt6/gpt6-016/1788910891256366000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-017.py",
+      "task": "A shop counter with display shelves and products",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "7baf467fc85374ceddb53947aab17d8beb356bb9ac2a8c5df13f87369ae02bb4",
+      "response": "acquisition/gpt6/gpt6-016/1788910891256366000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-018.py",
+      "task": "A laptop with open screen, keyboard and trackpad",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "8b514526ac0683dde1500d5106ab243479c41c6e5b6c18f7fec02419209b7716",
+      "response": "acquisition/gpt6/gpt6-016/1788910891256366000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-019.py",
+      "task": "A pair of over-ear headphones on a stand",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "985be703092475a07f869a798b8a24cdb131958415e5adaf512f4d49edd0c1aa",
+      "response": "acquisition/gpt6/gpt6-016/1788910891256366000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-020.py",
+      "task": "A four-legged robot dog with simple jointed limbs",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "9b36c8570dd5e733b6a1fc048a210e64b93eba65ccd073df6fd4661cc671c817",
+      "response": "acquisition/gpt6/gpt6-016/1788910891256366000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 504.90905690193176
+}

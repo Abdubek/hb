@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": false,
+  "score": 6,
+  "last_activity_date": 1602873436,
+  "last_edit_date": 1602873436,
+  "creation_date": 1602872363,
+  "answer_id": 198926,
+  "question_id": 30678,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>Can use <code>directory</code> in conjunction with <code>files</code></strong></p>\n<ul>\n<li><p>It is also possible to use directory` for the invoked filebrowsers\ncurrent  directory path,</p>\n</li>\n<li><p>and there is a propertygroup type for this already defined as\n<code>bpy.types.OperatorFileListElement</code> which is basically the same as\n<code>bpy.types.PropertyGroup</code> by a different name and used the same.</p>\n</li>\n<li><p>Used <code>pathlib</code> over <code>os</code> as another point of difference.\n<a href=\"https://blender.stackexchange.com/a/167527/15543\">https://blender.stackexchange.com/a/167527/15543</a></p>\n</li>\n</ul>\n<p>These changes applied to Fahads answer <a href=\"https://blender.stackexchange.com/a/183998/15543\">https://blender.stackexchange.com/a/183998/15543</a></p>\n<pre><code>import bpy\nfrom pathlib import Path\nfrom bpy_extras.io_utils import ImportHelper \nfrom bpy.types import Operator, OperatorFileListElement\nfrom bpy.props import CollectionProperty, StringProperty\n\nclass OT_TestOpenFilebrowser(Operator, ImportHelper): \n    bl_idname = &quot;test.open_filebrowser&quot; \n    bl_label = &quot;Open the file browser&quot; \n    directory : StringProperty(subtype='DIR_PATH')\n    files : CollectionProperty(type=OperatorFileListElement)\n    \n    def execute(self, context): \n        \n        &quot;&quot;&quot;Do something with the selected file(s).&quot;&quot;&quot;\n        base = Path(self.directory)                \n        for f in self.files:\n            print(base / f.name)\n\n        return {'FINISHED'}\n    \ndef register(): \n    bpy.utils.register_class(OT_TestOpenFilebrowser) \n\ndef unregister(): \n    bpy.utils.unregister_class(OT_TestOpenFilebrowser) \n    \nif __name__ == &quot;__main__&quot;: \n    register()\n\n    # test call \n    bpy.ops.test.open_filebrowser('INVOKE_DEFAULT')\n</code></pre>\n"
+}

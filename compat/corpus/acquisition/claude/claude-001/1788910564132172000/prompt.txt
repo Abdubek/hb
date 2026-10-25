@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+claude-001: A two-seat park bench with slatted back and seat
+claude-002: A dining table and four matching chairs
+claude-003: A six-wheel rover with chassis, wheels and sensor mast
+claude-004: A compact handheld game console with buttons and screen
+claude-005: A desktop speaker with two circular drivers

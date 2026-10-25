@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 191753,
+    "reputation": 48653,
+    "user_id": 55,
+    "user_type": "registered",
+    "accept_rate": 40,
+    "profile_image": "https://i.sstatic.net/PsT5q.png?s=256",
+    "display_name": "ideasman42",
+    "link": "https://blender.stackexchange.com/users/55/ideasman42"
+  },
+  "is_accepted": true,
+  "score": 8,
+  "last_activity_date": 1593853066,
+  "last_edit_date": 1593853066,
+  "creation_date": 1407271264,
+  "answer_id": 14746,
+  "question_id": 6377,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>There are 2 things to consider here:</p>\n<ul>\n<li>The camera frame. <em>The camera frame is not as simple as you might expect since its effected by the field-of-view, aspect &amp; x/y shift.</em></li>\n<li>The 2D view pixel coords, <em>The user can pan &amp; zoom the view, so this also has to be calculated.</em></li>\n</ul>\n<p>This script gets the camera bounds and prints the pixel boundaries.</p>\n<pre><code>import bpy\n\ndef view3d_find():\n    # returns first 3d view, normally we get from context\n    for area in bpy.context.window.screen.areas:\n        if area.type == 'VIEW_3D':\n            v3d = area.spaces[0]\n            rv3d = v3d.region_3d\n            for region in area.regions:\n                if region.type == 'WINDOW':\n                    return region, rv3d\n    return None, None\n\ndef view3d_camera_border(scene):\n    obj = scene.camera\n    cam = obj.data\n\n    frame = cam.view_frame(scene=scene)\n\n    # move from object-space into world-space \n    frame = [obj.matrix_world @ v for v in frame]\n\n    # move into pixelspace\n    from bpy_extras.view3d_utils import location_3d_to_region_2d\n    region, rv3d = view3d_find()\n    frame_px = [location_3d_to_region_2d(region, rv3d, v) for v in frame]\n    return frame_px\n\nframe_px = view3d_camera_border(bpy.context.scene)\nprint(&quot;Camera frame:&quot;, frame_px)\n</code></pre>\n<p>See API docs for the important functions used here:</p>\n<ul>\n<li><a href=\"http://www.blender.org/documentation/blender_python_api_2_71_release/bpy.types.Camera.html#bpy.types.Camera.view_frame\" rel=\"nofollow noreferrer\">bpy.types.Camera.view_frame</a></li>\n<li><a href=\"http://www.blender.org/documentation/blender_python_api_2_71_release/bpy_extras.view3d_utils.html#bpy_extras.view3d_utils.location_3d_to_region_2d\" rel=\"nofollow noreferrer\">bpy_extras.view3d_utils.location_3d_to_region_2d</a></li>\n</ul>\n"
+}

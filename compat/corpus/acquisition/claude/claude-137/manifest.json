@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-137.py",
+      "task": "A railway carriage interior with facing seats, luggage racks and overhead lights",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "6a2786c469eb4e667d87aeaa71340c1fc3e99d889a170795ded13650823c1198",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-137/1788913847897431000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 242.89422607421875
+}

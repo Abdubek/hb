@@ -1,0 +1,14 @@
+{
+  "git_commit": "323b2a5b606511167eb599e6485a7d46e0e3593d",
+  "branch": "corpus-real",
+  "blender_image": "sha256:9bd1d0566c93a75a210dbcaa3661e2d58c60c6fb2105df93e1d4d2780dab4b3e",
+  "build_command": "CARGO_TARGET_DIR=/tmp/corpus-real-build HB_PYTHON_SOURCE=/workspace/.build/Python-3.13.7 cargo build --release --offline",
+  "native_blender": {
+    "url": "https://download.blender.org/release/Blender4.5/blender-4.5.9-macos-arm64.dmg",
+    "archive_sha256": "e3a3d7aac381fb4e4d05197f99cd8899484d7e8bc4497c134066e6733f372238",
+    "executable_sha256": "3d297c91a96ef848bdb987da48cad2b4591ffa51f4f3591b231ce075b1c8af48",
+    "version": "4.5.9 LTS",
+    "build_hash": "8bf95cbd38d1",
+    "platform": "macOS arm64"
+  }
+}

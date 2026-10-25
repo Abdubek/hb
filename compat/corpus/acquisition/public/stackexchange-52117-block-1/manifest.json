@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-52117-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/52117",
+      "author": "Sterling Roth",
+      "author_url": "https://blender.stackexchange.com/users/24379/sterling-roth",
+      "license": "CC BY-SA 3.0",
+      "answer_id": 52117,
+      "code_block": 1,
+      "sha256": "301a460a9d28411df093aa02050197b16978f119fadd0a708d7b696b6a066e22",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1462567487,
+      "last_edit_date": null,
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/52117/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-52117-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

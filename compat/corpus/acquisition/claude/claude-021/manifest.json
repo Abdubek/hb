@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "claude-021.py",
+      "task": "A garden pergola with overhead slats",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "bb2f8c910d2d0e10496cf3f8c8f6c9ce0b85f3ba92e55cfe9885521ac5685fd5",
+      "response": "acquisition/claude/claude-021/1788910891259300000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-022.py",
+      "task": "A camping lantern with handle and protective frame",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "b229912f3192183e0578994235269b84738cac722cfb4cd29a54c86aa838827a",
+      "response": "acquisition/claude/claude-021/1788910891259300000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-023.py",
+      "task": "A water tower with tank, legs and ladder",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "d84334953ada8c4aec2c175d179274988e0a1293b17ce8fe70fb508b9cf19df4",
+      "response": "acquisition/claude/claude-021/1788910891259300000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-024.py",
+      "task": "A playground slide with ladder and platform",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "5cf1bb37bff48254f52707375e6b35f454db31a23befc30b6bb6452eeef46a7a",
+      "response": "acquisition/claude/claude-021/1788910891259300000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-025.py",
+      "task": "A circular gazebo with posts and roof",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "524cd170871ff05d893cf439f3c2c89449a9778a04c5fcf8d6192c2a30501168",
+      "response": "acquisition/claude/claude-021/1788910891259300000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 503.05193185806274
+}

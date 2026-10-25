@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-123.py",
+      "task": "A compact industrial pump skid assembled from motors, tanks, valves and pipe flanges",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "e8c5e0ec29ead9e782d771ab10eb1122503ae5a6c9360638528ebf1e75c164c7",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-123/1788913516555198000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 465.4584650993347
+}

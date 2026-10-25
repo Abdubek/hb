@@ -1,0 +1,130 @@
+[
+  {
+    "pattern": "^bmesh\\.ops\\.(inset_region|bevel|remove_doubles|subdivide_edges|bisect_plane|solidify|triangulate)(\\b|\\()",
+    "coverage": "Missing operations: editable bmesh operators"
+  },
+  {
+    "pattern": "^bpy\\.ops\\.mesh\\.primitive_ico_sphere_add",
+    "coverage": "Missing operations: ico-sphere primitive"
+  },
+  {
+    "pattern": "^bpy\\.ops\\.object\\.(duplicate|parent_set|origin_set)(\\b|\\()",
+    "coverage": "Missing operations: object operators"
+  },
+  {
+    "pattern": "^bpy\\.ops\\.(import_scene|export_scene|render)(\\b|\\.)",
+    "coverage": "Missing operations: bpy I/O and rendering operators"
+  },
+  {
+    "pattern": "^bpy\\.data\\.curves(\\b|\\.)|^bpy\\.types\\.(Curve|TextCurve|Spline|SplinePoint|BezierSplinePoint)(\\b|\\.)|^bpy\\.ops\\.object\\.text_add",
+    "coverage": "Data API: curves and text objects"
+  },
+  {
+    "pattern": "(^bpy\\.types\\.World\\.(node_tree|use_nodes))|^bpy\\.context\\.scene\\.world\\.node_tree",
+    "coverage": "World: node editing and constant Background nodes"
+  },
+  {
+    "pattern": "matrix_world|constraints",
+    "coverage": "Data API: matrix_world and constraints"
+  },
+  {
+    "pattern": "^bpy\\.types\\.Material\\.(blend_method|surface_render_method)|^bpy\\.types\\.ShaderNode\\..*[Tt]ransmission",
+    "coverage": "Materials: transmission and material settings"
+  },
+  {
+    "pattern": "^bpy\\.types\\.Modifier\\.(use_object_offset|use_merge_vertices|fit_type|offset_object|start_cap|end_cap)",
+    "coverage": "ARRAY limits: object offsets, merging, caps and fit modes"
+  },
+  {
+    "pattern": "^bpy\\.types\\.Modifier\\.(mirror_object|use_bisect_axis|use_bisect_flip_axis)",
+    "coverage": "MIRROR limits: mirror objects and bisect"
+  },
+  {
+    "pattern": "^bpy\\.types\\.Modifier\\.(solver|operand_type|material_mode|use_self|use_hole_tolerant)",
+    "coverage": "BOOLEAN limits: solvers and collection operands"
+  },
+  {
+    "pattern": "^bpy\\.types\\.Modifier\\.(levels|render_levels|quality|uv_smooth)",
+    "coverage": "SUBSURF limits: levels, quality and UV interpolation"
+  },
+  {
+    "pattern": "^bpy\\.types\\.Modifier\\.(mode|double_threshold|loose_edges)",
+    "coverage": "WELD and modifier topology limits"
+  },
+  {
+    "pattern": "^bpy\\.types\\.Modifier\\.(vertex_group|invert_vertex_group|texture_coords|direction|space)",
+    "coverage": "Modifier limits: vertex groups and displacement modes"
+  },
+  {
+    "pattern": "^bpy\\.types\\.WeightedNormalModifier\\.",
+    "coverage": "WEIGHTED_NORMAL parameter limits"
+  },
+  {
+    "pattern": "^mathutils\\.Matrix\\.decompose|^mathutils\\.Quaternion\\.slerp",
+    "coverage": "mathutils: Matrix decomposition and quaternion slerp"
+  },
+  {
+    "pattern": "^bpy\\.context\\.scene\\.cycles(\\b|\\.)",
+    "coverage": "Deliberate non-goal: Cycles-grade rendering"
+  },
+  {
+    "pattern": "modifiers\\.new\\(type='NODES'|^bpy\\.data\\.node_groups|GeometryNode",
+    "coverage": "Deliberate non-goal: Geometry Nodes"
+  },
+  {
+    "pattern": "^bpy\\.context\\.scene\\.(node_tree|use_nodes)|CompositorNode",
+    "coverage": "Deliberate non-goal: compositor"
+  },
+  {
+    "pattern": "ShaderNode(TexNoise|TexVoronoi|TexWave|TexMusgrave|MixShader|Volume|BsdfGlass)",
+    "coverage": "Deliberate non-goal: arbitrary shader graphs"
+  },
+  {
+    "pattern": "^bpy\\.(props|utils\\.register|utils\\.unregister)|^bpy\\.types\\.(Operator|Panel|PropertyGroup|UIList|Menu)|^bpy\\.context\\.(window_manager|screen|area)|^bpy\\.ops\\.view3d",
+    "coverage": "Deliberate non-goals: GUI/interactive viewport and addon/plugin loading"
+  },
+  {
+    "pattern": "depsgraph|evaluated_get",
+    "coverage": "Data API: broader dependency-graph interfaces"
+  },
+  {
+    "pattern": "^bpy\\.types\\.Modifier\\.(use_clamp_overlap|loop_slide|profile|affect|offset_type|harden_normals|miter_outer|miter_inner|vmesh_method)",
+    "coverage": "BEVEL limits: overlap clamping and broader profiles/options"
+  },
+  {
+    "pattern": "^bpy\\.types\\.Modifier\\.(solidify_mode|use_even_offset|use_quality_normals|thickness_clamp)",
+    "coverage": "SOLIDIFY limits: non-manifold, even, quality and clamped offsets"
+  },
+  {
+    "pattern": "^bpy\\.types\\.IDData\\.(body|extrude|align_x|align_y)(\\b|\\.)",
+    "coverage": "Data API: curves/text (checker generic datablock alias)"
+  },
+  {
+    "pattern": "^bpy\\.utils$",
+    "coverage": "Deliberate non-goal: addon registration namespace used by these samples"
+  },
+  {
+    "pattern": "^bpy\\.types\\.ShaderNode\\.(color_ramp|operation)(\\b|\\.)",
+    "coverage": "Deliberate non-goal: arbitrary shader graphs"
+  },
+  {
+    "pattern": "^bmesh\\.types\\.(BMVert|BMEdge|BMFace)\\.|^bmesh\\.(from_edit_mesh|update_edit_mesh)$",
+    "coverage": "BMesh data: full Blender element/lifecycle API parity (broad existing entry)"
+  },
+  {
+    "pattern": "^bpy\\.ops\\.mesh\\.primitive_.*\\((align|enter_editmode)=",
+    "coverage": "Primitives: remaining edit-mode/alignment cases"
+  },
+  {
+    "pattern": "^bpy\\.context\\.scene\\.(frame_start|frame_end|frame_set|frame_current)(\\b|\\.)",
+    "coverage": "Deliberate non-goal: animation timeline"
+  },
+  {
+    "pattern": "^bpy\\.ops\\.object\\.camera_add\\(align='VIEW'\\)",
+    "coverage": "Deliberate non-goal: interactive viewport alignment"
+  },
+  {
+    "pattern": "^bpy\\.types\\.ShaderNode\\.(sky_type|sun_elevation|sun_rotation|wave_type)(\\b|\\.)",
+    "coverage": "Deliberate non-goal: arbitrary shader graphs (Sky/Wave texture nodes)"
+  }
+]

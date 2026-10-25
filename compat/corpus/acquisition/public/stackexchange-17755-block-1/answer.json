@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 2331658,
+    "reputation": 29989,
+    "user_id": 1363,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/oskiS.png?s=256",
+    "display_name": "CodeManX",
+    "link": "https://blender.stackexchange.com/users/1363/codemanx"
+  },
+  "is_accepted": true,
+  "score": 22,
+  "last_activity_date": 1737818539,
+  "last_edit_date": 1737818539,
+  "creation_date": 1413196234,
+  "answer_id": 17755,
+  "question_id": 17751,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>You usually run an operator and adjust the settings afterwards in the <a href=\"https://docs.blender.org/manual/en/latest/interface/undo_redo.html\" rel=\"nofollow noreferrer\"><em>Redo</em> panel</a>, or the operator should prompt the user before execution using <code>invoke_props_dialog()</code>:</p>\n<pre><code>import bpy\n\nclass SimpleOperator(bpy.types.Operator):\n    bl_label = &quot;Simple Operator&quot;\n    bl_idname = &quot;object.simple_operator&quot;\n    \n    my_enum: bpy.props.EnumProperty(\n        items=(\n            ('ONE', &quot;One&quot;, &quot;&quot;),\n            ('TWO', &quot;Two&quot;, &quot;&quot;),\n            ('THREE', &quot;Three&quot;, &quot;&quot;)\n        ),\n        default='ONE'\n    )\n    \n    def invoke(self, context, event):\n        wm = context.window_manager\n        return wm.invoke_props_dialog(self)\n    \n    def execute(self, context):\n        self.report({'INFO'}, self.my_enum)\n        return {'FINISHED'}\n\n\ndef register():\n    bpy.utils.register_class(SimpleOperator)\n\ndef unregister():\n    bpy.utils.unregister_class(SimpleOperator)\n\nif __name__ == &quot;__main__&quot;:\n    register()\n\n    bpy.ops.object.simple_operator('INVOKE_DEFAULT')\n</code></pre>\n<p>If you really want to display UI elements in a panel to set values before clicking a button, you will need to register global properties and pass them to the appropriate operator properties (you can't add operator properties directly to a panel).</p>\n<pre><code>import bpy\n\nclass SimpleOperator(bpy.types.Operator):\n    bl_label = &quot;Simple Operator&quot;\n    bl_idname = &quot;object.simple_operator&quot;\n    \n    my_enum: bpy.props.EnumProperty(\n        items=(\n            ('ONE', &quot;One&quot;, &quot;&quot;),\n            ('TWO', &quot;Two&quot;, &quot;&quot;),\n            ('THREE', &quot;Three&quot;, &quot;&quot;)\n        ),\n        default='ONE'\n    )\n    \n    def execute(self, context):\n        self.report({'INFO'}, self.my_enum)\n        return {'FINISHED'}\n\n\nclass HelloWorldPanel(bpy.types.Panel):\n    &quot;&quot;&quot;Creates a Panel in the Object properties window&quot;&quot;&quot;\n    bl_label = &quot;Hello World Panel&quot;\n    bl_idname = &quot;OBJECT_PT_hello&quot;\n    bl_space_type = 'PROPERTIES'\n    bl_region_type = 'WINDOW'\n    bl_context = &quot;object&quot;\n    \n    def draw(self, context):\n        layout = self.layout\n\n        ob = context.object\n\n        row = layout.row()\n        row.prop(ob, &quot;my_global_enum&quot;, expand=True)\n        \n        props = layout.operator(SimpleOperator.bl_idname)\n        props.my_enum = ob.my_global_enum\n\n\ndef register():\n    bpy.utils.register_class(SimpleOperator)\n    bpy.utils.register_class(HelloWorldPanel)\n    \n    bpy.types.Object.my_global_enum = bpy.props.EnumProperty(\n        items=(\n            ('ONE', &quot;One&quot;, &quot;&quot;),\n            ('TWO', &quot;Two&quot;, &quot;&quot;),\n            ('THREE', &quot;Three&quot;, &quot;&quot;)\n        ),\n        default='TWO'\n    )\n\n\ndef unregister():\n    bpy.utils.unregister_class(HelloWorldPanel)\n    bpy.utils.unregister_class(SimpleOperator)\n    del bpy.types.Object.my_global_enum\n\n\nif __name__ == &quot;__main__&quot;:\n    register()\n</code></pre>\n"
+}

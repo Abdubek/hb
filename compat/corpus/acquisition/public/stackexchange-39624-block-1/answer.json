@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 3274879,
+    "reputation": 10011,
+    "user_id": 2271,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/5SCGc.png?s=256",
+    "display_name": "pink vertex",
+    "link": "https://blender.stackexchange.com/users/2271/pink-vertex"
+  },
+  "is_accepted": true,
+  "score": 10,
+  "last_activity_date": 1444205814,
+  "last_edit_date": 1444205814,
+  "creation_date": 1444205421,
+  "answer_id": 39624,
+  "question_id": 39609,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>The update method only gets the reference to the ID-block who owns the property and the context passed. So you have to create a function for each property individually.</p>\n\n<p>You can do this dynamically</p>\n\n<pre><code>import bpy\n\ndef callback(scene, prop):\n    print(\"Property '%s' of %s updated to value %s\" % (prop, scene.name, getattr(scene, prop)))\n\ndef create_update_func(prop):\n    def update(self, context):\n        callback(self, prop)\n    return update\n\nbpy.types.Scene.prop_a = bpy.props.BoolProperty(update=create_update_func(\"prop_a\"))\nbpy.types.Scene.prop_b = bpy.props.BoolProperty(update=create_update_func(\"prop_b\"))\nbpy.types.Scene.prop_c = bpy.props.BoolProperty(update=create_update_func(\"prop_c\"))\n</code></pre>\n"
+}

@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 5,
+  "last_activity_date": 1614148466,
+  "creation_date": 1614148466,
+  "answer_id": 212938,
+  "question_id": 212886,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>My suggestion is don't use it.</strong></p>\n<p><em>Can see reason for confusion, have personally never used the scale value in the operator, (fortunately because yeah it's bloody confusing) Speculate there could be some legacy nature about it.</em></p>\n<p>Crunch any operator into the python console   auto complete <kbd>Tab</kbd>  will show defaults of an operator</p>\n<pre><code>&gt;&gt;&gt; bpy.ops.mesh.pri&lt;Tab&gt;mitive_cu&lt;Tab&gt;be_add(\nprimitive_cube_add()\nbpy.ops.mesh.primitive_cube_add(\n        size=2, \n        calc_uvs=True, \n        enter_editmode=False, \n        align='WORLD', \n        location=(0, 0, 0), \n        rotation=(0, 0, 0), \n        scale=(0, 0, 0))\n\nConstruct a cube mesh\n</code></pre>\n<p>There is no need to pass any default to an operator.</p>\n<p>One would suggest the default for scale should really be <code>(1, 1, 1)</code>, notice too how scale is <strong>not</strong> used in the operators panel</p>\n<p><a href=\"https://i.sstatic.net/JJves.png\" rel=\"noreferrer\"><img src=\"https://i.sstatic.net/JJves.png\" alt=\"enter image description here\" /></a></p>\n<p>Let's run some tests to see what we get for different size scale combos...</p>\n<pre><code>import bpy\n\ntests = (\n    (0, (1, 1, 1)),\n    (1, (0, 0, 0)),\n    (1, (1, 1, 1)),\n    (1, (2, 2, 2)),\n    (2, (1, 1, 1)),\n    (2, (2, 2, 2)),\n    (1, (1, 1, 4)),\n    (2, (1, 1, 4)),\n    (2, (2, 2, 8)),\n    )\n\nx = 0    \nfor i, (size, scale) in enumerate(tests):\n    # Create the default cube\n    bpy.ops.mesh.primitive_cube_add(\n        size=size,\n        scale=scale,\n        location = (x, 0, 0),\n        )\n    cube = bpy.context.object\n    cube.name = f&quot;Test{i}_{size}_{scale}&quot;\n    print(size, scale, cube.dimensions[:])\n    x += cube.dimensions.x\n</code></pre>\n<p>and <em>OMG</em> or <em>WTF</em> the Results.</p>\n<pre><code>0 (1, 1, 1) (1.0, 1.0, 1.0)\n1 (0, 0, 0) (0.0, 0.0, 0.0)\n1 (1, 1, 1) (1.0, 1.0, 1.0)\n1 (2, 2, 2) (1.0, 1.0, 1.0)\n2 (1, 1, 1) (2.0, 2.0, 2.0)\n2 (2, 2, 2) (2.0, 2.0, 2.0)\n1 (1, 1, 4) (0.5, 0.5, 2.0)\n2 (1, 1, 4) (1.0, 1.0, 4.0)\n2 (2, 2, 8) (2.0, 2.0, 8.0)\n</code></pre>\n<p>size 0 has dimensions, scale 0 doesn't ... same results for.. are you still confused?</p>\n<p>In the end comes down to don't use it.</p>\n<p><strong>Matrices</strong></p>\n<p>Onto the soapbox and suggest the use of matrices. If we wish to apply a scale of (1, 1, 4) to the default cube of known dimension (2, 2, 2) can</p>\n<pre><code>from mathutils import Matrix\nS = Matrix.Diagonal((1, 1, 4)).to_4x4()\ncube.data.transform(S)\ncube.data.update() # see result in viewport.\n</code></pre>\n<p>or equivalently can create matrix via</p>\n<pre><code>S = Matrix.Diagonal((1, 1, 4, 1))\nSz = Matrix.Scale(4, 4, 'Z')\nSz = Matrix.Scale(4, 4, (0, 0, 1))\n</code></pre>\n<p>Matrices can also be used when creating bmesh primitives as demonstrated in <a href=\"https://blender.stackexchange.com/questions/212786/how-to-create-cylinder-with-varying-radius-at-different-height/212816#212816\">How to create cylinder with varying radius at different height</a></p>\n"
+}

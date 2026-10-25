@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 6,
+  "last_activity_date": 1482207521,
+  "creation_date": 1482207521,
+  "answer_id": 69525,
+  "question_id": 69505,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>Probably easiest to use the armature objects pose bone collection.</p>\n\n<pre><code>import bpy\ncontext = bpy.context\nobj = context.object\n\nnamelist = [(\"Bone\", \"Head\")]\n\nfor name, newname in namelist:\n    # get the pose bone with name\n    pb = obj.pose.bones.get(name)\n    # continue if no bone of that name\n    if pb is None:\n        continue\n    # rename\n    pb.name = newname\n</code></pre>\n"
+}

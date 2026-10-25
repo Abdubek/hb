@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 6,
+  "last_activity_date": 1576339827,
+  "last_edit_date": 1576339827,
+  "creation_date": 1576339171,
+  "answer_id": 160913,
+  "question_id": 160909,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>An alternative using bmesh and a draw callback</strong></p>\n\n<p><a href=\"https://i.sstatic.net/HU77X.gif\" rel=\"noreferrer\"><img src=\"https://i.sstatic.net/HU77X.gif\" alt=\"enter image description here\"></a></p>\n\n<p>As mentioned in comments, here is an alternative using a draw callback on the 3d view.</p>\n\n<p>Simply prints the active element.</p>\n\n<pre><code>import bpy\nimport blf\nimport bmesh\n\nbmeshes = {}\n#from gi.repository import Gdk\nclass DrawingClass:\n    def __init__(self, context, prop):\n        self.prop = prop\n        self.handle = bpy.types.SpaceView3D.draw_handler_add(\n                   self.draw_text_callback,(context,),\n                   'WINDOW', 'POST_PIXEL')\n\n    def draw_text_callback(self, context):\n        font_id = 0  # XXX, need to find out how best to get this.\n        # draw some text\n        blf.position(font_id, 15, 50, 20)\n        blf.size(font_id, 20, 72)\n\n        ob = context.object\n        meshes = set(o.data for o in context.selected_objects if o.mode == 'EDIT')\n        if context.mode == 'EDIT_MESH':\n            for m in meshes:\n                bmeshes.setdefault(m.name, bmesh.from_edit_mesh(m))\n        else:\n            bmeshes.clear()\n            return\n        me = ob.data\n        blf.draw(font_id, f\"{bmeshes[me.name].select_history.active}\")\n\n    def remove_handle(self):\n         bpy.types.SpaceView3D.draw_handler_remove(self.handle, 'WINDOW')\n\nif __name__ == \"__main__\":\n    # test call            \n    dc = DrawingClass(bpy.context, \"Auto Layer Running......\")\n    dns = bpy.app.driver_namespace\n    dns[\"dc\"] = dc\n</code></pre>\n"
+}

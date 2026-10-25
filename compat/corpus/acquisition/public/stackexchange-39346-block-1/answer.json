@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 3037723,
+    "reputation": 56265,
+    "user_id": 935,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/06d003e2851b568e261efe011fcb0b74?s=256&d=identicon&r=PG",
+    "display_name": "sambler",
+    "link": "https://blender.stackexchange.com/users/935/sambler"
+  },
+  "is_accepted": true,
+  "score": 9,
+  "last_activity_date": 1443631317,
+  "creation_date": 1443631317,
+  "answer_id": 39346,
+  "question_id": 39291,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>The issue with creating an object is where you are doing it, the scene's list of objects doesn't allow you to create new objects, only to link objects to the scene. To create a new object you use <code>bpy.data.objects.new()</code></p>\n\n<p>An example of manually creating a mesh object would be -</p>\n\n<pre><code>import bpy\n\n# get the current scene\nscn = bpy.context.scene\n\n# create a mesh data block\nmymesh = bpy.data.meshes.new('mymesh')\n\n# define some vertices\nverts = [Vector((-1,  1, 0)),\n         Vector(( 1,  1, 0)),\n         Vector(( 1, -1, 0)),\n         Vector((-1, -1, 0)),\n        ]\n\nedges = []\nfaces = [[0, 1, 2, 3]]\n# add the vertices to the mesh\nmymesh.from_pydata(verts, edges, faces)\n\n# create an object that uses the mesh data\nmyobj = bpy.data.objects.new('myobject', mymesh)\n\n# link the object to the scene\nscn.objects.link(myobj)\n</code></pre>\n"
+}

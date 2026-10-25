@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-051.py",
+      "task": "An industrial pipe assembly with elbows and valve wheels",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "a8014a2566c3ea495fec943b5bdaa7512e0fccca65f516830a76d37850226a72",
+      "response": "acquisition/gpt6/gpt6-051/1788912323967751000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-052.py",
+      "task": "A round storage tank with access ladder and safety rail",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "943fbb2fb06b9937b8509d7e41b647c0fd85f02c2c7b9976fbb19f92bf10dd63",
+      "response": "acquisition/gpt6/gpt6-051/1788912323967751000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-053.py",
+      "task": "A laboratory workstation with cabinets and instruments",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "bdca1006368835567c2544ef0a61896c9eaa3b803476f1dff8300f50abce305c",
+      "response": "acquisition/gpt6/gpt6-051/1788912323967751000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-054.py",
+      "task": "A satellite with solar wings and antenna",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "f52f00b8e15702f3e7029f7cbf467060dbcdad09419dc69e207e7766037b6c5a",
+      "response": "acquisition/gpt6/gpt6-051/1788912323967751000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-055.py",
+      "task": "A toy locomotive with wheels, chimney and cab",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "0b07fbc249d75960bfd9f10ec113bcc0e5c75097898da5aeea1e1c13b73dfd57",
+      "response": "acquisition/gpt6/gpt6-051/1788912323967751000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 313.8499491214752
+}

@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-031.py",
+      "task": "A railway signal and short section of track",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "889b29eb7e620c9cdda7c0ecb7cd82ff779b083799c28781442f8c0f09885b66",
+      "response": "acquisition/gpt6/gpt6-031/1788911396178666000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-032.py",
+      "task": "A traffic intersection with signals and bollards",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "30e7ea600988378c0921aa78f571f70b77accaf707981ae46d596e457b953b69",
+      "response": "acquisition/gpt6/gpt6-031/1788911396178666000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-033.py",
+      "task": "A simple quadcopter with four propellers",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "216113a16ec6574d8145e27b9c47d7eba9d8e7f8920479dac504733e90e2b37a",
+      "response": "acquisition/gpt6/gpt6-031/1788911396178666000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-034.py",
+      "task": "A telescope on a tripod with adjustment knobs",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "b8d730e6558ab83cbd7d34df99efb56c4c0ac1096b0285868074715c0ce95627",
+      "response": "acquisition/gpt6/gpt6-031/1788911396178666000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-035.py",
+      "task": "A mechanical keyboard with rows of colored keys",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "de29642472f527166735491fa1141c588e9fc5b07d955588dba596bc451ddcfb",
+      "response": "acquisition/gpt6/gpt6-031/1788911396178666000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 273.510360956192
+}

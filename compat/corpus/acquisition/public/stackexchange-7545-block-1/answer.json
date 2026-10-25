@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 974885,
+    "reputation": 44187,
+    "user_id": 12,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/P4M8V.png?s=256",
+    "display_name": "iKlsR",
+    "link": "https://blender.stackexchange.com/users/12/iklsr"
+  },
+  "is_accepted": true,
+  "score": 5,
+  "last_activity_date": 1626199307,
+  "last_edit_date": 1626199307,
+  "creation_date": 1394039779,
+  "answer_id": 7545,
+  "question_id": 7526,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>It's all about context, at no point are you in the image editor. The same <code>bpy.ops.transform.translate()</code> is used in the 3d view and the image editor. Basically, you could just save the current area, switch to the editor, perform transforms and switch back. Granted, there are much more elegant ways to do this but for a 3 line hack, it works quite well.</p>\n<pre><code>import bpy\n\n#+ grab the current area\noriginal_area = bpy.context.area.type\n\nview_layer = bpy.context.view_layer\nfor count, ob in enumerate(bpy.context.selected_objects):\n    if ob.type == 'MESH':\n        view_layer.objects.active = ob\n        #+ switch to the UV editor to perform transforms etc\n        bpy.context.area.ui_type = 'UV'\n        bpy.ops.object.mode_set(mode='EDIT', toggle=False)\n\n        bpy.ops.mesh.reveal()\n        bpy.ops.mesh.select_all(action='SELECT')\n        #+ select the uvs\n        bpy.ops.uv.select_all(action='SELECT')\n\n        bpy.ops.transform.translate(value=(0.125, 0, 0), constraint_axis=(True, False, False))\n\n        #+ return to the original mode where the script was run\n        bpy.context.area.type = original_area\n        bpy.ops.object.mode_set(mode='OBJECT', toggle=False)\n</code></pre>\n"
+}

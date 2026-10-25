@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 3714529,
+    "reputation": 16430,
+    "user_id": 3710,
+    "user_type": "registered",
+    "accept_rate": 94,
+    "profile_image": "https://i.sstatic.net/0zCBe.png?s=256",
+    "display_name": "p2or",
+    "link": "https://blender.stackexchange.com/users/3710/p2or"
+  },
+  "is_accepted": true,
+  "score": 20,
+  "last_activity_date": 1578580135,
+  "last_edit_date": 1578580135,
+  "creation_date": 1421084822,
+  "answer_id": 23088,
+  "question_id": 23086,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>You can pass a list of vertex coordinates to <a href=\"https://docs.blender.org/api/current/bpy.types.Mesh.html?highlight=from_pydata#bpy.types.Mesh.from_pydata\" rel=\"noreferrer\"><code>Mesh.from_pydata(vertices, edges, faces)</code></a> However, you also have to create a <em>new mesh</em> as well as a <em>new object datablock</em> and link them together properly:</p>\n\n<p><strong>Blender 2.8x</strong></p>\n\n<pre><code>import bpy\n\ndef point_cloud(ob_name, coords, edges=[], faces=[]):\n    \"\"\"Create point cloud object based on given coordinates and name.\n\n    Keyword arguments:\n    ob_name -- new object name\n    coords -- float triplets eg: [(-1.0, 1.0, 0.0), (-1.0, -1.0, 0.0)]\n    \"\"\"\n\n    # Create new mesh and a new object\n    me = bpy.data.meshes.new(ob_name + \"Mesh\")\n    ob = bpy.data.objects.new(ob_name, me)\n\n    # Make a mesh from a list of vertices/edges/faces\n    me.from_pydata(coords, edges, faces)\n\n    # Display name and update the mesh\n    ob.show_name = True\n    me.update()\n    return ob\n\n# Create the object\npc = point_cloud(\"point-cloud\", [(0.0, 0.0, 0.0)])\n\n# Link object to the active collection\nbpy.context.collection.objects.link(pc)\n\n# Alternatively Link object to scene collection\n#bpy.context.scene.collection.objects.link(pc)\n</code></pre>\n\n<p><strong>Blender 2.7x</strong></p>\n\n<pre><code>import bpy\n\ndef point_cloud(ob_name, coords, edges=[], faces=[]):\n    \"\"\"Create point cloud object based on given coordinates and name.\n\n    Keyword arguments:\n    ob_name -- new object name\n    coords -- float triplets eg: [(-1.0, 1.0, 0.0), (-1.0, -1.0, 0.0)]\n    \"\"\"\n\n    # Create new mesh and a new object\n    me = bpy.data.meshes.new(ob_name + \"Mesh\")\n    ob = bpy.data.objects.new(ob_name, me)\n\n    # Make a mesh from a list of vertices/edges/faces\n    me.from_pydata(coords, edges, faces)\n\n    # Display name and update the mesh\n    ob.show_name = True\n    me.update()\n    return ob\n\n# Create the object\npc = point_cloud(\"point-cloud\", [(0.0, 0.0, 0.0)])\n\n# Link object to the scene\nbpy.context.scene.objects.link(pc)\n</code></pre>\n"
+}

@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-006.py",
+      "task": "A furnished 4 by 5 meter room with doorway and window",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "a468c16b6d6bed6d1d8508d5345819c05a6d27a5e12eae20b7abc2c2ae43a95a",
+      "response": "acquisition/gpt6/gpt6-006/1788910891238992000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-007.py",
+      "task": "A bicycle parking rack for five bicycles",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "8421eabac59fe5a84612f63c9b55c202fdb3f955de2a1a8db01109d582460ebf",
+      "response": "acquisition/gpt6/gpt6-006/1788910891238992000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-008.py",
+      "task": "A modern streetlight and square pavement base",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "e38554cba9417a31f72cfd3c2d2663585cc8b3da6e676346ba3109ac822d5619",
+      "response": "acquisition/gpt6/gpt6-006/1788910891238992000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-009.py",
+      "task": "A small footbridge with deck, posts and railings",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "3efe1b42bfa0ba60a8cc2a23a21a04786c12ca1d772db057eeef1f7f532935aa",
+      "response": "acquisition/gpt6/gpt6-006/1788910891238992000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-010.py",
+      "task": "A kitchen island with stools and overhead pendants",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "c9e997b5bb218b04d6194b4dab65085918960f17167e62b85027b0486e3482ec",
+      "response": "acquisition/gpt6/gpt6-006/1788910891238992000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 354.854651927948
+}

@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "claude-056.py",
+      "task": "A simple sailboat with hull, mast and boom",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "2e0309058692bd88ad0d2e2a446bf728a2406c0b6f75f4afee1db8e3c4098344",
+      "response": "acquisition/claude/claude-056/1788912366230317000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-057.py",
+      "task": "A street market stall with canopy and produce crates",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "61baa9754776a4c20cb72d2b84a1c276d07705470f06c228c266e232d5d1b7ee",
+      "response": "acquisition/claude/claude-056/1788912366230317000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-058.py",
+      "task": "A compact espresso cart on four wheels",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "14ec7e328cd67010a451681de7f8bc1378372e618ffe20eee789fdda2926e0b4",
+      "response": "acquisition/claude/claude-056/1788912366230317000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-059.py",
+      "task": "A bathroom vanity with sink, mirror and faucet",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "f9a4a8965d89edba95545ec18b2ba83be3fd2d77fa55d3884635f6a393785a2b",
+      "response": "acquisition/claude/claude-056/1788912366230317000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-060.py",
+      "task": "A hotel reception desk with wall sign and seating",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "b76bd0422453d0a2be1513541d60f96f32dcfc30b942d2bb6b579ac2d0556af3",
+      "response": "acquisition/claude/claude-056/1788912366230317000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 1095.964802980423
+}

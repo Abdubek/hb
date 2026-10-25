@@ -1,0 +1,63 @@
+{
+  "url": "https://api.github.com/gists/9be9e2a0241bfb2f154d1eef6623b369",
+  "forks_url": "https://api.github.com/gists/9be9e2a0241bfb2f154d1eef6623b369/forks",
+  "commits_url": "https://api.github.com/gists/9be9e2a0241bfb2f154d1eef6623b369/commits",
+  "id": "9be9e2a0241bfb2f154d1eef6623b369",
+  "node_id": "MDQ6R2lzdDliZTllMmEwMjQxYmZiMmYxNTRkMWVlZjY2MjNiMzY5",
+  "git_pull_url": "https://gist.github.com/9be9e2a0241bfb2f154d1eef6623b369.git",
+  "git_push_url": "https://gist.github.com/9be9e2a0241bfb2f154d1eef6623b369.git",
+  "html_url": "https://gist.github.com/CGArtPython/9be9e2a0241bfb2f154d1eef6623b369",
+  "files": {
+    "BP_triangles_p3_i3.py": {
+      "filename": "BP_triangles_p3_i3.py",
+      "type": "application/x-python",
+      "language": "Python",
+      "raw_url": "https://gist.githubusercontent.com/CGArtPython/9be9e2a0241bfb2f154d1eef6623b369/raw/ec65e00ba086f64174ff8a918df745848c741260/BP_triangles_p3_i3.py",
+      "size": 3448
+    },
+    "LICENSE": {
+      "filename": "LICENSE",
+      "type": "text/plain",
+      "language": "Text",
+      "raw_url": "https://gist.githubusercontent.com/CGArtPython/9be9e2a0241bfb2f154d1eef6623b369/raw/52cc0747a50affd42fb10fbd3b7623603f57e225/LICENSE",
+      "size": 1054
+    },
+    "README.md": {
+      "filename": "README.md",
+      "type": "text/markdown",
+      "language": "Markdown",
+      "raw_url": "https://gist.githubusercontent.com/CGArtPython/9be9e2a0241bfb2f154d1eef6623b369/raw/dade4c58f735ef36ab808666f05f5a654a229f29/README.md",
+      "size": 292
+    }
+  },
+  "public": true,
+  "created_at": "2020-08-23T15:18:47Z",
+  "updated_at": "2020-09-06T23:49:56Z",
+  "description": "Blender 3D Python Tutorial \"Blender+Python: Make some triangles, Part 3 Idea #3\"",
+  "comments": 0,
+  "user": null,
+  "comments_enabled": true,
+  "comments_url": "https://api.github.com/gists/9be9e2a0241bfb2f154d1eef6623b369/comments",
+  "owner": {
+    "login": "CGArtPython",
+    "id": 65920683,
+    "node_id": "MDQ6VXNlcjY1OTIwNjgz",
+    "avatar_url": "https://avatars.githubusercontent.com/u/65920683?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/CGArtPython",
+    "html_url": "https://github.com/CGArtPython",
+    "followers_url": "https://api.github.com/users/CGArtPython/followers",
+    "following_url": "https://api.github.com/users/CGArtPython/following{/other_user}",
+    "gists_url": "https://api.github.com/users/CGArtPython/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/CGArtPython/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/CGArtPython/subscriptions",
+    "organizations_url": "https://api.github.com/users/CGArtPython/orgs",
+    "repos_url": "https://api.github.com/users/CGArtPython/repos",
+    "events_url": "https://api.github.com/users/CGArtPython/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/CGArtPython/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "truncated": false
+}

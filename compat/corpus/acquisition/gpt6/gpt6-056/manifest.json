@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-056.py",
+      "task": "A simple sailboat with hull, mast and boom",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "b089e26a3af737ca6189592cd1a5e430d832755e449a6f8a80aec78823c0c60d",
+      "response": "acquisition/gpt6/gpt6-056/1788912368213101000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-057.py",
+      "task": "A street market stall with canopy and produce crates",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "ccdd0a3886a85ecb5bfbb63a0f126c225e016870c15785b742827f3cb1a1ed24",
+      "response": "acquisition/gpt6/gpt6-056/1788912368213101000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-058.py",
+      "task": "A compact espresso cart on four wheels",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "b9dbe796ba10bf037f0b056a4132b9f12cce4ae8fa64afc5a1ac3cc78dc1af6b",
+      "response": "acquisition/gpt6/gpt6-056/1788912368213101000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-059.py",
+      "task": "A bathroom vanity with sink, mirror and faucet",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "2888564f4d20f75d42e970325bc77090b18137287aa662d307b811004bcea6ae",
+      "response": "acquisition/gpt6/gpt6-056/1788912368213101000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-060.py",
+      "task": "A hotel reception desk with wall sign and seating",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "f58bee3e5dba7aaf717cfc02adb06bdc698fe3c56be376aca404539c6846de78",
+      "response": "acquisition/gpt6/gpt6-056/1788912368213101000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 474.93982315063477
+}

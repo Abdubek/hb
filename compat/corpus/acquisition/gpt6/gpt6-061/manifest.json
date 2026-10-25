@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-061.py",
+      "task": "A fireplace with mantel, hearth and stacked logs",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "41e67a978e9aaabeba0d7035ad053e9c40a03ad3cb2ae70477fbb3203c876291",
+      "response": "acquisition/gpt6/gpt6-061/1788912517941592000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-062.py",
+      "task": "A TV console with drawers and a television",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "8d1e2ad51067f0665d23ba9be4b49f51ad390b1429516555f34f70c6c33933ff",
+      "response": "acquisition/gpt6/gpt6-061/1788912517941592000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-063.py",
+      "task": "A vending machine with product shelves and keypad",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "61666be8a550cddeb5973f2cbf4c263fe01f3279e2fc95cb27bd2bc31590fa87",
+      "response": "acquisition/gpt6/gpt6-061/1788912517941592000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-064.py",
+      "task": "An arcade cabinet with screen, joystick and buttons",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "09bfb86da084d70db13669fdab346fecea2f2f424a76820d93176ec2ca08da82",
+      "response": "acquisition/gpt6/gpt6-061/1788912517941592000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-065.py",
+      "task": "A ticket kiosk with touch screen and card reader",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "a5c53b980b502c5c63964ebd3b12dd741179387859ed8ab335df8a8459522bbf",
+      "response": "acquisition/gpt6/gpt6-061/1788912517941592000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 480.0215091705322
+}

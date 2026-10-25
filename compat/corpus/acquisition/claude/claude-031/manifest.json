@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "claude-031.py",
+      "task": "A railway signal and short section of track",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "0aa164c684e252aee5ced596446a534841233e3355a7863a87105ed03bfc5b3e",
+      "response": "acquisition/claude/claude-031/1788911394328090000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-032.py",
+      "task": "A traffic intersection with signals and bollards",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "49ee186b6eb2e1a35de629a9736a6cb9a744430041dbbae0ed3c55d149401ac4",
+      "response": "acquisition/claude/claude-031/1788911394328090000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-033.py",
+      "task": "A simple quadcopter with four propellers",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "53d26b959e7ede24913f6b4f0ec3b08555d950748ae3354518a1662ab2a528ca",
+      "response": "acquisition/claude/claude-031/1788911394328090000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-034.py",
+      "task": "A telescope on a tripod with adjustment knobs",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "25a8825bdad3275995c79a430ba556de1143d2aa5cdf7314ef4bb80463524fb5",
+      "response": "acquisition/claude/claude-031/1788911394328090000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-035.py",
+      "task": "A mechanical keyboard with rows of colored keys",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "06c001b301abfcfbb1bcd2c23fa4e67259188d2970e8d057c6c0d8003fd44049",
+      "response": "acquisition/claude/claude-031/1788911394328090000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 1123.6113691329956
+}

@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+claude-021: A garden pergola with overhead slats
+claude-022: A camping lantern with handle and protective frame
+claude-023: A water tower with tank, legs and ladder
+claude-024: A playground slide with ladder and platform
+claude-025: A circular gazebo with posts and roof

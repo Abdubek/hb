@@ -1,0 +1,70 @@
+{
+  "scripts": [
+    {
+      "file": "claude-091.py",
+      "task": "A row of cinema seats on a stepped platform",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "8311697f988dfc413d167d1c159ff57f858a5e714190ce655fc9b99b63d093c3",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-091/1788911460988555000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-092.py",
+      "task": "A lecture podium with microphone and reading surface",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "aa3becaf723e4d265c71b181e32c55fb86cb58e51b1a6d713e7ce6316bff62e0",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-091/1788911460988555000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-093.py",
+      "task": "A museum display case with pedestal and glass enclosure",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "867e048f332322c7c2547f3f88cfef64b7ed05c681cc2798db3318cc857aeac4",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-091/1788911460988555000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-094.py",
+      "task": "A wall-mounted control panel with switches and gauges",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "831ab3ab320edda1b621ccd4c8950a77539ef5839a2b85d33a7a49ebdd7e2c24",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-091/1788911460988555000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-095.py",
+      "task": "A freestanding coat rack with multiple hooks",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "58a300cb5f9f184520ca8b8ab8b92df1203541bf13e649d0b9e5411c6dec9cc4",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-091/1788911460988555000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 909.9402151107788
+}

@@ -1,0 +1,17 @@
+{
+  "scripts": [
+    {
+      "file": "gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py",
+      "provider": "github-gist",
+      "source_url": "https://gist.github.com/CGArtPython/358c86435101d8c67ba92327bbb7ef2a",
+      "raw_url": "https://gist.githubusercontent.com/CGArtPython/358c86435101d8c67ba92327bbb7ef2a/raw/593ab91420407ff426ef3d3bc0983823bda720b1/BP_triangles_p3_i1.py",
+      "original_filename": "BP_triangles_p3_i1.py",
+      "author": "CGArtPython",
+      "license": "MIT",
+      "license_url": "https://gist.githubusercontent.com/CGArtPython/358c86435101d8c67ba92327bbb7ef2a/raw/52cc0747a50affd42fb10fbd3b7623603f57e225/LICENSE",
+      "license_evidence": "acquisition/public/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1/LICENSE",
+      "sha256": "6f16e7e16d07fb2cfef97859d24ed6dd1547e5d0ddd14faf74b9eac3c4615a24",
+      "source_transform": "none; exact downloaded bytes"
+    }
+  ]
+}

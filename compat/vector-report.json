@@ -1,0 +1,72 @@
+{
+  "reference": "Blender 4.5.9 LTS",
+  "seed": 20260908,
+  "scope": "Vector only: 2D/3D/4D, finite randomized inputs in [-20,20]; not full mathutils parity",
+  "operations": 100000,
+  "absolute_tolerance": 1e-05,
+  "relative_tolerance": 1e-06,
+  "passed": true,
+  "bit_exact": 95458,
+  "by_operation": {
+    "add": {
+      "operations": 10000,
+      "within_tolerance": 10000,
+      "bit_exact": 10000,
+      "max_absolute_error": 0.0
+    },
+    "subtract": {
+      "operations": 10000,
+      "within_tolerance": 10000,
+      "bit_exact": 10000,
+      "max_absolute_error": 0.0
+    },
+    "component_multiply": {
+      "operations": 10000,
+      "within_tolerance": 10000,
+      "bit_exact": 10000,
+      "max_absolute_error": 0.0
+    },
+    "scalar_multiply": {
+      "operations": 10000,
+      "within_tolerance": 10000,
+      "bit_exact": 10000,
+      "max_absolute_error": 0.0
+    },
+    "scalar_divide": {
+      "operations": 10000,
+      "within_tolerance": 10000,
+      "bit_exact": 10000,
+      "max_absolute_error": 0.0
+    },
+    "dot": {
+      "operations": 10000,
+      "within_tolerance": 10000,
+      "bit_exact": 10000,
+      "max_absolute_error": 0.0
+    },
+    "length": {
+      "operations": 10000,
+      "within_tolerance": 10000,
+      "bit_exact": 10000,
+      "max_absolute_error": 0.0
+    },
+    "normalized": {
+      "operations": 10000,
+      "within_tolerance": 10000,
+      "bit_exact": 8385,
+      "max_absolute_error": 1.7881393432617188e-07
+    },
+    "lerp": {
+      "operations": 10000,
+      "within_tolerance": 10000,
+      "bit_exact": 7073,
+      "max_absolute_error": 7.62939453125e-06
+    },
+    "project": {
+      "operations": 10000,
+      "within_tolerance": 10000,
+      "bit_exact": 10000,
+      "max_absolute_error": 0.0
+    }
+  }
+}

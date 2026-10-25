@@ -1,0 +1,120 @@
+{
+  "file": "stackexchange-28683-block-1.py",
+  "source_sha256": "fac392af0a9591a06873c7c013b42f1c70e4fdf0f092cff65e84c6db82ca1532",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.02519287500763312,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:4\",\"message\":\"bpy.types.Operator: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Operator for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:9\",\"message\":\"bpy.props.IntProperty: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.props.IntProperty for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:9\",\"message\":\"bpy.props: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.props for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:37\",\"message\":\"bpy.utils.register_class: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.utils.register_class for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:37\",\"message\":\"bpy.utils: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.utils for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:41\",\"message\":\"bpy.utils.unregister_class: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.utils.unregister_class for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:41\",\"message\":\"bpy.utils: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.utils for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:48\",\"message\":\"bpy.ops.wm.modal_timer_operator: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm.modal_timer_operator for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:48\",\"message\":\"bpy.ops.wm: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py\",\"ok\":false,\"timing\":{\"python_init_ms\":12.079791,\"total_ms\":13.984958}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:4",
+        "message": "bpy.types.Operator: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Operator for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:9",
+        "message": "bpy.props.IntProperty: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.props.IntProperty for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:9",
+        "message": "bpy.props: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.props for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:37",
+        "message": "bpy.utils.register_class: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.utils.register_class for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:37",
+        "message": "bpy.utils: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.utils for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:41",
+        "message": "bpy.utils.unregister_class: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.utils.unregister_class for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:41",
+        "message": "bpy.utils: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.utils for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:48",
+        "message": "bpy.ops.wm.modal_timer_operator: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.wm.modal_timer_operator for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py:48",
+        "message": "bpy.ops.wm: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 12.079791,
+      "total_ms": 13.984958
+    }
+  },
+  "blender_process": {
+    "returncode": 0,
+    "seconds": 0.4860577500076033,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-f_amev9z",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-f_amev9z\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py"
+    ],
+    "stdout": "CORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py\", \"ok\": true}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n\nBlender quit\n",
+    "stderr": ""
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-28683-block-1.py",
+    "ok": true
+  }
+}

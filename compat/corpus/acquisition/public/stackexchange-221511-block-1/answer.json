@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": false,
+  "score": 6,
+  "last_activity_date": 1620154237,
+  "last_edit_date": 1620154237,
+  "creation_date": 1620152380,
+  "answer_id": 221511,
+  "question_id": 221480,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>With one loop.</strong></p>\n<p>Was seeking clarification on this, if the idea is to rotate the vertices of the face loop. Similar to @scurest can use the <code>foreach_get</code> and <code>foreach_set</code> methods to provide quick access to values without looping in python.  This will have a significantly increased performance for a high poly count.</p>\n<p>The loop start is taken directly from the data. The loop end by accumulating the number of verts in each face.</p>\n<p>Have used a <code>deque</code> to rotate the face vert list. A positive value for <code>rotate</code> rotates the list to <code>n</code> the right, negative to the left. <em>eg</em> to make the ith element first <code>Deque.rotate(-i)</code> <em>For example could find which is face vert is closest to the origin and rotate each accordingly</em></p>\n<pre><code>import bpy\nfrom collections import deque\nfrom itertools import accumulate\n\nrotate = 1 # rotate 1 to right\n\ncontext = bpy.context\n\nob = context.object\nme = ob.data\nn = len(me.polygons)\n\nloop_starts = [0] * n\nme.polygons.foreach_get(&quot;loop_start&quot;, loop_starts)\nloop_ends = [0] * n\nme.polygons.foreach_get(&quot;loop_total&quot;, loop_ends)\nloop_ends = accumulate(loop_ends)\nface_select = [False] * n\nme.polygons.foreach_get(&quot;select&quot;, face_select)\nvert_indices = [0] * len(me.loops)\nme.loops.foreach_get(&quot;vertex_index&quot;, vert_indices)\n'''\n# Note same as\nme.polygons.foreach_get(&quot;vertices&quot;, vert_indices)\n'''\n\nfor select, start, end in zip(\n        face_select,\n        loop_starts,\n        loop_ends\n        ):\n    if select: \n        face_verts = deque(vert_indices[start : end])\n        face_verts.rotate(rotate)\n        vert_indices[start : end] = face_verts\n\nme.loops.foreach_set(&quot;vertex_index&quot;, vert_indices)\n#print(me.validate()) # while testing just in case.\n</code></pre>\n<p>Test on default cube.</p>\n<p>Before</p>\n<pre><code>&gt;&gt;&gt; me = C.object.data\n&gt;&gt;&gt; for f in me.polygons:\n...     f.vertices[:]\n...     \n(0, 1, 3, 2)\n(2, 3, 7, 6)\n(6, 7, 5, 4)\n(4, 5, 1, 0)\n(2, 6, 4, 0)\n(7, 3, 1, 5)\n</code></pre>\n<p>After</p>\n<pre><code>(2, 0, 1, 3)\n(6, 2, 3, 7)\n(4, 6, 7, 5)\n(0, 4, 5, 1)\n(0, 2, 6, 4)\n(5, 7, 3, 1)\n</code></pre>\n<p>similarly with bmesh</p>\n<pre><code>&gt;&gt;&gt; bm = bmesh.new()\n&gt;&gt;&gt; bm.from_mesh(me)\n&gt;&gt;&gt; for f in bm.faces:\n...     [v.index for v in f.verts]\n...     \n[2, 0, 1, 3]\n[6, 2, 3, 7]\n[4, 6, 7, 5]\n[0, 4, 5, 1]\n[0, 2, 6, 4]\n[5, 7, 3, 1]\n</code></pre>\n<p><strong>Note.</strong></p>\n<p>Still need to make sure of the winding order, if for example sake were to simply randomly shuffle (<code>random.shuffle</code>) the face loop verts</p>\n<pre><code>        face_verts = vert_indices[start : end]\n        shuffle(face_verts)\n        vert_indices[start : end] = face_verts\n</code></pre>\n<p>will end up with incorrect winding, and a mess</p>\n<p><a href=\"https://i.sstatic.net/y2Axo.png\" rel=\"noreferrer\"><img src=\"https://i.sstatic.net/y2Axo.png\" alt=\"enter image description here\" /></a></p>\n"
+}

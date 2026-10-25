@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 3018602,
+    "reputation": 2470,
+    "user_id": 911,
+    "user_type": "registered",
+    "accept_rate": 69,
+    "profile_image": "https://i.sstatic.net/yqqvX.jpg?s=256",
+    "display_name": "mifth",
+    "link": "https://blender.stackexchange.com/users/911/mifth"
+  },
+  "is_accepted": false,
+  "score": 7,
+  "last_activity_date": 1450053349,
+  "last_edit_date": 1450053349,
+  "creation_date": 1407833176,
+  "answer_id": 14940,
+  "question_id": 14910,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>Here is my result. Thank you a lot @Codemax. </p>\n\n<p><a href=\"https://i.sstatic.net/yEFVM.png\" rel=\"noreferrer\"><img src=\"https://i.sstatic.net/yEFVM.png\" alt=\"output node and code in blender\"></a></p>\n\n<pre><code>import bpy\n\nscene = bpy.context.scene\nnodes = scene.node_tree.nodes\n\noutput_file = nodes.new(\"CompositorNodeOutputFile\")\n# output_file.base_path = \"//maFolder/\"\n\noutput_file.file_slots.remove(output_file.inputs[0])\nfor i in range(0, 20):\n    idx = str(i + 1)\n    if i &lt; 9:\n        idx = \"0\" + idx\n    output_file.file_slots.new(\"set_\" + idx)\n</code></pre>\n"
+}

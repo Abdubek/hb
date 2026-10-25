@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 8,
+  "last_activity_date": 1575514638,
+  "last_edit_date": 1575514638,
+  "creation_date": 1575512973,
+  "answer_id": 160069,
+  "question_id": 160042,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>Add and link the vertex colour node.</strong></p>\n\n<p>Adds a new material using <code>mat = bpy.data.materials.new()</code>  </p>\n\n<p>Recommend: almost never use <code>bpy.ops.materials.new()</code> The material <code>bpy.data.materials[mat]</code> in script in question is confusing and varies dependant on pre existing materials \"Material\" and \"MyMaterial\".</p>\n\n<p>Notice I used the index of the io when making links. Could use <code>vcol.outputs[\"Color\"]</code> for <code>vcol.outputs[0]</code>, however if the user is using a different language, then \"Color\" will be in that language.</p>\n\n<p>The principled bsdf base color is input 0. A simple test in python console to save counting by eye.</p>\n\n<pre><code>&gt;&gt;&gt; for i, o in enumerate(bsdf.inputs):\n...     i, o.name\n...     \n(0, 'Base Color')\n(1, 'Subsurface')\n(2, 'Subsurface Radius')\n(3, 'Subsurface Color')\n(4, 'Metallic')\n(5, 'Specular')\n(6, 'Specular Tint')\n(7, 'Roughness')\n(8, 'Anisotropic')\n(9, 'Anisotropic Rotation')\n(10, 'Sheen')\n(11, 'Sheen Tint')\n(12, 'Clearcoat')\n(13, 'Clearcoat Roughness')\n(14, 'IOR')\n(15, 'Transmission')\n(16, 'Transmission Roughness')\n(17, 'Emission')\n(18, 'Alpha')\n(19, 'Normal')\n(20, 'Clearcoat Normal')\n(21, 'Tangent')\n</code></pre>\n\n<p>Script to add material, add vertex colour node, link it to base color of bsdf.</p>\n\n<pre><code>import bpy\n\nnewmat = bpy.data.materials.new(\"VertCol\")\nnewmat.use_nodes = True\nnode_tree = newmat.node_tree\nnodes = node_tree.nodes\n\nbsdf = nodes.get(\"Principled BSDF\") \n'''\n# alternatively\n\noutput, bsdf = nodes\n'''\n\n\nassert(bsdf) # make sure it exists to continue\n\nvcol = nodes.new(type=\"ShaderNodeVertexColor\")\nvcol.layer_name = \"VColor\" # the vertex color layer name\n\n# make links\n\nnode_tree.links.new(vcol.outputs[0], bsdf.inputs[0])\n</code></pre>\n"
+}

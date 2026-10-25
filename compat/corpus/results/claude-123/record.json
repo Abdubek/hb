@@ -1,0 +1,311 @@
+{
+  "file": "invalid/claude-123.py",
+  "source_sha256": "e8c5e0ec29ead9e782d771ab10eb1122503ae5a6c9360638528ebf1e75c164c7",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.10059516699402593,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:18\",\"message\":\"bpy.ops.wm.read_factory_settings: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm.read_factory_settings for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:18\",\"message\":\"bpy.ops.wm: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:21\",\"message\":\"bpy.context.scene.unit_settings.system: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.unit_settings.system for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:21\",\"message\":\"bpy.context.scene.unit_settings: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.unit_settings for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:23\",\"message\":\"bpy.context.scene.render.engine: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.render.engine for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:25\",\"message\":\"bpy.context.scene.render.engine: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.render.engine for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:30\",\"message\":\"bpy.context.view_layer.active_layer_collection: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.view_layer.active_layer_collection for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:30\",\"message\":\"bpy.context.view_layer.layer_collection.children: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.view_layer.layer_collection.children for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:30\",\"message\":\"bpy.context.view_layer.layer_collection: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.view_layer.layer_collection for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:86\",\"message\":\"bpy.types.Mesh.validate: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Mesh.validate for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:124\",\"message\":\"mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:135\",\"message\":\"mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:179\",\"message\":\"mathutils.Quaternion.rotation_difference: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Quaternion.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:179\",\"message\":\"mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:180\",\"message\":\"mathutils.Quaternion.cross: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Quaternion.cross for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:202\",\"message\":\"mathutils.Vector.to_euler: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Vector.to_euler for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:214\",\"message\":\"[]mathutils.Vector.x.normalized: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api []mathutils.Vector.x.normalized for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:214\",\"message\":\"[]mathutils.Vector.y.normalized: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api []mathutils.Vector.y.normalized for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:214\",\"message\":\"[]mathutils.Vector.z.normalized: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api []mathutils.Vector.z.normalized for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:226\",\"message\":\"mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:228\",\"message\":\"mathutils.Vector.to_euler: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Vector.to_euler for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:249\",\"message\":\"mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:258\",\"message\":\"mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:581\",\"message\":\"bpy.types.Light.angle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Light.angle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:588\",\"message\":\"bpy.types.World.use_nodes=True: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:589\",\"message\":\"bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:589\",\"message\":\"bpy.types.World.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py\",\"ok\":false,\"timing\":{\"python_init_ms\":15.012167,\"total_ms\":84.17962499999999}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:18",
+        "message": "bpy.ops.wm.read_factory_settings: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.wm.read_factory_settings for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:18",
+        "message": "bpy.ops.wm: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:21",
+        "message": "bpy.context.scene.unit_settings.system: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.unit_settings.system for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:21",
+        "message": "bpy.context.scene.unit_settings: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.unit_settings for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:23",
+        "message": "bpy.context.scene.render.engine: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.render.engine for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:25",
+        "message": "bpy.context.scene.render.engine: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.render.engine for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:30",
+        "message": "bpy.context.view_layer.active_layer_collection: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.view_layer.active_layer_collection for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:30",
+        "message": "bpy.context.view_layer.layer_collection.children: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.view_layer.layer_collection.children for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:30",
+        "message": "bpy.context.view_layer.layer_collection: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.view_layer.layer_collection for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:86",
+        "message": "bpy.types.Mesh.validate: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Mesh.validate for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:124",
+        "message": "mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:135",
+        "message": "mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:179",
+        "message": "mathutils.Quaternion.rotation_difference: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Quaternion.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:179",
+        "message": "mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:180",
+        "message": "mathutils.Quaternion.cross: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Quaternion.cross for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:202",
+        "message": "mathutils.Vector.to_euler: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Vector.to_euler for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:214",
+        "message": "[]mathutils.Vector.x.normalized: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api []mathutils.Vector.x.normalized for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:214",
+        "message": "[]mathutils.Vector.y.normalized: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api []mathutils.Vector.y.normalized for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:214",
+        "message": "[]mathutils.Vector.z.normalized: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api []mathutils.Vector.z.normalized for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:226",
+        "message": "mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:228",
+        "message": "mathutils.Vector.to_euler: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Vector.to_euler for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:249",
+        "message": "mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:258",
+        "message": "mathutils.Vector.rotation_difference: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Vector.rotation_difference for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:581",
+        "message": "bpy.types.Light.angle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Light.angle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:588",
+        "message": "bpy.types.World.use_nodes=True: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:589",
+        "message": "bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:589",
+        "message": "bpy.types.World.node_tree: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 15.012167,
+      "total_ms": 84.17962499999999
+    }
+  },
+  "blender_process": {
+    "returncode": 1,
+    "seconds": 0.7782508340023924,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-6c4pjixe",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-6c4pjixe\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py"
+    ],
+    "stdout": "Extensions: writing cache failed ([Errno 1] Operation not permitted: '/user-home/Library/Application Support/Blender').\nCORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py\", \"ok\": false, \"exception\": \"ValueError\", \"message\": \"Vector.angle(other): zero length vectors have no valid angle\", \"line\": 148}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n",
+    "stderr": "Traceback (most recent call last):\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py\", line 11, in <module>\n    runpy.run_path(source, run_name=\"__main__\")\n  File \"<frozen runpy>\", line 291, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py\", line 547, in <module>\n    build_train(yy, tag)\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py\", line 373, in build_train\n    tube([(vx - 0.02, y, SHAFT_Z - 0.16), (vx - 0.02, y, PED_TOP + 0.10),\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py\", line 169, in tube\n    frames = path_frames(points, bend_r, arc_steps)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py\", line 148, in path_frames\n    ang = a.angle(b)\n          ^^^^^^^^^^\nValueError: Vector.angle(other): zero length vectors have no valid angle\n"
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py",
+    "ok": false,
+    "exception": "ValueError",
+    "message": "Vector.angle(other): zero length vectors have no valid angle",
+    "line": 148
+  },
+  "runtime_process": {
+    "returncode": 1,
+    "seconds": 0.036371958995005116,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-6c4pjixe\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-6c4pjixe/scene.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"frames\":[{\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py\",\"function\":\"<module>\",\"line\":18}],\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:18\",\"message\":\"bpy.ops.wm: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},\"ok\":false}\n",
+    "stderr": ""
+  },
+  "runtime": {
+    "error": {
+      "code": "UNSUPPORTED_API",
+      "doc": "docs/compatibility.md#unsupported",
+      "frames": [
+        {
+          "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py",
+          "function": "<module>",
+          "line": 18
+        }
+      ],
+      "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-123.py:18",
+      "message": "bpy.ops.wm: This path is outside the tested hb modeling subset.",
+      "suggestion": "Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives."
+    },
+    "ok": false
+  },
+  "runtime_probe_process": {
+    "returncode": 1,
+    "seconds": 0.0376627919904422,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-6c4pjixe\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-6c4pjixe/exception_probe.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-6c4pjixe/probe.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"frames\":[{\"file\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-6c4pjixe/exception_probe.py\",\"function\":\"<module>\",\"line\":6}],\"location\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-6c4pjixe/exception_probe.py:6\",\"message\":\"bpy.ops.wm: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},\"ok\":false}\n",
+    "stderr": "CORPUS_HB_EXCEPTION={\"exception\": \"UnsupportedError\", \"message\": \"bpy.ops.wm: This path is outside the tested hb modeling subset.\", \"line\": 18}\n"
+  },
+  "runtime_exception": {
+    "exception": "UnsupportedError",
+    "message": "bpy.ops.wm: This path is outside the tested hb modeling subset.",
+    "line": 18
+  },
+  "error_parity": {
+    "hb_rejected": true,
+    "same_message": false,
+    "same_line": false,
+    "probe_matches_direct_run": true,
+    "same_exception_class": false,
+    "status": "different_error"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 191753,
+    "reputation": 48653,
+    "user_id": 55,
+    "user_type": "registered",
+    "accept_rate": 40,
+    "profile_image": "https://i.sstatic.net/PsT5q.png?s=256",
+    "display_name": "ideasman42",
+    "link": "https://blender.stackexchange.com/users/55/ideasman42"
+  },
+  "is_accepted": true,
+  "score": 12,
+  "last_activity_date": 1393733629,
+  "last_edit_date": 1393733629,
+  "creation_date": 1393732551,
+  "answer_id": 7455,
+  "question_id": 7449,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<h2>Background Info...</h2>\n\n<p>Blender intentionally prevents you from manipulating the scene at startup, this is because it is rarely useful and you end up running into issues - like loading a blend file immediately overwrite any changes you have made.</p>\n\n<p>Other data such as the user preferences <strong>can</strong> be manipulated since this persists across different blend files.</p>\n\n<h2>1. Explicit Execution</h2>\n\n<p>So, if you want to do this, you can use a command line argument to run a text block in your <code>startup.blend</code>:</p>\n\n<pre><code>blender --python-text lamp.py\n</code></pre>\n\n<p>Or you can reference a path directly:</p>\n\n<pre><code>blender --python /path/to/lamp.py\n</code></pre>\n\n<p>This way you can control if the script runs before or after loading a blend file.</p>\n\n<pre><code># add the lamp to any blend you open\nblender example.blend --python-text lamp.py\n\n# add the lamp, then overwrite it (not useful in this case)\nblender --python-text lamp.py example.blend\n</code></pre>\n\n<p>The main drawback for this is it needs to be added to some startup script or launcher, or manually entered into the commandline each time you start blender.</p>\n\n<hr>\n\n<h2>2. Using Callbacks</h2>\n\n<p>Heres an example of a script you can place in <code>startup/</code> which adds a handler that can manipulate the scene how you like.</p>\n\n<pre><code>import bpy\n\ndef load_handler(dummy):\n    bpy.ops.object.lamp_add(type='POINT', view_align=False, location=(0.0, 0.0, 0.0), rotation=(0.0, 0.0, 0.0), layers=(True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))\n\nbpy.app.handlers.load_post.append(load_handler)\n</code></pre>\n\n<p>This is another example which keeps the handler active but only executes on new files.</p>\n\n<pre><code>import bpy\nfrom bpy.app.handlers import persistent\n\n@persistent\ndef load_handler(dummy):\n\n    # only apply to startup\n    if not bpy.data.filepath:\n        return\n\n    bpy.ops.object.lamp_add(type='POINT', view_align=False, location=(0.0, 0.0, 0.0), rotation=(0.0, 0.0, 0.0), layers=(True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))\n\nbpy.app.handlers.load_post.append(load_handler)\n</code></pre>\n\n<p>This may seem overkill for such a simple task, but when you consider it gives you the ability to execute code on any newly loaded file, its quite flexible.</p>\n"
+}

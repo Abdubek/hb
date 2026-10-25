@@ -1,0 +1,9 @@
+stackexchange-10919-block-1.py
+
+Author: CodeManX
+Answer: https://blender.stackexchange.com/a/10919
+Revision history: https://blender.stackexchange.com/posts/10919/revisions
+License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+
+One original code block, HTML-decoded. No repairs, added imports, or combined blocks.
+The licensed answer snapshot is retained in answer.json.

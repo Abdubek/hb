@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-036.py",
+      "task": "A computer monitor on an articulated desk mount",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "aa8fc86b19d7e20be7a7480105ac94a00b1865a650a3f810991ecf6716dfd8a4",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-036/1788912999227005000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 369.5368959903717
+}

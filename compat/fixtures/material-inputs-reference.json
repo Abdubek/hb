@@ -1,0 +1,377 @@
+{
+  "blender": "4.5.9 LTS",
+  "inputs": {
+    "Base Color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "Metallic": 0.0,
+    "Roughness": 0.5,
+    "IOR": 1.5,
+    "Alpha": 1.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Weight": 0.0,
+    "Diffuse Roughness": 0.0,
+    "Subsurface Weight": 0.0,
+    "Subsurface Radius": [
+      1.0,
+      0.20000000298023224,
+      0.10000000149011612
+    ],
+    "Subsurface Scale": 0.05000000074505806,
+    "Subsurface IOR": 1.399999976158142,
+    "Subsurface Anisotropy": 0.0,
+    "Specular IOR Level": 0.5,
+    "Specular Tint": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Anisotropic": 0.0,
+    "Anisotropic Rotation": 0.0,
+    "Tangent": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Transmission Weight": 0.0,
+    "Coat Weight": 0.0,
+    "Coat Roughness": 0.029999999329447746,
+    "Coat IOR": 1.5,
+    "Coat Tint": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Coat Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Sheen Weight": 0.0,
+    "Sheen Roughness": 0.5,
+    "Sheen Tint": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Emission Strength": 0.0,
+    "Thin Film Thickness": 0.0,
+    "Thin Film IOR": 1.3300000429153442
+  },
+  "ranges": {
+    "Base Color": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ]
+    ],
+    "Metallic": [
+      -2.0,
+      2.0
+    ],
+    "Roughness": [
+      -2.0,
+      2.0
+    ],
+    "IOR": [
+      -2.0,
+      2.0
+    ],
+    "Alpha": [
+      -2.0,
+      2.0
+    ],
+    "Normal": [
+      [
+        -2.0,
+        -3.0,
+        -4.0
+      ],
+      [
+        2.0,
+        3.0,
+        4.0
+      ]
+    ],
+    "Weight": [
+      -2.0,
+      2.0
+    ],
+    "Diffuse Roughness": [
+      -2.0,
+      2.0
+    ],
+    "Subsurface Weight": [
+      -2.0,
+      2.0
+    ],
+    "Subsurface Radius": [
+      [
+        -2.0,
+        -3.0,
+        -4.0
+      ],
+      [
+        2.0,
+        3.0,
+        4.0
+      ]
+    ],
+    "Subsurface Scale": [
+      -2.0,
+      2.0
+    ],
+    "Subsurface IOR": [
+      -2.0,
+      2.0
+    ],
+    "Subsurface Anisotropy": [
+      -2.0,
+      2.0
+    ],
+    "Specular IOR Level": [
+      -2.0,
+      2.0
+    ],
+    "Specular Tint": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ]
+    ],
+    "Anisotropic": [
+      -2.0,
+      2.0
+    ],
+    "Anisotropic Rotation": [
+      -2.0,
+      2.0
+    ],
+    "Tangent": [
+      [
+        -2.0,
+        -3.0,
+        -4.0
+      ],
+      [
+        2.0,
+        3.0,
+        4.0
+      ]
+    ],
+    "Transmission Weight": [
+      -2.0,
+      2.0
+    ],
+    "Coat Weight": [
+      -2.0,
+      2.0
+    ],
+    "Coat Roughness": [
+      -2.0,
+      2.0
+    ],
+    "Coat IOR": [
+      -2.0,
+      2.0
+    ],
+    "Coat Tint": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ]
+    ],
+    "Coat Normal": [
+      [
+        -2.0,
+        -3.0,
+        -4.0
+      ],
+      [
+        2.0,
+        3.0,
+        4.0
+      ]
+    ],
+    "Sheen Weight": [
+      -2.0,
+      2.0
+    ],
+    "Sheen Roughness": [
+      -2.0,
+      2.0
+    ],
+    "Sheen Tint": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ]
+    ],
+    "Emission Color": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ]
+    ],
+    "Emission Strength": [
+      -2.0,
+      2.0
+    ],
+    "Thin Film Thickness": [
+      -2.0,
+      2.0
+    ],
+    "Thin Film IOR": [
+      -2.0,
+      2.0
+    ]
+  },
+  "ShaderNodeMapping": {
+    "type": "MAPPING",
+    "inputs": {
+      "Vector": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "outputs": [
+      "Vector"
+    ],
+    "vector_type": "POINT"
+  },
+  "ShaderNodeTexCoord": {
+    "type": "TEX_COORD",
+    "inputs": {},
+    "outputs": [
+      "Generated",
+      "Normal",
+      "UV",
+      "Object",
+      "Camera",
+      "Window",
+      "Reflection"
+    ],
+    "object": null,
+    "from_instancer": false
+  },
+  "ShaderNodeTexImage": {
+    "type": "TEX_IMAGE",
+    "inputs": {
+      "Vector": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "outputs": [
+      "Color",
+      "Alpha"
+    ],
+    "projection": "FLAT",
+    "extension": "REPEAT",
+    "interpolation": "Linear"
+  },
+  "available_by_name": [
+    "Base Color",
+    "Metallic",
+    "Roughness",
+    "IOR",
+    "Alpha",
+    "Normal",
+    "Diffuse Roughness",
+    "Subsurface Weight",
+    "Subsurface Radius",
+    "Subsurface Scale",
+    "Subsurface Anisotropy",
+    "Specular IOR Level",
+    "Specular Tint",
+    "Anisotropic",
+    "Anisotropic Rotation",
+    "Tangent",
+    "Transmission Weight",
+    "Coat Weight",
+    "Coat Roughness",
+    "Coat IOR",
+    "Coat Tint",
+    "Coat Normal",
+    "Sheen Weight",
+    "Sheen Roughness",
+    "Sheen Tint",
+    "Emission Color",
+    "Emission Strength",
+    "Thin Film Thickness",
+    "Thin Film IOR"
+  ]
+}

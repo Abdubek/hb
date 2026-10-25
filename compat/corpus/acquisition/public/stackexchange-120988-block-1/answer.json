@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 14391011,
+    "reputation": 2463,
+    "user_id": 62606,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/I6H0B.png?s=256",
+    "display_name": "3DSinghVFX",
+    "link": "https://blender.stackexchange.com/users/62606/3dsinghvfx"
+  },
+  "is_accepted": false,
+  "score": 5,
+  "last_activity_date": 1540147569,
+  "creation_date": 1540147569,
+  "answer_id": 120988,
+  "question_id": 120982,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>Actually there are two steps, (1) scaling the vectors w.r.t to normalized normal, then (2) translating them w.r.t to normalized vector, so you have to do it separately.</p>\n\n<p>You are doing correctly and only one step is remaining. After the transformation of vectors (vert * mat_out), you have to translate them w.r.t to the origin.</p>\n\n<pre><code>import bpy\nimport bmesh\nimport mathutils\n\nobj = bpy.context.edit_object\nme = obj.data\nbm = bmesh.from_edit_mesh(me)\n\nverts_sel = [v for v in bm.verts if v.select is True]\nverts_co = [v.co for v in verts_sel]\nverts_nor = [v.normal for v in verts_sel]\n\naxis = mathutils.Vector(sum(verts_nor, mathutils.Vector()) / len(verts_sel))\naxis = axis.normalized()\n\norigin = mathutils.Matrix.Translation(sum(verts_co, mathutils.Vector()) / len(verts_sel))\nmat_sca = mathutils.Matrix.Scale(0.0, 4, axis)\n\nmat_out = mat_sca  # Do not combine transformations\n\nfor v in verts_sel:\n    vert = mathutils.Vector(v.co)\n    # you have translate the \"transferred vectors (vert * mat_out)\" w.r.t origin \n    v.co = origin * (vert * mat_out)\n\nbmesh.update_edit_mesh(me, True)\n</code></pre>\n\n<p>But you can also achieve same result without script,\n<a href=\"https://i.sstatic.net/Aoc0m.gif\" rel=\"noreferrer\"><img src=\"https://i.sstatic.net/Aoc0m.gif\" alt=\"enter image description here\"></a></p>\n"
+}

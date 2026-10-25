@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-111.py",
+      "task": "A radial array of turbine blades around a central hub inside a mechanical housing",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "352482438b8b920863aa360160b2f58f255dcfab2d863310b7c20fc2a10842c2",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-111/1788911937011746000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-112.py",
+      "task": "A parametric honeycomb partition wall with a doorway and a surrounding frame",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "77caad541aba526a7cbf77278fbd6bdf20b01465efcb8d8e03279007e6233c8d",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-111/1788911937011746000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-113.py",
+      "task": "A procedural brick wall with staggered courses, corner returns and a window opening",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "194e32a2dbda707c252a2b37a28af2385b92398f9b0e33bfe63e4c5d95096063",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-111/1788911937011746000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-114.py",
+      "task": "A circular auditorium with tiered seating, aisles and a central presentation platform",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "f85f2a880d2ed0466bafd03ab9cddf84037ee0de983eb677aa1defbddd314efd",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-111/1788911937011746000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-115.py",
+      "task": "A modular cable tray installation with straight sections, junctions and wall brackets",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "1eb3544f56b102dd06ea35f943e1c95ed1148764f63e732403861b3a7ea90c30",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-111/1788911937011746000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 490.94088912010193
+}

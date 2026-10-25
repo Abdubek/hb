@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "claude-066.py",
+      "task": "A parking meter beside a curb",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "eea7fb4038c5f3292be2a2067de7856d9a6372f90deb87ecec2d17a01d810aca",
+      "response": "acquisition/claude/claude-066/1788912637818731000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-067.py",
+      "task": "A luggage cart with handles and stacked suitcases",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "89b569c87d082f365439bd653f7ebe130123696650ac9dd61b6b557949fedae4",
+      "response": "acquisition/claude/claude-066/1788912637818731000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-068.py",
+      "task": "A suitcase with wheels, handle and corner bumpers",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "d9ab28c9713d923831e92410a7f3f9437a5e2cdd70236f883dede5ee8458a3d2",
+      "response": "acquisition/claude/claude-066/1788912637818731000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-069.py",
+      "task": "A camera tripod with spread legs and central column",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "0c20a6526e514c2ee1f5c86acc41bd28db67c90b17109ca6ffb77dec9834453c",
+      "response": "acquisition/claude/claude-066/1788912637818731000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-070.py",
+      "task": "A chess table with simple geometric pieces",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "fdddc55abf9e7559e5c8b2ff7cdf2109321ff4f0fffed68468cd7540adb217ac",
+      "response": "acquisition/claude/claude-066/1788912637818731000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 867.308042049408
+}

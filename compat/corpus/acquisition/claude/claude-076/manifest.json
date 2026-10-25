@@ -1,0 +1,70 @@
+{
+  "scripts": [
+    {
+      "file": "claude-076.py",
+      "task": "A fire escape staircase on a building wall",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "b5403cf18a1848243bce6a28b928a947226d8b8974c08b449c84b01e0924885b",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-076/1788911460928831000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-077.py",
+      "task": "A loading dock with ramp, bumpers and overhead door",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "a5d3826c255d9402855dc796c385852668c66a5d5e6de6da5bea21f7434757dc",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-076/1788911460928831000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-078.py",
+      "task": "A construction barricade with striped slats and feet",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "9c109350a3f7bcf50ac8d005465a324c08a68b6afe22bc2c1c7fc2c4d600697d",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-076/1788911460928831000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-079.py",
+      "task": "A shipping container with corrugated sides and doors",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "ad6f58aafc6118ae0c5f1b66dc139a1caaee5875d3f47bffab742a0118d2a8f7",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-076/1788911460928831000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-080.py",
+      "task": "A gantry crane with trolley and hook",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "4ed2ff55dc79af2e287b9e926b59d77f27f2ebc8066b3926e9b89073a4cc22ae",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-076/1788911460928831000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 1134.7974348068237
+}

@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 2835822,
+    "reputation": 29639,
+    "user_id": 241,
+    "user_type": "registered",
+    "accept_rate": 100,
+    "profile_image": "https://i.sstatic.net/luu52.jpg?s=256",
+    "display_name": "Ray Mairlot",
+    "link": "https://blender.stackexchange.com/users/241/ray-mairlot"
+  },
+  "is_accepted": true,
+  "score": 17,
+  "last_activity_date": 1657894832,
+  "last_edit_date": 1657894832,
+  "creation_date": 1424020192,
+  "answer_id": 24808,
+  "question_id": 16511,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>Note:</strong> The question I originally asked (and answered) was for 2.79. I have now updated this code to work with 2.8+. For 2.79, when defining properties on a class, you use <code>=</code> instead of <code>:</code>, so the custom string line would be <code>customString = bpy.props.StringProperty()</code> for 2.79.</p>\n<hr />\n<p>Part of the confusion with my question came from the fact I <em>presumed</em> that defining an EnumProperty was the correct, and only, way to store a list.</p>\n<p>What I didn't quite understand was that the CollectionProperty itself would act like a list. I can have much the same code as I had before, minus the enum:</p>\n<pre><code>import bpy\n\nclass customPropertiesGroup(bpy.types.PropertyGroup):\n    customString : bpy.props.StringProperty()\n\nbpy.utils.register_class(customPropertiesGroup)\n\nbpy.types.Scene.customLists = bpy.props.CollectionProperty(type=customPropertiesGroup)\n</code></pre>\n<p>And every time I want to add a new item I do:</p>\n<pre><code>newCustomItem = bpy.context.scene.customLists.add()\nnewCustomItem.customString = &quot;test1&quot;\nnewCustomItem = bpy.context.scene.customLists.add()\nnewCustomItem.customString = &quot;test2&quot;\netc..\n</code></pre>\n<p>I can then access each custom item with:</p>\n<pre><code>bpy.context.scene.customLists[0].customString\nbpy.context.scene.customLists[1].customString\n</code></pre>\n<p>If I want nested lists I can simply have the PropertyGroup Class' property as another CollectionProperty:</p>\n<pre><code>import bpy\n\nclass subcustomPropertiesGroup(bpy.types.PropertyGroup):\n    customString : bpy.props.StringProperty()\n\nbpy.utils.register_class(subcustomPropertiesGroup)\n\nclass customPropertiesGroup(bpy.types.PropertyGroup):\n    subLists : bpy.props.CollectionProperty(type=subcustomPropertiesGroup)    \n\nbpy.utils.register_class(customPropertiesGroup)\n\nbpy.types.Scene.customLists = bpy.props.CollectionProperty(type=customPropertiesGroup)\n\nnewcustomList = bpy.context.scene.customLists.add()\nnewcustomList.name= &quot;List 1&quot;\nnewSubList = bpy.context.scene.customLists[&quot;List 1&quot;].subLists.add()\nnewSubList.name = &quot;Sub List 1&quot;\nnewSubList.customString = &quot;String 1&quot;\n</code></pre>\n<p>This allows me to have an arrangement where I can access lists and sublists like so:</p>\n<pre><code>bpy.context.scene.customLists['List 1'].subList['Sub List 1'].customString\n</code></pre>\n<p>I can add or remove items (with <code>customLists.remove(index)</code>) and print them out like I would a normal python list:</p>\n<pre><code>for customList in bpy.context.scene.customLists:\n\n    print(&quot;List: &quot;+customList.name)\n\n    for subList in customList.subLists:\n    \n        print(&quot;Sub List: &quot;+subList.name)\n        print(&quot;Custom property: &quot;+subList.customString)\n</code></pre>\n<p>And because I am not clearing the list each time I define it (as I was in the question) the properties become available again after reloading the file and re-running the code.</p>\n"
+}

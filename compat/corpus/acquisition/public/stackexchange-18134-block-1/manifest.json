@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-18134-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/18134",
+      "author": "CodeManX",
+      "author_url": "https://blender.stackexchange.com/users/1363/codemanx",
+      "license": "CC BY-SA 3.0",
+      "answer_id": 18134,
+      "code_block": 1,
+      "sha256": "415567a30be67b1cc8ba4c9b47cbf4485593f055eca3264411b0ec6444f94a07",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1414093318,
+      "last_edit_date": null,
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/18134/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-18134-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

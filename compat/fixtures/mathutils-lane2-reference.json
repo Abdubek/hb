@@ -1,0 +1,6657 @@
+{
+  "rectangular": [
+    {
+      "rows": 2,
+      "cols": 2,
+      "values": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ]
+      ],
+      "transposed": [
+        [
+          1.0,
+          3.0
+        ],
+        [
+          2.0,
+          4.0
+        ]
+      ],
+      "transposed_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ]
+      ],
+      "transpose": null,
+      "transpose_after": [
+        [
+          1.0,
+          3.0
+        ],
+        [
+          2.0,
+          4.0
+        ]
+      ],
+      "to_3x3": [
+        [
+          1.0,
+          2.0,
+          0.0
+        ],
+        [
+          3.0,
+          4.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "to_3x3_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ]
+      ],
+      "to_4x4": [
+        [
+          1.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          3.0,
+          4.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "to_4x4_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ]
+      ],
+      "determinant": -2.0,
+      "determinant_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ]
+      ],
+      "inverted": [
+        [
+          -2.0,
+          1.0
+        ],
+        [
+          1.5,
+          -0.5
+        ]
+      ],
+      "inverted_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ]
+      ],
+      "decompose": {
+        "error": "ValueError",
+        "message": "Matrix.decompose(): inappropriate matrix size - expects 4x4 matrix"
+      },
+      "decompose_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ]
+      ],
+      "translation": {
+        "error": "AttributeError",
+        "message": "Matrix.translation: inappropriate matrix size, must be 4x4"
+      },
+      "vector2": [
+        5.0,
+        11.0
+      ],
+      "vector3": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      },
+      "vector4": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      }
+    },
+    {
+      "rows": 2,
+      "cols": 3,
+      "values": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ]
+      ],
+      "transposed": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transposed_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ]
+      ],
+      "transpose": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transpose_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ]
+      ],
+      "to_3x3": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "to_3x3_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ]
+      ],
+      "to_4x4": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          0.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "to_4x4_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ]
+      ],
+      "determinant": {
+        "error": "ValueError",
+        "message": "Matrix.determinant(): only square matrices are supported"
+      },
+      "determinant_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ]
+      ],
+      "inverted": {
+        "error": "ValueError",
+        "message": "Matrix.invert(ed): only square matrices are supported"
+      },
+      "inverted_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ]
+      ],
+      "decompose": {
+        "error": "ValueError",
+        "message": "Matrix.decompose(): inappropriate matrix size - expects 4x4 matrix"
+      },
+      "decompose_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ]
+      ],
+      "translation": {
+        "error": "AttributeError",
+        "message": "Matrix.translation: inappropriate matrix size, must be 4x4"
+      },
+      "vector2": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      },
+      "vector3": [
+        14.0,
+        32.0
+      ],
+      "vector4": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      }
+    },
+    {
+      "rows": 2,
+      "cols": 4,
+      "values": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ]
+      ],
+      "transposed": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transposed_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ]
+      ],
+      "transpose": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transpose_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ]
+      ],
+      "to_3x3": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "to_3x3_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ]
+      ],
+      "to_4x4": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "to_4x4_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ]
+      ],
+      "determinant": {
+        "error": "ValueError",
+        "message": "Matrix.determinant(): only square matrices are supported"
+      },
+      "determinant_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ]
+      ],
+      "inverted": {
+        "error": "ValueError",
+        "message": "Matrix.invert(ed): only square matrices are supported"
+      },
+      "inverted_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ]
+      ],
+      "decompose": {
+        "error": "ValueError",
+        "message": "Matrix.decompose(): inappropriate matrix size - expects 4x4 matrix"
+      },
+      "decompose_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ]
+      ],
+      "translation": {
+        "error": "AttributeError",
+        "message": "Matrix.translation: inappropriate matrix size, must be 4x4"
+      },
+      "vector2": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      },
+      "vector3": [
+        18.0,
+        46.0,
+        -3101.15625
+      ],
+      "vector4": [
+        30.0,
+        70.0
+      ]
+    },
+    {
+      "rows": 3,
+      "cols": 2,
+      "values": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ]
+      ],
+      "transposed": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transposed_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ]
+      ],
+      "transpose": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transpose_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ]
+      ],
+      "to_3x3": [
+        [
+          1.0,
+          2.0,
+          0.0
+        ],
+        [
+          3.0,
+          4.0,
+          0.0
+        ],
+        [
+          5.0,
+          6.0,
+          1.0
+        ]
+      ],
+      "to_3x3_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ]
+      ],
+      "to_4x4": [
+        [
+          1.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          3.0,
+          4.0,
+          0.0,
+          0.0
+        ],
+        [
+          5.0,
+          6.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "to_4x4_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ]
+      ],
+      "determinant": {
+        "error": "ValueError",
+        "message": "Matrix.determinant(): only square matrices are supported"
+      },
+      "determinant_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ]
+      ],
+      "inverted": {
+        "error": "ValueError",
+        "message": "Matrix.invert(ed): only square matrices are supported"
+      },
+      "inverted_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ]
+      ],
+      "decompose": {
+        "error": "ValueError",
+        "message": "Matrix.decompose(): inappropriate matrix size - expects 4x4 matrix"
+      },
+      "decompose_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ]
+      ],
+      "translation": {
+        "error": "AttributeError",
+        "message": "Matrix.translation: inappropriate matrix size, must be 4x4"
+      },
+      "vector2": [
+        5.0,
+        11.0,
+        17.0
+      ],
+      "vector3": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      },
+      "vector4": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      }
+    },
+    {
+      "rows": 3,
+      "cols": 3,
+      "values": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ]
+      ],
+      "transposed": [
+        [
+          1.0,
+          4.0,
+          7.0
+        ],
+        [
+          2.0,
+          5.0,
+          8.0
+        ],
+        [
+          3.0,
+          6.0,
+          9.0
+        ]
+      ],
+      "transposed_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ]
+      ],
+      "transpose": null,
+      "transpose_after": [
+        [
+          1.0,
+          4.0,
+          7.0
+        ],
+        [
+          2.0,
+          5.0,
+          8.0
+        ],
+        [
+          3.0,
+          6.0,
+          9.0
+        ]
+      ],
+      "to_3x3": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ]
+      ],
+      "to_3x3_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ]
+      ],
+      "to_4x4": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          0.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0,
+          0.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "to_4x4_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ]
+      ],
+      "determinant": 0.0,
+      "determinant_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ]
+      ],
+      "inverted": {
+        "error": "ValueError",
+        "message": "Matrix.invert(ed): matrix does not have an inverse"
+      },
+      "inverted_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ]
+      ],
+      "decompose": {
+        "error": "ValueError",
+        "message": "Matrix.decompose(): inappropriate matrix size - expects 4x4 matrix"
+      },
+      "decompose_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ]
+      ],
+      "translation": {
+        "error": "AttributeError",
+        "message": "Matrix.translation: inappropriate matrix size, must be 4x4"
+      },
+      "vector2": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      },
+      "vector3": [
+        14.0,
+        32.0,
+        50.0
+      ],
+      "vector4": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      }
+    },
+    {
+      "rows": 3,
+      "cols": 4,
+      "values": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "transposed": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transposed_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "transpose": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transpose_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "to_3x3": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0
+        ]
+      ],
+      "to_3x3_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "to_4x4": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "to_4x4_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "determinant": {
+        "error": "ValueError",
+        "message": "Matrix.determinant(): only square matrices are supported"
+      },
+      "determinant_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "inverted": {
+        "error": "ValueError",
+        "message": "Matrix.invert(ed): only square matrices are supported"
+      },
+      "inverted_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "decompose": {
+        "error": "ValueError",
+        "message": "Matrix.decompose(): inappropriate matrix size - expects 4x4 matrix"
+      },
+      "decompose_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "translation": {
+        "error": "AttributeError",
+        "message": "Matrix.translation: inappropriate matrix size, must be 4x4"
+      },
+      "vector2": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      },
+      "vector3": [
+        18.0,
+        46.0,
+        74.0
+      ],
+      "vector4": [
+        30.0,
+        70.0,
+        110.0
+      ]
+    },
+    {
+      "rows": 4,
+      "cols": 2,
+      "values": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0
+        ]
+      ],
+      "transposed": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transposed_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0
+        ]
+      ],
+      "transpose": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transpose_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0
+        ]
+      ],
+      "to_3x3": [
+        [
+          1.0,
+          2.0,
+          0.0
+        ],
+        [
+          3.0,
+          4.0,
+          0.0
+        ],
+        [
+          5.0,
+          6.0,
+          1.0
+        ]
+      ],
+      "to_3x3_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0
+        ]
+      ],
+      "to_4x4": [
+        [
+          1.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          3.0,
+          4.0,
+          0.0,
+          0.0
+        ],
+        [
+          5.0,
+          6.0,
+          1.0,
+          0.0
+        ],
+        [
+          7.0,
+          8.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "to_4x4_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0
+        ]
+      ],
+      "determinant": {
+        "error": "ValueError",
+        "message": "Matrix.determinant(): only square matrices are supported"
+      },
+      "determinant_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0
+        ]
+      ],
+      "inverted": {
+        "error": "ValueError",
+        "message": "Matrix.invert(ed): only square matrices are supported"
+      },
+      "inverted_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0
+        ]
+      ],
+      "decompose": {
+        "error": "ValueError",
+        "message": "Matrix.decompose(): inappropriate matrix size - expects 4x4 matrix"
+      },
+      "decompose_after": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0
+        ]
+      ],
+      "translation": {
+        "error": "AttributeError",
+        "message": "Matrix.translation: inappropriate matrix size, must be 4x4"
+      },
+      "vector2": [
+        5.0,
+        11.0,
+        17.0,
+        23.0
+      ],
+      "vector3": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      },
+      "vector4": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      }
+    },
+    {
+      "rows": 4,
+      "cols": 3,
+      "values": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ],
+        [
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "transposed": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transposed_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ],
+        [
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "transpose": {
+        "error": "ValueError",
+        "message": "Matrix.transpose(d): only square matrices are supported"
+      },
+      "transpose_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ],
+        [
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "to_3x3": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ]
+      ],
+      "to_3x3_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ],
+        [
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "to_4x4": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          0.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0,
+          0.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0,
+          0.0
+        ],
+        [
+          10.0,
+          11.0,
+          12.0,
+          1.0
+        ]
+      ],
+      "to_4x4_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ],
+        [
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "determinant": {
+        "error": "ValueError",
+        "message": "Matrix.determinant(): only square matrices are supported"
+      },
+      "determinant_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ],
+        [
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "inverted": {
+        "error": "ValueError",
+        "message": "Matrix.invert(ed): only square matrices are supported"
+      },
+      "inverted_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ],
+        [
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "decompose": {
+        "error": "ValueError",
+        "message": "Matrix.decompose(): inappropriate matrix size - expects 4x4 matrix"
+      },
+      "decompose_after": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          7.0,
+          8.0,
+          9.0
+        ],
+        [
+          10.0,
+          11.0,
+          12.0
+        ]
+      ],
+      "translation": {
+        "error": "AttributeError",
+        "message": "Matrix.translation: inappropriate matrix size, must be 4x4"
+      },
+      "vector2": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      },
+      "vector3": [
+        14.0,
+        32.0,
+        50.0,
+        68.0
+      ],
+      "vector4": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      }
+    },
+    {
+      "rows": 4,
+      "cols": 4,
+      "values": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        [
+          13.0,
+          14.0,
+          15.0,
+          16.0
+        ]
+      ],
+      "transposed": [
+        [
+          1.0,
+          5.0,
+          9.0,
+          13.0
+        ],
+        [
+          2.0,
+          6.0,
+          10.0,
+          14.0
+        ],
+        [
+          3.0,
+          7.0,
+          11.0,
+          15.0
+        ],
+        [
+          4.0,
+          8.0,
+          12.0,
+          16.0
+        ]
+      ],
+      "transposed_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        [
+          13.0,
+          14.0,
+          15.0,
+          16.0
+        ]
+      ],
+      "transpose": null,
+      "transpose_after": [
+        [
+          1.0,
+          5.0,
+          9.0,
+          13.0
+        ],
+        [
+          2.0,
+          6.0,
+          10.0,
+          14.0
+        ],
+        [
+          3.0,
+          7.0,
+          11.0,
+          15.0
+        ],
+        [
+          4.0,
+          8.0,
+          12.0,
+          16.0
+        ]
+      ],
+      "to_3x3": [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0
+        ]
+      ],
+      "to_3x3_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        [
+          13.0,
+          14.0,
+          15.0,
+          16.0
+        ]
+      ],
+      "to_4x4": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        [
+          13.0,
+          14.0,
+          15.0,
+          16.0
+        ]
+      ],
+      "to_4x4_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        [
+          13.0,
+          14.0,
+          15.0,
+          16.0
+        ]
+      ],
+      "determinant": 0.0,
+      "determinant_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        [
+          13.0,
+          14.0,
+          15.0,
+          16.0
+        ]
+      ],
+      "inverted": {
+        "error": "ValueError",
+        "message": "Matrix.invert(ed): matrix does not have an inverse"
+      },
+      "inverted_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        [
+          13.0,
+          14.0,
+          15.0,
+          16.0
+        ]
+      ],
+      "decompose": [
+        [
+          4.0,
+          8.0,
+          12.0
+        ],
+        [
+          0.12427576631307602,
+          -0.8618046641349792,
+          0.2518325448036194,
+          0.4224081039428711
+        ],
+        [
+          -10.344079971313477,
+          -11.832159996032715,
+          -13.379088401794434
+        ]
+      ],
+      "decompose_after": [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        [
+          13.0,
+          14.0,
+          15.0,
+          16.0
+        ]
+      ],
+      "translation": [
+        4.0,
+        8.0,
+        12.0
+      ],
+      "vector2": {
+        "error": "ValueError",
+        "message": "matrix * vector: len(matrix.col) and len(vector) must be the same, except for 4x4 matrix * 3D vector."
+      },
+      "vector3": [
+        18.0,
+        46.0,
+        74.0
+      ],
+      "vector4": [
+        30.0,
+        70.0,
+        110.0,
+        150.0
+      ]
+    }
+  ],
+  "slerp": [
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        0.9510565400123596,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        0.7071067690849304,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        1.2000000476837158,
+        0.20000000298023224,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        1.5,
+        0.5,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.2,
+      "value": [
+        0.9510565400123596,
+        0.0,
+        0.0,
+        0.30901700258255005
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.5,
+      "value": [
+        0.7071067690849304,
+        0.0,
+        0.0,
+        0.7071067690849304
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.2,
+      "value": [
+        0.9627267122268677,
+        0.08281610161066055,
+        -0.11042147129774094,
+        0.13802683353424072
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.5,
+      "value": [
+        0.7745966911315918,
+        0.19364918768405914,
+        -0.25819891691207886,
+        0.3227486312389374
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        -0.9510565400123596,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        -0.7071067690849304,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        1.2000000476837158,
+        0.20000000298023224,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        1.5,
+        0.5,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.2,
+      "value": [
+        -0.9510565400123596,
+        0.0,
+        0.0,
+        0.30901700258255005
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.5,
+      "value": [
+        -0.7071067690849304,
+        0.0,
+        0.0,
+        0.7071067690849304
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0,
+      "value": [
+        1.0,
+        0.0,
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.2,
+      "value": [
+        0.9627267122268677,
+        0.08281610161066055,
+        -0.11042147129774094,
+        0.13802683353424072
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.5,
+      "value": [
+        0.7745966911315918,
+        0.19364918768405914,
+        -0.25819891691207886,
+        0.3227486312389374
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        0.30901700258255005,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        0.7071067690849304,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        -0.30901700258255005,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        -0.7071067690849304,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        0.6180340051651001,
+        0.30901700258255005,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        1.4142135381698608,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.2,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.30901700258255005
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.5,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.7071067690849304
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.2,
+      "value": [
+        0.06180340051651001,
+        0.09270510077476501,
+        -0.12360680103302002,
+        0.15450850129127502
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.5,
+      "value": [
+        0.1414213627576828,
+        0.2121320366859436,
+        -0.2828427255153656,
+        0.3535533845424652
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        1.8000000715255737,
+        0.800000011920929,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        1.5,
+        0.5,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        -2.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        -1.8000000715255737,
+        -0.800000011920929,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        -1.5,
+        -0.5,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        1.9021130800247192,
+        0.9510565400123596,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        1.4142135381698608,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.2,
+      "value": [
+        1.9021130800247192,
+        0.9510565400123596,
+        0.0,
+        0.30901700258255005
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.5,
+      "value": [
+        1.4142135381698608,
+        0.7071067690849304,
+        0.0,
+        0.7071067690849304
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.2,
+      "value": [
+        1.708565592765808,
+        0.898646354675293,
+        -0.08872716128826141,
+        0.11090894788503647
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.5,
+      "value": [
+        1.1931174993515015,
+        0.705024003982544,
+        -0.21693046391010284,
+        0.27116307616233826
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        0.30901700258255005,
+        0.0,
+        0.0,
+        0.9510565400123596
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        0.7071067690849304,
+        0.0,
+        0.0,
+        0.7071067690849304
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        -0.30901700258255005,
+        0.0,
+        0.0,
+        0.9510565400123596
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        -0.7071067690849304,
+        0.0,
+        0.0,
+        0.7071067690849304
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.9510565400123596
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.7071067690849304
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        0.6180340051651001,
+        0.30901700258255005,
+        0.0,
+        0.9510565400123596
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        1.4142135381698608,
+        0.7071067690849304,
+        0.0,
+        0.7071067690849304
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.2,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.5,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.2,
+      "value": [
+        0.04801514744758606,
+        0.07202272117137909,
+        -0.09603029489517212,
+        0.978147566318512
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.5,
+      "value": [
+        0.1154700517654419,
+        0.17320507764816284,
+        -0.2309401035308838,
+        0.8660253882408142
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        0.4575568735599518,
+        0.2722548246383667,
+        -0.3630064129829407,
+        0.45375800132751465
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        0.7745966911315918,
+        0.19364918768405914,
+        -0.25819891691207886,
+        0.3227486312389374
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        -0.20000000298023224,
+        -0.30000001192092896,
+        0.4000000059604645,
+        -0.5
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        -0.4575568735599518,
+        -0.2722548246383667,
+        0.3630064129829407,
+        -0.45375800132751465
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        -0.7745966911315918,
+        -0.19364918768405914,
+        0.25819891691207886,
+        -0.3227486312389374
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        0.19021131098270416,
+        0.28531697392463684,
+        -0.3804226219654083,
+        0.4755282700061798
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        0.1414213627576828,
+        0.2121320366859436,
+        -0.2828427255153656,
+        0.3535533845424652
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.2,
+      "value": [
+        0.6100559830665588,
+        0.4714481830596924,
+        -0.3328404128551483,
+        0.4160504937171936
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 0.5,
+      "value": [
+        1.1931174993515015,
+        0.705024003982544,
+        -0.21693046391010284,
+        0.27116307616233826
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1,
+      "value": [
+        2.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.2,
+      "value": [
+        0.17162194848060608,
+        0.2574329376220703,
+        -0.34324389696121216,
+        0.6691305637359619
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 0.5,
+      "value": [
+        0.1154700517654419,
+        0.17320507764816284,
+        -0.2309401035308838,
+        0.8660253882408142
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1,
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.2,
+      "value": [
+        0.21773415803909302,
+        0.3266012370586395,
+        -0.43546831607818604,
+        0.5443353652954102
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 0.5,
+      "value": [
+        0.22792115807533264,
+        0.34188175201416016,
+        -0.4558423161506653,
+        0.5698028802871704
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1,
+      "value": [
+        0.20000000298023224,
+        0.30000001192092896,
+        -0.4000000059604645,
+        0.5
+      ]
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": -0.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    },
+    {
+      "a": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "b": [
+        0.2,
+        0.3,
+        -0.4,
+        0.5
+      ],
+      "t": 1.1,
+      "value": {
+        "error": "ValueError",
+        "message": "quat.slerp(): interpolation factor must be between 0.0 and 1.0"
+      }
+    }
+  ],
+  "decompose": [
+    {
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "value": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "matrix": [
+        [
+          -2.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          4.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "value": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          -0.0
+        ],
+        [
+          -2.0,
+          -3.0,
+          -4.0
+        ]
+      ]
+    },
+    {
+      "matrix": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          3.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "value": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999999403953552,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          3.0
+        ]
+      ]
+    },
+    {
+      "matrix": [
+        [
+          1.0,
+          0.5,
+          0.30000001192092896,
+          4.0
+        ],
+        [
+          0.0,
+          2.0,
+          0.4000000059604645,
+          5.0
+        ],
+        [
+          0.0,
+          0.0,
+          3.0,
+          6.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "value": [
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          0.9972690343856812,
+          -0.03315020352602005,
+          0.024862654507160187,
+          -0.06113257259130478
+        ],
+        [
+          1.0,
+          2.0615527629852295,
+          3.041381359100342
+        ]
+      ]
+    },
+    {
+      "matrix": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "value": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  ]
+}

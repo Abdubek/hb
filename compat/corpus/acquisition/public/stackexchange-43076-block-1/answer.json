@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 3732141,
+    "reputation": 16191,
+    "user_id": 15861,
+    "user_type": "registered",
+    "accept_rate": 57,
+    "profile_image": "https://graph.facebook.com/780312555/picture?type=large",
+    "display_name": "TLousky",
+    "link": "https://blender.stackexchange.com/users/15861/tlousky"
+  },
+  "is_accepted": true,
+  "score": 10,
+  "last_activity_date": 1651843795,
+  "last_edit_date": 1651843795,
+  "creation_date": 1450183244,
+  "answer_id": 43076,
+  "question_id": 43060,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>There were several issues with your code:</p>\n<ol>\n<li><p>The loop cut and slide operator is supposed to be executed from the 3D viewport. To execute it from other windows (Console, text editor, etc), you need to override the context.</p>\n</li>\n<li><p>You used an illegal value for the &quot;falloff&quot; parameter (used to be &quot;Inverse_Square&quot;, I changed it to &quot;Smooth&quot;. You can also choose: &quot;SHPERE&quot;, &quot;ROOT&quot;, &quot;SHARP&quot; or &quot;LINEAR&quot; if you prefer).</p>\n</li>\n</ol>\n<p>Here's the code:</p>\n<pre><code>import bpy\n\nbpy.ops.mesh.primitive_plane_add()\nbpy.context.object.dimensions[0] = 1\nbpy.ops.object.editmode_toggle()\n\ndef view3d_find( return_area = False ):\n    # returns first 3d view, normally we get from context\n    for area in bpy.context.window.screen.areas:\n        if area.type == 'VIEW_3D':\n            v3d = area.spaces[0]\n            rv3d = v3d.region_3d\n            for region in area.regions:\n                if region.type == 'WINDOW':\n                    if return_area: return region, rv3d, v3d, area\n                    return region, rv3d, v3d\n    return None, None\n\nregion, rv3d, v3d, area = view3d_find(True)\n\noverride = {\n    'scene'  : bpy.context.scene,\n    'region' : region,\n    'area'   : area,\n    'space'  : v3d\n}\n\nbpy.ops.mesh.loopcut_slide(\n    override, \n    MESH_OT_loopcut = {\n        &quot;number_cuts&quot;           : 2,\n        &quot;smoothness&quot;            : 0,     \n        &quot;falloff&quot;               : 'SMOOTH',  # Was 'INVERSE_SQUARE' that does not exist\n        &quot;object_index&quot;          : 0,\n        &quot;edge_index&quot;            : 2,\n        &quot;mesh_select_mode_init&quot; : (True, False, False)\n    },\n    TRANSFORM_OT_edge_slide = {\n        &quot;value&quot;           : 0,\n        &quot;mirror&quot;          : False, \n        &quot;snap&quot;            : False,\n        &quot;snap_target&quot;     : 'CLOSEST',\n        &quot;snap_point&quot;      : (0, 0, 0),\n        &quot;snap_align&quot;      : False,\n        &quot;snap_normal&quot;     : (0, 0, 0),\n        &quot;correct_uv&quot;      : False,\n        &quot;release_confirm&quot; : False\n    }\n)\n</code></pre>\n"
+}

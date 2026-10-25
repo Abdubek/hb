@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-139.py",
+      "task": "A dining room with an oval table, upholstered chairs and sculptural chandelier",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "c0d691cbad54476921af233c90bf3b33071cdebc39f3094e609d7f98d5884932",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-139/1788913847897712000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 600.8726170063019
+}

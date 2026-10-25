@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 1291461,
+    "reputation": 40360,
+    "user_id": 47,
+    "user_type": "registered",
+    "accept_rate": 94,
+    "profile_image": "https://www.gravatar.com/avatar/4a953b25f0b546cc39b80725930f3ffa?s=256&d=identicon&r=PG",
+    "display_name": "zeffii",
+    "link": "https://blender.stackexchange.com/users/47/zeffii"
+  },
+  "is_accepted": true,
+  "score": 7,
+  "last_activity_date": 1431601150,
+  "last_edit_date": 1492088258,
+  "creation_date": 1431600247,
+  "answer_id": 30839,
+  "question_id": 30837,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>What you're asking for is this:</p>\n\n<h3>Using ops</h3>\n\n<pre><code>import bpy\n\n# if named..\n# obj = bpy.data.objects['IcoSphere']  \nobj = bpy.context.active_object  \nme = obj.data\n\n# must be in object mode, to refresh face selections and data\nbpy.ops.object.mode_set(mode = 'OBJECT') \n\nfaces = me.polygons\nfor f in faces:\n    f.select = (f.normal.y &lt; 0.0)\n\n# to remove using this method we switch to edit mode, and back after removal.\n\nbpy.ops.object.mode_set(mode = 'EDIT') \nbpy.ops.mesh.delete(type='FACE')\nbpy.ops.object.mode_set(mode = 'OBJECT') \n</code></pre>\n\n<p>This is essentially a scripted walk through of what you would be doing if you inspected each face normal and selected only those that had a negative y coordinate, then at the end it would delete the selected faces.</p>\n\n<p>There are other ways to do this, but this might give some insight. This is the after shot:</p>\n\n<p><img src=\"https://i.sstatic.net/cH5NB.png\" alt=\"enter image description here\"></p>\n\n<h3>Using bmesh</h3>\n\n<p>See: </p>\n\n<ul>\n<li>TextEditor -> Templates -> Python -> Bmesh Simple</li>\n<li><a href=\"http://www.blender.org/api/blender_python_api_2_74_5/bmesh.ops.html?highlight=bmesh#bmesh.ops.delete\" rel=\"nofollow noreferrer\">bmesh.ops docs</a>.</li>\n</ul>\n\n<p>warning, the <em>context</em> parameter of bmesh.ops delete is a little undocumented, but is described <a href=\"https://blender.stackexchange.com/a/1542/47\">here</a></p>\n\n<pre><code>import bpy\nimport bmesh\n\nobj = bpy.context.active_object  \nme = obj.data\n\nbm = bmesh.new()   # create an empty BMesh\nbm.from_mesh(me)   # fill it in from a Mesh\n\nfaces = [f for f in bm.faces if (f.normal.y &lt; 0.0)]\n\nbmesh.ops.delete(bm, geom=faces, context=5)\n\n# Finish up, write the bmesh back to the mesh\nbm.to_mesh(me)\nbm.free()  # free and prevent further access\n</code></pre>\n"
+}

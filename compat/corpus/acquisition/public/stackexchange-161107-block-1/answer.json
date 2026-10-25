@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 7,
+  "last_activity_date": 1611753846,
+  "last_edit_date": 1611753846,
+  "creation_date": 1576506738,
+  "answer_id": 161107,
+  "question_id": 161103,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>Don't use operators in handlers</strong></p>\n<p><a href=\"https://i.sstatic.net/PxZT0.gif\" rel=\"nofollow noreferrer\"><img src=\"https://i.sstatic.net/PxZT0.gif\" alt=\"enter image description here\" /></a></p>\n<p>For the most part don't use operators in handlers. When rendering for example, the context needed will not be there.  I imagine edit mode toggle means nada to the renderer.\nUse API methods and the passed argument <code>scene</code></p>\n<p>In example below, displays a line of <code>bpy.data.texts[&quot;Text&quot;]</code> as the body of text object <code>scene.objects[&quot;Text&quot;]</code></p>\n<pre><code>import bpy\n\n# pass arguments to build a handler\ndef text_body_handler(obname, textname):\n    # the handler method\n    def text_body(scene):\n        text = bpy.data.texts.get(textname)\n        text_ob = scene.objects.get(obname)\n        if not text and text_ob:\n            print(&quot;Error: check names&quot;)\n            return \n        f = scene.frame_current\n        lines = len(text.lines)\n        if text_ob and f &lt;= lines:\n            text_ob.data.body = text.lines[f-1].body\n \n    return text_body\n\nbpy.app.handlers.frame_change_post.clear()           \nbpy.app.handlers.frame_change_post.append(text_body_handler(&quot;Text&quot;, &quot;Text&quot;))\n</code></pre>\n<p>Textblock <code>bpy.data.texts[&quot;Text&quot;]</code></p>\n<pre><code>I had written him a letter \nwhich I had, \nfor want of better Knowledge, \nsent to where I met him \ndown the Lachlan, years ago,\nHe was shearing when I knew him, \nso I sent the letter to him,\nJust \u2018on spec\u2019, addressed as follows,\n\u2018Clancy, of The Overflow\u2019.\n</code></pre>\n"
+}

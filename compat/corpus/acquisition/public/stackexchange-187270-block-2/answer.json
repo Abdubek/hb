@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 8,
+  "last_activity_date": 1595343356,
+  "creation_date": 1595343356,
+  "answer_id": 187270,
+  "question_id": 187233,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>Pass the scene to view frame</strong></p>\n<p>Think you got there in the end, here is <a href=\"https://blender.stackexchange.com/a/45324/15543\">@ideasman42's script</a> modified to add empties to 5 points of frustum, for each camera object in scene.</p>\n<p>All the info re resolution will come with the passed as keyword scene, else it defaults to None.</p>\n<pre><code>&gt;&gt;&gt; C.scene.camera.data.view_frame(\nview_frame()\nCamera.view_frame(scene=None)\nReturn 4 points for the cameras frame (before object transformation)\n</code></pre>\n<p>Test script:</p>\n<pre><code>import bpy\n\n\ndef camera_as_planes(scene, obj):\n    &quot;&quot;&quot;\n    Return planes in world-space which represent the camera view bounds.\n    &quot;&quot;&quot;\n    from mathutils.geometry import normal\n    print(obj.name)\n    camera = obj.data\n    # normalize to ignore camera scale\n    matrix = obj.matrix_world.normalized()\n    frame = [matrix @ v for v in camera.view_frame(scene=scene)]\n    origin = matrix.to_translation()\n    frame.append(origin)\n    for p in frame:\n        bpy.ops.object.empty_add(location=p)\n\n# test call\nscene = bpy.context.scene\ncams = [o for o in scene.objects if o.type == 'CAMERA']\nfor cam in cams:\n    camera_as_planes(scene, cam)\n</code></pre>\n"
+}

@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-021.py",
+      "task": "A garden pergola with overhead slats",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "166d4ce298b516c0438582c1ee25602ba0e0236cb904d8b66d1800c3638f02b6",
+      "response": "acquisition/gpt6/gpt6-021/1788910891271164000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-022.py",
+      "task": "A camping lantern with handle and protective frame",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "aeb63801c4d7b4a257b6962a027ac8d2ec9ab4894b27a4389bf9cd49c54f3dee",
+      "response": "acquisition/gpt6/gpt6-021/1788910891271164000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-023.py",
+      "task": "A water tower with tank, legs and ladder",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "6a25d94afa2247bdbb0dcdcacdf292a0873ef0f9ae228c8428245a464e010485",
+      "response": "acquisition/gpt6/gpt6-021/1788910891271164000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-024.py",
+      "task": "A playground slide with ladder and platform",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "cc68c8141d779a28537c8c69f17ec5bae110fe2cfd4b7f07c82508f2ed9855a2",
+      "response": "acquisition/gpt6/gpt6-021/1788910891271164000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-025.py",
+      "task": "A circular gazebo with posts and roof",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "73e3d2718c7e5125d049b4eaf32bcf45b9b7b0e816ce8fbf2657f18b86c9f67a",
+      "response": "acquisition/gpt6/gpt6-021/1788910891271164000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 471.59961199760437
+}

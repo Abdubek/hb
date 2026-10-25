@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-123010-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/123010",
+      "author": "Martynas \u017diemys",
+      "author_url": "https://blender.stackexchange.com/users/60759/martynas-%c5%bdiemys",
+      "license": "CC BY-SA 4.0",
+      "answer_id": 123010,
+      "code_block": 1,
+      "sha256": "9b7b744cc4c8602ff5cc9edbbd6ffecce751aca39b7b766518f29bc472030947",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1542612414,
+      "last_edit_date": 1640263675,
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/123010/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-123010-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

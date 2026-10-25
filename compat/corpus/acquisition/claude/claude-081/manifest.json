@@ -1,0 +1,70 @@
+{
+  "scripts": [
+    {
+      "file": "claude-081.py",
+      "task": "A suspension bridge study with towers, cables and deck",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "181a219b03f3efe24330cc5c2afc7e12acf4035acc72d8570002d0e5b2883f28",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-081/1788911460940232000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-082.py",
+      "task": "A modern pavilion with curved roof and slim columns",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "c648bac11c10dff7704b3696f6933ec56e1fcfa2321cf44e81bd3ba3f5c883a4",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-081/1788911460940232000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-083.py",
+      "task": "A spiral display stand with staggered circular shelves",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "7f2831ad87646efdde98bf7db5de2f5b5dddd6adae1e66ec2666e842402bab59",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-081/1788911460940232000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-084.py",
+      "task": "A cylindrical perfume bottle with cap and label panel",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "09bacb35fd99c53cf09e5d0bcc0a4d4803cdd9bfea28837ccd34080729e67c53",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-081/1788911460940232000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-085.py",
+      "task": "A desk organizer with pen cups and paper tray",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "84b976e4d3c871c2674d6d6fce178fe643cbeebf023e26be0cd82e7ea1e55acf",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-081/1788911460940232000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 926.0536460876465
+}

@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 3007581,
+    "reputation": 9521,
+    "user_id": 894,
+    "user_type": "registered",
+    "accept_rate": 83,
+    "profile_image": "https://www.gravatar.com/avatar/c0722b25781ac4a173ccf6b7cef33971?s=256&d=identicon&r=PG",
+    "display_name": "Todd McIntosh",
+    "link": "https://blender.stackexchange.com/users/894/todd-mcintosh"
+  },
+  "is_accepted": false,
+  "score": 5,
+  "last_activity_date": 1452441727,
+  "last_edit_date": 1452441727,
+  "creation_date": 1438604361,
+  "answer_id": 35009,
+  "question_id": 35007,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>You just need to map a boolean variable to the row property.</p>\n\n<pre><code>import bpy\n\nclass FilterPanel(bpy.types.Panel):\n    bl_category = \"EasyFX\"\n    bl_label = \"Filter\"\n    bl_idname = \"Filter\"\n    bl_space_type = 'IMAGE_EDITOR'\n    bl_region_type = 'TOOLS'\n\n    def draw(self, context):\n        scene = context.scene\n        layout = self.layout\n        col = layout.column(align=True)\n        row = col.row(align=True)\n\n        #Checkbox Here\n        #(implied from property type = bool)\n        row.prop(scene, \"my_prop\")\n\ndef register():\n    # add your custom property to the Scene, but if you\n    # have to register many properties consider using a \n    # property group. \n    bpy.types.Scene.my_prop = bpy.props.BoolProperty(\n        name=\"Prop name\",\n        description=\"Some tooltip\",\n        default = True)\n\n    bpy.utils.register_class(FilterPanel)\n\ndef unregister():\n    bpy.utils.unregister_class(FilterPanel)\n    del bpy.types.Scene.my_prop\n</code></pre>\n"
+}

@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 1291461,
+    "reputation": 40360,
+    "user_id": 47,
+    "user_type": "registered",
+    "accept_rate": 94,
+    "profile_image": "https://www.gravatar.com/avatar/4a953b25f0b546cc39b80725930f3ffa?s=256&d=identicon&r=PG",
+    "display_name": "zeffii",
+    "link": "https://blender.stackexchange.com/users/47/zeffii"
+  },
+  "is_accepted": true,
+  "score": 12,
+  "last_activity_date": 1621217680,
+  "last_edit_date": 1621217680,
+  "creation_date": 1397563233,
+  "answer_id": 8593,
+  "question_id": 7020,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>While it's not very pretty, it is possible. This example recreates the default  NURBS Surface. Inspired by <a href=\"https://blender.stackexchange.com/a/8587/47\">https://blender.stackexchange.com/a/8587/47</a></p>\n<pre><code>import bpy\nfrom mathutils import Vector\n\nsurface_data = bpy.data.curves.new('wook', 'SURFACE')\nsurface_data.dimensions = '3D'\n\n# 16 coordinates\npoints = [\n    Vector((-1.5, -1.5, 0.0, 1.0)), Vector((-1.5, -0.5, 0.0, 1.0)),\n    Vector((-1.5, 0.5, 0.0, 1.0)), Vector((-1.5, 1.5, 0.0, 1.0)),\n    Vector((-0.5, -1.5, 0.0, 1.0)), Vector((-0.5, -0.5, 1.0, 1.0)),\n    Vector((-0.5, 0.5, 1.0, 1.0)), Vector((-0.5, 1.5, 0.0, 1.0)),\n    Vector((0.5, -1.5, 0.0, 1.0)), Vector((0.5, -0.5, 1.0, 1.0)),\n    Vector((0.5, 0.5, 1.0, 1.0)), Vector((0.5, 1.5, 0.0, 1.0)),\n    Vector((1.5, -1.5, 0.0, 1.0)), Vector((1.5, -0.5, 0.0, 1.0)),\n    Vector((1.5, 0.5, 0.0, 1.0)), Vector((1.5, 1.5, 0.0, 1.0))\n]\n\n# set points per segments (U * V)\nfor i in range(0, 16, 4):\n    spline = surface_data.splines.new(type='NURBS')\n    spline.points.add(3)  # already has a default vector\n\n    for p, new_co in zip(spline.points, points[i:i+4]):\n        p.co = new_co\n\nsurface_object = bpy.data.objects.new('NURBS_OBJ', surface_data)\nbpy.context.collection.objects.link(surface_object)\n\nsplines = surface_object.data.splines\nfor s in splines:\n    for p in s.points:\n        p.select = True\n\nbpy.context.view_layer.objects.active = surface_object\nbpy.ops.object.mode_set(mode = 'EDIT') \nbpy.ops.curve.make_segment()\n</code></pre>\n<p>The ideal situation would be where the spline.points would take a nested list and automatically combine them under the hood, rather than requiring calls to <code>bpy.ops</code>.</p>\n<p>Edit: For Blender 2.8+, linking objects uses 'bpy.context.collection'</p>\n"
+}

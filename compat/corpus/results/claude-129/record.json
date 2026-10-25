@@ -1,0 +1,253 @@
+{
+  "file": "claude-129.py",
+  "source_sha256": "30957e4553c8e169e72b4c65ad2034f0b88ca38dea8d371593874a5fafcdfcce",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.1741790000232868,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:11\",\"message\":\"bpy.ops.wm.read_factory_settings: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm.read_factory_settings for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:11\",\"message\":\"bpy.ops.wm: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"STATIC_UNRESOLVED\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:37\",\"message\":\"bpy.types.Material.<dynamic>: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.<dynamic> for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"STATIC_UNRESOLVED\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:39\",\"message\":\"bpy.types.Material.<dynamic>: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.<dynamic> for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:71\",\"message\":\"bpy.types.Object.matrix_parent_inverse: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.matrix_parent_inverse for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:71\",\"message\":\"bpy.types.Object.matrix_world.inverted: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:71\",\"message\":\"bpy.types.Object.matrix_world: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:94\",\"message\":\"bmesh.ops.bevel: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:111\",\"message\":\"bpy.types.Object.matrix_world.length.length: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:111\",\"message\":\"bpy.types.Object.matrix_world.length: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:111\",\"message\":\"mathutils.Vector.length.length: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Vector.length.length for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:112\",\"message\":\"bpy.types.Object.matrix_world.length.to_track_quat: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:112\",\"message\":\"bpy.types.Object.matrix_world.to_track_quat: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:112\",\"message\":\"mathutils.Vector.length.to_track_quat: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.Vector.length.to_track_quat for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:122\",\"message\":\"bmesh.ops.create_icosphere: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:131\",\"message\":\"bpy.types.Object.matrix_world.length: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:132\",\"message\":\"bpy.types.Object.matrix_world.normalized: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:145\",\"message\":\"bpy.types.Object.matrix_world: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:174\",\"message\":\"bmesh.ops.bevel: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:188\",\"message\":\"bmesh.ops.bevel: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:507\",\"message\":\"bpy.types.Object.matrix_world.normalized: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:508\",\"message\":\"bpy.types.Object.matrix_world.normalized: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:527\",\"message\":\"bmesh.ops.create_icosphere: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:535\",\"message\":\"bpy.types.Light.angle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Light.angle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:560\",\"message\":\"bpy.types.World.use_nodes=True: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:561\",\"message\":\"bpy.types.World.node_tree.nodes.get: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:561\",\"message\":\"bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:561\",\"message\":\"bpy.types.World.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py\",\"ok\":false,\"timing\":{\"python_init_ms\":51.444833,\"total_ms\":138.112209}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:11",
+        "message": "bpy.ops.wm.read_factory_settings: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.wm.read_factory_settings for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:11",
+        "message": "bpy.ops.wm: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.wm for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "STATIC_UNRESOLVED",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:37",
+        "message": "bpy.types.Material.<dynamic>: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.<dynamic> for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "STATIC_UNRESOLVED",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:39",
+        "message": "bpy.types.Material.<dynamic>: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.<dynamic> for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:71",
+        "message": "bpy.types.Object.matrix_parent_inverse: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.matrix_parent_inverse for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:71",
+        "message": "bpy.types.Object.matrix_world.inverted: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:71",
+        "message": "bpy.types.Object.matrix_world: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:94",
+        "message": "bmesh.ops.bevel: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:111",
+        "message": "bpy.types.Object.matrix_world.length.length: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:111",
+        "message": "bpy.types.Object.matrix_world.length: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:111",
+        "message": "mathutils.Vector.length.length: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Vector.length.length for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:112",
+        "message": "bpy.types.Object.matrix_world.length.to_track_quat: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:112",
+        "message": "bpy.types.Object.matrix_world.to_track_quat: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:112",
+        "message": "mathutils.Vector.length.to_track_quat: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.Vector.length.to_track_quat for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:122",
+        "message": "bmesh.ops.create_icosphere: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:131",
+        "message": "bpy.types.Object.matrix_world.length: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:132",
+        "message": "bpy.types.Object.matrix_world.normalized: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:145",
+        "message": "bpy.types.Object.matrix_world: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:174",
+        "message": "bmesh.ops.bevel: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:188",
+        "message": "bmesh.ops.bevel: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:507",
+        "message": "bpy.types.Object.matrix_world.normalized: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:508",
+        "message": "bpy.types.Object.matrix_world.normalized: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use object.location, rotation_euler and scale; use hb query bbox for evaluated world-space bounds."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:527",
+        "message": "bmesh.ops.create_icosphere: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:535",
+        "message": "bpy.types.Light.angle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Light.angle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:560",
+        "message": "bpy.types.World.use_nodes=True: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:561",
+        "message": "bpy.types.World.node_tree.nodes.get: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:561",
+        "message": "bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py:561",
+        "message": "bpy.types.World.node_tree: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 51.444833,
+      "total_ms": 138.112209
+    }
+  },
+  "blender_process": {
+    "returncode": 0,
+    "seconds": 0.8700359170034062,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-wqefas1o",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-wqefas1o\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py"
+    ],
+    "stdout": "Extensions: writing cache failed ([Errno 1] Operation not permitted: '/user-home/Library/Application Support/Blender').\nCORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py\", \"ok\": true}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n\nBlender quit\n",
+    "stderr": ""
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/claude-129.py",
+    "ok": true
+  }
+}

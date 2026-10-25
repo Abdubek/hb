@@ -1,0 +1,143 @@
+{
+  "file": "invalid/stackexchange-69525-block-1.py",
+  "source_sha256": "36a87aae5636d658e1458c8a58bc8f600fee096bc85314511b766c0b061ffcb1",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.0253859999938868,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py:9\",\"message\":\"bpy.types.Object.pose.bones.get: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.pose.bones.get for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py:9\",\"message\":\"bpy.types.Object.pose.bones: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.pose.bones for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py:9\",\"message\":\"bpy.types.Object.pose: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.pose for tested paths and parameter limits; use hb capabilities for supported alternatives.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py\",\"ok\":false,\"timing\":{\"python_init_ms\":12.036125,\"total_ms\":12.919958000000001}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py:9",
+        "message": "bpy.types.Object.pose.bones.get: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.pose.bones.get for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py:9",
+        "message": "bpy.types.Object.pose.bones: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.pose.bones for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py:9",
+        "message": "bpy.types.Object.pose: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.pose for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 12.036125,
+      "total_ms": 12.919958000000001
+    }
+  },
+  "blender_process": {
+    "returncode": 1,
+    "seconds": 0.4178170420054812,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-md09r0l6",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-md09r0l6\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py"
+    ],
+    "stdout": "CORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py\", \"ok\": false, \"exception\": \"AttributeError\", \"message\": \"'NoneType' object has no attribute 'bones'\", \"line\": 9}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n",
+    "stderr": "Traceback (most recent call last):\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py\", line 11, in <module>\n    runpy.run_path(source, run_name=\"__main__\")\n  File \"<frozen runpy>\", line 291, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py\", line 9, in <module>\n    pb = obj.pose.bones.get(name)\n         ^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'bones'\n"
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py",
+    "ok": false,
+    "exception": "AttributeError",
+    "message": "'NoneType' object has no attribute 'bones'",
+    "line": 9
+  },
+  "runtime_process": {
+    "returncode": 1,
+    "seconds": 0.0325329169863835,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-md09r0l6\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-md09r0l6/scene.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"SCRIPT_ERROR\",\"doc\":\"docs/compatibility.md#errors\",\"frames\":[{\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py\",\"function\":\"<module>\",\"line\":9}],\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py:9\",\"message\":\"'NoneType' object has no attribute 'pose'\",\"suggestion\":\"Correct the script and rerun; the scene was not saved.\"},\"ok\":false}\n",
+    "stderr": ""
+  },
+  "runtime": {
+    "error": {
+      "code": "SCRIPT_ERROR",
+      "doc": "docs/compatibility.md#errors",
+      "frames": [
+        {
+          "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py",
+          "function": "<module>",
+          "line": 9
+        }
+      ],
+      "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-69525-block-1.py:9",
+      "message": "'NoneType' object has no attribute 'pose'",
+      "suggestion": "Correct the script and rerun; the scene was not saved."
+    },
+    "ok": false
+  },
+  "runtime_probe_process": {
+    "returncode": 1,
+    "seconds": 0.03178354099509306,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-md09r0l6\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-md09r0l6/exception_probe.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-md09r0l6/probe.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"SCRIPT_ERROR\",\"doc\":\"docs/compatibility.md#errors\",\"frames\":[{\"file\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-md09r0l6/exception_probe.py\",\"function\":\"<module>\",\"line\":6}],\"location\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-md09r0l6/exception_probe.py:6\",\"message\":\"'NoneType' object has no attribute 'pose'\",\"suggestion\":\"Correct the script and rerun; the scene was not saved.\"},\"ok\":false}\n",
+    "stderr": "CORPUS_HB_EXCEPTION={\"exception\": \"AttributeError\", \"message\": \"'NoneType' object has no attribute 'pose'\", \"line\": 9}\n"
+  },
+  "runtime_exception": {
+    "exception": "AttributeError",
+    "message": "'NoneType' object has no attribute 'pose'",
+    "line": 9
+  },
+  "error_parity": {
+    "hb_rejected": true,
+    "same_message": false,
+    "same_line": true,
+    "probe_matches_direct_run": true,
+    "same_exception_class": true,
+    "status": "different_error"
+  }
+}

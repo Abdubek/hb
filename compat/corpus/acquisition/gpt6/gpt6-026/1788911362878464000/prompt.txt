@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+gpt6-026: A wooden pallet carrying six labeled crates
+gpt6-027: A rolling office chair with five casters
+gpt6-028: A freestanding floor lamp with adjustable arm
+gpt6-029: A warehouse rack containing boxes and barrels
+gpt6-030: A compact forklift with forks, mast and wheels

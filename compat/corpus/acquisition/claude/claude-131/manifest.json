@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-131.py",
+      "task": "A compact recording studio with acoustic treatment, mixing desk and monitor speakers",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "566d1bfe507c36b6163cd9e93e9d39e48548c5efc095c30d2a83dd60e27ab322",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-131/1788913924155878000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 280.52948117256165
+}

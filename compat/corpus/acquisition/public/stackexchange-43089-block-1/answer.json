@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 3732141,
+    "reputation": 16191,
+    "user_id": 15861,
+    "user_type": "registered",
+    "accept_rate": 57,
+    "profile_image": "https://graph.facebook.com/780312555/picture?type=large",
+    "display_name": "TLousky",
+    "link": "https://blender.stackexchange.com/users/15861/tlousky"
+  },
+  "is_accepted": true,
+  "score": 14,
+  "last_activity_date": 1450201679,
+  "last_edit_date": 1450201679,
+  "creation_date": 1450201020,
+  "answer_id": 43089,
+  "question_id": 43086,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<pre><code>import bpy\nfrom math import *  # It's considered bad practice to import everything from a library, especially when you're not using any (or just a few) of its function\nimport mathutils\n\nName = 'Dimi'\n\n# The primitive_cylinder_add does not return the object, but rather only a status indicating success or failure\nexitStatus = bpy.ops.mesh.primitive_cylinder_add(radius = 0.5, depth = 1)\nscj = bpy.context.scene\n\n# The added cylinder will be the active object afterits created\nob = bpy.context.object\nme = ob.data\nob.name = Name\n\n# These two lines are unnecessary and will generate another copy of your cylinder\n#ob = bpy.data.objects.new(Name, me1)\n#scj.objects.link(ob)\n\n# If you want to move your object, simply set its location thus:\nob.location = ( 4, 0, 0 )\n\n# And you can rotate the object the same way\nob.rotation_euler = (0,0,0)  # Note that you need to use radians rather than angles here\n</code></pre>\n"
+}

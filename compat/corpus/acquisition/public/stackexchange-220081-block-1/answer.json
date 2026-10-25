@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": false,
+  "score": 11,
+  "last_activity_date": 1618850298,
+  "last_edit_date": 1618850298,
+  "creation_date": 1618848875,
+  "answer_id": 220081,
+  "question_id": 220072,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>Check it exists and is linked to scene.</strong></p>\n<p>IMO Two tests required here, one to test if collection exists, and secondly if it is linked at any level to the current scene.  A quick test for the latter is to see if the scene is a user of the collection.</p>\n<pre><code>import bpy\ncontext = bpy.context\n\n# name of collection\nname = &quot;Foo&quot;\n\nscene = context.scene\n\ncoll = bpy.data.collections.get(name)\n# if it doesn't exist create it\nif coll is None:\n    coll = bpy.data.collections.new(name)\n# if it is not linked to scene colleciton treelink it\nif not scene.user_of_id(coll):\n    context.collection.children.link(coll)\n</code></pre>\n<p>Related</p>\n<p><a href=\"https://blender.stackexchange.com/questions/167878/how-to-get-all-collections-of-the-current-scene/167889#167889\">How to get all collections of the current scene?</a></p>\n"
+}

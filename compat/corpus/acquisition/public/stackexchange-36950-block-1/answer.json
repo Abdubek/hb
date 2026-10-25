@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 3274879,
+    "reputation": 10011,
+    "user_id": 2271,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/5SCGc.png?s=256",
+    "display_name": "pink vertex",
+    "link": "https://blender.stackexchange.com/users/2271/pink-vertex"
+  },
+  "is_accepted": true,
+  "score": 12,
+  "last_activity_date": 1597742094,
+  "last_edit_date": 1597742094,
+  "creation_date": 1441282903,
+  "answer_id": 36950,
+  "question_id": 36902,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>It is also possible to directly keyframe the positions of the mesh vertices</p>\n<p>Edit updated for 2.8.</p>\n<pre><code>import bpy\nfrom mathutils import Vector\n\ndef insert_keyframe(fcurves, frame, values):\n    for fcu, val in zip(fcurves, values):\n        fcu.keyframe_points.insert(frame, val, options={'FAST'})\n\nobj = bpy.context.active_object\nmesh = obj.data\naction = bpy.data.actions.new(&quot;MeshAnimation&quot;)\n\nmesh.animation_data_create()\nmesh.animation_data.action = action\n\ndata_path = &quot;vertices[%d].co&quot;\nvec_z = Vector((0.0, 0.0, 1.0))\n\nframes = 0, 25, 50, 75, 100\nvalues = 0.0, 3.0, 5.0, 3.0, 0.0\n\nfor v in mesh.vertices:\n    fcurves = [action.fcurves.new(data_path % v.index, index =  i) for i in range(3)]\n    co_rest = v.co\n\n    for t, value in zip(frames, values):\n        co_kf = co_rest + value * vec_z\n        insert_keyframe(fcurves, t, co_kf)     \n</code></pre>\n"
+}

@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 9457372,
+    "reputation": 7115,
+    "user_id": 109459,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/yLhDC.jpg?s=256",
+    "display_name": "X Y",
+    "link": "https://blender.stackexchange.com/users/109459/x-y"
+  },
+  "is_accepted": true,
+  "score": 6,
+  "last_activity_date": 1676385744,
+  "last_edit_date": 1676385744,
+  "creation_date": 1676379811,
+  "answer_id": 286200,
+  "question_id": 286171,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<pre><code>import bpy\n\n# strokes = bpy.data.grease_pencils[&quot;Annotations&quot;].layers['RulerData3D'].frames[0].strokes\n\ndef is_measure_tool_active():\n    try:\n        if 'builtin.measure' in bpy.context.workspace.tools: return True\n        return False\n    except: return False\n\ndef set_active_tool(tool_name):\n    for area in bpy.context.screen.areas:\n        if area.type == &quot;VIEW_3D&quot;:\n            override = bpy.context.copy()\n            override[&quot;space_data&quot;] = area.spaces[0]\n            override[&quot;area&quot;] = area\n            bpy.ops.wm.tool_set_by_id(override, name=tool_name)\n            break\n\ndef refresh():\n    if is_measure_tool_active():\n        set_active_tool(&quot;builtin.select_box&quot;)\n        set_active_tool(&quot;builtin.measure&quot;)\n\ndef get_layers():\n    try: return bpy.data.grease_pencils[&quot;Annotations&quot;].layers\n    except: return None\n\nlayers = get_layers()\n\nif layers is not None and 'RulerData3D' in layers:\n    layers.remove(layers['RulerData3D'])\n\n    refresh()\n</code></pre>\n"
+}

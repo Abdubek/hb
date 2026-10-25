@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 1896576,
+    "reputation": 201,
+    "user_id": 12755,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/62f4c2e3bb79e33246aa465ca20fd3b1?s=256&d=identicon&r=PG",
+    "display_name": "amartin7211",
+    "link": "https://blender.stackexchange.com/users/12755/amartin7211"
+  },
+  "is_accepted": false,
+  "score": 10,
+  "last_activity_date": 1424653299,
+  "last_edit_date": 1424653299,
+  "creation_date": 1424646919,
+  "answer_id": 26146,
+  "question_id": 16511,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>I had trouble getting the other answer for the nested lists to work without the complete code. Here is an example of the answer that should work directly pasted into the text editor:</p>\n\n<pre><code>import bpy\n\nclass subcustomPropertiesGroup(bpy.types.PropertyGroup):\n    customString = bpy.props.StringProperty()\nbpy.utils.register_class(subcustomPropertiesGroup)\n\nclass customPropertiesGroup(bpy.types.PropertyGroup):\n    subLists = bpy.props.CollectionProperty(type=subcustomPropertiesGroup)    \nbpy.utils.register_class(customPropertiesGroup)\n\nbpy.types.Scene.customLists = bpy.props.CollectionProperty(type=customPropertiesGroup)\nbpy.types.Scene.subLists = bpy.props.CollectionProperty(type=subcustomPropertiesGroup)\n\nbpy.context.scene.customLists.clear()\nbpy.context.scene.subLists.clear()\n\nbpy.context.scene.customLists.add().name = 'list1'\nbpy.context.scene.customLists.add().name = 'list2'\n\nnewCustomItem = bpy.context.scene.customLists['list1'].subLists.add()\nnewCustomItem.customString = \"test1\"\nnewCustomItem = bpy.context.scene.customLists['list1'].subLists.add()\nnewCustomItem.customString = \"test2\"\nnewCustomItem = bpy.context.scene.customLists['list2'].subLists.add()\nnewCustomItem.customString = \"test3\"\nnewCustomItem = bpy.context.scene.customLists['list2'].subLists.add()\nnewCustomItem.customString = \"test4\"\n\nprint('_______________')\nfor customList in bpy.context.scene.customLists:\n\n    print(\"List: \"+customList.name)\n\n    for subList in customList.subLists:\n\n        print(\"Property: \"+subList.customString)\n</code></pre>\n\n<p>Hope this helps other beginners.</p>\n"
+}

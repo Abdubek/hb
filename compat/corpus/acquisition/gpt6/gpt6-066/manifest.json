@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-066.py",
+      "task": "A parking meter beside a curb",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "c518d357cf2cd0d1791b6dbba36c360c9e7cdafa7ee642463feaa262a64f44ba",
+      "response": "acquisition/gpt6/gpt6-066/1788912811752143000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-067.py",
+      "task": "A luggage cart with handles and stacked suitcases",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "efd74f660518470c434736477648941c6c2e9660d30bb6f7e14a73bf8cb65b4c",
+      "response": "acquisition/gpt6/gpt6-066/1788912811752143000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-068.py",
+      "task": "A suitcase with wheels, handle and corner bumpers",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "7897727f2a349d0d8d504b63684725920e0cec807631e96ad53794f18f5f4e6b",
+      "response": "acquisition/gpt6/gpt6-066/1788912811752143000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-069.py",
+      "task": "A camera tripod with spread legs and central column",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "4d09de312d3feb2286f7817029db0bbfffa1e7bf81dd3dadfe1f288ccb9df188",
+      "response": "acquisition/gpt6/gpt6-066/1788912811752143000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-070.py",
+      "task": "A chess table with simple geometric pieces",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "f33a12eee898be9686162090a16e1dc0a73b32b87cfc07c2abaa4fc375f310b1",
+      "response": "acquisition/gpt6/gpt6-066/1788912811752143000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 522.0098121166229
+}

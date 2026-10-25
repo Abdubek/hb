@@ -1,0 +1,171 @@
+{
+  "file": "invalid/stackexchange-14914-block-1.py",
+  "source_sha256": "90e4e7e43bcb4bf15b9ddb0af17c041cb51f6fb46fd3f903ae4c804bac618d62",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.025286707998020574,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:4\",\"message\":\"bpy.context.scene.node_tree.nodes: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.node_tree.nodes for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:4\",\"message\":\"bpy.context.scene.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.node_tree for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:7\",\"message\":\"bpy.context.scene.node_tree.nodes.new: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.node_tree.nodes.new for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:8\",\"message\":\"bpy.types.ShaderNode.base_path: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.base_path for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:10\",\"message\":\"bpy.context.scene.node_tree.links.new: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.node_tree.links.new for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:10\",\"message\":\"bpy.context.scene.node_tree.links: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.node_tree.links for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:10\",\"message\":\"bpy.context.scene.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.node_tree for tested paths and parameter limits; use hb capabilities for supported alternatives.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py\",\"ok\":false,\"timing\":{\"python_init_ms\":13.182833,\"total_ms\":14.162457999999999}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:4",
+        "message": "bpy.context.scene.node_tree.nodes: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.node_tree.nodes for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:4",
+        "message": "bpy.context.scene.node_tree: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.node_tree for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:7",
+        "message": "bpy.context.scene.node_tree.nodes.new: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.node_tree.nodes.new for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:8",
+        "message": "bpy.types.ShaderNode.base_path: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.base_path for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:10",
+        "message": "bpy.context.scene.node_tree.links.new: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.node_tree.links.new for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:10",
+        "message": "bpy.context.scene.node_tree.links: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.node_tree.links for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:10",
+        "message": "bpy.context.scene.node_tree: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.node_tree for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 13.182833,
+      "total_ms": 14.162457999999999
+    }
+  },
+  "blender_process": {
+    "returncode": 1,
+    "seconds": 0.43484045899822377,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dzvoea11",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dzvoea11\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py"
+    ],
+    "stdout": "CORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py\", \"ok\": false, \"exception\": \"AttributeError\", \"message\": \"'NoneType' object has no attribute 'nodes'\", \"line\": 4}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n",
+    "stderr": "Traceback (most recent call last):\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py\", line 11, in <module>\n    runpy.run_path(source, run_name=\"__main__\")\n  File \"<frozen runpy>\", line 291, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py\", line 4, in <module>\n    nodes = scene.node_tree.nodes\n            ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'nodes'\n"
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py",
+    "ok": false,
+    "exception": "AttributeError",
+    "message": "'NoneType' object has no attribute 'nodes'",
+    "line": 4
+  },
+  "runtime_process": {
+    "returncode": 1,
+    "seconds": 0.032215958985034376,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dzvoea11\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dzvoea11/scene.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"frames\":[{\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py\",\"function\":\"<module>\",\"line\":4}],\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:4\",\"message\":\"bpy.context.scene.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.node_tree for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},\"ok\":false}\n",
+    "stderr": ""
+  },
+  "runtime": {
+    "error": {
+      "code": "UNSUPPORTED_API",
+      "doc": "docs/compatibility.md#unsupported",
+      "frames": [
+        {
+          "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py",
+          "function": "<module>",
+          "line": 4
+        }
+      ],
+      "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/stackexchange-14914-block-1.py:4",
+      "message": "bpy.context.scene.node_tree: This path is outside the tested hb modeling subset.",
+      "suggestion": "Inspect hb api bpy.context.scene.node_tree for tested paths and parameter limits; use hb capabilities for supported alternatives."
+    },
+    "ok": false
+  },
+  "runtime_probe_process": {
+    "returncode": 1,
+    "seconds": 0.03134749998571351,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dzvoea11\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dzvoea11/exception_probe.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dzvoea11/probe.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"frames\":[{\"file\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dzvoea11/exception_probe.py\",\"function\":\"<module>\",\"line\":6}],\"location\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dzvoea11/exception_probe.py:6\",\"message\":\"bpy.context.scene.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.node_tree for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},\"ok\":false}\n",
+    "stderr": "CORPUS_HB_EXCEPTION={\"exception\": \"UnsupportedError\", \"message\": \"bpy.context.scene.node_tree: This path is outside the tested hb modeling subset.\", \"line\": 4}\n"
+  },
+  "runtime_exception": {
+    "exception": "UnsupportedError",
+    "message": "bpy.context.scene.node_tree: This path is outside the tested hb modeling subset.",
+    "line": 4
+  },
+  "error_parity": {
+    "hb_rejected": true,
+    "same_message": false,
+    "same_line": true,
+    "probe_matches_direct_run": true,
+    "same_exception_class": false,
+    "status": "different_error"
+  }
+}

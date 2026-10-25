@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-313554-block-2.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/313554",
+      "author": "Markus von Broady",
+      "author_url": "https://blender.stackexchange.com/users/60486/markus-von-broady",
+      "license": "CC BY-SA 4.0",
+      "answer_id": 313554,
+      "code_block": 2,
+      "sha256": "57cc7da29989df6f8f5c967a3f197a3b30e7f0b07817b63402c3a312d4ff9fcb",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1708823094,
+      "last_edit_date": 1708875590,
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/313554/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-313554-block-2/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "claude-041.py",
+      "task": "A tiny house with porch, pitched roof and chimney",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "6f37bd2f6ae3a95b3f5f3307a0acb57e2ec9ddf9a5054c85757d5c92e8bb8b41",
+      "response": "acquisition/claude/claude-041/1788911759623715000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-042.py",
+      "task": "A greenhouse with frame, roof and planting tables",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "db1befe860a171f96b4f595951a4ce20540b611df8c035acc376b5251294dbfa",
+      "response": "acquisition/claude/claude-041/1788911759623715000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-043.py",
+      "task": "A public drinking fountain with two basins",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "e2bb51869a4a1fddfd24678b11fb0851fbae082dd514188ad8d923be3e22a1f5",
+      "response": "acquisition/claude/claude-041/1788911759623715000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-044.py",
+      "task": "A tiled swimming pool with ladder and surrounding deck",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "bfb0a0f7a885ebed5cd1e9fd76ff0c15288a3287a34a7e6a4e8fb3e73d1dfb0e",
+      "response": "acquisition/claude/claude-041/1788911759623715000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-045.py",
+      "task": "A staircase with landing and handrails",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "ab7a1fa3a22b1a312adeee3a42aa53959231b44356fdbb8418a0b601afd632d2",
+      "response": "acquisition/claude/claude-041/1788911759623715000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 1052.1264250278473
+}

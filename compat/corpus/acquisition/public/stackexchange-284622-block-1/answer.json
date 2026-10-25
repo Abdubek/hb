@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 26099610,
+    "reputation": 862,
+    "user_id": 153409,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/b12fbe912ad8a8046a50d52bec360e1e?s=256&d=identicon&r=PG",
+    "display_name": "Muzammil",
+    "link": "https://blender.stackexchange.com/users/153409/muzammil"
+  },
+  "is_accepted": true,
+  "score": 7,
+  "last_activity_date": 1674727213,
+  "last_edit_date": 1674727213,
+  "creation_date": 1674712787,
+  "answer_id": 284622,
+  "question_id": 284605,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>This is how you can get it.</p>\n<pre><code>import bpy\n\n# Reference the node group\ngeometry_node = bpy.data.node_groups['Geometry Nodes']\n\n# Reference the String to Curves node\ncurve_node = geometry_node.nodes['String to Curves']\n\n# Get the font\nfont = curve_node.font\nprint(font)\n# Get the font name\nprint(font.name)\n</code></pre>\n"
+}

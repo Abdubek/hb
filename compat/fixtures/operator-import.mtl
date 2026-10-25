@@ -1,0 +1,7 @@
+newmtl OBJ paint
+Ka 0.2 0.2 0.2
+Kd 0.3 0.5 0.7
+Ks 0.5 0.5 0.5
+Ns 250
+d 1
+illum 2

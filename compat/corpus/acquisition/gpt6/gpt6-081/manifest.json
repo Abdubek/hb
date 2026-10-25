@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-081.py",
+      "task": "A suspension bridge study with towers, cables and deck",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "7329102f3e3ecd7285d19ccfd53007b773af22d3fa01a847408abfe91ce0a0ce",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-081/1788911460973980000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-082.py",
+      "task": "A modern pavilion with curved roof and slim columns",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "3386d4ae98fdef68de375e3ff0c700e5c2d67006693593f7c3c14cce09d5b06c",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-081/1788911460973980000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-083.py",
+      "task": "A spiral display stand with staggered circular shelves",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "e4ce5afe81e4f7e570d14baf76d937d66a4785edd445b113f7fcc2b900736dbe",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-081/1788911460973980000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-084.py",
+      "task": "A cylindrical perfume bottle with cap and label panel",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "6b2a8e14e7de4c81dea07a7de03c2afbb5de06d54ffd8e97286c004008977733",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-081/1788911460973980000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-085.py",
+      "task": "A desk organizer with pen cups and paper tray",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "3dcf75d0ece5e8f45590387fca833df183bd1f26281dc5a8e3ccd5a6ebb52519",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-081/1788911460973980000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 420.1346230506897
+}

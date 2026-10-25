@@ -1,0 +1,1107 @@
+{
+  "corpus_kind": "synthetic seed, 25 families with 8 parameter variants; not an independent production corpus",
+  "scripts": 200,
+  "static_pass": 192,
+  "runtime_pass": 192,
+  "blender_golden_pass": 192,
+  "symbol_frequency": {
+    "bpy.context": 248,
+    "bpy.context.object": 232,
+    "bpy.ops": 224,
+    "bpy.ops.mesh": 216,
+    "bpy.ops.mesh.primitive_cube_add": 200,
+    "bpy.data": 24,
+    "bpy.context.object.name": 16,
+    "bpy.context.object.modifiers.new": 8,
+    "bpy.context.object.modifiers": 8,
+    "bpy.context.scene.camera": 8,
+    "bpy.data.cameras.new": 8,
+    "bpy.data.objects.new": 8,
+    "bpy.context.collection.objects.link": 8,
+    "bpy.context.scene": 8,
+    "bpy.data.cameras": 8,
+    "bpy.data.objects": 8,
+    "bpy.context.collection.objects": 8,
+    "bpy.context.collection": 8,
+    "bpy.data.materials.new": 8,
+    "bpy.context.object.data.materials.append": 8,
+    "bpy.data.materials": 8,
+    "bpy.context.object.data.materials": 8,
+    "bpy.context.object.data": 8,
+    "bpy.ops.mesh.primitive_cylinder_add": 8,
+    "bpy.ops.mesh.primitive_uv_sphere_add": 8,
+    "bpy.ops.object.shade_smooth": 8,
+    "bpy.ops.object": 8
+  },
+  "unsupported_frequency": {
+    "bpy.types.Object.modifiers.new(type=BEVEL; mesh has UVs, create cube with calc_uvs=False)": 8
+  },
+  "results": [
+    {
+      "script": "acoustic_panels_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "acoustic_panels_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "acoustic_panels_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "acoustic_panels_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "acoustic_panels_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "acoustic_panels_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "acoustic_panels_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "acoustic_panels_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bench_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bench_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bench_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bench_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bench_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bench_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bench_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bench_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "beveled_case_00.py",
+      "static_pass": false,
+      "errors": [
+        {
+          "code": "UNSUPPORTED_API",
+          "doc": "docs/compatibility.md#unsupported",
+          "location": "/workspace/compat/corpus/beveled_case_00.py:15",
+          "message": "bpy.types.Object.modifiers.new(type=BEVEL; mesh has UVs, create cube with calc_uvs=False): This path is outside the tested hb modeling subset.",
+          "suggestion": "Inspect hb api --json for tested paths and parameter limits. Modeling currently supports Vector, standalone bmesh edits, face-region extrusion, closed-solid normal repair and cube/grid/circle/cone/UV-sphere creation, mesh primitives including torus, mesh joining, transform baking, ARRAY/MIRROR/SOLIDIFY/TRIANGULATE/WELD and UV-free cuboid BEVEL subsets."
+        }
+      ]
+    },
+    {
+      "script": "beveled_case_01.py",
+      "static_pass": false,
+      "errors": [
+        {
+          "code": "UNSUPPORTED_API",
+          "doc": "docs/compatibility.md#unsupported",
+          "location": "/workspace/compat/corpus/beveled_case_01.py:15",
+          "message": "bpy.types.Object.modifiers.new(type=BEVEL; mesh has UVs, create cube with calc_uvs=False): This path is outside the tested hb modeling subset.",
+          "suggestion": "Inspect hb api --json for tested paths and parameter limits. Modeling currently supports Vector, standalone bmesh edits, face-region extrusion, closed-solid normal repair and cube/grid/circle/cone/UV-sphere creation, mesh primitives including torus, mesh joining, transform baking, ARRAY/MIRROR/SOLIDIFY/TRIANGULATE/WELD and UV-free cuboid BEVEL subsets."
+        }
+      ]
+    },
+    {
+      "script": "beveled_case_02.py",
+      "static_pass": false,
+      "errors": [
+        {
+          "code": "UNSUPPORTED_API",
+          "doc": "docs/compatibility.md#unsupported",
+          "location": "/workspace/compat/corpus/beveled_case_02.py:15",
+          "message": "bpy.types.Object.modifiers.new(type=BEVEL; mesh has UVs, create cube with calc_uvs=False): This path is outside the tested hb modeling subset.",
+          "suggestion": "Inspect hb api --json for tested paths and parameter limits. Modeling currently supports Vector, standalone bmesh edits, face-region extrusion, closed-solid normal repair and cube/grid/circle/cone/UV-sphere creation, mesh primitives including torus, mesh joining, transform baking, ARRAY/MIRROR/SOLIDIFY/TRIANGULATE/WELD and UV-free cuboid BEVEL subsets."
+        }
+      ]
+    },
+    {
+      "script": "beveled_case_03.py",
+      "static_pass": false,
+      "errors": [
+        {
+          "code": "UNSUPPORTED_API",
+          "doc": "docs/compatibility.md#unsupported",
+          "location": "/workspace/compat/corpus/beveled_case_03.py:15",
+          "message": "bpy.types.Object.modifiers.new(type=BEVEL; mesh has UVs, create cube with calc_uvs=False): This path is outside the tested hb modeling subset.",
+          "suggestion": "Inspect hb api --json for tested paths and parameter limits. Modeling currently supports Vector, standalone bmesh edits, face-region extrusion, closed-solid normal repair and cube/grid/circle/cone/UV-sphere creation, mesh primitives including torus, mesh joining, transform baking, ARRAY/MIRROR/SOLIDIFY/TRIANGULATE/WELD and UV-free cuboid BEVEL subsets."
+        }
+      ]
+    },
+    {
+      "script": "beveled_case_04.py",
+      "static_pass": false,
+      "errors": [
+        {
+          "code": "UNSUPPORTED_API",
+          "doc": "docs/compatibility.md#unsupported",
+          "location": "/workspace/compat/corpus/beveled_case_04.py:15",
+          "message": "bpy.types.Object.modifiers.new(type=BEVEL; mesh has UVs, create cube with calc_uvs=False): This path is outside the tested hb modeling subset.",
+          "suggestion": "Inspect hb api --json for tested paths and parameter limits. Modeling currently supports Vector, standalone bmesh edits, face-region extrusion, closed-solid normal repair and cube/grid/circle/cone/UV-sphere creation, mesh primitives including torus, mesh joining, transform baking, ARRAY/MIRROR/SOLIDIFY/TRIANGULATE/WELD and UV-free cuboid BEVEL subsets."
+        }
+      ]
+    },
+    {
+      "script": "beveled_case_05.py",
+      "static_pass": false,
+      "errors": [
+        {
+          "code": "UNSUPPORTED_API",
+          "doc": "docs/compatibility.md#unsupported",
+          "location": "/workspace/compat/corpus/beveled_case_05.py:15",
+          "message": "bpy.types.Object.modifiers.new(type=BEVEL; mesh has UVs, create cube with calc_uvs=False): This path is outside the tested hb modeling subset.",
+          "suggestion": "Inspect hb api --json for tested paths and parameter limits. Modeling currently supports Vector, standalone bmesh edits, face-region extrusion, closed-solid normal repair and cube/grid/circle/cone/UV-sphere creation, mesh primitives including torus, mesh joining, transform baking, ARRAY/MIRROR/SOLIDIFY/TRIANGULATE/WELD and UV-free cuboid BEVEL subsets."
+        }
+      ]
+    },
+    {
+      "script": "beveled_case_06.py",
+      "static_pass": false,
+      "errors": [
+        {
+          "code": "UNSUPPORTED_API",
+          "doc": "docs/compatibility.md#unsupported",
+          "location": "/workspace/compat/corpus/beveled_case_06.py:15",
+          "message": "bpy.types.Object.modifiers.new(type=BEVEL; mesh has UVs, create cube with calc_uvs=False): This path is outside the tested hb modeling subset.",
+          "suggestion": "Inspect hb api --json for tested paths and parameter limits. Modeling currently supports Vector, standalone bmesh edits, face-region extrusion, closed-solid normal repair and cube/grid/circle/cone/UV-sphere creation, mesh primitives including torus, mesh joining, transform baking, ARRAY/MIRROR/SOLIDIFY/TRIANGULATE/WELD and UV-free cuboid BEVEL subsets."
+        }
+      ]
+    },
+    {
+      "script": "beveled_case_07.py",
+      "static_pass": false,
+      "errors": [
+        {
+          "code": "UNSUPPORTED_API",
+          "doc": "docs/compatibility.md#unsupported",
+          "location": "/workspace/compat/corpus/beveled_case_07.py:15",
+          "message": "bpy.types.Object.modifiers.new(type=BEVEL; mesh has UVs, create cube with calc_uvs=False): This path is outside the tested hb modeling subset.",
+          "suggestion": "Inspect hb api --json for tested paths and parameter limits. Modeling currently supports Vector, standalone bmesh edits, face-region extrusion, closed-solid normal repair and cube/grid/circle/cone/UV-sphere creation, mesh primitives including torus, mesh joining, transform baking, ARRAY/MIRROR/SOLIDIFY/TRIANGULATE/WELD and UV-free cuboid BEVEL subsets."
+        }
+      ]
+    },
+    {
+      "script": "bookcase_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bookcase_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bookcase_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bookcase_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bookcase_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bookcase_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bookcase_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bookcase_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bridge_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bridge_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bridge_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bridge_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bridge_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bridge_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bridge_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "bridge_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "cabinet_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "cabinet_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "cabinet_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "cabinet_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "cabinet_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "cabinet_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "cabinet_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "cabinet_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "city_blocks_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "city_blocks_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "city_blocks_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "city_blocks_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "city_blocks_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "city_blocks_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "city_blocks_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "city_blocks_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "desk_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "desk_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "desk_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "desk_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "desk_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "desk_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "desk_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "desk_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "dominoes_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "dominoes_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "dominoes_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "dominoes_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "dominoes_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "dominoes_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "dominoes_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "dominoes_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "game_console_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "game_console_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "game_console_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "game_console_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "game_console_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "game_console_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "game_console_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "game_console_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "keyboard_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "keyboard_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "keyboard_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "keyboard_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "keyboard_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "keyboard_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "keyboard_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "keyboard_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "monitor_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "monitor_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "monitor_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "monitor_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "monitor_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "monitor_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "monitor_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "monitor_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pallet_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pallet_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pallet_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pallet_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pallet_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pallet_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pallet_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pallet_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pergola_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pergola_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pergola_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pergola_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pergola_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pergola_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pergola_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "pergola_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "picture_frame_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "picture_frame_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "picture_frame_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "picture_frame_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "picture_frame_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "picture_frame_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "picture_frame_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "picture_frame_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_camera_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_camera_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_camera_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_camera_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_camera_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_camera_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_camera_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_camera_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_material_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_material_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_material_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_material_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_material_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_material_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_material_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "product_material_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "robot_blockout_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "robot_blockout_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "robot_blockout_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "robot_blockout_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "robot_blockout_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "robot_blockout_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "robot_blockout_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "robot_blockout_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "room_shell_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "room_shell_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "room_shell_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "room_shell_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "room_shell_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "room_shell_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "room_shell_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "room_shell_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "rover_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "rover_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "rover_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "rover_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "rover_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "rover_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "rover_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "rover_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "server_rack_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "server_rack_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "server_rack_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "server_rack_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "server_rack_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "server_rack_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "server_rack_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "server_rack_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "shipping_crate_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "shipping_crate_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "shipping_crate_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "shipping_crate_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "shipping_crate_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "shipping_crate_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "shipping_crate_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "shipping_crate_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "sphere_lamp_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "sphere_lamp_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "sphere_lamp_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "sphere_lamp_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "sphere_lamp_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "sphere_lamp_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "sphere_lamp_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "sphere_lamp_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "staircase_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "staircase_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "staircase_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "staircase_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "staircase_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "staircase_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "staircase_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "staircase_07.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "window_grid_00.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "window_grid_01.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "window_grid_02.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "window_grid_03.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "window_grid_04.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "window_grid_05.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "window_grid_06.py",
+      "static_pass": true,
+      "errors": []
+    },
+    {
+      "script": "window_grid_07.py",
+      "static_pass": true,
+      "errors": []
+    }
+  ],
+  "static_pass_runtime_rejected": [],
+  "runtime_evidence": "compat/golden-report.json; regenerate after source or corpus changes"
+}

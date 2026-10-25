@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": false,
+  "score": 11,
+  "last_activity_date": 1450201089,
+  "creation_date": 1450201089,
+  "answer_id": 43090,
+  "question_id": 43086,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>I think you want something akin to, </p>\n\n<pre><code>import bpy\nfrom math import radians\nfrom mathutils import Vector\n\ncontext = bpy.context\nName = 'Dimi'\n# operators don't return object refs.\nbpy.ops.mesh.primitive_cylinder_add(radius = 0.5, depth = 1)\n\nscene = context.scene\nob = scene.objects.active # the newly added cylinder.\nob.name = Name\n# move the object\nob.location += Vector((4, 0, 0))\n# set the objects rotation\nob.rotation_euler = (0, 0, radians(20))\n</code></pre>\n\n<p>bpy.ops.mesh.primitive..add returns an object when run in object mode, or adds that primitive to a mesh when run in edit mode.  Did you really want to move all objects in the scene?</p>\n"
+}

@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-131.py",
+      "task": "A compact recording studio with acoustic treatment, mixing desk and monitor speakers",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "9991ad4d710218b59973b2418ac9d766ffae61913fdbfaacb9895ceb2591fd88",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-131/1788912427953786000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-132.py",
+      "task": "A corner cafe interior with banquette seating, counter and pendant lighting",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "6e420021b9eab88faf6002fc9960a151bc7278b8927d89e06cce56cf4b024cfd",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-131/1788912427953786000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-133.py",
+      "task": "A small public library interior with reading tables, book stacks and skylights",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "244be98fbf1d5fc3356fb1d0bd627637523e5953911fcfe59d48f70e40068e78",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-131/1788912427953786000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-134.py",
+      "task": "A shoe shop interior with wall shelving, mirror, display islands and checkout desk",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "247e8801c3adf1ff6b082278a0e0d5229eb47c5e5a939d233f200b09622b5bd2",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-131/1788912427953786000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-135.py",
+      "task": "A dentist waiting room with reception window, seating, magazine table and planters",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "39fcf59ee43aeec4fe57a04de93c0ea506ffd50dd63cfedb39441f66400c0c61",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-131/1788912427953786000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 536.5163180828094
+}

@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-041.py",
+      "task": "A tiny house with porch, pitched roof and chimney",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "b456025dd1c32113c9953293b304689d9f70054e796c14ed07ce2e2197818817",
+      "response": "acquisition/gpt6/gpt6-041/1788911782562653000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-042.py",
+      "task": "A greenhouse with frame, roof and planting tables",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "0166a1b52f62d5b6f6c0772e4eebfd4b3449569e5c55b33585e4987313c67256",
+      "response": "acquisition/gpt6/gpt6-041/1788911782562653000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-043.py",
+      "task": "A public drinking fountain with two basins",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "5771bc3ff0278171a8be918b696dbb6f38c958e96da66e8267115727815a3e2d",
+      "response": "acquisition/gpt6/gpt6-041/1788911782562653000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-044.py",
+      "task": "A tiled swimming pool with ladder and surrounding deck",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "bd5d99271c44e36d1f427dc98151ee151fa3233d2cff5bc244d940bc5427bf0c",
+      "response": "acquisition/gpt6/gpt6-041/1788911782562653000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-045.py",
+      "task": "A staircase with landing and handrails",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "4185db3bbb6ef29d7713431d505b4f74ed095317b8b7bbdda760c07d2330f1be",
+      "response": "acquisition/gpt6/gpt6-041/1788911782562653000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 583.6664328575134
+}

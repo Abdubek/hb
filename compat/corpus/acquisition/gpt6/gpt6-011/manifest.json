@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-011.py",
+      "task": "A low-poly coffee maker with carafe and buttons",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "a557d16be567144d7abfe3216db517495250b68709fdd6b93b8dacbe16e74f9e",
+      "response": "acquisition/gpt6/gpt6-011/1788910891240435000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-012.py",
+      "task": "A camera body with lens and top controls",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "47280ba7b481f2c1178564430ec280cfde8e1dad34d273edb03425b34d556d05",
+      "response": "acquisition/gpt6/gpt6-011/1788910891240435000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-013.py",
+      "task": "A record player with platter, tonearm and cover",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "0b96f99c1e20b51a85700b2649709e32ce0245ab916aa8ca6c9241b3f670e92d",
+      "response": "acquisition/gpt6/gpt6-011/1788910891240435000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-014.py",
+      "task": "A modular bookshelf with staggered shelves and books",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "295d0a258f7708b8aace685152e3c6cac02a9284f28c630d876342f5e00a36f7",
+      "response": "acquisition/gpt6/gpt6-011/1788910891240435000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-015.py",
+      "task": "A three-story building facade with balconies",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "bad1478c44405053f91a8db00ac05444d4f1b01849414879420cfc5b8f632589",
+      "response": "acquisition/gpt6/gpt6-011/1788910891240435000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 835.569210767746
+}

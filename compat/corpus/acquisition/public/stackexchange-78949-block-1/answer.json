@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 4,
+  "last_activity_date": 1493822122,
+  "creation_date": 1493822122,
+  "answer_id": 78949,
+  "question_id": 78397,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>Can also obtain the equivalent of keystrokes gxx5 rzz45 gxx5, (ie local transform on x by 5, rotate on z by 45 degrees, local transform again by 5), by creating <a href=\"https://docs.blender.org/api/blender_python_api_current/mathutils.html#mathutils.Matrix.Translation\" rel=\"nofollow noreferrer\">transform</a> and <a href=\"https://docs.blender.org/api/blender_python_api_current/mathutils.html#mathutils.Matrix.Rotation\" rel=\"nofollow noreferrer\">rotation</a> matrices, and chaining them together via matrix multiplication in the order wanted.</p>\n\n<pre><code>import bpy\nfrom mathutils import Matrix\nfrom math import radians\n\n# Translation matrices\nT0 = T1 = Matrix.Translation((5, 0, 0))\n\n# Rotation matrix\nR0 = Matrix.Rotation(radians(45), 4, 'Z')\n\nobj = bpy.context.object\n\n#  \nM = T0 * R0 * T1\n\nobj.matrix_world = M * obj.matrix_world\n</code></pre>\n"
+}

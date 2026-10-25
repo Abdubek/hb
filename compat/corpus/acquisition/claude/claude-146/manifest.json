@@ -1,0 +1,70 @@
+{
+  "scripts": [
+    {
+      "file": "claude-146.py",
+      "task": "A landscaped amphitheater with concentric terraces and side access stairs",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "19fc75e1bd8487b19cc68af7cecd4e5ac9e36f905cbee8915d5abf8275152dc8",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-146/1788912807496486000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-147.py",
+      "task": "A multilevel car park facade with ramps, columns and horizontal safety barriers",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "1ebb83567deb7c1054f77c1f7a59a7023702ed89fc45603cc068bb58771074fc",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-146/1788912807496486000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-148.py",
+      "task": "A compact airport control tower with glazed cab and exterior service platforms",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "e94886e41c27d150698afaa5f050352eceafccd6e4300c2e2653ac2688a61c8c",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-146/1788912807496486000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-149.py",
+      "task": "A coastal lookout pavilion with angular roof, viewing deck and wind screens",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "d00e618a5ea221311e04d2c3c3597376e9ebb93cf734f736828b03a4a8e610d9",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-146/1788912807496486000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-150.py",
+      "task": "A modular pedestrian bridge with triangular trusses and covered entry portals",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "7211090f4c553cb00b1daef84d16f8c20119327226a976b9f80e9fe6aedaef90",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-146/1788912807496486000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 679.268018245697
+}

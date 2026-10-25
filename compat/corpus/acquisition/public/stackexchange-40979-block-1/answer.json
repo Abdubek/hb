@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 3,
+  "last_activity_date": 1469216268,
+  "last_edit_date": 1469216268,
+  "creation_date": 1446552356,
+  "answer_id": 40979,
+  "question_id": 40974,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>Came up with similar to @TLousky, test code below only selects faces without the range value.</p>\n\n<p>To use <a href=\"http://www.blender.org/api/blender_python_api_2_76_release/bpy.types.Object.html?highlight=closest_point_on_mesh#bpy.types.Object.closest_point_on_mesh\" rel=\"nofollow noreferrer\">closest point on mesh</a> you need to put the reference point into the calling object's object space, if not you will get undesired results when away from the origin.</p>\n\n<p>Also note: use vectors to calculate distance.</p>\n\n<pre><code>import bpy\nimport bmesh\n\nL = 0.5 # distance limit\nsphere = bpy.data.objects.get(\"Sphere\")\nmesh_obj = bpy.context.edit_object\nme = mesh_obj.data\nsmwi = sphere.matrix_world.inverted()\n\nbm = bmesh.from_edit_mesh(me)\n\nfor face in bm.faces:\n    v1 = mesh_obj.matrix_world * face.calc_center_median() # global face median\n    localPos = smwi * v1  # face cent in sphere local space\n\n    (hit, loc, norm, face_index) = sphere.closest_point_on_mesh(localPos)\n    # Edited for new hit success return val.  \n    v2 = sphere.matrix_world * loc\n    face.select = ((v2 - v1).length &gt; L)\n</code></pre>\n\n<p>test result</p>\n\n<p><a href=\"https://i.sstatic.net/vPvV0.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.sstatic.net/vPvV0.png\" alt=\"enter image description here\"></a></p>\n\n<p>To make it more accurate  consider using the normal returned to determine which point of a face to use.  If the angle between the face normal and the normal to the closest point is ~ 90 use the closest edge,  ~ 180 degrees it's on the inside.</p>\n"
+}

@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-106.py",
+      "task": "An isometric camera framing a cutaway studio apartment with kitchenette and sleeping area",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "c043ee71ec50bb4d5cd33e7167e6ccfc03b84922a3f5aeb39a7eb19f2b51a554",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-106/1788911836985062000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-107.py",
+      "task": "A telephoto architectural view of an office tower with facade fins and a plaza",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "40afdff04ea081856465899b8a95ab32d8d9f52a18279d88528b12c0b119de9c",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-106/1788911836985062000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-108.py",
+      "task": "A top down flat lay of a pen, notebook, glasses and a small camera on a desktop",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "4cf46e85b38e1ae0ae7e131f0a209dbaac4f52a2ced7faa0f38ea6ab6bccb5a3",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-106/1788911836985062000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-109.py",
+      "task": "A low angle hero view of a cordless power drill with battery pack and chuck",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "f8b97254f1aea14152f9e4496463c791f73ace3307a288bdbce6e2f8dcba2d84",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-106/1788911836985062000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-110.py",
+      "task": "A turntable display scene for a pair of sneakers made from simple modeled forms",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "0746ce8b28530701e97619ad52ec4b72dd196ede87f13e45e279c8b5bc2e9565",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-106/1788911836985062000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 510.0251929759979
+}

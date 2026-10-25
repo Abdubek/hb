@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 8387978,
+    "reputation": 81,
+    "user_id": 24379,
+    "user_type": "unregistered",
+    "profile_image": "https://www.gravatar.com/avatar/a826a5d893b34b68ae924099c10a2128?s=256&d=identicon&r=PG",
+    "display_name": "Sterling Roth",
+    "link": "https://blender.stackexchange.com/users/24379/sterling-roth"
+  },
+  "is_accepted": true,
+  "score": 3,
+  "last_activity_date": 1462567487,
+  "creation_date": 1462567487,
+  "answer_id": 52117,
+  "question_id": 52047,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>So, I submitted a bug report, and got a same day response from Bastien. Turns out, the problem is related to the Fake User restructuring that is going on and there isn't a straightforward way to do it. Here's a link to the bug report: <a href=\"https://developer.blender.org/T48360\" rel=\"nofollow\">Blender Bug Tracker</a></p>\n\n<p>He also pointed me in the direction of an effective workaround that I thought I'd share. Here is the working code:</p>\n\n<pre><code>import bpy\n\nscn = bpy.data.scenes['Scene']\nob = bpy.data.objects['Cube']\n\ntestgroup = bpy.data.groups.new('testgroup')\ntestgroup.objects.link(ob)\ntestgroup.objects.unlink(ob)\n\nscn.objects.unlink(ob)\n\nob.user_clear()    #manually clears all users, frees the object to be removed\n\nbpy.data.objects.remove(ob)\n</code></pre>\n"
+}

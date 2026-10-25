@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-096.py",
+      "task": "A kitchen range with burners, knobs and oven door",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "7491ca09117ed4629a60651ef7f03cdcfd43c10c470740244224dff1a1965107",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-096/1788911461000986000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-097.py",
+      "task": "A refrigerator with shelves and open door",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "15342ff2dcf1c8da3f5ae558cd086add2f474c0d08b456a161f9fe7f8de8816e",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-096/1788911461000986000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-098.py",
+      "task": "A washbasin with faucet, drain and pedestal",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "72246aacfdf8426b452376afd7d88210f4703710fc8ea13c8fb5633cb3ca7397",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-096/1788911461000986000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-099.py",
+      "task": "A traditional mailbox on a post with flag",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "8f92e0b7035027191c0e939e266944e10602d9fa2f9daea9fb5849983aa929be",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-096/1788911461000986000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-100.py",
+      "task": "A small pedestrian station platform with canopy and benches",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "3bd0efa8c6ec91eefed92e3bbd4e15e582aca48c406c07851cbcd3d8187c9030",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-096/1788911461000986000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 496.10303497314453
+}

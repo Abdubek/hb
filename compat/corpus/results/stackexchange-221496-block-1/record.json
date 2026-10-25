@@ -1,0 +1,120 @@
+{
+  "file": "stackexchange-221496-block-1.py",
+  "source_sha256": "3c6e011de72edbb04d8e8088804830b0bb38cc76ba74d3ba00e4f998601cfe08",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.025320040993392467,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:8\",\"message\":\"bpy.types.Object.mode: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.mode for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:9\",\"message\":\"bpy.ops.object.mode_set: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.mode_set for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:15\",\"message\":\"bpy.types.MeshPolygon.select: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.MeshPolygon.select for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:20\",\"message\":\"bpy.types.MeshPolygon.loop_start: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.MeshPolygon.loop_start for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:21\",\"message\":\"bpy.types.MeshPolygon.loop_total: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.MeshPolygon.loop_total for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:22\",\"message\":\"bpy.types.IDData.loops: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.IDData.loops for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:25\",\"message\":\"bpy.types.IDData.loops.vertex_index: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.IDData.loops.vertex_index for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:32\",\"message\":\"bpy.types.IDData.loops.vertex_index: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.IDData.loops.vertex_index for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:38\",\"message\":\"bpy.ops.object.mode_set: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.mode_set for tested paths and parameter limits; use hb capabilities for supported alternatives.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py\",\"ok\":false,\"timing\":{\"python_init_ms\":11.670167000000001,\"total_ms\":13.076417}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:8",
+        "message": "bpy.types.Object.mode: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.mode for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:9",
+        "message": "bpy.ops.object.mode_set: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.mode_set for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:15",
+        "message": "bpy.types.MeshPolygon.select: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.MeshPolygon.select for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:20",
+        "message": "bpy.types.MeshPolygon.loop_start: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.MeshPolygon.loop_start for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:21",
+        "message": "bpy.types.MeshPolygon.loop_total: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.MeshPolygon.loop_total for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:22",
+        "message": "bpy.types.IDData.loops: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.IDData.loops for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:25",
+        "message": "bpy.types.IDData.loops.vertex_index: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.IDData.loops.vertex_index for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:32",
+        "message": "bpy.types.IDData.loops.vertex_index: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.IDData.loops.vertex_index for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py:38",
+        "message": "bpy.ops.object.mode_set: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.mode_set for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 11.670167000000001,
+      "total_ms": 13.076417
+    }
+  },
+  "blender_process": {
+    "returncode": 0,
+    "seconds": 0.43664933400577866,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-fzs9fbfz",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-fzs9fbfz\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py"
+    ],
+    "stdout": "CORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py\", \"ok\": true}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n\nBlender quit\n",
+    "stderr": ""
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-221496-block-1.py",
+    "ok": true
+  }
+}

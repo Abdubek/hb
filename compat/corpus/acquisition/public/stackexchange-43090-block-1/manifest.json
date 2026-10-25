@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-43090-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/43090",
+      "author": "batFINGER",
+      "author_url": "https://blender.stackexchange.com/users/15543/batfinger",
+      "license": "CC BY-SA 3.0",
+      "answer_id": 43090,
+      "code_block": 1,
+      "sha256": "fb1304306790d0c9f8258ca2a1a82b93a630d1807b7103b845c1946cceff3b83",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1450201089,
+      "last_edit_date": null,
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/43090/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-43090-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

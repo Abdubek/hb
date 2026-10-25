@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+gpt6-106: An isometric camera framing a cutaway studio apartment with kitchenette and sleeping area
+gpt6-107: A telephoto architectural view of an office tower with facade fins and a plaza
+gpt6-108: A top down flat lay of a pen, notebook, glasses and a small camera on a desktop
+gpt6-109: A low angle hero view of a cordless power drill with battery pack and chuck
+gpt6-110: A turntable display scene for a pair of sneakers made from simple modeled forms

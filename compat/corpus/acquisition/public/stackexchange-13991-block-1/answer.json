@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 2331658,
+    "reputation": 29989,
+    "user_id": 1363,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/oskiS.png?s=256",
+    "display_name": "CodeManX",
+    "link": "https://blender.stackexchange.com/users/1363/codemanx"
+  },
+  "is_accepted": false,
+  "score": 27,
+  "last_activity_date": 1584572234,
+  "last_edit_date": 1584572234,
+  "creation_date": 1405175457,
+  "answer_id": 13991,
+  "question_id": 13986,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>If you don't want to change the real selection states, you may wanna use an override:</p>\n\n<pre><code>import bpy\n\nscene = bpy.context.scene\n\nobs = []\nfor ob in scene.objects:\n    # whatever objects you want to join...\n    if ob.type == 'MESH':\n        obs.append(ob)\n\nctx = bpy.context.copy()\n\n# one of the objects to join\nctx['active_object'] = obs[0]\n\nctx['selected_objects'] = obs\n# In Blender 2.8x this needs to be the following instead:\n#ctx['selected_editable_objects'] = obs\n\n# We need the scene bases as well for joining.\n# Remove this line in Blender &gt;= 2.80!\nctx['selected_editable_bases'] = [scene.object_bases[ob.name] for ob in obs]\n\nbpy.ops.object.join(ctx)\n</code></pre>\n"
+}

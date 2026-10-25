@@ -1,0 +1,38 @@
+{
+  "blender": "4.5.9 LTS",
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_transmission": {
+          "transmissionFactor": 0.75
+        },
+        "KHR_materials_ior": {
+          "ior": 1.3300000429153442
+        }
+      },
+      "name": "Glass",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.20000000298023224,
+          0.4000000059604645,
+          0.6000000238418579,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.20000000298023224
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Mapped",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.5
+      }
+    }
+  ]
+}

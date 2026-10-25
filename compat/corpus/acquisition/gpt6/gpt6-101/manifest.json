@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-101.py",
+      "task": "A studio product shot setup for a brushed steel electric kettle with a seamless backdrop",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "05b15a5249804561285fc8d12b5b73d3e79f9fb07390b498075b612fc7b4617a",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-101/1788911461098560000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-102.py",
+      "task": "A perfume bottle presentation with two softboxes, a rim light and a portrait camera",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "45a0e7aeb240f97a5071377f8edb6893f88c0524f50ef25b1e0dba6eb3c16661",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-101/1788911461098560000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-103.py",
+      "task": "A wristwatch macro composition with shallow depth of field and a tilted display block",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "c09a899973d7ec7dd66836717150955d022fa1d39730084ddf9a55dfb0e0e192",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-101/1788911461098560000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-104.py",
+      "task": "A three camera setup around a sculptural desk lamp, including an orthographic elevation",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "5f1306eb0b6ec833ca31aa4398c1ab332d56091270b5d3274abe28617e2b10ab",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-101/1788911461098560000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-105.py",
+      "task": "A wide angle camera looking down a furnished hotel corridor with repeated doors",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "af708b9004d18145dd8987dfcfbbd8cfce270d11d9f41717e6fb90e9ff4eb5c4",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-101/1788911461098560000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 475.91218876838684
+}

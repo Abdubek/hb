@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-118083-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/118083",
+      "author": "Clarkx",
+      "author_url": "https://blender.stackexchange.com/users/26620/clarkx",
+      "license": "CC BY-SA 4.0",
+      "answer_id": 118083,
+      "code_block": 1,
+      "sha256": "1a1e154a6d1ae132a5e66b404dad5f2e8bc7217086ab2e8a5f3bc8cc49296e19",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1536592430,
+      "last_edit_date": null,
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/118083/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-118083-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "file": "gpt6-066.py",
+  "source_sha256": "c518d357cf2cd0d1791b6dbba36c360c9e7cdafa7ee642463feaa262a64f44ba",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.03436670798691921,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py:39\",\"message\":\"bpy.types.Object.rotation_quaternion: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.rotation_quaternion for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py:46\",\"message\":\"bpy.data.curves.new: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.curves.new for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py:46\",\"message\":\"bpy.data.curves: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.curves for tested paths and parameter limits; use hb capabilities for supported alternatives.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py\",\"ok\":false,\"timing\":{\"python_init_ms\":12.557459,\"total_ms\":23.461875}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py:39",
+        "message": "bpy.types.Object.rotation_quaternion: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.rotation_quaternion for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py:46",
+        "message": "bpy.data.curves.new: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.curves.new for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py:46",
+        "message": "bpy.data.curves: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.curves for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 12.557459,
+      "total_ms": 23.461875
+    }
+  },
+  "blender_process": {
+    "returncode": 0,
+    "seconds": 0.517447499994887,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-plist2i_",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-plist2i_\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py"
+    ],
+    "stdout": "CORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py\", \"ok\": true}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n\nBlender quit\n",
+    "stderr": ""
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-066.py",
+    "ok": true
+  }
+}

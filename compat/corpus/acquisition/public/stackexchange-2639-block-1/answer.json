@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 191753,
+    "reputation": 48653,
+    "user_id": 55,
+    "user_type": "registered",
+    "accept_rate": 40,
+    "profile_image": "https://i.sstatic.net/PsT5q.png?s=256",
+    "display_name": "ideasman42",
+    "link": "https://blender.stackexchange.com/users/55/ideasman42"
+  },
+  "is_accepted": true,
+  "score": 14,
+  "last_activity_date": 1392425981,
+  "last_edit_date": 1392425981,
+  "creation_date": 1377751894,
+  "answer_id": 2639,
+  "question_id": 2638,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>There are 2 ways you can do this:</p>\n\n<ol>\n<li><p><strong>Standard API</strong> (bpy) - the most straightforward is to set each object in editmode and run the tool.\n<br>\n<br>\nNotice I'm not using <code>bpy.data.objects</code>, This will operate on all objects in your blend file, not just your scene, instead use <code>bpy.context.scene.objects</code>.</p>\n\n<pre><code>import bpy\n\nscene = bpy.context.scene\nfor ob in scene.objects:\n    if ob.type == 'MESH':\n        scene.objects.active = ob\n        bpy.ops.object.mode_set(mode='EDIT', toggle=False)\n\n        bpy.ops.mesh.reveal()\n        bpy.ops.mesh.select_all(action='SELECT')\n\n        # execute any editmode tool\n        bpy.ops.mesh.tris_convert_to_quads(limit=0.9,\n                                           uvs=False,\n                                           vcols=False,\n                                           sharp=False,\n                                           materials=False)\n\n        bpy.ops.object.mode_set(mode='OBJECT', toggle=False)\n</code></pre>\n\n<p><strong>Note</strong>:\nYou need to be careful trying to edit all objects, some may be hidden, not on a visible layer, or linked in from an external file (and can't be edited). For this reason its often better to use <code>context.selected_editable_objects</code></p>\n\n<hr></li>\n<li><p><strong>bmesh module</strong> (<a href=\"http://www.blender.org/documentation/blender_python_api_2_69_10/bmesh.html\" rel=\"nofollow\">Docs</a>) - bypass <code>bpy.ops</code> modes and edit the mesh directly.\nIn this case using the <code>bmesh</code> api. Note that this is specific to meshes, curves, metaballs etc will need to use <code>bpy.ops</code> still since they don't have an equivalent to bmesh.</p>\n\n<pre><code>import bpy\nimport bmesh\n\nscene = bpy.context.scene\nfor ob in scene.objects:\n    if ob.type == 'MESH':\n        me = ob.data\n        bm = bmesh.new()\n        bm.from_mesh(me)\n\n        # execute any bmesh operator\n        bmesh.ops.join_triangles(bm, faces=bm.faces,\n                                 limit=0.9,\n                                 cmp_sharp=False,\n                                 cmp_uvs=False,\n                                 cmp_vcols=False,\n                                 cmp_materials=False)\n        bm.to_mesh(me)\n        bm.free()\n</code></pre>\n\n<p><strong>Note</strong>:\nThe examples above may touch the same mesh multiple times since many objects can share the mesh, You almost <em>never</em> want this, at worst it gives invalid results because the tool runs many times, at best the script just runs slowly and does a lot of useless calculation.</p>\n\n<p>Here is an example which ensures meshes are only edited once.</p>\n\n<pre><code>import bpy\nimport bmesh\n\nscene = bpy.context.scene\nunique_meshes = set([ob.data for ob in scene.objects if ob.type == 'MESH'])\n\nfor me in unique_meshes:\n    bm = bmesh.new()\n    bm.from_mesh(me)\n\n    # execute any bmesh operator\n    bmesh.ops.join_triangles(bm, faces=bm.faces,\n                             limit=0.9,\n                             cmp_sharp=False,\n                             cmp_uvs=False,\n                             cmp_vcols=False,\n                             cmp_materials=False)\n    bm.to_mesh(me)\n    bm.free()\n</code></pre></li>\n</ol>\n"
+}

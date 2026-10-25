@@ -1,0 +1,70 @@
+{
+  "scripts": [
+    {
+      "file": "claude-096.py",
+      "task": "A kitchen range with burners, knobs and oven door",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "affe9cf94d3b1502c2aa0e06d97ae45a32d4a128e1e2da62654e6f3e494f4683",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-096/1788911460987032000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-097.py",
+      "task": "A refrigerator with shelves and open door",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "3bb16b57f651fec7d51685224962d0262711ca77d7bdb78bd3d03fa1f375cfe8",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-096/1788911460987032000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-098.py",
+      "task": "A washbasin with faucet, drain and pedestal",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "6ef6931b853da6565d66ba94a39d121e6f61136024774015a94de156d22123ab",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-096/1788911460987032000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-099.py",
+      "task": "A traditional mailbox on a post with flag",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "c05445aec1d9b865464cd820e5ce5dea8f58925ff5d08d8846d31637ab0f87b7",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-096/1788911460987032000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-100.py",
+      "task": "A small pedestrian station platform with canopy and benches",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "7f6d12e555a0dae09d664e4afaa880bf37e699a6fbefa499452af1b196878e46",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-096/1788911460987032000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 660.2143421173096
+}

@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+gpt6-146: A landscaped amphitheater with concentric terraces and side access stairs
+gpt6-147: A multilevel car park facade with ramps, columns and horizontal safety barriers
+gpt6-148: A compact airport control tower with glazed cab and exterior service platforms
+gpt6-149: A coastal lookout pavilion with angular roof, viewing deck and wind screens
+gpt6-150: A modular pedestrian bridge with triangular trusses and covered entry portals

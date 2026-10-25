@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-132.py",
+      "task": "A corner cafe interior with banquette seating, counter and pendant lighting",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "a1a476a661b3ab38f1b1abcffeb22948ae0350b26463ad987c93504e324fa791",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-132/1788913990008144000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 784.291079044342
+}

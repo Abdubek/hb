@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 1255747,
+    "reputation": 226,
+    "user_id": 360,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/bfdca9cb017761c54eb69000510595d8?s=256&d=identicon&r=PG",
+    "display_name": "Angus Hollands",
+    "link": "https://blender.stackexchange.com/users/360/angus-hollands"
+  },
+  "is_accepted": true,
+  "score": 5,
+  "last_activity_date": 1409772197,
+  "last_edit_date": 1409772197,
+  "creation_date": 1409771582,
+  "answer_id": 15541,
+  "question_id": 15540,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>If you're only going to call this operator from the callback, you don't really need to use an operator.</p>\n\n<p>However, the reason that your operator fails is that it doesn't support execution rather than invocation.</p>\n\n<p>Add a method called <code>execute</code> with <code>(self, context)</code> as the arguments. If you want to use the <code>invoke()</code> method's code, just call <code>self.invoke</code> and pass <code>None</code> for the event (be careful with this). The <code>execute()</code> method should return a set for the result just as <code>invoke()</code> does, so if you're using invoke's body, just return the result of <code>self.invoke(context, None)</code>.</p>\n\n<p>Finally, call the operator as <code>'EXEC_DEFAULT'</code> instead of <code>'INVOKE_DEFAULT'</code></p>\n\n<pre><code>import bpy\n\nclass FooOp(bpy.types.Operator):\n    bl_idname = \"development.fooop\"\n    bl_label = \"Foo\"\n\n    @classmethod\n    def poll(cls,context):\n        return True\n\n    def execute(self, context):\n        return self.invoke(context, None)\n\n    def invoke(self,context,event):\n        self.report({'INFO'},\"running FooOp!\")\n        return {'FINISHED'}\n\ndef make_foo(scene):\n    bpy.ops.development.fooOp('EXEC_DEFAULT')\n\n\nbpy.app.handlers.render_complete.append(make_foo)\nbpy.utils.register_class(FooOp)\n</code></pre>\n"
+}

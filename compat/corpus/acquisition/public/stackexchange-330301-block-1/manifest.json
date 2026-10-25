@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-330301-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/330301",
+      "author": "Daniel M&#246;ller",
+      "author_url": "https://blender.stackexchange.com/users/39345/daniel-m%c3%b6ller",
+      "license": "CC BY-SA 4.0",
+      "answer_id": 330301,
+      "code_block": 1,
+      "sha256": "296dfb824e08f2263acd6cde66ce6c3d70b3904bb57bf1bf74423d958dc45a14",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1737853982,
+      "last_edit_date": null,
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/330301/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-330301-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

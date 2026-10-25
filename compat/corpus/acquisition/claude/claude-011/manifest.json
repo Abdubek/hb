@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "claude-011.py",
+      "task": "A low-poly coffee maker with carafe and buttons",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "1f14b1db3d28d3358f484fea1cd40d856d867c7ce69e6cb3ebe10c5de34c0e4d",
+      "response": "acquisition/claude/claude-011/1788910891239454000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-012.py",
+      "task": "A camera body with lens and top controls",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "ab91588cf0b6d9b568edda077df4ae314b047b95194964fe29192b09f15da083",
+      "response": "acquisition/claude/claude-011/1788910891239454000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-013.py",
+      "task": "A record player with platter, tonearm and cover",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "3fc61daf6d849c09d45c1d038aa1b5b24faee07f987cc7d5d5204bc4dc61909d",
+      "response": "acquisition/claude/claude-011/1788910891239454000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-014.py",
+      "task": "A modular bookshelf with staggered shelves and books",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "f1dbc593d24d7663693a133f6e0299763cc547f1856bd1f2a824dbfd38d6c506",
+      "response": "acquisition/claude/claude-011/1788910891239454000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-015.py",
+      "task": "A three-story building facade with balconies",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "4b423bb5c2cadb8ca950fc69c05afd260c0d4d4e5b261f247539be131c0faab7",
+      "response": "acquisition/claude/claude-011/1788910891239454000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 1091.143112897873
+}

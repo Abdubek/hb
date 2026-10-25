@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 21642992,
+    "reputation": 51,
+    "user_id": 132689,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/7a88291b3c52e1e7ec2fcafd5a096cf5?s=256&d=identicon&r=PG&f=y&so-version=2",
+    "display_name": "Olg",
+    "link": "https://blender.stackexchange.com/users/132689/olg"
+  },
+  "is_accepted": false,
+  "score": 5,
+  "last_activity_date": 1633087184,
+  "last_edit_date": 1633087184,
+  "creation_date": 1633086657,
+  "answer_id": 239606,
+  "question_id": 150809,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>If I understand your question correctly, I can offer the following solution:</p>\n<pre><code>import bpy\n        \ndef msgbus_callback(*arg):\n    # in console will be print selected_objects \n    print(bpy.context.selected_objects)\n    # you can do something\n        \ndef subscribe_to_obj(): \n             \n    bpy.msgbus.subscribe_rna(\n        key=(bpy.types.LayerObjects, 'active'),\n        owner=bpy,\n        args=('something, if you need',),\n        notify=msgbus_callback\n        )\n        \nif __name__ == &quot;__main__&quot;:\n    subscribe_to_obj() \n</code></pre>\n"
+}

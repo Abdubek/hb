@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-166856-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/166856",
+      "author": "Iszotic",
+      "author_url": "https://blender.stackexchange.com/users/32211/iszotic",
+      "license": "CC BY-SA 4.0",
+      "answer_id": 166856,
+      "code_block": 1,
+      "sha256": "f8780f6af7b0f2731f140e3a7c31052f8b223d44700f370b717e2bcf18a745f8",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1581648695,
+      "last_edit_date": 1621304212,
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/166856/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-166856-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

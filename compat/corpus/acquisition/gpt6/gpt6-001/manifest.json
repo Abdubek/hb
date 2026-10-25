@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-001.py",
+      "task": "A two-seat park bench with slatted back and seat",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "6ff37c5bb289cd65fe26352212df56d17382a170544fc46b2a366d5283701af2",
+      "response": "acquisition/gpt6/gpt6-001/1788910564132181000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-002.py",
+      "task": "A dining table and four matching chairs",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "175d668ee225234f77f2ff5492234467eefcf2d71aaec3e8278438341237f833",
+      "response": "acquisition/gpt6/gpt6-001/1788910564132181000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-003.py",
+      "task": "A six-wheel rover with chassis, wheels and sensor mast",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "40ee52552619014bcfb452d7a08ccafa655d5357043b08f5c3bb554de9d72b58",
+      "response": "acquisition/gpt6/gpt6-001/1788910564132181000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-004.py",
+      "task": "A compact handheld game console with buttons and screen",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "aeede2a607d246f7ad3e3bc31246031ea75de6ffbad879cf82fefafaff44a5cb",
+      "response": "acquisition/gpt6/gpt6-001/1788910564132181000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-005.py",
+      "task": "A desktop speaker with two circular drivers",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "ed0662832b8be76f496de28d146440755040bc0612ad1bd4ab2660e94b202632",
+      "response": "acquisition/gpt6/gpt6-001/1788910564132181000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 255.59643125534058
+}

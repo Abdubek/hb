@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-091.py",
+      "task": "A row of cinema seats on a stepped platform",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "69cd1800019fbc367c5e765fbe3b9e1f5fab49dc757a89fc289249955d4059e6",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-091/1788911460986550000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-092.py",
+      "task": "A lecture podium with microphone and reading surface",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "4bfe345fd5d796412920c719a7f3767c496af95fc13d526deb7d1250ce3505c2",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-091/1788911460986550000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-093.py",
+      "task": "A museum display case with pedestal and glass enclosure",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "7804d30581cd4ea4f893c2806fb7495d010ea0a80c570846024aa168ef8198a5",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-091/1788911460986550000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-094.py",
+      "task": "A wall-mounted control panel with switches and gauges",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "c0c5bf51e9c5161174bdf757849719c72034997639d6764b456c25432308b8ea",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-091/1788911460986550000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-095.py",
+      "task": "A freestanding coat rack with multiple hooks",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "2baf9542d28c08afaa4c6d70d333f192b942c86df7ac13bb2a9270e6e51a334a",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-091/1788911460986550000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 375.92111706733704
+}

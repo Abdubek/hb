@@ -1,0 +1,70 @@
+{
+  "scripts": [
+    {
+      "file": "claude-101.py",
+      "task": "A studio product shot setup for a brushed steel electric kettle with a seamless backdrop",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "33e37b8cf3b83c02a31bc4605a4679c2a9a4edd5be60732c4d364a5645fcb6a1",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-101/1788911461065857000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-102.py",
+      "task": "A perfume bottle presentation with two softboxes, a rim light and a portrait camera",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "39fa32b85d9b0bc3808add651a2b56dd4c31be542c8046c49e818d2b285ad9cb",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-101/1788911461065857000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-103.py",
+      "task": "A wristwatch macro composition with shallow depth of field and a tilted display block",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "79947bcd49ba7e02013b64bb895777fa2832d9209083719fa041834845448300",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-101/1788911461065857000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-104.py",
+      "task": "A three camera setup around a sculptural desk lamp, including an orthographic elevation",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "64defc7e51a1c557b20286544269bd7a03101402d0ef842da9bce5853c949f1f",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-101/1788911461065857000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-105.py",
+      "task": "A wide angle camera looking down a furnished hotel corridor with repeated doors",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "0f16633d4a184317b9079350ebccd6ba86bd3dc86fc4e48768922063fc2e6c2b",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-101/1788911461065857000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 856.1313562393188
+}

@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-30839-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/30839",
+      "author": "zeffii",
+      "author_url": "https://blender.stackexchange.com/users/47/zeffii",
+      "license": "CC BY-SA 3.0",
+      "answer_id": 30839,
+      "code_block": 1,
+      "sha256": "1a92049cd074e8b58a20cb326a30d038b6492d32b249b4c0ff96746e6f6f4e48",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1431600247,
+      "last_edit_date": 1492088258,
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/30839/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-30839-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 2399079,
+    "reputation": 23479,
+    "user_id": 39345,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/JskU5.jpg?s=256",
+    "display_name": "Daniel M&#246;ller",
+    "link": "https://blender.stackexchange.com/users/39345/daniel-m%c3%b6ller"
+  },
+  "is_accepted": true,
+  "score": 5,
+  "last_activity_date": 1737853982,
+  "creation_date": 1737853982,
+  "answer_id": 330301,
+  "question_id": 330300,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>There is some issue with the order of the matrix multiplications.</p>\n<p>Gotta figure out if it's Blender or the Website (I guess it's Blender), one of them is inverting the order.</p>\n<p>If you invert the order of the inputs (ZYX becomes XYZ; and YXZ becomes ZXY) it will give you the expected result.</p>\n<pre><code>import bpy\nfrom math import radians, degrees\nfrom mathutils import Matrix, Euler, Vector\nfrom datetime import datetime\nfrom bpy_extras.node_shader_utils import PrincipledBSDFWrapper\n\n\ndef convert_euler_zyx_to_yxz(rotation_zyx):\n    euler_zyx = Euler((radians(rotation_zyx[0]), radians(rotation_zyx[1]), radians(rotation_zyx[2])), 'XYZ')\n    rot_mat = euler_zyx.to_matrix()\n\n    \n    rot_yxz = rot_mat.to_euler('ZXY')\n    print('\\n')\n    print(f'%.4f %.4f %.4f' % (degrees(euler_zyx.x), degrees(euler_zyx.y), degrees(euler_zyx.z)))\n    print(f'%.4f %.4f %.4f' % (degrees(rot_yxz.x), degrees(rot_yxz.y), degrees(rot_yxz.z)))\n\n\nrot_zyx = (119.878, -11.9565, 138.127)  # Rotaci\u00f3n en grados en orden ZYX\nconvert_euler_zyx_to_yxz(rot_zyx)\n\n</code></pre>\n"
+}

@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 1172394,
+    "reputation": 51130,
+    "user_id": 60486,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/TM20oBJj.png?s=256",
+    "display_name": "Markus von Broady",
+    "link": "https://blender.stackexchange.com/users/60486/markus-von-broady"
+  },
+  "is_accepted": false,
+  "score": 5,
+  "last_activity_date": 1620232369,
+  "creation_date": 1620232369,
+  "answer_id": 221597,
+  "question_id": 221558,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>This solution will work for any face (triangle, quad, ngon) generating points with even distribution. I think the conversion from local to other coordinate system has been explained by batFINGER, so there's no reason to deal with it here:</p>\n<pre><code>import bpy, bmesh, random\nfrom mathutils import Vector\n\nnum_points = 1000\n\n\ndef point_on_triangle(face):\n    a, b, c = map(lambda v: v.co, face.verts)\n    a2b = b - a  # vector from a to b\n    a2c = c - a  \n    height = random.triangular(low=0.0, high=1.0, mode=0.0)\n    return a + a2c*height + a2b*(1-height)*random.random()\n\n\ndef main():\n    me = bpy.context.active_object.data\n    bm = bmesh.from_edit_mesh(me)\n    temp_geom = bmesh.ops.duplicate(bm, geom=[bm.select_history.active])\n    temp_face = next(el for el in temp_geom['geom'] if isinstance(el, bmesh.types.BMFace))\n    triangles = bmesh.ops.triangulate(bm, faces=[temp_face])['faces']\n    surfaces = map(lambda t: t.calc_area(), triangles)\n    choices = random.choices(population=triangles, weights=surfaces, k=num_points)\n    points = map(point_on_triangle, choices)\n    temp_verts = list({v for tri in triangles for v in tri.verts})\n    \n    for point in points:\n        bm.verts.new(point)\n    bmesh.ops.delete(bm, geom=temp_verts)\n    bmesh.update_edit_mesh(me)\n    \n    \nif __name__ == &quot;__main__&quot;:\n    main()\n</code></pre>\n<p><a href=\"https://i.sstatic.net/RMAwS.gif\" rel=\"noreferrer\"><img src=\"https://i.sstatic.net/RMAwS.gif\" alt=\"\" /></a></p>\n<ol>\n<li>Duplicate a face and triangulate it.</li>\n<li>Randomize a list of triangles (they can repeat) based on their surfaces (a triangle B with twice more surface than triangle A will appear twice more often in the list.</li>\n<li>For each position of the list, take the triangle on that position and randomize a point inside it.</li>\n<li>Randomizing a point on a triangle: randomize a point on a rectangle made of 2 such triangles, but multiply the vector along <em>&quot;base&quot;</em> (whichever edge is assumed as base doesn't matter) by the distance from the <em>&quot;top&quot;</em> (the vertex not making the <em>&quot;base&quot;</em>), to actually get a point on a triangle and not on the imagined rectangle. For an even distribution, randomize the height on which the point will spawn first, with non-uniform distribution, countering the <em>&quot;stretch&quot;</em> - <code>random.triangular</code>.</li>\n<li>Gather a list of temporary vertices, passing them through a set to get rid of duplicates, and remove them.</li>\n</ol>\n"
+}

@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 3732141,
+    "reputation": 16191,
+    "user_id": 15861,
+    "user_type": "registered",
+    "accept_rate": 57,
+    "profile_image": "https://graph.facebook.com/780312555/picture?type=large",
+    "display_name": "TLousky",
+    "link": "https://blender.stackexchange.com/users/15861/tlousky"
+  },
+  "is_accepted": false,
+  "score": 3,
+  "last_activity_date": 1493642600,
+  "last_edit_date": 1493642600,
+  "creation_date": 1493642051,
+  "answer_id": 78846,
+  "question_id": 78397,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p><a href=\"https://i.sstatic.net/CkTDj.gif\" rel=\"nofollow noreferrer\"><img src=\"https://i.sstatic.net/CkTDj.gif\" alt=\"enter image description here\"></a></p>\n\n<p>What you're missing is a scene update before the 2nd translation. It will recalculate the local matrix before applying the 2nd translation and thus leads to the result you're aiming for:</p>\n\n<pre><code>import bpy \nimport  mathutils\n\nobject = bpy.data.objects[\"Cube\"]\n\n\n# translate\ntranslation = mathutils.Vector((5.0, 0.0, 0.0))\n\ninv = object.matrix_world.copy()\ninv.invert()\nvec_rot = translation * inv\nobject.location = object.location + vec_rot\n\n# rotate\neuler = mathutils.Euler((0.0, 0.0, 45.0))\nobject.rotation_euler.rotate(euler)\n\n###### SCENE UPDATE ######    \nbpy.context.scene.update()\n##########################\n\n# translate again\ntranslation = mathutils.Vector((5.0, 0.0, 0.0))\n\ninv = object.matrix_world.copy()\ninv.invert()\nvec_rot = translation * inv\nobject.location = object.location + vec_rot\n</code></pre>\n"
+}

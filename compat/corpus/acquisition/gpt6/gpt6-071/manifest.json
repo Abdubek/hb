@@ -1,0 +1,60 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-071.py",
+      "task": "A picnic table with attached benches",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "d305c4d987f81aca05672648d36c116df67de239e227ce303aba3ec322d3b9bd",
+      "response": "acquisition/gpt6/gpt6-071/1788912869716933000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-072.py",
+      "task": "A basketball hoop on a support pole and backboard",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "04432ff943272fc341cfaa63c1e25b48e4f1162d084daf3b492bab0e1c0f567e",
+      "response": "acquisition/gpt6/gpt6-071/1788912869716933000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-073.py",
+      "task": "A tennis court with net and perimeter posts",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "611bbf196eb237163f4aadc8ea7b397c9ca5766f9180c7ee4e6cc025ba668498",
+      "response": "acquisition/gpt6/gpt6-071/1788912869716933000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-074.py",
+      "task": "A row of three beach umbrellas with lounge chairs",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "77904e029975d4f1b35eb4edb080973d4299276650382c375f0a86558d392564",
+      "response": "acquisition/gpt6/gpt6-071/1788912869716933000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-075.py",
+      "task": "A rooftop HVAC unit with fan grilles and ducts",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "140945d3cf5fcd01255cd4b9b5b44f4bda8fe9a8e8887eaf60ae102860b43e53",
+      "response": "acquisition/gpt6/gpt6-071/1788912869716933000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 483.5351266860962
+}

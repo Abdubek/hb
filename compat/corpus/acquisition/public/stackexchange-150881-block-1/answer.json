@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 9430826,
+    "reputation": 13028,
+    "user_id": 31447,
+    "user_type": "registered",
+    "accept_rate": 75,
+    "profile_image": "https://www.gravatar.com/avatar/7e9720798b41ceab22fb4286ddb77f1c?s=256&d=identicon&r=PG",
+    "display_name": "brockmann",
+    "link": "https://blender.stackexchange.com/users/31447/brockmann"
+  },
+  "is_accepted": true,
+  "score": 11,
+  "last_activity_date": 1567705079,
+  "creation_date": 1567705079,
+  "answer_id": 150881,
+  "question_id": 150809,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>You have to pass <code>\"location\"</code> (string) to <a href=\"https://docs.blender.org/api/current/bpy.types.bpy_struct.html?highlight=path_resolve#bpy.types.bpy_struct.path_resolve\" rel=\"noreferrer\"><code>path_resolve()</code></a>:</p>\n\n<pre><code>import bpy\n\n# Callback function for location changes\ndef obj_location_callback(ob):\n    # Do something here\n    print('Object \"{}\" changed its location to: {}: '.format(\n        ob.name, ob.location)\n        )\n\n\n# Subscribe to the context object (mesh)\ndef subscribe_to_obj_loc(ob):\n    if ob.type != 'MESH':\n        return\n\n    subscribe_to = ob.path_resolve(\"location\", False)\n\n    bpy.msgbus.subscribe_rna(\n        key=subscribe_to,\n        # owner of msgbus subcribe (for clearing later)\n        owner=ob,\n        # Args passed to callback function (tuple)\n        args=(ob,),\n        # Callback function for property update\n        notify=obj_location_callback,\n    )\n\n# Ensure only meshes are passed to this function\nsubscribe_to_obj_loc(bpy.context.object)\n</code></pre>\n"
+}

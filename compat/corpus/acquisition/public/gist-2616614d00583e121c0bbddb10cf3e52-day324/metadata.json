@@ -1,0 +1,49 @@
+{
+  "url": "https://api.github.com/gists/2616614d00583e121c0bbddb10cf3e52",
+  "forks_url": "https://api.github.com/gists/2616614d00583e121c0bbddb10cf3e52/forks",
+  "commits_url": "https://api.github.com/gists/2616614d00583e121c0bbddb10cf3e52/commits",
+  "id": "2616614d00583e121c0bbddb10cf3e52",
+  "node_id": "G_kwDOA-3eq9oAIDI2MTY2MTRkMDA1ODNlMTIxYzBiYmRkYjEwY2YzZTUy",
+  "git_pull_url": "https://gist.github.com/2616614d00583e121c0bbddb10cf3e52.git",
+  "git_push_url": "https://gist.github.com/2616614d00583e121c0bbddb10cf3e52.git",
+  "html_url": "https://gist.github.com/CGArtPython/2616614d00583e121c0bbddb10cf3e52",
+  "files": {
+    "day324.py": {
+      "filename": "day324.py",
+      "type": "application/x-python",
+      "language": "Python",
+      "raw_url": "https://gist.githubusercontent.com/CGArtPython/2616614d00583e121c0bbddb10cf3e52/raw/9552d67d93d4d9c26778b7f4cffff28703917964/day324.py",
+      "size": 16986
+    }
+  },
+  "public": true,
+  "created_at": "2021-11-29T06:07:02Z",
+  "updated_at": "2021-11-29T06:08:02Z",
+  "description": "The code for this art: https://www.artstation.com/artwork/48wX6L",
+  "comments": 0,
+  "user": null,
+  "comments_enabled": true,
+  "comments_url": "https://api.github.com/gists/2616614d00583e121c0bbddb10cf3e52/comments",
+  "owner": {
+    "login": "CGArtPython",
+    "id": 65920683,
+    "node_id": "MDQ6VXNlcjY1OTIwNjgz",
+    "avatar_url": "https://avatars.githubusercontent.com/u/65920683?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/CGArtPython",
+    "html_url": "https://github.com/CGArtPython",
+    "followers_url": "https://api.github.com/users/CGArtPython/followers",
+    "following_url": "https://api.github.com/users/CGArtPython/following{/other_user}",
+    "gists_url": "https://api.github.com/users/CGArtPython/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/CGArtPython/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/CGArtPython/subscriptions",
+    "organizations_url": "https://api.github.com/users/CGArtPython/orgs",
+    "repos_url": "https://api.github.com/users/CGArtPython/repos",
+    "events_url": "https://api.github.com/users/CGArtPython/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/CGArtPython/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "truncated": false
+}

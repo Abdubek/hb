@@ -1,0 +1,17 @@
+{
+  "scripts": [
+    {
+      "file": "gist-2616614d00583e121c0bbddb10cf3e52-day324.py",
+      "provider": "github-gist",
+      "source_url": "https://gist.github.com/CGArtPython/2616614d00583e121c0bbddb10cf3e52",
+      "raw_url": "https://gist.githubusercontent.com/CGArtPython/2616614d00583e121c0bbddb10cf3e52/raw/9552d67d93d4d9c26778b7f4cffff28703917964/day324.py",
+      "original_filename": "day324.py",
+      "author": "CGArtPython",
+      "license": "MIT",
+      "license_url": "https://gist.githubusercontent.com/CGArtPython/2616614d00583e121c0bbddb10cf3e52/raw/9552d67d93d4d9c26778b7f4cffff28703917964/day324.py",
+      "license_evidence": "acquisition/public/gist-2616614d00583e121c0bbddb10cf3e52-day324/LICENSE",
+      "sha256": "b633f4af6c77cb481f610605bc694bc0c11a9c7048f726dee5bca16f42deb504",
+      "source_transform": "none; exact downloaded bytes"
+    }
+  ]
+}

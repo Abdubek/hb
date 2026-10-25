@@ -1,0 +1,191 @@
+{
+  "blender": "4.5.9 LTS",
+  "new": {
+    "color": [
+      0.05000000074505806,
+      0.05000000074505806,
+      0.05000000074505806
+    ],
+    "use_nodes": false,
+    "nodes": null
+  },
+  "enabled": {
+    "color": [
+      0.10000000149011612,
+      0.20000000298023224,
+      0.30000001192092896
+    ],
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Background",
+        "type": "ShaderNodeBackground",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.10000000149011612,
+              0.20000000298023224,
+              0.30000001192092896,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ],
+        "outputs": [
+          "Background"
+        ]
+      },
+      {
+        "name": "World Output",
+        "type": "ShaderNodeOutputWorld",
+        "inputs": [],
+        "outputs": []
+      }
+    ]
+  },
+  "color_changed": {
+    "color": [
+      0.699999988079071,
+      0.800000011920929,
+      0.8999999761581421
+    ],
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Background",
+        "type": "ShaderNodeBackground",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.10000000149011612,
+              0.20000000298023224,
+              0.30000001192092896,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ],
+        "outputs": [
+          "Background"
+        ]
+      },
+      {
+        "name": "World Output",
+        "type": "ShaderNodeOutputWorld",
+        "inputs": [],
+        "outputs": []
+      }
+    ]
+  },
+  "ranges": {
+    "color": [
+      0.699999988079071,
+      0.800000011920929,
+      0.8999999761581421
+    ],
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Background",
+        "type": "ShaderNodeBackground",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.0,
+              2.0,
+              3.0,
+              4.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": -3.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ],
+        "outputs": [
+          "Background"
+        ]
+      },
+      {
+        "name": "World Output",
+        "type": "ShaderNodeOutputWorld",
+        "inputs": [],
+        "outputs": []
+      }
+    ]
+  },
+  "disabled": {
+    "color": [
+      0.699999988079071,
+      0.800000011920929,
+      0.8999999761581421
+    ],
+    "use_nodes": false,
+    "nodes": [
+      {
+        "name": "Background",
+        "type": "ShaderNodeBackground",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.0,
+              2.0,
+              3.0,
+              4.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": -3.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ],
+        "outputs": [
+          "Background"
+        ]
+      },
+      {
+        "name": "World Output",
+        "type": "ShaderNodeOutputWorld",
+        "inputs": [],
+        "outputs": []
+      }
+    ]
+  },
+  "environment": {
+    "projection": "EQUIRECTANGULAR",
+    "interpolation": "Linear",
+    "inputs": [
+      "Vector"
+    ],
+    "outputs": [
+      "Color"
+    ],
+    "image": null
+  }
+}

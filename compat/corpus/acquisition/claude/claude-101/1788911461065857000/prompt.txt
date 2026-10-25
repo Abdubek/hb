@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+claude-101: A studio product shot setup for a brushed steel electric kettle with a seamless backdrop
+claude-102: A perfume bottle presentation with two softboxes, a rim light and a portrait camera
+claude-103: A wristwatch macro composition with shallow depth of field and a tilted display block
+claude-104: A three camera setup around a sculptural desk lamp, including an orthographic elevation
+claude-105: A wide angle camera looking down a furnished hotel corridor with repeated doors

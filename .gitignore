@@ -1,0 +1,12 @@
+/target/
+/.build/
+/outputs/
+/dist/
+__pycache__/
+*.pyc
+.DS_Store
+*.hb
+*.hb.revisions/
+*.hb.lock
+.env
+.env.*

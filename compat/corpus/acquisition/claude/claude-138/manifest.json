@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-138.py",
+      "task": "A compact boat cabin with curved ceiling, bunks, portholes and fold down table",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "6b9b395a314def6557128b70ec91b8c74cc1f8c903d763b416cc60871b7dc2c3",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-138/1788913847897471000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 444.2415671348572
+}

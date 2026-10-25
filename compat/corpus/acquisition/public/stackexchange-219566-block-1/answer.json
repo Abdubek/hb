@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": false,
+  "score": 5,
+  "last_activity_date": 1618426777,
+  "creation_date": 1618426777,
+  "answer_id": 219566,
+  "question_id": 219551,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>Matrices, object copies  and Object Color.</strong></p>\n<p><a href=\"https://blender.stackexchange.com/questions/185290/same-material-with-different-key-frames\">Same Material with different key frames</a></p>\n<p><a href=\"https://blender.stackexchange.com/questions/185371/why-does-editing-a-material-on-one-object-change-lots-of-other-objects-material\">Why does editing a material on one object change lots of other object&#39;s materials as well?</a></p>\n<p>First going to give the context object the simplest of materials, that uses the object color.</p>\n<p><a href=\"https://i.sstatic.net/yzIyj.png\" rel=\"noreferrer\"><img src=\"https://i.sstatic.net/yzIyj.png\" alt=\"enter image description here\" /></a></p>\n<p>All our linked copies will have the same material, and take on the value assigned to their respective object color.</p>\n<p><strong>Matrices.</strong></p>\n<p>For my circle have started with a skinny torus at global origin (the default)</p>\n<p>To do what is akin to an edit mode transform of 2 in x direction will make a translation matrix and apply it the torus, which will have the effect of shifting the mesh 2 to the right while its origin remains at the center.</p>\n<p>Next will make a rotation matrix that rotates <span class=\"math-container\">$4 \\pi / n$</span> radians about the z axis.</p>\n<p>Each copy will have this rotation applied.</p>\n<pre><code>import bpy\nfrom random import uniform\nfrom mathutils import Matrix\nfrom math import pi\nn=25\n\nT = Matrix.Translation((2, 0, 0))\nR = Matrix.Rotation(4 * pi / n, 4, 'Z')\n#M = R @ T\n\nob = bpy.context.object\nob.data.transform(T) # like an edit mode transform\n\ncoll = bpy.context.collection\n\nfor i in range(1, n+1):\n    copy = ob.copy() # copy object\n    copy.color = (uniform(0, 1), uniform(0, 1), uniform(0, 1), 1)\n    copy.matrix_world @= R\n    coll.objects.link(copy) # link to context collection\n    ob = copy\n</code></pre>\n<p><a href=\"https://i.sstatic.net/XKrc3.gif\" rel=\"noreferrer\"><img src=\"https://i.sstatic.net/XKrc3.gif\" alt=\"enter image description here\" /></a>\n<em>Test Run on my torus</em></p>\n"
+}

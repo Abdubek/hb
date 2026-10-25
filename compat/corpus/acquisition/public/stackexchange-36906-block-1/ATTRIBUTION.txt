@@ -1,0 +1,9 @@
+stackexchange-36906-block-1.py
+
+Author: zeffii
+Answer: https://blender.stackexchange.com/a/36906
+Revision history: https://blender.stackexchange.com/posts/36906/revisions
+License: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+
+One original code block, HTML-decoded. No repairs, added imports, or combined blocks.
+The licensed answer snapshot is retained in answer.json.

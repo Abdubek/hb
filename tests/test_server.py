@@ -1,0 +1,88 @@
+"""Exercise HB's stdio protocols through the packaged executable."""
+import base64
+import json
+from pathlib import Path
+import subprocess
+import tempfile
+import unittest
+
+from test_cli import HB
+
+
+def request(identifier, method, params=None):
+    return {"jsonrpc": "2.0", "id": identifier, "method": method, "params": params or {}}
+
+
+class Server(unittest.TestCase):
+    def exchange(self, mode, messages, directory):
+        process = subprocess.run(
+            [str(HB), "serve", mode],
+            input="".join(json.dumps(message) + "\n" for message in messages),
+            text=True, capture_output=True, cwd=directory, timeout=30,
+        )
+        self.assertEqual(process.returncode, 0, process.stderr)
+        return [json.loads(line) for line in process.stdout.splitlines()]
+
+    def test_jsonrpc_scene_history_and_batch(self):
+        with tempfile.TemporaryDirectory() as directory:
+            replies = self.exchange("--jsonrpc", [
+                request(1, "run", {"code": "import bpy\nbpy.ops.mesh.primitive_cube_add()"}),
+                request(2, "run", {"code": "import bpy\nbpy.context.object.location.x=3"}),
+                request(3, "log"),
+                request(4, "undo"),
+                [request(5, "query", {"args": ["stats"]}), request(6, "capabilities")],
+                {"jsonrpc": "2.0", "method": "capabilities"},
+            ], directory)
+            self.assertEqual(len(replies), 5)
+            first, second = replies[0]["result"], replies[1]["result"]
+            self.assertNotEqual(first["revision"], second["revision"])
+            self.assertEqual([entry["revision"] for entry in replies[2]["result"]["revisions"]],
+                             [second["revision"], first["revision"]])
+            self.assertEqual(replies[3]["result"]["revision"], first["revision"])
+            self.assertTrue(replies[4][0]["result"]["ok"])
+            self.assertEqual(replies[4][1]["result"]["name"], "hb")
+
+    def test_mcp_handshake_tools_and_render_content(self):
+        with tempfile.TemporaryDirectory() as directory:
+            image = str(Path(directory) / "cube.png")
+            replies = self.exchange("--mcp", [
+                request(1, "tools/list"),
+                request(2, "initialize", {"protocolVersion": "2025-11-25",
+                                          "clientInfo": {"name": "test", "version": "1"},
+                                          "capabilities": {}}),
+                {"jsonrpc": "2.0", "method": "notifications/initialized"},
+                request(3, "tools/list"),
+                request(4, "tools/call", {"name": "hb_run", "arguments": {
+                    "code": "import bpy\nbpy.ops.mesh.primitive_cube_add()"}}),
+                request(5, "tools/call", {"name": "hb_render", "arguments": {
+                    "args": ["--size", "64", "--out", image]}}),
+                request(6, "tools/call", {"name": "missing_tool"}),
+            ], directory)
+            self.assertEqual(replies[0]["error"]["code"], -32000)
+            self.assertEqual(replies[1]["result"]["serverInfo"]["name"], "hb")
+            tools = {tool["name"] for tool in replies[2]["result"]["tools"]}
+            self.assertTrue({"hb_run", "hb_api", "hb_review", "hb_render"} <= tools)
+            self.assertFalse(replies[3]["result"]["isError"])
+            rendered = replies[4]["result"]
+            self.assertFalse(rendered["isError"])
+            self.assertEqual(rendered["content"][1]["mimeType"], "image/png")
+            self.assertEqual(base64.b64decode(rendered["content"][1]["data"]),
+                             Path(image).read_bytes())
+            self.assertEqual(replies[5]["error"]["code"], -32602)
+
+    def test_jsonrpc_invalid_requests_and_parameters(self):
+        with tempfile.TemporaryDirectory() as directory:
+            replies = self.exchange("--jsonrpc", [
+                {"jsonrpc": "1.0", "id": 1, "method": "capabilities"},
+                request(2, "unknown"),
+                request(3, "run", {"args": "not an array"}),
+                request(4, "run", {"code": 42}),
+            ], directory)
+            self.assertEqual(replies[0]["error"]["code"], -32600)
+            self.assertEqual(replies[1]["error"]["code"], -32601)
+            for reply in replies[2:]:
+                self.assertEqual(reply["error"]["data"]["code"], "INVALID_PARAMS")
+
+
+if __name__ == "__main__":
+    unittest.main()

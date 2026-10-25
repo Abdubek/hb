@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+gpt6-131: A compact recording studio with acoustic treatment, mixing desk and monitor speakers
+gpt6-132: A corner cafe interior with banquette seating, counter and pendant lighting
+gpt6-133: A small public library interior with reading tables, book stacks and skylights
+gpt6-134: A shoe shop interior with wall shelving, mirror, display islands and checkout desk
+gpt6-135: A dentist waiting room with reception window, seating, magazine table and planters

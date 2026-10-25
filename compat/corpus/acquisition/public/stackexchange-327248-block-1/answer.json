@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 27620086,
+    "reputation": 515,
+    "user_id": 161442,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/6dqkAiBM.png?s=256",
+    "display_name": "Oxicid",
+    "link": "https://blender.stackexchange.com/users/161442/oxicid"
+  },
+  "is_accepted": true,
+  "score": 4,
+  "last_activity_date": 1763300036,
+  "last_edit_date": 1763300036,
+  "creation_date": 1731923997,
+  "answer_id": 327248,
+  "question_id": 285829,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>In blender 4.2 they added the ability to change and set categories. There is another option, through ctypes, it is implemented in my addon <a href=\"https://github.com/Oxicid/UniV/blob/ad9c4f9ee5c165c18a0860dc31830f10dabb2108/operators/toggle.py#L315\" rel=\"nofollow noreferrer\">UniV</a>, in the operator SplitUVToggle, but it is too complex for the average programmer.</p>\n<pre class=\"lang-py prettyprint-override\"><code>import bpy\n\ndef set_active_panel_category(category, area_type):\n    if bpy.app.version &gt;= (4, 2, 0):\n        areas = (area for win in bpy.context.window_manager.windows for area in win.screen.areas if area.type == area_type)\n        for a in areas:\n            for r in a.regions:\n                if r.type == 'UI':\n                    if r.width == 1:\n                        with bpy.context.temp_override(area=a):\n                            bpy.ops.wm.context_toggle(data_path='space_data.show_region_ui')\n                    try:\n                        if r.active_panel_category != category:\n                            r.active_panel_category = category\n                            r.tag_redraw()\n                    except (NameError, AttributeError) as e:\n                        raise e\n                    \narea_type = 'VIEW_3D'\ncategory = 'View'\n\nset_active_panel_category(category, area_type)\n<span class=\"math-container\">```</span>\n</code></pre>\n"
+}

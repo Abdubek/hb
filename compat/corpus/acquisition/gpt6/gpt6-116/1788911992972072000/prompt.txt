@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+gpt6-116: A solar farm following a gently sloping ground surface with service paths
+gpt6-117: A spherical arrangement of small satellites linked by thin struts
+gpt6-118: A spiral parking ramp with guard rails and central support columns
+gpt6-119: A perforated metal speaker grille over a rounded rectangular enclosure
+gpt6-120: A woven basket modeled from crossing strips with a reinforced rim and two handles

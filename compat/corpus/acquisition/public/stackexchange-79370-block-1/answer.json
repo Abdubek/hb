@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 7213424,
+    "reputation": 61448,
+    "user_id": 19156,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/yaIhE.jpg?s=256",
+    "display_name": "lemon",
+    "link": "https://blender.stackexchange.com/users/19156/lemon"
+  },
+  "is_accepted": true,
+  "score": 6,
+  "last_activity_date": 1494425344,
+  "creation_date": 1494425344,
+  "answer_id": 79370,
+  "question_id": 79344,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>Here is a solution using a temporary IK constraint:</p>\n\n<p><a href=\"https://i.sstatic.net/eoHAY.gif\" rel=\"noreferrer\"><img src=\"https://i.sstatic.net/eoHAY.gif\" alt=\"enter image description here\"></a></p>\n\n<p>The principle is to:</p>\n\n<ul>\n<li>Set an empty at cursor position</li>\n<li>Add a IK constraint to the bone targeting the empty</li>\n<li>Get the resulting transformation</li>\n<li>Remove the constraint</li>\n<li>Assign the previously obtained transformations</li>\n</ul>\n\n<p>The commented code:</p>\n\n<pre><code>import bpy\n\n#Bones and its parents\ndef BoneAndParents( bone ):\n    yield bone\n    while bone.parent:\n        bone = bone.parent\n        yield bone\n\narm = bpy.data.objects['Armature']\n\nbpy.ops.object.mode_set(mode='OBJECT')\n\n#Add a temporary empty\nbpy.ops.object.add()\nempty = bpy.context.scene.objects.active\n\nbpy.context.scene.objects.active = arm\n\nbpy.ops.object.mode_set(mode='POSE')\n\nbone = arm.pose.bones['Bone.003']\n\n#Add IK constraint and update\nconstraint = bone.constraints.new( 'IK' )\nconstraint.target = empty\nbone.constraints.update()\nbpy.context.scene.update() #Important: update the scene\n\n#Get the bones and transformation due to the constraint\nbones = [b for b in BoneAndParents( bone )]\ntransformations = [b.matrix.copy() for b in bones]\n\n#Get rid of the temporary constraint and update\nbone.constraints.remove( constraint )\nbone.constraints.update()\n\n#Assign transformation\nfor b, t in zip( bones, transformations ):\n    b.matrix = t\n\n#Remove temporary empty\nbpy.ops.object.mode_set(mode='OBJECT')\nbpy.context.scene.objects.active = empty\nbpy.ops.object.delete()\n\n#Back to pose\nbpy.context.scene.objects.active = arm\nbpy.ops.object.mode_set(mode='POSE')\n</code></pre>\n"
+}

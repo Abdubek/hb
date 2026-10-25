@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 3037723,
+    "reputation": 56265,
+    "user_id": 935,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/06d003e2851b568e261efe011fcb0b74?s=256&d=identicon&r=PG",
+    "display_name": "sambler",
+    "link": "https://blender.stackexchange.com/users/935/sambler"
+  },
+  "is_accepted": false,
+  "score": 5,
+  "last_activity_date": 1386750739,
+  "last_edit_date": 1492088263,
+  "creation_date": 1386750739,
+  "answer_id": 5445,
+  "question_id": 5413,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>I figured a way to get this to work. It still uses the override as we add the group to the material and put the group into edit mode to use the <code>tree_socket_add</code> operator. Ideally we should be able to do this without using operators to visually edit the group. I'm using the operator usage to separate this from your <a href=\"https://blender.stackexchange.com/questions/5387/how-to-handle-creating-a-node-group-in-a-script\">other group question</a>. As mentioned in that question the api change in 2.67 means this won't work in blender &lt;=2.66</p>\n\n<p>It should be improved by testing that we have an active material or even an object to add a material to.</p>\n\n<p>Note that <code>tree_socket_add</code> adds the sockets to <code>test_group.inputs</code> where we can name them but to make connections we need to use <code>group_inputs.outputs</code></p>\n\n<pre><code>import bpy\n\nfor area in bpy.context.screen.areas:\n    if area.type == \"NODE_EDITOR\":\n        override = {'screen': bpy.context.screen, 'area': area}\n\n# create a group\ntest_group = bpy.data.node_groups.new('testGroup', 'ShaderNodeTree')\n\n# create group inputs\ngroup_inputs = test_group.nodes.new('NodeGroupInput')\ngroup_inputs.location = (-350,0)\n\n# create group outputs\ngroup_outputs = test_group.nodes.new('NodeGroupOutput')\ngroup_outputs.location = (300,0)\n\n# add group to active material\nbpy.ops.node.add_node(override,settings=[{\"name\":\"node_tree\", \"value\":\"bpy.data.node_groups['\"+test_group.name+\"']\"}], type=\"ShaderNodeGroup\")\n# put group into edit mode\nbpy.ops.node.group_edit(override)\n\n# create group input/output sockets\nbpy.ops.node.tree_socket_add(override, in_out='IN')\ntest_group.inputs[0].name = 'in_to_greater'\nbpy.ops.node.tree_socket_add(override, in_out='IN')\ntest_group.inputs[1].name = 'in_to_less'\nbpy.ops.node.tree_socket_add(override, in_out='OUT')\ntest_group.outputs[0].name = 'out_result'\n\n# create three math nodes in a group\nnode_add = test_group.nodes.new('ShaderNodeMath')\nnode_add.operation = 'ADD'\nnode_add.location = (100,0)\n\nnode_greater = test_group.nodes.new('ShaderNodeMath')\nnode_greater.operation = 'GREATER_THAN'\nnode_greater.label = 'greater'\nnode_greater.location = (-100,100)\n\nnode_less = test_group.nodes.new('ShaderNodeMath')\nnode_less.operation = 'LESS_THAN'\nnode_less.label = 'less'\nnode_less.location = (-100,-100)\n\n# link nodes together\ntest_group.links.new(node_add.inputs[0], node_greater.outputs[0])\ntest_group.links.new(node_add.inputs[1], node_less.outputs[0])\ntest_group.links.new(group_inputs.outputs[0], node_greater.inputs[0])\ntest_group.links.new(group_inputs.outputs[1], node_less.inputs[0])\ntest_group.links.new(node_add.outputs[0], group_outputs.inputs[0])\n</code></pre>\n"
+}

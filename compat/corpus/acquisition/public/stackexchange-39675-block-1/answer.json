@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 3732141,
+    "reputation": 16191,
+    "user_id": 15861,
+    "user_type": "registered",
+    "accept_rate": 57,
+    "profile_image": "https://graph.facebook.com/780312555/picture?type=large",
+    "display_name": "TLousky",
+    "link": "https://blender.stackexchange.com/users/15861/tlousky"
+  },
+  "is_accepted": true,
+  "score": 6,
+  "last_activity_date": 1444332571,
+  "last_edit_date": 1444332571,
+  "creation_date": 1444282539,
+  "answer_id": 39675,
+  "question_id": 39653,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>I made two small changes to your script that might help it work as intended.</p>\n\n<ol>\n<li>I switched to using bmesh to save the selected verts data. I find it a bit more reliable and stable than the built in mesh data.</li>\n<li>I saved the vertex indices instead of references to the vertices themselves in the list comprehension. This makes sure the list, which is comprised of simple integers, will persist after you go back to object mode (bmesh vertex references would have been destroyed). You don't need anything except the indices for this script anyway. This could have been what crashed your script, not sure but you'll have to test and let us know.</li>\n</ol>\n\n<p>So here's the updated code [EDIT: the previous code failed because it was impossible to access v.groups once we only saved vertex indices and not vertex references. The script needed to decide if it transfers and inverts a weight for a given vertex. The following is based on the previous idea, with changes from Hatrou Hansou, and works OK]:</p>\n\n<pre><code>import bpy\n\n# ensure we are in edit mode\nbpy.ops.object.mode_set(mode=\"EDIT\")\n\n# configurable parameters\nsrc_group = \"Arm_03.L\"\ndst_group = \"Arm_02.L\"\n\nobj = bpy.context.edit_object\nsrc_group_index = obj.vertex_groups[src_group].index\ndst_group_index = obj.vertex_groups[dst_group].index\n\nmesh = obj.data\n\n# Saving vertex indices only, instead of vertex objects in this list\n# Copy v.groups.group, do not reference v.groups (unstable)\nsel_verts_ig = [[v.index, [g.group for g in v.groups]] for v in mesh.vertices if v.select]\n\n# no more SEGFAULT in this line\nbpy.ops.object.mode_set(mode=\"OBJECT\")\n\nprint(\"Working\")\n\nfor ig in sel_verts_ig:\n    v1in = False\n    v2in = False\n    i = ig[0]\n    for g in ig[1]:\n        if g == src_group_index:\n            v1in = True\n        if g == dst_group_index:\n            v2in = True\n    if v1in and v2in:\n        obj.vertex_groups[dst_group].add([i], 1.0 - obj.vertex_groups[src_group].weight(i), 'REPLACE')\n\nprint(\"Finished\")\n</code></pre>\n"
+}

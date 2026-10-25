@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-053.py",
+      "task": "A laboratory workstation with cabinets and instruments",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "0b9c2311b1f12f3f1f2c647fb0f1608a1592ca8bca09a5bf2c8e43b0c6547f37",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-053/1788913657814917000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 460.3705987930298
+}

@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-126.py",
+      "task": "A portable generator with tubular cage, motor housing, fuel tank and control panel",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "625e6ec25a6ecb257edf93a412ed7b11d90f2dccb04aaa8a4a34335d3a110bb7",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-126/1788913657815888000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 603.4504330158234
+}

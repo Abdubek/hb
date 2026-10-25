@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 15,
+  "last_activity_date": 1555419252,
+  "last_edit_date": 1555419252,
+  "creation_date": 1480319080,
+  "answer_id": 68133,
+  "question_id": 68093,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>Firstly <a href=\"https://www.blender.org/api/blender_python_api_current/bpy.types.Operator.html\" rel=\"noreferrer\">operators</a> don't work in a usual create class instance way... the code below</p>\n\n<pre><code>myobject = remDoubles()\nmyobject.execute()\n</code></pre>\n\n<p>Will NOT work.</p>\n\n<p>Have a look at the <a href=\"https://www.blender.org/api/blender_python_api_current/bpy.types.Operator.html\" rel=\"noreferrer\">Hello World Example</a>  The <code>HelloWorldOperator</code>operator class is defined, registered (known to bpy.ops), then called using <code>bpy.ops.</code> \"plus\" the <code>bl_idname</code>.  </p>\n\n<p>In your example you would </p>\n\n<pre><code>bpy.utils.register_class(RemoveDoublesMulti) # changed to camel-case name\n\n# test call to the newly defined operator\nbpy.ops.object.remove_doubles_multi()\n</code></pre>\n\n<p>Using a <a href=\"https://www.blender.org/api/blender_python_api_current/bmesh.html\" rel=\"noreferrer\">bmesh</a> approach avoids toggling in and out of edit mode, changing the context object ...  etc.  An alternative for <code>execute</code>:</p>\n\n<pre><code>import bpy\nimport bmesh\n\ncontext = bpy.context\n\ndistance = 0.0 # remove doubles tolerance.\nif True: #def execute(self, context):\n\n    meshes = set(o.data for o in context.selected_objects\n                      if o.type == 'MESH')\n\n    bm = bmesh.new()\n\n    for m in meshes:\n        bm.from_mesh(m)\n        bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=distance)\n        bm.to_mesh(m)\n        m.update()\n        bm.clear()\n\n    bm.free()\n</code></pre>\n"
+}

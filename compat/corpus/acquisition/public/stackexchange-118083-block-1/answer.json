@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 8635024,
+    "reputation": 113,
+    "user_id": 26620,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/e1eda9fa5f1fb3546e3c7a5b1a76a4d4?s=256&d=identicon&r=PG&f=y&so-version=2",
+    "display_name": "Clarkx",
+    "link": "https://blender.stackexchange.com/users/26620/clarkx"
+  },
+  "is_accepted": true,
+  "score": 3,
+  "last_activity_date": 1536592430,
+  "creation_date": 1536592430,
+  "answer_id": 118083,
+  "question_id": 118057,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>I'm copy/pasting the solution from @batFINGER so I will be able to change this problem to solved. Thanks.</p>\n\n<pre><code>import bpy\nfrom bpy.props import FloatProperty\nfrom mathutils import Vector, Matrix, Quaternion, Euler\nfrom math import degrees, radians\n\nclass HelloWorldPanel(bpy.types.Panel):\n    \"\"\"Creates a Panel in the Object properties window\"\"\"\n    bl_label = \"Hello World Panel\"\n    bl_idname = \"OBJECT_PT_hello\"\n    bl_space_type = 'PROPERTIES'\n    bl_region_type = 'WINDOW'\n    bl_context = \"object\"\n\n    def draw(self, context):\n        layout = self.layout\n\n        obj = context.object\n\n        row = layout.row()\n        row.label(text=\"Active object is: \" + obj.name)\n        row = layout.row()\n        row.prop(obj, \"name\")\n\n        row = layout.row()\n        row.prop(obj, \"rotate\")\n\ndef get_rotation(self):\n    return self.rotation_euler.to_matrix().to_euler('ZYX').z\n\ndef set_rotation(self, value):\n    rot = self.rotation_euler.to_matrix().to_euler('ZYX')\n    rot.z = value\n    self.rotation_euler = rot.to_matrix().to_euler(self.rotation_mode)\n\ndef register():\n    bpy.types.Object.rotate = FloatProperty(name=\"Rotation\",\n            description=\"Rotate object.\",\n            get=get_rotation,\n            set=set_rotation,\n            unit='ROTATION')\n\n    bpy.utils.register_class(HelloWorldPanel)\n\n\ndef unregister():\n    del bpy.types.Object.rotate\n    bpy.utils.unregister_class(HelloWorldPanel)\n\n\nif __name__ == \"__main__\":\n    register()\n</code></pre>\n"
+}

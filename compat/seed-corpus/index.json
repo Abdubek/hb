@@ -1,0 +1,1406 @@
+{
+  "kind": "synthetic_seed",
+  "independent_task_families": 25,
+  "scripts": [
+    {
+      "file": "desk_00.py",
+      "family": "desk",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "desk_01.py",
+      "family": "desk",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "desk_02.py",
+      "family": "desk",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "desk_03.py",
+      "family": "desk",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "desk_04.py",
+      "family": "desk",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "desk_05.py",
+      "family": "desk",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "desk_06.py",
+      "family": "desk",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "desk_07.py",
+      "family": "desk",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bookcase_00.py",
+      "family": "bookcase",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bookcase_01.py",
+      "family": "bookcase",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bookcase_02.py",
+      "family": "bookcase",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bookcase_03.py",
+      "family": "bookcase",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bookcase_04.py",
+      "family": "bookcase",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bookcase_05.py",
+      "family": "bookcase",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bookcase_06.py",
+      "family": "bookcase",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bookcase_07.py",
+      "family": "bookcase",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "staircase_00.py",
+      "family": "staircase",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "staircase_01.py",
+      "family": "staircase",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "staircase_02.py",
+      "family": "staircase",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "staircase_03.py",
+      "family": "staircase",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "staircase_04.py",
+      "family": "staircase",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "staircase_05.py",
+      "family": "staircase",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "staircase_06.py",
+      "family": "staircase",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "staircase_07.py",
+      "family": "staircase",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bench_00.py",
+      "family": "bench",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bench_01.py",
+      "family": "bench",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bench_02.py",
+      "family": "bench",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bench_03.py",
+      "family": "bench",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bench_04.py",
+      "family": "bench",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bench_05.py",
+      "family": "bench",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bench_06.py",
+      "family": "bench",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bench_07.py",
+      "family": "bench",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bridge_00.py",
+      "family": "bridge",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bridge_01.py",
+      "family": "bridge",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bridge_02.py",
+      "family": "bridge",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bridge_03.py",
+      "family": "bridge",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bridge_04.py",
+      "family": "bridge",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bridge_05.py",
+      "family": "bridge",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bridge_06.py",
+      "family": "bridge",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "bridge_07.py",
+      "family": "bridge",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "room_shell_00.py",
+      "family": "room_shell",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "room_shell_01.py",
+      "family": "room_shell",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "room_shell_02.py",
+      "family": "room_shell",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "room_shell_03.py",
+      "family": "room_shell",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "room_shell_04.py",
+      "family": "room_shell",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "room_shell_05.py",
+      "family": "room_shell",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "room_shell_06.py",
+      "family": "room_shell",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "room_shell_07.py",
+      "family": "room_shell",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "city_blocks_00.py",
+      "family": "city_blocks",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "city_blocks_01.py",
+      "family": "city_blocks",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "city_blocks_02.py",
+      "family": "city_blocks",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "city_blocks_03.py",
+      "family": "city_blocks",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "city_blocks_04.py",
+      "family": "city_blocks",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "city_blocks_05.py",
+      "family": "city_blocks",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "city_blocks_06.py",
+      "family": "city_blocks",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "city_blocks_07.py",
+      "family": "city_blocks",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pallet_00.py",
+      "family": "pallet",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pallet_01.py",
+      "family": "pallet",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pallet_02.py",
+      "family": "pallet",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pallet_03.py",
+      "family": "pallet",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pallet_04.py",
+      "family": "pallet",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pallet_05.py",
+      "family": "pallet",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pallet_06.py",
+      "family": "pallet",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pallet_07.py",
+      "family": "pallet",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "shipping_crate_00.py",
+      "family": "shipping_crate",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "shipping_crate_01.py",
+      "family": "shipping_crate",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "shipping_crate_02.py",
+      "family": "shipping_crate",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "shipping_crate_03.py",
+      "family": "shipping_crate",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "shipping_crate_04.py",
+      "family": "shipping_crate",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "shipping_crate_05.py",
+      "family": "shipping_crate",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "shipping_crate_06.py",
+      "family": "shipping_crate",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "shipping_crate_07.py",
+      "family": "shipping_crate",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "server_rack_00.py",
+      "family": "server_rack",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "server_rack_01.py",
+      "family": "server_rack",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "server_rack_02.py",
+      "family": "server_rack",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "server_rack_03.py",
+      "family": "server_rack",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "server_rack_04.py",
+      "family": "server_rack",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "server_rack_05.py",
+      "family": "server_rack",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "server_rack_06.py",
+      "family": "server_rack",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "server_rack_07.py",
+      "family": "server_rack",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "keyboard_00.py",
+      "family": "keyboard",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "keyboard_01.py",
+      "family": "keyboard",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "keyboard_02.py",
+      "family": "keyboard",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "keyboard_03.py",
+      "family": "keyboard",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "keyboard_04.py",
+      "family": "keyboard",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "keyboard_05.py",
+      "family": "keyboard",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "keyboard_06.py",
+      "family": "keyboard",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "keyboard_07.py",
+      "family": "keyboard",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "dominoes_00.py",
+      "family": "dominoes",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "dominoes_01.py",
+      "family": "dominoes",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "dominoes_02.py",
+      "family": "dominoes",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "dominoes_03.py",
+      "family": "dominoes",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "dominoes_04.py",
+      "family": "dominoes",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "dominoes_05.py",
+      "family": "dominoes",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "dominoes_06.py",
+      "family": "dominoes",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "dominoes_07.py",
+      "family": "dominoes",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "picture_frame_00.py",
+      "family": "picture_frame",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "picture_frame_01.py",
+      "family": "picture_frame",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "picture_frame_02.py",
+      "family": "picture_frame",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "picture_frame_03.py",
+      "family": "picture_frame",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "picture_frame_04.py",
+      "family": "picture_frame",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "picture_frame_05.py",
+      "family": "picture_frame",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "picture_frame_06.py",
+      "family": "picture_frame",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "picture_frame_07.py",
+      "family": "picture_frame",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "cabinet_00.py",
+      "family": "cabinet",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "cabinet_01.py",
+      "family": "cabinet",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "cabinet_02.py",
+      "family": "cabinet",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "cabinet_03.py",
+      "family": "cabinet",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "cabinet_04.py",
+      "family": "cabinet",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "cabinet_05.py",
+      "family": "cabinet",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "cabinet_06.py",
+      "family": "cabinet",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "cabinet_07.py",
+      "family": "cabinet",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pergola_00.py",
+      "family": "pergola",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pergola_01.py",
+      "family": "pergola",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pergola_02.py",
+      "family": "pergola",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pergola_03.py",
+      "family": "pergola",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pergola_04.py",
+      "family": "pergola",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pergola_05.py",
+      "family": "pergola",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pergola_06.py",
+      "family": "pergola",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "pergola_07.py",
+      "family": "pergola",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "robot_blockout_00.py",
+      "family": "robot_blockout",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "robot_blockout_01.py",
+      "family": "robot_blockout",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "robot_blockout_02.py",
+      "family": "robot_blockout",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "robot_blockout_03.py",
+      "family": "robot_blockout",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "robot_blockout_04.py",
+      "family": "robot_blockout",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "robot_blockout_05.py",
+      "family": "robot_blockout",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "robot_blockout_06.py",
+      "family": "robot_blockout",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "robot_blockout_07.py",
+      "family": "robot_blockout",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "monitor_00.py",
+      "family": "monitor",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "monitor_01.py",
+      "family": "monitor",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "monitor_02.py",
+      "family": "monitor",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "monitor_03.py",
+      "family": "monitor",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "monitor_04.py",
+      "family": "monitor",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "monitor_05.py",
+      "family": "monitor",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "monitor_06.py",
+      "family": "monitor",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "monitor_07.py",
+      "family": "monitor",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "acoustic_panels_00.py",
+      "family": "acoustic_panels",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "acoustic_panels_01.py",
+      "family": "acoustic_panels",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "acoustic_panels_02.py",
+      "family": "acoustic_panels",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "acoustic_panels_03.py",
+      "family": "acoustic_panels",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "acoustic_panels_04.py",
+      "family": "acoustic_panels",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "acoustic_panels_05.py",
+      "family": "acoustic_panels",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "acoustic_panels_06.py",
+      "family": "acoustic_panels",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "acoustic_panels_07.py",
+      "family": "acoustic_panels",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "window_grid_00.py",
+      "family": "window_grid",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "window_grid_01.py",
+      "family": "window_grid",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "window_grid_02.py",
+      "family": "window_grid",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "window_grid_03.py",
+      "family": "window_grid",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "window_grid_04.py",
+      "family": "window_grid",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "window_grid_05.py",
+      "family": "window_grid",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "window_grid_06.py",
+      "family": "window_grid",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "window_grid_07.py",
+      "family": "window_grid",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "game_console_00.py",
+      "family": "game_console",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "game_console_01.py",
+      "family": "game_console",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "game_console_02.py",
+      "family": "game_console",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "game_console_03.py",
+      "family": "game_console",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "game_console_04.py",
+      "family": "game_console",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "game_console_05.py",
+      "family": "game_console",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "game_console_06.py",
+      "family": "game_console",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "game_console_07.py",
+      "family": "game_console",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": true
+    },
+    {
+      "file": "rover_00.py",
+      "family": "rover",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "rover_01.py",
+      "family": "rover",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "rover_02.py",
+      "family": "rover",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "rover_03.py",
+      "family": "rover",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "rover_04.py",
+      "family": "rover",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "rover_05.py",
+      "family": "rover",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "rover_06.py",
+      "family": "rover",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "rover_07.py",
+      "family": "rover",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_material_00.py",
+      "family": "product_material",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_material_01.py",
+      "family": "product_material",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_material_02.py",
+      "family": "product_material",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_material_03.py",
+      "family": "product_material",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_material_04.py",
+      "family": "product_material",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_material_05.py",
+      "family": "product_material",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_material_06.py",
+      "family": "product_material",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_material_07.py",
+      "family": "product_material",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_camera_00.py",
+      "family": "product_camera",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_camera_01.py",
+      "family": "product_camera",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_camera_02.py",
+      "family": "product_camera",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_camera_03.py",
+      "family": "product_camera",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_camera_04.py",
+      "family": "product_camera",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_camera_05.py",
+      "family": "product_camera",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_camera_06.py",
+      "family": "product_camera",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "product_camera_07.py",
+      "family": "product_camera",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "beveled_case_00.py",
+      "family": "beveled_case",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "beveled_case_01.py",
+      "family": "beveled_case",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "beveled_case_02.py",
+      "family": "beveled_case",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "beveled_case_03.py",
+      "family": "beveled_case",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "beveled_case_04.py",
+      "family": "beveled_case",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "beveled_case_05.py",
+      "family": "beveled_case",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "beveled_case_06.py",
+      "family": "beveled_case",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "beveled_case_07.py",
+      "family": "beveled_case",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "sphere_lamp_00.py",
+      "family": "sphere_lamp",
+      "variant": 0,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "sphere_lamp_01.py",
+      "family": "sphere_lamp",
+      "variant": 1,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "sphere_lamp_02.py",
+      "family": "sphere_lamp",
+      "variant": 2,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "sphere_lamp_03.py",
+      "family": "sphere_lamp",
+      "variant": 3,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "sphere_lamp_04.py",
+      "family": "sphere_lamp",
+      "variant": 4,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "sphere_lamp_05.py",
+      "family": "sphere_lamp",
+      "variant": 5,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "sphere_lamp_06.py",
+      "family": "sphere_lamp",
+      "variant": 6,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    },
+    {
+      "file": "sphere_lamp_07.py",
+      "family": "sphere_lamp",
+      "variant": 7,
+      "provenance": "GPT-authored parameterized seed; generated in this implementation session",
+      "expected_m0": false
+    }
+  ]
+}

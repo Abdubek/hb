@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 3037723,
+    "reputation": 56265,
+    "user_id": 935,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/06d003e2851b568e261efe011fcb0b74?s=256&d=identicon&r=PG",
+    "display_name": "sambler",
+    "link": "https://blender.stackexchange.com/users/935/sambler"
+  },
+  "is_accepted": false,
+  "score": 5,
+  "last_activity_date": 1464723554,
+  "creation_date": 1464723554,
+  "answer_id": 53842,
+  "question_id": 53773,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>Each object has two properties called <code>hide</code> and <code>hide_render</code> - the first is viewport visibility and the second is render visibility.</p>\n\n<p>To use python to set a keyframe for a property you set the value, then use <code>keyframe_insert(data_path, frame=f)</code> to keyframe it. So if you only want to object visible on one frame, you make it visible and set a keyframe on the relevant frame, then hide it and add a keyframe for the previous and next frame.</p>\n\n<pre><code>import bpy\n\n# clear any existing objects\nfor o in bpy.data.objects:\n    o.hide = False\nbpy.ops.object.select_all(action='SELECT')\nbpy.ops.object.delete()\n\ngrid_size = 7\n# the default cube is 2 units wide, add another .2 for gap\nspacing = 2.2\n\nfor x in range(grid_size):\n    for y in range(grid_size):\n        f = (x*grid_size) + y\n        bpy.ops.mesh.primitive_cube_add (location=(x*spacing, y*spacing, 0))\n        obj = bpy.context.active_object\n        # key as visible on the current frame\n        obj.keyframe_insert('hide',frame=f)\n        obj.keyframe_insert('hide_render',frame=f)\n        # hide it\n        obj.hide = True\n        obj.hide_render = True\n        # key as hidden on the previous frame\n        obj.keyframe_insert('hide',frame=f-1)\n        obj.keyframe_insert('hide_render',frame=f-1)\n        # key as hidden on the next frame\n        obj.keyframe_insert('hide',frame=f+1)\n        obj.keyframe_insert('hide_render',frame=f+1)\n</code></pre>\n"
+}

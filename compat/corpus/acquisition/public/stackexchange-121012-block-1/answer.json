@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 3,
+  "last_activity_date": 1540366844,
+  "last_edit_date": 1540366844,
+  "creation_date": 1540194647,
+  "answer_id": 121012,
+  "question_id": 120982,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><strong>Define plane and project onto it.</strong></p>\n\n<p>An alternative approach is defining the plane at the average location of selected vertices, with normal calculated from the sum of vertex normals, then normalized.</p>\n\n<p>Using the normal and a point on the plane can <a href=\"https://en.wikipedia.org/wiki/Vector_projection#Matrix_representation\" rel=\"nofollow noreferrer\">project</a> any vector onto that plane. </p>\n\n<p><a href=\"https://math.stackexchange.com/a/633243/405394\">From this anwer on Maths Stack Exchange</a></p>\n\n<blockquote>\n  <p>If <span class=\"math-container\">$A$</span>,<span class=\"math-container\">$B$</span>,<span class=\"math-container\">$C$</span> are not on the same line, then <span class=\"math-container\">$\\vec{AB}\\times\n&gt; \\vec{BC}$</span> will give you the direction of your reference plane normal\n  vector <span class=\"math-container\">$\\hat{n}_1$</span>. I think you should know how to do the\n  normalization so that <span class=\"math-container\">$|\\hat{n}_1|=1$</span></p>\n  \n  <p>Then the projection of <span class=\"math-container\">$\\vec{BD}$</span> on the reference plane is\n  <span class=\"math-container\">$\\vec{BD}-(\\vec{BD}\\cdot \\hat{n}_1)\\hat{n}_1$</span></p>\n</blockquote>\n\n<p>Have used <a href=\"https://docs.blender.org/api/2.79/mathutils.geometry.html#mathutils.geometry.distance_point_to_plane\" rel=\"nofollow noreferrer\"><code>mathutils.geometry.distance_point_to_plane(pt, plane_co, plane_no)</code></a> to calculate the projection,</p>\n\n<pre><code>import bpy\nimport bmesh\nfrom mathutils import Vector\nfrom mathutils.geometry import distance_point_to_plane\n\ncontext = bpy.context\nob = context.edit_object\nme = ob.data\nbm = bmesh.from_edit_mesh(me)\nbm.normal_update() #  maybe unneccesary if no prior ops.\nverts_sel = [v for v in bm.verts if v.select is True]\nn = len(verts_sel)\nverts_co = [v.co for v in verts_sel]\nverts_no = [v.normal for v in verts_sel]\n\nplane_co = sum(verts_co, Vector()) / n\nplane_no = sum(verts_no, Vector()).normalized()\n\nfor v in verts_sel:\n    d = distance_point_to_plane(v.co, plane_co, plane_no)\n    v.co -= d * plane_no\n\nbmesh.update_edit_mesh(me)\n</code></pre>\n\n<p>Rather than using the <code>mathutils</code> routine this is the equivalent of </p>\n\n<pre><code>for v in verts_sel:\n    v.co -= (v.co - plane_co).dot(plane_no) * plane_no\n</code></pre>\n\n<p>where <span class=\"math-container\">$\\vec{BD}$</span> is <code>v.co - plane_co</code></p>\n\n<p><strong>Alternatively using matrices.</strong></p>\n\n<p><code>bmesh.ops.transform()</code> lets us define both a transform matrix and a space matrix. In this case we need the calculated median point to be the origin of our new space, ie a simple translation matrix. For the transform matrix will use the scale matrix from question.</p>\n\n<pre><code>T = Matrix.Translation(-plane_co)\nS = Matrix.Scale(0, 4, plane_no)\nbmesh.ops.transform(bm, verts=verts_sel, matrix=S, space=T)\n</code></pre>\n"
+}

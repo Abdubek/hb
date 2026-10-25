@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 6604624,
+    "reputation": 86008,
+    "user_id": 15543,
+    "user_type": "registered",
+    "accept_rate": 36,
+    "profile_image": "https://www.gravatar.com/avatar/72df43e455348f6c32989a15d962d59e?s=256&d=identicon&r=PG",
+    "display_name": "batFINGER",
+    "link": "https://blender.stackexchange.com/users/15543/batfinger"
+  },
+  "is_accepted": true,
+  "score": 5,
+  "last_activity_date": 1525098561,
+  "last_edit_date": 1525098561,
+  "creation_date": 1525098208,
+  "answer_id": 107470,
+  "question_id": 107438,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p><strong>Screen Full Area Opens a new Screen</strong></p>\n\n<p>A couple of prints in the following show that the context screen and henceforth area, after calling the <code>bpy.ops.screen.screen_full_area()</code> operator are not the same.  Change the <code>override</code> dictionary accordingly.  (btw running view all without the override core dumps my blender (ubuntu 18))</p>\n\n<pre><code>import bpy\n\ncontext = bpy.context\nfor area in bpy.context.screen.areas:\n   if area.type == 'IMAGE_EDITOR':\n       override = bpy.context.copy()\n       override['space_data'] = area.spaces.active\n       override['region'] = area.regions[-1]\n       override['area'] = area\n       bpy.ops.screen.screen_full_area(override, use_hide_panels=True)\n\n       print(context.area, override['area'])\n       print(context.screen, override['screen'])\n       print(context.window, override['window'])\n       override['screen'] = context.screen\n       override[\"area\"] = context.area\n       bpy.ops.image.view_all(override, fit_view=True)\n       break\n</code></pre>\n"
+}

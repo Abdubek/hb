@@ -1,0 +1,123 @@
+{
+  "file": "invalid/gpt6-055.py",
+  "source_sha256": "0b07fbc249d75960bfd9f10ec113bcc0e5c75097898da5aeea1e1c13b73dfd57",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.022592875000555068,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"SYNTAX_ERROR\",\"doc\":\"docs/compatibility.md#static-checker\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py:15\",\"message\":\"unexpected indent\",\"suggestion\":\"Correct the Python syntax.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py\",\"ok\":false,\"timing\":{\"python_init_ms\":10.928500000000001,\"total_ms\":11.387667}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "SYNTAX_ERROR",
+        "doc": "docs/compatibility.md#static-checker",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py:15",
+        "message": "unexpected indent",
+        "suggestion": "Correct the Python syntax."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 10.928500000000001,
+      "total_ms": 11.387667
+    }
+  },
+  "blender_process": {
+    "returncode": 1,
+    "seconds": 0.4351370410004165,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-e60zafms",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-e60zafms\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py"
+    ],
+    "stdout": "CORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py\", \"ok\": false, \"exception\": \"IndentationError\", \"message\": \"unexpected indent (gpt6-055.py, line 15)\", \"line\": 15}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n",
+    "stderr": "Traceback (most recent call last):\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py\", line 11, in <module>\n    runpy.run_path(source, run_name=\"__main__\")\n  File \"<frozen runpy>\", line 290, in run_path\n  File \"<frozen runpy>\", line 259, in _get_code_from_file\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py\", line 15\n    def_placeholder = None\nIndentationError: unexpected indent\n"
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py",
+    "ok": false,
+    "exception": "IndentationError",
+    "message": "unexpected indent (gpt6-055.py, line 15)",
+    "line": 15
+  },
+  "runtime_process": {
+    "returncode": 1,
+    "seconds": 0.032020291982917115,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-e60zafms\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-e60zafms/scene.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"SCRIPT_ERROR\",\"doc\":\"docs/compatibility.md#errors\",\"frames\":[],\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py:15\",\"message\":\"unexpected indent (gpt6-055.py, line 15)\",\"suggestion\":\"Correct the script and rerun; the scene was not saved.\"},\"ok\":false}\n",
+    "stderr": ""
+  },
+  "runtime": {
+    "error": {
+      "code": "SCRIPT_ERROR",
+      "doc": "docs/compatibility.md#errors",
+      "frames": [],
+      "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gpt6-055.py:15",
+      "message": "unexpected indent (gpt6-055.py, line 15)",
+      "suggestion": "Correct the script and rerun; the scene was not saved."
+    },
+    "ok": false
+  },
+  "runtime_probe_process": {
+    "returncode": 1,
+    "seconds": 0.030914208007743582,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-e60zafms\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-e60zafms/exception_probe.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-e60zafms/probe.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"SCRIPT_ERROR\",\"doc\":\"docs/compatibility.md#errors\",\"frames\":[{\"file\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-e60zafms/exception_probe.py\",\"function\":\"<module>\",\"line\":6}],\"location\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-e60zafms/exception_probe.py:6\",\"message\":\"unexpected indent (gpt6-055.py, line 15)\",\"suggestion\":\"Correct the script and rerun; the scene was not saved.\"},\"ok\":false}\n",
+    "stderr": "CORPUS_HB_EXCEPTION={\"exception\": \"IndentationError\", \"message\": \"unexpected indent (gpt6-055.py, line 15)\", \"line\": 15}\n"
+  },
+  "runtime_exception": {
+    "exception": "IndentationError",
+    "message": "unexpected indent (gpt6-055.py, line 15)",
+    "line": 15
+  },
+  "error_parity": {
+    "hb_rejected": true,
+    "same_message": true,
+    "same_line": true,
+    "probe_matches_direct_run": true,
+    "same_exception_class": true,
+    "status": "same_error"
+  }
+}

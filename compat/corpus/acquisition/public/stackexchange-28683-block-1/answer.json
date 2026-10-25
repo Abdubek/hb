@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 1291461,
+    "reputation": 40360,
+    "user_id": 47,
+    "user_type": "registered",
+    "accept_rate": 94,
+    "profile_image": "https://www.gravatar.com/avatar/4a953b25f0b546cc39b80725930f3ffa?s=256&d=identicon&r=PG",
+    "display_name": "zeffii",
+    "link": "https://blender.stackexchange.com/users/47/zeffii"
+  },
+  "is_accepted": true,
+  "score": 16,
+  "last_activity_date": 1628001736,
+  "last_edit_date": 1628001736,
+  "creation_date": 1429511334,
+  "answer_id": 28683,
+  "question_id": 28673,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p><em>Text Editor &gt; Python &gt; Templates &gt; Operator Modal Timer</em></p>\n<p>I quickly cobbled together a small edit to that template, which I think does what you want. Run it from Text Editor, read the code you don't understand slowly and follow the flow of control carefully. There is no need to manually redraw.</p>\n<pre><code>import bpy\nimport random\n\nclass ModalTimerOperator(bpy.types.Operator):\n    &quot;&quot;&quot;Operator which runs its self from a timer&quot;&quot;&quot;\n    bl_idname = &quot;wm.modal_timer_operator&quot;\n    bl_label = &quot;Modal Timer Operator&quot;\n\n    limits : bpy.props.IntProperty(default=0) #not 'limits ='\n    _timer = None\n\n    def modal(self, context, event):\n        if event.type in {'RIGHTMOUSE', 'ESC'} or self.limits &gt; 30:\n            self.limits = 0\n            self.cancel(context)\n            return {'FINISHED'}\n\n        if event.type == 'TIMER':\n            XYZcoord = (random.random()*100, random.random()*100, random.random()*100)\n            bpy.ops.mesh.primitive_uv_sphere_add(location=XYZcoord)\n            self.limits += 1\n\n        return {'PASS_THROUGH'}\n\n    def execute(self, context):\n        wm = context.window_manager\n        self._timer = wm.event_timer_add(time_step=0.1, window=context.window)\n        wm.modal_handler_add(self)\n        return {'RUNNING_MODAL'}\n\n    def cancel(self, context):\n        wm = context.window_manager\n        wm.event_timer_remove(self._timer)\n\n\ndef register():\n    bpy.utils.register_class(ModalTimerOperator)\n\n\ndef unregister():\n    bpy.utils.unregister_class(ModalTimerOperator)\n\n\nif __name__ == &quot;__main__&quot;:\n    register()\n\n    # test call\n    bpy.ops.wm.modal_timer_operator()\n</code></pre>\n"
+}

@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-040.py",
+      "task": "A garden wheelbarrow with tray, handles and supports",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "03e9e7a3c59174e311b572bc35c3196c62121882362a4a976bef9d9ec455df8c",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-040/1788912999227711000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 180.8685109615326
+}

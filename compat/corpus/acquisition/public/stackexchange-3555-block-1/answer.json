@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 3052631,
+    "reputation": 633,
+    "user_id": 1491,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/BFKwX.jpg?s=256",
+    "display_name": "kivig",
+    "link": "https://blender.stackexchange.com/users/1491/kivig"
+  },
+  "is_accepted": true,
+  "score": 5,
+  "last_activity_date": 1382979860,
+  "creation_date": 1382979860,
+  "answer_id": 3555,
+  "question_id": 3527,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>Though not officially possible (<a href=\"https://projects.blender.org/tracker/index.php?func=detail&amp;aid=37216&amp;group_id=9&amp;atid=498\" rel=\"noreferrer\">https://projects.blender.org/tracker/index.php?func=detail&amp;aid=37216&amp;group_id=9&amp;atid=498</a>), I found a dirty workaround:</p>\n\n<pre><code>import bpy\n\nframeStart = 1\nframeEnd = 155\nframeStep = 50\nviewer_area = None\nviewer_space = None\n\nfor area_search in bpy.context.screen.areas:\n    if viewer_area == None and area_search.type == 'IMAGE_EDITOR':\n        viewer_area = area_search\n        break\n\nif viewer_area == None:\n    viewer_area = bpy.context.screen.areas[0]\n    viewer_area.type = \"IMAGE_EDITOR\"\n\nfor space in viewer_area.spaces:\n    if space.type == \"IMAGE_EDITOR\":\n        viewer_space = space\n\npath = 'H:\\\\Data\\\\_blender\\\\Fluid\\\\Video_Edit.mov'\nimg = bpy.data.images.load(path)\nw = img.size[0]\nh = img.size[1]\nviewer_space.image = img\n\nframe = 1\nfor frame in range(frameStart, frameEnd, frameStep):\n    viewer_space.image_user.frame_offset = frame\n    #switch back and forth to force refresh\n    viewer_space.draw_channels = 'COLOR_ALPHA'\n    viewer_space.draw_channels = 'COLOR'\n    pixels = list(viewer_space.image.pixels)\n    tmp = bpy.data.images.new(name=\"sample\"+str(frame), width=w, height=h, alpha=False, float_buffer=False)\n    tmp.pixels = pixels\n\nimg.user_clear()\nbpy.data.images.remove(img)\n</code></pre>\n"
+}

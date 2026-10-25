@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-116.py",
+      "task": "A solar farm following a gently sloping ground surface with service paths",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "318aacb26f5a660516b356d584203da3f83857f989a51681cf54e67b9454fbd1",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-116/1788911992972072000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-117.py",
+      "task": "A spherical arrangement of small satellites linked by thin struts",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "c77491e2e3178eedae17aafdd19a5ba57c04c3f8d8159a42ee0c67bfbe4c1ea8",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-116/1788911992972072000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-118.py",
+      "task": "A spiral parking ramp with guard rails and central support columns",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "59a1ee1cefa59b06af7435bffe4938ddc23a3c245c151938c6e65ad5fcabed83",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-116/1788911992972072000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-119.py",
+      "task": "A perforated metal speaker grille over a rounded rectangular enclosure",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "64a583a28f05b73d015b7c304e6ed89ab3e491c5623abbd71f81841ab9adce43",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-116/1788911992972072000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-120.py",
+      "task": "A woven basket modeled from crossing strips with a reinforced rim and two handles",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "78ab706c7f010b62570c35df1c8866592dab06780ce2be2ae37f29872f878424",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-116/1788911992972072000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 535.7936110496521
+}

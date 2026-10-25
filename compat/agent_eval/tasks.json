@@ -1,0 +1,421 @@
+[
+  {
+    "id": "01-handheld",
+    "description": "A handheld game console standing upright, with a screen and controls",
+    "required_meshes": [
+      "Body",
+      "Screen",
+      "Dpad",
+      "Button A",
+      "Button B"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "02-rover",
+    "description": "A six-wheel exploration rover, with three wheels on each side",
+    "required_meshes": [
+      "Chassis",
+      "Wheel L1",
+      "Wheel L2",
+      "Wheel L3",
+      "Wheel R1",
+      "Wheel R2",
+      "Wheel R3",
+      "Mast"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "03-room",
+    "description": "A furnished room with a floor exactly 4 by 5 meters in XY, two walls, a desk and a chair",
+    "required_meshes": [
+      "Floor",
+      "Wall X",
+      "Wall Y",
+      "Desk",
+      "Chair"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {
+      "floor_xy": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "04-bench",
+    "description": "A park bench with seat, back and four legs",
+    "required_meshes": [
+      "Seat",
+      "Back",
+      "Leg 1",
+      "Leg 2",
+      "Leg 3",
+      "Leg 4"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "05-lamp",
+    "description": "A desk lamp with a base, upright stem and shade",
+    "required_meshes": [
+      "Base",
+      "Stem",
+      "Shade"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "06-shelf",
+    "description": "An open bookcase with two vertical sides and three shelves",
+    "required_meshes": [
+      "Side L",
+      "Side R",
+      "Shelf 1",
+      "Shelf 2",
+      "Shelf 3"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "07-camera",
+    "description": "A compact photographic camera with body, lens and shutter button",
+    "required_meshes": [
+      "Body",
+      "Lens",
+      "Shutter"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "08-speaker",
+    "description": "A two-driver speaker cabinet with round drivers on the front",
+    "required_meshes": [
+      "Cabinet",
+      "Woofer",
+      "Tweeter"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "09-monitor",
+    "description": "A desktop monitor with screen, stem and base",
+    "required_meshes": [
+      "Housing",
+      "Screen",
+      "Stem",
+      "Base"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "10-stool",
+    "description": "A round-seat stool with three legs",
+    "required_meshes": [
+      "Seat",
+      "Leg 1",
+      "Leg 2",
+      "Leg 3"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "11-bridge",
+    "description": "A short pedestrian bridge with a deck, two piers and railings",
+    "required_meshes": [
+      "Deck",
+      "Pier 1",
+      "Pier 2",
+      "Rail L",
+      "Rail R"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "12-kiosk",
+    "description": "A freestanding information kiosk with screen, body and base",
+    "required_meshes": [
+      "Body",
+      "Screen",
+      "Base"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "13-cabinet",
+    "description": "A two-door cabinet with two handles and a top",
+    "required_meshes": [
+      "Body",
+      "Door L",
+      "Door R",
+      "Handle L",
+      "Handle R",
+      "Top"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "14-table",
+    "description": "A rectangular dining table with a top and four distinct legs",
+    "required_meshes": [
+      "Top",
+      "Leg 1",
+      "Leg 2",
+      "Leg 3",
+      "Leg 4"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "15-chess",
+    "description": "A chess-inspired geometric rook beside a pawn on a board",
+    "required_meshes": [
+      "Board",
+      "Rook Base",
+      "Rook Tower",
+      "Rook Crown",
+      "Pawn Base",
+      "Pawn Stem",
+      "Pawn Head"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "16-crate",
+    "description": "An open-top shipping crate with a bottom and four separate sides",
+    "required_meshes": [
+      "Bottom",
+      "Side N",
+      "Side S",
+      "Side E",
+      "Side W"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "17-bottle",
+    "description": "A reusable water bottle with cylindrical body, shoulder, neck and cap",
+    "required_meshes": [
+      "Body",
+      "Shoulder",
+      "Neck",
+      "Cap"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "18-robot",
+    "description": "A friendly rigid toy robot with boxy torso, head, arms and feet",
+    "required_meshes": [
+      "Torso",
+      "Head",
+      "Arm L",
+      "Arm R",
+      "Foot L",
+      "Foot R"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "19-bus",
+    "description": "A toy bus with body, roof, front window and four wheels",
+    "required_meshes": [
+      "Body",
+      "Roof",
+      "Window",
+      "Wheel FL",
+      "Wheel FR",
+      "Wheel BL",
+      "Wheel BR"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "20-stairs",
+    "description": "An architectural staircase of five progressively taller blocks",
+    "required_meshes": [
+      "Step 1",
+      "Step 2",
+      "Step 3",
+      "Step 4",
+      "Step 5"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "21-pavilion",
+    "description": "A small pavilion with four columns and a roof",
+    "required_meshes": [
+      "Column 1",
+      "Column 2",
+      "Column 3",
+      "Column 4",
+      "Roof"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "22-bed",
+    "description": "A single bed with frame, mattress, pillow and headboard",
+    "required_meshes": [
+      "Frame",
+      "Mattress",
+      "Pillow",
+      "Headboard"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "23-sofa",
+    "description": "A two-seat sofa with base, back, arms and cushions",
+    "required_meshes": [
+      "Base",
+      "Back",
+      "Arm L",
+      "Arm R",
+      "Cushion L",
+      "Cushion R"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "24-pedestal",
+    "description": "A three-level exhibition pedestal with a displayed sphere",
+    "required_meshes": [
+      "Lower",
+      "Middle",
+      "Upper",
+      "Exhibit"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "25-fence",
+    "description": "A three-post fence with two horizontal rails",
+    "required_meshes": [
+      "Post 1",
+      "Post 2",
+      "Post 3",
+      "Rail Lower",
+      "Rail Upper"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "26-turntable",
+    "description": "A record player with a plinth, circular platter and tonearm",
+    "required_meshes": [
+      "Plinth",
+      "Platter",
+      "Tonearm"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "27-luggage",
+    "description": "An upright suitcase with handle and two wheels",
+    "required_meshes": [
+      "Body",
+      "Handle",
+      "Wheel L",
+      "Wheel R"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "28-arch",
+    "description": "A simple block archway with two uprights and a lintel",
+    "required_meshes": [
+      "Upright L",
+      "Upright R",
+      "Lintel"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "29-workbench",
+    "description": "A workshop bench with top, lower shelf, four legs and vise",
+    "required_meshes": [
+      "Top",
+      "Shelf",
+      "Leg 1",
+      "Leg 2",
+      "Leg 3",
+      "Leg 4",
+      "Vise"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  },
+  {
+    "id": "30-booth",
+    "description": "A trade-show booth with floor, back wall, counter and sign panel",
+    "required_meshes": [
+      "Floor",
+      "Back Wall",
+      "Counter",
+      "Sign"
+    ],
+    "minimum_materials": 2,
+    "camera": "Camera",
+    "special": {}
+  }
+]

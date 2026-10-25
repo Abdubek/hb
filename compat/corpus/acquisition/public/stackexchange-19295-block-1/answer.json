@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 2331658,
+    "reputation": 29989,
+    "user_id": 1363,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/oskiS.png?s=256",
+    "display_name": "CodeManX",
+    "link": "https://blender.stackexchange.com/users/1363/codemanx"
+  },
+  "is_accepted": true,
+  "score": 9,
+  "last_activity_date": 1417136951,
+  "creation_date": 1417136951,
+  "answer_id": 19295,
+  "question_id": 19293,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>You can achieve this with two dynamic enum properties if you are fine with selecting an armature and a bone. If you want to select an armature <strong>object</strong>, things become more complicated. Below code updates the list of armature objects as the first enum property is changed - which is really ugly. Another way would be to place a button for the user to update the collection:</p>\n\n<pre><code>import bpy\n\n\nclass HelloWorldPanel(bpy.types.Panel):\n    \"\"\"Creates a Panel in the Object properties window\"\"\"\n    bl_label = \"Hello World Panel\"\n    bl_idname = \"OBJECT_PT_hello\"\n    bl_space_type = 'PROPERTIES'\n    bl_region_type = 'WINDOW'\n    bl_context = \"object\"\n\n    def draw(self, context):\n        layout = self.layout\n        sce = context.scene\n\n        col = layout.column()\n        col.prop(sce, \"arma\")\n        col.prop(sce, \"bone\")\n\n        col.prop_search(sce, \"arma_name\", bpy.data, \"armatures\")\n        arma = bpy.data.armatures.get(sce.arma_name)\n        if arma is not None:\n            col.prop_search(sce, \"bone_name\", arma, \"bones\")\n\n        col.prop_search(sce, \"arma_name\", sce, \"arma_coll\", icon='OBJECT_DATA')\n\ndef arma_items(self, context):\n    obs = []\n    for ob in context.scene.objects:\n        if ob.type == 'ARMATURE':\n            obs.append((ob.name, ob.name, \"\"))\n    return obs\n\ndef arma_upd(self, context):\n    self.arma_coll.clear()\n    for ob in context.scene.objects:\n        if ob.type == 'ARMATURE':\n            item = self.arma_coll.add()\n            item.name = ob.name\n\ndef bone_items(self, context):\n    arma = context.scene.objects.get(self.arma)\n    if arma is None:\n        return\n    return [(bone.name, bone.name, \"\") for bone in arma.data.bones]\n\ndef register():\n    bpy.utils.register_class(HelloWorldPanel)\n    bpy.types.Scene.arma = bpy.props.EnumProperty(items=arma_items, update=arma_upd)\n    bpy.types.Scene.bone = bpy.props.EnumProperty(items=bone_items)\n    bpy.types.Scene.arma_coll = bpy.props.CollectionProperty(type=bpy.types.PropertyGroup)\n    bpy.types.Scene.arma_name = bpy.props.StringProperty()\n    bpy.types.Scene.bone_name = bpy.props.StringProperty()\n\n\ndef unregister():\n    bpy.utils.unregister_class(HelloWorldPanel)\n    del bpy.types.Scene.arma\n    del bpy.types.Scene.bone\n    del bpy.types.Scene.arma_name\n    del bpy.types.Scene.bone_name\n    del bpy.types.Scene.arma_coll\n\n\nif __name__ == \"__main__\":\n    register()\n</code></pre>\n"
+}

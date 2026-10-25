@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-136.py",
+      "task": "A loft workshop with workbench, pegboard tools, storage drawers and task lamps",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "f689082498a8b35baa7d2f28eed625b5ed6e8be0184a299732e2e2121df9a513",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-136/1788913847897947000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 862.194393157959
+}

@@ -1,0 +1,9 @@
+stackexchange-17755-block-1.py
+
+Author: CodeManX
+Answer: https://blender.stackexchange.com/a/17755
+Revision history: https://blender.stackexchange.com/posts/17755/revisions
+License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+
+One original code block, HTML-decoded. No repairs, added imports, or combined blocks.
+The licensed answer snapshot is retained in answer.json.

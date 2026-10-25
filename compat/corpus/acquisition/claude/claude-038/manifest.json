@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-038.py",
+      "task": "A saucepan with lid, handle and knob",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "5b1f7846213c9ba4f154481af92483a16af1bfb887d05e60c330256da759ecee",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-038/1788912999227567000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 196.12322187423706
+}

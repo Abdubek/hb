@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-134700-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/134700",
+      "author": "Koniotaur",
+      "author_url": "https://blender.stackexchange.com/users/70668/koniotaur",
+      "license": "CC BY-SA 4.0",
+      "answer_id": 134700,
+      "code_block": 1,
+      "sha256": "da2b2505256e8bf6db87b974ff7e152cad3360c33723fc65d003a3b9e52f01e3",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1552992057,
+      "last_edit_date": null,
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/134700/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-134700-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

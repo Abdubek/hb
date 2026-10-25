@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-135.py",
+      "task": "A dentist waiting room with reception window, seating, magazine table and planters",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "f601566b4c9859525a6d1b486256c6efa67efd7cb0f3558b451988bf3aaecf51",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-135/1788914118189370000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 445.758670091629
+}

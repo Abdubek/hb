@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 2331658,
+    "reputation": 29989,
+    "user_id": 1363,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/oskiS.png?s=256",
+    "display_name": "CodeManX",
+    "link": "https://blender.stackexchange.com/users/1363/codemanx"
+  },
+  "is_accepted": true,
+  "score": 12,
+  "last_activity_date": 1392635977,
+  "creation_date": 1392635977,
+  "answer_id": 7089,
+  "question_id": 7085,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>As pink vertex pointed out, the method needs to called <code>execute</code>.</p>\n\n<p>What happens here?</p>\n\n<p>An operator added to a panel shows as button, and if you click it, Blender will try to invoke it by default (which means it looks for an <code>invoke()</code> method in the operator).</p>\n\n<p>Since your operator has no <code>invoke()</code>, it will try to execute it instead (thus try to call <code>execute()</code>). Your operator doesn't have it, and Blender gives up with the error mesasge:</p>\n\n<blockquote>\n  <p>wm_operator_invoke: invalid operator call 'OBJECT_OT_my_operator'</p>\n</blockquote>\n\n<p>So it means it couldn't find a method for the operator context (<code>invoke</code> for a button in a panel by default), nor an alternative (<code>execute</code>).</p>\n\n<p>You can override the operator context in layouts if you need to. If your operator defines <code>invoke()</code> and <code>execute()</code> alongside, you might want a button in a panel that executes the operator, and not invoke it. Create a layout sub-element (column, row, ...) and set its <code>operator_context</code> attribute to the context you want to run it in (see <a href=\"http://www.blender.org/documentation/blender_python_api_2_69_10/bpy.types.UILayout.html#bpy.types.UILayout.operator_context\">API docs</a>):</p>\n\n<pre><code>import bpy\n\nclass OBJECT_OT_my_operator(bpy.types.Operator):\n    bl_idname = \"object.my_operator\"\n    bl_label = \"My Operator\"\n\n    def invoke(self, context, event):\n        print(\"hello invoke\")\n        return {'FINISHED'}\n\n    def execute(self, context):\n        print(\"hello execute\")        \n        return {'FINISHED'}\n\ndef draw(self, context):\n    layout = self.layout\n    layout.operator(OBJECT_OT_my_operator.bl_idname, text=\"Operator 1 - invoke (default)\")\n\n    col = layout.column()\n    col.operator_context = 'EXEC_DEFAULT'\n    col.operator(OBJECT_OT_my_operator.bl_idname, text=\"Operator 1 - execute\")\n\n\ndef register():\n    bpy.utils.register_class(OBJECT_OT_my_operator)\n    bpy.types.RENDER_PT_render.append(draw)\n\ndef unregister():\n    bpy.utils.unregister_class(OBJECT_OT_my_operator)\n    bpy.types.RENDER_PT_render.remove(draw)\n\nif __name__ == \"__main__\":\n    register()\n</code></pre>\n"
+}

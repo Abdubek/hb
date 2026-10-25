@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-125.py",
+      "task": "A docked spacecraft assembled from a capsule, fuel tanks, thruster pods and landing legs",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "a5e148e0d51cd01e906558fcc0a3f5ef0c12415fac5cad35c225bef61ab212cb",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-125/1788913516555282000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 203.44151186943054
+}

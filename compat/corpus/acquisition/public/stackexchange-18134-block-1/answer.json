@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 2331658,
+    "reputation": 29989,
+    "user_id": 1363,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/oskiS.png?s=256",
+    "display_name": "CodeManX",
+    "link": "https://blender.stackexchange.com/users/1363/codemanx"
+  },
+  "is_accepted": true,
+  "score": 6,
+  "last_activity_date": 1414093318,
+  "creation_date": 1414093318,
+  "answer_id": 18134,
+  "question_id": 17960,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>It is basically a timing issue: your code below <code>revert_mainfile()</code> is called before the scene is ready, it's simply too early.</p>\n\n<p>A <code>load_post</code> handler alone doesn't help either, the argument passed to this callback is <code>None</code>.</p>\n\n<p>If you register a persistent <code>load_post</code> handler, which sets up a <code>scene_update_pre</code> handler, the execution will be delayed until the scene is ready:</p>\n\n<pre><code>import bpy\nfrom bpy.app.handlers import persistent\n\ndef scene_update_callback(scene):\n\n    # self-removal, only run once\n    bpy.app.handlers.scene_update_pre.remove(scene_update_callback)\n\n    ob = scene.objects.get(\"Cube\")\n\n    if ob is not None:\n        bpy.ops.object.mode_set(mode='OBJECT')\n        bpy.ops.object.select_all(action='DESELECT')\n        ob.select = True\n        bpy.ops.object.delete()\n\n\n@persistent\ndef load_post_callback(dummy):\n\n    # self-removal, so it isn't called again\n    bpy.app.handlers.load_post.remove(load_post_callback)\n\n    # use a scene update handler to delay execution of code\n    bpy.app.handlers.scene_update_pre.append(scene_update_callback)\n\n\nif __name__ == '__main__':\n    bpy.app.handlers.load_post.append(load_post_callback)\n    bpy.ops.wm.revert_mainfile()\n</code></pre>\n"
+}

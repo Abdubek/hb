@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "claude-061.py",
+      "task": "A fireplace with mantel, hearth and stacked logs",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "688f9e696672deb5765f91ffc33a239a361de7028c875f65a075da702361fdfb",
+      "response": "acquisition/claude/claude-061/1788912508169799000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-062.py",
+      "task": "A TV console with drawers and a television",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "dc618799bb9fce2d61034b7076b72f2091fc32110c758bb1ea2200ebc66f1f0e",
+      "response": "acquisition/claude/claude-061/1788912508169799000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-063.py",
+      "task": "A vending machine with product shelves and keypad",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "a58eddc03af35b72359941d95cc8bd0b348fbcf329703ced56cecd5c7ab663f8",
+      "response": "acquisition/claude/claude-061/1788912508169799000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-064.py",
+      "task": "An arcade cabinet with screen, joystick and buttons",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "2d263ef359674727bdb61b4a61ee3ac9ea0adaaa870fd407e3e5c6fc1f2d96d6",
+      "response": "acquisition/claude/claude-061/1788912508169799000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-065.py",
+      "task": "A ticket kiosk with touch screen and card reader",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "ba8f1039fdcb2d752c3fc4beb03f6f034a71f1484bcf9c302c319589a76b2d49",
+      "response": "acquisition/claude/claude-061/1788912508169799000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 1009.0932910442352
+}

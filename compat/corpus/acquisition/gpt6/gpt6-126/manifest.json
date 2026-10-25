@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-126.py",
+      "task": "A portable generator with tubular cage, motor housing, fuel tank and control panel",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "496418f38839707588f2714bb71117324194efdff7875a9df8e55233bdb19de3",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-126/1788912370930724000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-127.py",
+      "task": "A mountain research outpost assembled from prefabricated living modules and walkways",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "a8d74bde5c4e9ab0b4708b8eefdb9ae32f48993a1910aaa097ccb85a387caf46",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-126/1788912370930724000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-128.py",
+      "task": "A retro computer terminal assembled from a CRT housing, keyboard, knobs and cable plugs",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "640866a29fbaae60a4859526c6cbb1698d67a80f5ee14f2ac906fec640bd51f5",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-126/1788912370930724000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-129.py",
+      "task": "A construction excavator with articulated boom, bucket, tracks and operator cab",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "234d488dd7cc6982ffa5d375620b7dd387fb7e7e9052e03b9e60a780d00c0043",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-126/1788912370930724000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-130.py",
+      "task": "A modular communication tower with platforms, antenna panels, braces and cable ladders",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "2d99f1cd843c6b7591117573d1314edfe1cb4b96834b5fff06f84a213ffbc631",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-126/1788912370930724000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 579.9147288799286
+}

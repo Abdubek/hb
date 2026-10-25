@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 1291461,
+    "reputation": 40360,
+    "user_id": 47,
+    "user_type": "registered",
+    "accept_rate": 94,
+    "profile_image": "https://www.gravatar.com/avatar/4a953b25f0b546cc39b80725930f3ffa?s=256&d=identicon&r=PG",
+    "display_name": "zeffii",
+    "link": "https://blender.stackexchange.com/users/47/zeffii"
+  },
+  "is_accepted": true,
+  "score": 4,
+  "last_activity_date": 1448193630,
+  "last_edit_date": 1448193630,
+  "creation_date": 1431859756,
+  "answer_id": 30977,
+  "question_id": 30976,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>You could use the <a href=\"http://www.blender.org/api/blender_python_api_2_74_5/bmesh.ops.html?highlight=bmesh.ops#bmesh.ops.spin\" rel=\"nofollow noreferrer\">spin provided by bmesh operators</a>. This doesn't require any particular context. Here's an example: </p>\n\n<p>From <a href=\"https://github.com/nortikin/sverchok/blob/master/nodes/modifier_make/lathe.py\" rel=\"nofollow noreferrer\">sverchok source code</a>:</p>\n\n<pre><code>import bpy\nimport bmesh\nfrom bmesh.ops import spin\nimport math\n\n\ndef lathe_geometry(bm, cent, axis, dvec, angle, steps, remove_doubles=True, dist=0.0001):\n    geom = bm.verts[:] + bm.edges[:]\n\n    # super verbose explanation.\n    spin(\n        bm, \n        geom=geom,         # geometry to use for the spin\n        cent=cent,         # center point of the spin world\n        axis=axis,         # axis, a (x, y, z) spin axis\n        dvec=dvec,         # offset for the center point\n        angle=angle,       # how much of the unit circle to rotate around\n        steps=steps,       # spin subdivision level \n        use_duplicate=0)   # include existing geometry in returned content\n\n    if remove_doubles:\n        bmesh.ops.remove_doubles(bm, verts=bm.verts[:], dist=dist)\n\nobj = bpy.data.objects['Graph']\nbm = bmesh.new()\nbm.from_mesh(obj.data)\n\naxis = (1,0,0)\ndvec = (0,0,0)\nangle = 2*math.pi\nsteps = 20\ncent = obj.location\n\nlathe_geometry(bm, cent, axis, dvec, angle, steps, remove_doubles=True, dist=0.0001)\n\nbm.to_mesh(obj.data)\n# obj.data.update()   # if you want update to show immediately\nbm.free()\n</code></pre>\n\n<p>Things to be aware of:  </p>\n\n<ul>\n<li>A small update in 3d view is required to see the result. The mesh will get updated whenever Blender call updates, so you don't strictly need to force the update yourself, but you can if you want to by called <code>obj.data.update()</code>  </li>\n<li>Possible downside of the bmesh.spin is that the order/topology of faces is not guaranteed or predictable.</li>\n</ul>\n\n<p><img src=\"https://i.sstatic.net/7Ys1Z.png\" alt=\"enter image description here\"></p>\n\n<p>You might prefer to use a further abstraction, which assumes the center of the rotation is obj.location: <a href=\"https://gist.github.com/zeffii/d4efc7c346d6aa90ae18\" rel=\"nofollow noreferrer\">https://gist.github.com/zeffii/d4efc7c346d6aa90ae18</a></p>\n"
+}

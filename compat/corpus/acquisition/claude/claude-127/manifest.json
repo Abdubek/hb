@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-127.py",
+      "task": "A mountain research outpost assembled from prefabricated living modules and walkways",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "13509a574de9f43de0d7c645c6ed6ea6585a536c07d452b808823578cb7ef8bc",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-127/1788913657815584000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 431.1862781047821
+}

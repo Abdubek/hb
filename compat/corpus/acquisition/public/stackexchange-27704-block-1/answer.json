@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 1291461,
+    "reputation": 40360,
+    "user_id": 47,
+    "user_type": "registered",
+    "accept_rate": 94,
+    "profile_image": "https://www.gravatar.com/avatar/4a953b25f0b546cc39b80725930f3ffa?s=256&d=identicon&r=PG",
+    "display_name": "zeffii",
+    "link": "https://blender.stackexchange.com/users/47/zeffii"
+  },
+  "is_accepted": true,
+  "score": 8,
+  "last_activity_date": 1427369563,
+  "last_edit_date": 1427369563,
+  "creation_date": 1427367806,
+  "answer_id": 27704,
+  "question_id": 27698,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>Armed with the extra information consider:</p>\n\n<pre><code>import bpy, bmesh\n\nme = bpy.context.object.data\n\nbm = bmesh.new()\nbm.from_mesh(me)\n\nEPSILON = 1.0e-5\n\nfor vert in bm.verts:\n    if -EPSILON &lt;= vert.co.x &lt;= EPSILON:\n        vert.select = True\n\nbm.to_mesh(me)\nbm.free()\n</code></pre>\n\n<p>Some clarification perhaps:</p>\n\n<p>EPSILON represents a value that is close to 0. If you've ever inspected coordinates closely in Blender you will find a cut off point maybe at around 6 or 7 digits after the decimal where you start to encounter artefacts in the representation of that float. Because 0 and 0.0000012312423 are not the same number you can't simply do a check for equality with 0, instead you might check is the x component within EPSILON tolerance.</p>\n\n<p>Here I make the significant digit 5 places after the decimal point, from practical experience i've found this to be sufficient.</p>\n\n<pre><code>&gt;&gt;&gt; 1.0e-5 == 0.00001\nTrue\n</code></pre>\n\n<p>The above will select just the vertices, from that point selecting the edges shouldn't be too difficult. Here's a quick implementation</p>\n\n<pre><code>import bpy, bmesh\n\nme = bpy.context.object.data\n\nbm = bmesh.new()\nbm.from_mesh(me)\n\nEPSILON = 1.0e-5\nfor vert in bm.verts:\n    if -EPSILON &lt;= vert.co.x &lt;= EPSILON:\n        vert.select = True\n\nfor edge in bm.edges:\n    if edge.verts[0].select and edge.verts[1].select:\n        edge.select = True\n\nbm.to_mesh(me)\nbm.free()\n</code></pre>\n\n<p><img src=\"https://i.sstatic.net/U6BFL.png\" alt=\"enter image description here\"></p>\n"
+}

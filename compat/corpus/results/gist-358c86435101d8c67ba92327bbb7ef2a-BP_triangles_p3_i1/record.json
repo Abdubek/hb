@@ -1,0 +1,183 @@
+{
+  "file": "gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py",
+  "source_sha256": "6f16e7e16d07fb2cfef97859d24ed6dd1547e5d0ddd14faf74b9eac3c4615a24",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.026778792002005503,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:13\",\"message\":\"bpy.types.Object.mode: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.mode for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:14\",\"message\":\"bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:26\",\"message\":\"bpy.ops.object.camera_add(align='VIEW'): This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.camera_add for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:28\",\"message\":\"bpy.ops.transform.rotate: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.transform.rotate for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:28\",\"message\":\"bpy.ops.transform: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.transform for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:30\",\"message\":\"bpy.ops.transform.rotate: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.transform.rotate for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:30\",\"message\":\"bpy.ops.transform: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.transform for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:53\",\"message\":\"bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:56\",\"message\":\"bpy.ops.mesh.subdivide: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.mesh.subdivide for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:57\",\"message\":\"bpy.ops.mesh.poke: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.mesh.poke for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:87\",\"message\":\"bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:94\",\"message\":\"bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:96\",\"message\":\"bmesh.from_edit_mesh: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:100\",\"message\":\"bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:109\",\"message\":\"bpy.types.Object.active_material_index: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.active_material_index for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:112\",\"message\":\"bpy.ops.object.material_slot_assign: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.material_slot_assign for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:129\",\"message\":\"bpy.ops.render.render: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use hb import, hb export or hb render (and their MCP tools); bpy I/O/render operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:129\",\"message\":\"bpy.ops.render: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use hb import, hb export or hb render (and their MCP tools); bpy I/O/render operators are unavailable.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py\",\"ok\":false,\"timing\":{\"python_init_ms\":10.998416,\"total_ms\":14.148542}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:13",
+        "message": "bpy.types.Object.mode: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.mode for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:14",
+        "message": "bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:26",
+        "message": "bpy.ops.object.camera_add(align='VIEW'): This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.camera_add for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:28",
+        "message": "bpy.ops.transform.rotate: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.transform.rotate for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:28",
+        "message": "bpy.ops.transform: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.transform for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:30",
+        "message": "bpy.ops.transform.rotate: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.transform.rotate for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:30",
+        "message": "bpy.ops.transform: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.transform for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:53",
+        "message": "bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:56",
+        "message": "bpy.ops.mesh.subdivide: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.mesh.subdivide for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:57",
+        "message": "bpy.ops.mesh.poke: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.mesh.poke for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:87",
+        "message": "bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:94",
+        "message": "bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:96",
+        "message": "bmesh.from_edit_mesh: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:100",
+        "message": "bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:109",
+        "message": "bpy.types.Object.active_material_index: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.active_material_index for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:112",
+        "message": "bpy.ops.object.material_slot_assign: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.material_slot_assign for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:129",
+        "message": "bpy.ops.render.render: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use hb import, hb export or hb render (and their MCP tools); bpy I/O/render operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py:129",
+        "message": "bpy.ops.render: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use hb import, hb export or hb render (and their MCP tools); bpy I/O/render operators are unavailable."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 10.998416,
+      "total_ms": 14.148542
+    }
+  },
+  "blender_process": {
+    "returncode": 0,
+    "seconds": 13.284842167020543,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-khyrqku_",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-khyrqku_\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py"
+    ],
+    "stdout": "Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\nFra:1 Mem:92.55M (Peak 92.55M) | Time:00:11.63 | Rendering 1 / 64 samples\nFra:1 Mem:92.63M (Peak 92.63M) | Time:00:12.08 | Rendering 25 / 64 samples\nFra:1 Mem:92.63M (Peak 92.63M) | Time:00:12.51 | Rendering 50 / 64 samples\nFra:1 Mem:92.63M (Peak 92.63M) | Time:00:12.67 | Rendering 64 / 64 samples\nCORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py\", \"ok\": true}\n\nBlender quit\n",
+    "stderr": ""
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py",
+    "ok": true
+  }
+}

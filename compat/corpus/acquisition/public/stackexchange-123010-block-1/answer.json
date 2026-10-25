@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 14084696,
+    "reputation": 32009,
+    "user_id": 60759,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/bAvaH.jpg?s=256",
+    "display_name": "Martynas \u017diemys",
+    "link": "https://blender.stackexchange.com/users/60759/martynas-%c5%bdiemys"
+  },
+  "is_accepted": true,
+  "score": 8,
+  "last_activity_date": 1640263675,
+  "last_edit_date": 1640263675,
+  "creation_date": 1542612414,
+  "answer_id": 123010,
+  "question_id": 120237,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>The solution I ended up with is the same as discussed in the comments:</p>\n<pre><code>import bpy\nfrom bpy.types import Menu\n \nclass Submenu(Menu):\n    bl_label = 'Some Submenu'    \n    def draw(self, context):\n        layout = self.layout\n        layout.label(text=&quot;Some Submenu&quot;)\n        layout.separator()\n        layout.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Submenu Operator&quot;, icon = &quot;BLENDER&quot;)\n        layout.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Submenu Operator&quot;, icon = &quot;BLENDER&quot;)\n        layout.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Submenu Operator&quot;, icon = &quot;BLENDER&quot;)\n        layout.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Submenu Operator&quot;, icon = &quot;BLENDER&quot;)\n \nclass Pie_menu(Menu):\n    bl_label = &quot;Some Pie Menu&quot;\n    def draw(self, context):\n        layout = self.layout\n        pie = layout.menu_pie()\n        pie.operator(&quot;wm.call_menu_pie&quot;, text = &quot;Some Other Pie&quot;, icon = &quot;RIGHTARROW_THIN&quot;).name=&quot;Pie_menu&quot;\n        pie.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Operator&quot;, icon = &quot;BLENDER&quot;)\n        pie.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Operator&quot;, icon = &quot;BLENDER&quot;)\n        pie.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Operator&quot;, icon = &quot;BLENDER&quot;)\n        pie.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Operator&quot;, icon = &quot;BLENDER&quot;)\n        pie.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Operator&quot;, icon = &quot;BLENDER&quot;)\n        pie.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Operator&quot;, icon = &quot;BLENDER&quot;)\n        pie.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Operator&quot;, icon = &quot;BLENDER&quot;)\n        pie.separator()\n        pie.separator()\n        other = pie.column()\n        gap = other.column()\n        gap.separator()\n        gap.scale_y = 7\n        other_menu = other.box().column()\n        other_menu.scale_y=1.3\n        other_menu.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Menu Operator&quot;,icon = &quot;BLENDER&quot;)\n        other_menu.operator(&quot;mesh.primitive_cube_add&quot;, text = &quot;Some Menu Operator&quot;,icon = &quot;BLENDER&quot;) \n        other_menu.menu('Submenu', icon='RIGHTARROW_THIN',  text='Some Submenu...')\n\n \ndef register():\n    bpy.utils.register_class(Submenu)\n    bpy.utils.register_class(Pie_menu)\n \ndef unregister():\n    bpy.utils.unregister_class(Submenu)\n    bpy.utils.unregister_class(Pie_menu)\n \nif __name__ == &quot;__main__&quot;:\n    register()\n \n    bpy.ops.wm.call_menu_pie(name=&quot;Pie_menu&quot;)\n</code></pre>\n<p>It works exactly as I wanted:</p>\n<p><a href=\"https://i.sstatic.net/9A01z.gif\" rel=\"nofollow noreferrer\"><img src=\"https://i.sstatic.net/9A01z.gif\" alt=\"enter image description here\" /></a></p>\n"
+}

@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-39624-block-1.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/39624",
+      "author": "pink vertex",
+      "author_url": "https://blender.stackexchange.com/users/2271/pink-vertex",
+      "license": "CC BY-SA 3.0",
+      "answer_id": 39624,
+      "code_block": 1,
+      "sha256": "5a2e4ca9e5a72b5e7f6444f6eeb5ebbb91d5e12c31975392c4885cb608638723",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1444205421,
+      "last_edit_date": 1444205814,
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/39624/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-39624-block-1/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

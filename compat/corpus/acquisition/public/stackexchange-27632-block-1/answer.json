@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 974885,
+    "reputation": 44187,
+    "user_id": 12,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/P4M8V.png?s=256",
+    "display_name": "iKlsR",
+    "link": "https://blender.stackexchange.com/users/12/iklsr"
+  },
+  "is_accepted": true,
+  "score": 11,
+  "last_activity_date": 1427333281,
+  "last_edit_date": 1427333281,
+  "creation_date": 1427254086,
+  "answer_id": 27632,
+  "question_id": 27631,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>I almost always look for hacks when doing simple tests like these <em>(half of the time the function you spend hours on, Blender has the functionality tucked away in some menu)</em> <strong><em>so</em></strong> if your use case is similar meshes I would probably use <code>bpy.ops.mesh.select_nth(offset=1)</code> to get the selections in a checkered pattern.</p>\n\n<pre><code>import bpy\n\n# get the object\nob = bpy.context.active_object\n\n# get the mesh\nmesh = ob.data\n\n# create a list with all faces\nface_list = [face for face in mesh.polygons]\n\n# select all faces for offset operator\nfor face in face_list:\n    face.select = True\n\n# toggle to edit mode\nbpy.ops.object.mode_set(mode='EDIT')\n\n# make sure face select mode is enabled\nbpy.context.tool_settings.mesh_select_mode = [False, False, True]\n\n# select every second face\nbpy.ops.mesh.select_nth(offset=1)\n\n# use second material slot\nob.active_material_index = 1\n\n# assign the material\nbpy.ops.object.material_slot_assign()\n\n# toggle to object mode\nbpy.ops.object.mode_set(mode='OBJECT')\n</code></pre>\n\n<p>To get the inner vertex, select the outer edges in edge select and then switch to vertex select and invert the selection. It's far from elegant but should work for the example you are using</p>\n"
+}

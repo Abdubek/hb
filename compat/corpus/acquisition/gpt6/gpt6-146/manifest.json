@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-146.py",
+      "task": "A landscaped amphitheater with concentric terraces and side access stairs",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "4d5f474ef05729fad3389b1796e5ffe2f930bab4f52b5153dfe58a3958fd4da0",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-146/1788912887848087000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-147.py",
+      "task": "A multilevel car park facade with ramps, columns and horizontal safety barriers",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "5f1d579e68bd7bee3315187ff5f1af8fb247d620797ca2baed7fe639f60d1e3b",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-146/1788912887848087000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-148.py",
+      "task": "A compact airport control tower with glazed cab and exterior service platforms",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "b38e6ffeac9f5d956ce16058ca998bc5e6ef8d156db0a3d921bf403dd0461938",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-146/1788912887848087000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-149.py",
+      "task": "A coastal lookout pavilion with angular roof, viewing deck and wind screens",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "9f018e324ef5da39085edda88d5255f52fc9c7580252120ee370cf523afcc14c",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-146/1788912887848087000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-150.py",
+      "task": "A modular pedestrian bridge with triangular trusses and covered entry portals",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "087f1a03eca4930739c9ce7365cb98dacfee909fd3c23cdf1224794bc09b754d",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-146/1788912887848087000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 377.87963914871216
+}

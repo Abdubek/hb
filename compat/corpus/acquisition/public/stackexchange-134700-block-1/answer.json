@@ -1,0 +1,19 @@
+{
+  "owner": {
+    "account_id": 15548196,
+    "reputation": 101,
+    "user_id": 70668,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/16fed2899c7c285085da11f0bce2326a?s=256&d=identicon&r=PG",
+    "display_name": "Koniotaur",
+    "link": "https://blender.stackexchange.com/users/70668/koniotaur"
+  },
+  "is_accepted": true,
+  "score": 5,
+  "last_activity_date": 1552992057,
+  "creation_date": 1552992057,
+  "answer_id": 134700,
+  "question_id": 134536,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>To everyone who wanted to also know why this doesn't work - here after long fight I managed to make it work, here's code:</p>\n\n<pre><code># This example adds an object mode tool to the toolbar.\n# This is just the circle-select and lasso tools tool.\nimport bpy\nfrom bpy.types import WorkSpaceTool\n\nclass Circularize(WorkSpaceTool):\n    bl_space_type='VIEW_3D'\n    bl_context_mode='EDIT_MESH'\n\n    # The prefix of the idname should be your add-on name.\n    bl_idname = \"ui_plus.circularize\"\n    bl_label = \"Circularize\"\n    bl_options = {'REGISTER', 'UNDO'}\n    bl_description = (\n        \"Move selected vertices into a circular shape\"\n    )\n    bl_icon = \"ops.generic.select_circle\"\n    bl_widget = None\n    bl_keymap = (\n        (\"mesh.looptools_circle\", {\"type\": 'LEFTMOUSE', \"value\": 'PRESS'},\n    {\"properties\": [(\"custom_radius\", False), (\"radius\", 1)]}),\n        )\n\n\ndef register():\n    bpy.utils.register_tool(Circularize, after={\"builtin.scale_cage\"}, separator=True, group=True)\n\ndef unregister():\n    bpy.utils.unregister_tool(Circularize)\n\nif __name__ == \"__main__\":\n    register()\n</code></pre>\n"
+}

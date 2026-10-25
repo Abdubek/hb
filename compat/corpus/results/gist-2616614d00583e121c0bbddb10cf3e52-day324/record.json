@@ -1,0 +1,766 @@
+{
+  "file": "invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py",
+  "source_sha256": "b633f4af6c77cb481f610605bc694bc0c11a9c7048f726dee5bca16f42deb504",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 1,
+    "seconds": 0.07577012499677949,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py"
+    ],
+    "stdout": "{\"errors\":[{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:67\",\"message\":\"bpy.types.Object.mode: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.mode for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:68\",\"message\":\"bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:71\",\"message\":\"bpy.types.Object.hide_set: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.hide_set for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:72\",\"message\":\"bpy.types.Object.hide_select: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.hide_select for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:73\",\"message\":\"bpy.types.Object.hide_viewport: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.hide_viewport for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:82\",\"message\":\"bpy.data.actions.name: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.actions.name for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:82\",\"message\":\"bpy.data.actions: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.actions for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:84\",\"message\":\"bpy.data.actions.remove: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.actions.remove for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:84\",\"message\":\"bpy.data.actions: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.actions for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:90\",\"message\":\"bpy.data.curves.name: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.curves.name for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:90\",\"message\":\"bpy.data.curves: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.curves for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:92\",\"message\":\"bpy.data.curves.remove: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.curves.remove for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:92\",\"message\":\"bpy.data.curves: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.curves for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:95\",\"message\":\"bpy.ops.outliner.orphans_purge: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.outliner.orphans_purge for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:95\",\"message\":\"bpy.ops.outliner: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.outliner for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:122\",\"message\":\"bpy.context.window_manager.clipboard: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.window_manager.clipboard for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:122\",\"message\":\"bpy.context.window_manager: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.window_manager for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:154\",\"message\":\"bpy.ops.object.constraint_add: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.constraint_add for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:155\",\"message\":\"bpy.types.Object.constraints.target: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.constraints.target for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:155\",\"message\":\"bpy.types.Object.constraints: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.constraints for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:161\",\"message\":\"bpy.ops.object.camera_add(align='VIEW'): This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.camera_add for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:167\",\"message\":\"bpy.types.IDData.passepartout_alpha: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.IDData.passepartout_alpha for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:189\",\"message\":\"bpy.context.scene.frame_end: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.frame_end for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:192\",\"message\":\"bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:192\",\"message\":\"bpy.types.World.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:193\",\"message\":\"bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:193\",\"message\":\"bpy.types.World.node_tree: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Use world.color with use_nodes=False; World node graphs are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:195\",\"message\":\"bpy.context.scene.render.fps: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.render.fps for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:197\",\"message\":\"bpy.context.scene.frame_current: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.frame_current for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:198\",\"message\":\"bpy.context.scene.frame_start: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.frame_start for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:200\",\"message\":\"bpy.context.preferences.edit.use_negative_frames: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.preferences.edit.use_negative_frames for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:200\",\"message\":\"bpy.context.preferences.edit: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.preferences.edit for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:200\",\"message\":\"bpy.context.preferences: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.preferences for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:202\",\"message\":\"bpy.context.scene.eevee.use_bloom: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee.use_bloom for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:202\",\"message\":\"bpy.context.scene.eevee: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:203\",\"message\":\"bpy.context.scene.eevee.bloom_intensity: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee.bloom_intensity for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:203\",\"message\":\"bpy.context.scene.eevee: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:205\",\"message\":\"bpy.context.scene.eevee.gtao_distance: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee.gtao_distance for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:205\",\"message\":\"bpy.context.scene.eevee: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:206\",\"message\":\"bpy.context.scene.eevee.gtao_factor: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee.gtao_factor for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:206\",\"message\":\"bpy.context.scene.eevee: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:208\",\"message\":\"bpy.context.scene.eevee.use_gtao: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee.use_gtao for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:208\",\"message\":\"bpy.context.scene.eevee: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:209\",\"message\":\"bpy.context.scene.eevee.use_ssr: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee.use_ssr for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:209\",\"message\":\"bpy.context.scene.eevee: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:210\",\"message\":\"bpy.context.scene.eevee.use_ssr_halfres: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee.use_ssr_halfres for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:210\",\"message\":\"bpy.context.scene.eevee: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:211\",\"message\":\"bpy.context.scene.eevee.ssr_quality: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee.ssr_quality for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:211\",\"message\":\"bpy.context.scene.eevee: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:213\",\"message\":\"bpy.context.scene.eevee.taa_render_samples: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee.taa_render_samples for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:213\",\"message\":\"bpy.context.scene.eevee: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:215\",\"message\":\"bpy.context.scene.view_settings.look: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.view_settings.look for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:215\",\"message\":\"bpy.context.scene.view_settings: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.view_settings for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:222\",\"message\":\"bpy.ops.collection.create: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.collection.create for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:222\",\"message\":\"bpy.ops.collection: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.collection for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:232\",\"message\":\"bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:237\",\"message\":\"bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:244\",\"message\":\"bmesh.from_edit_mesh: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:264\",\"message\":\"bpy.types.Material.color_ramp.elements.new: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.color_ramp.elements.new for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:264\",\"message\":\"bpy.types.Material.color_ramp.elements: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.color_ramp.elements for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:264\",\"message\":\"bpy.types.ShaderNode.color_ramp.elements.new: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.color_ramp.elements.new for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:264\",\"message\":\"bpy.types.ShaderNode.color_ramp.elements: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.color_ramp.elements for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:268\",\"message\":\"bpy.types.Material.color_ramp.elements.color: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.color_ramp.elements.color for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:268\",\"message\":\"bpy.types.Material.color_ramp.elements: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.color_ramp.elements for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:268\",\"message\":\"bpy.types.ShaderNode.color_ramp.elements.color: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.color_ramp.elements.color for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:268\",\"message\":\"bpy.types.ShaderNode.color_ramp.elements: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.color_ramp.elements for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:323\",\"message\":\"bpy.ops.object.origin_set: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.object.origin_set for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:342\",\"message\":\"mathutils.noise.noise: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.noise.noise for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:342\",\"message\":\"mathutils.noise: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api mathutils.noise for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:353\",\"message\":\"bpy.types.IDData.bevel_mode: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.IDData.bevel_mode for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:354\",\"message\":\"bpy.types.IDData.bevel_object: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.IDData.bevel_object for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:389\",\"message\":\"bpy.data.curves.new: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.curves.new for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:389\",\"message\":\"bpy.data.curves: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.data.curves for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:409\",\"message\":\"bpy.types.Object.shape_key_add: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.shape_key_add for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:411\",\"message\":\"bpy.types.Object.shape_key_add: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Object.shape_key_add for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:421\",\"message\":\"bpy.ops.curve.simple: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.curve.simple for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:421\",\"message\":\"bpy.ops.curve: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.ops.curve for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:436\",\"message\":\"bpy.types.Material.object: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.object for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:436\",\"message\":\"bpy.types.ShaderNode.object: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.object for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:437\",\"message\":\"bpy.types.Material.inputs.default_value: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.inputs.default_value for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:437\",\"message\":\"bpy.types.Material.inputs: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.inputs for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:438\",\"message\":\"bpy.types.Material.color_ramp: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.color_ramp for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:438\",\"message\":\"bpy.types.ShaderNode.color_ramp: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.color_ramp for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:485\",\"message\":\"bpy.types.Material.node_tree.nodes.remove: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.Material.node_tree.nodes.remove for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:488\",\"message\":\"bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:491\",\"message\":\"bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:497\",\"message\":\"bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:503\",\"message\":\"bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:509\",\"message\":\"bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:519\",\"message\":\"bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:554\",\"message\":\"bpy.context.scene.render.image_settings.file_format: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.render.image_settings.file_format for tested paths and parameter limits; use hb capabilities for supported alternatives.\"},{\"code\":\"UNSUPPORTED_API\",\"doc\":\"docs/compatibility.md#unsupported\",\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:554\",\"message\":\"bpy.context.scene.render.image_settings: This path is outside the tested hb modeling subset.\",\"suggestion\":\"Inspect hb api bpy.context.scene.render.image_settings for tested paths and parameter limits; use hb capabilities for supported alternatives.\"}],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py\",\"ok\":false,\"timing\":{\"python_init_ms\":25.326291,\"total_ms\":52.463791}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:67",
+        "message": "bpy.types.Object.mode: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.mode for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:68",
+        "message": "bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:71",
+        "message": "bpy.types.Object.hide_set: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.hide_set for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:72",
+        "message": "bpy.types.Object.hide_select: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.hide_select for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:73",
+        "message": "bpy.types.Object.hide_viewport: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.hide_viewport for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:82",
+        "message": "bpy.data.actions.name: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.actions.name for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:82",
+        "message": "bpy.data.actions: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.actions for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:84",
+        "message": "bpy.data.actions.remove: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.actions.remove for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:84",
+        "message": "bpy.data.actions: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.actions for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:90",
+        "message": "bpy.data.curves.name: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.curves.name for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:90",
+        "message": "bpy.data.curves: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.curves for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:92",
+        "message": "bpy.data.curves.remove: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.curves.remove for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:92",
+        "message": "bpy.data.curves: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.curves for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:95",
+        "message": "bpy.ops.outliner.orphans_purge: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.outliner.orphans_purge for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:95",
+        "message": "bpy.ops.outliner: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.outliner for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:122",
+        "message": "bpy.context.window_manager.clipboard: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.window_manager.clipboard for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:122",
+        "message": "bpy.context.window_manager: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.window_manager for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:154",
+        "message": "bpy.ops.object.constraint_add: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.constraint_add for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:155",
+        "message": "bpy.types.Object.constraints.target: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.constraints.target for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:155",
+        "message": "bpy.types.Object.constraints: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.constraints for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:161",
+        "message": "bpy.ops.object.camera_add(align='VIEW'): This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.camera_add for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:167",
+        "message": "bpy.types.IDData.passepartout_alpha: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.IDData.passepartout_alpha for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:189",
+        "message": "bpy.context.scene.frame_end: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.frame_end for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:192",
+        "message": "bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:192",
+        "message": "bpy.types.World.node_tree: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:193",
+        "message": "bpy.types.World.node_tree.nodes: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:193",
+        "message": "bpy.types.World.node_tree: This path is outside the tested hb modeling subset.",
+        "suggestion": "Use world.color with use_nodes=False; World node graphs are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:195",
+        "message": "bpy.context.scene.render.fps: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.render.fps for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:197",
+        "message": "bpy.context.scene.frame_current: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.frame_current for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:198",
+        "message": "bpy.context.scene.frame_start: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.frame_start for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:200",
+        "message": "bpy.context.preferences.edit.use_negative_frames: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.preferences.edit.use_negative_frames for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:200",
+        "message": "bpy.context.preferences.edit: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.preferences.edit for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:200",
+        "message": "bpy.context.preferences: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.preferences for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:202",
+        "message": "bpy.context.scene.eevee.use_bloom: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee.use_bloom for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:202",
+        "message": "bpy.context.scene.eevee: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:203",
+        "message": "bpy.context.scene.eevee.bloom_intensity: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee.bloom_intensity for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:203",
+        "message": "bpy.context.scene.eevee: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:205",
+        "message": "bpy.context.scene.eevee.gtao_distance: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee.gtao_distance for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:205",
+        "message": "bpy.context.scene.eevee: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:206",
+        "message": "bpy.context.scene.eevee.gtao_factor: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee.gtao_factor for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:206",
+        "message": "bpy.context.scene.eevee: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:208",
+        "message": "bpy.context.scene.eevee.use_gtao: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee.use_gtao for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:208",
+        "message": "bpy.context.scene.eevee: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:209",
+        "message": "bpy.context.scene.eevee.use_ssr: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee.use_ssr for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:209",
+        "message": "bpy.context.scene.eevee: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:210",
+        "message": "bpy.context.scene.eevee.use_ssr_halfres: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee.use_ssr_halfres for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:210",
+        "message": "bpy.context.scene.eevee: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:211",
+        "message": "bpy.context.scene.eevee.ssr_quality: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee.ssr_quality for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:211",
+        "message": "bpy.context.scene.eevee: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:213",
+        "message": "bpy.context.scene.eevee.taa_render_samples: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee.taa_render_samples for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:213",
+        "message": "bpy.context.scene.eevee: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.eevee for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:215",
+        "message": "bpy.context.scene.view_settings.look: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.view_settings.look for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:215",
+        "message": "bpy.context.scene.view_settings: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.view_settings for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:222",
+        "message": "bpy.ops.collection.create: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.collection.create for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:222",
+        "message": "bpy.ops.collection: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.collection for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:232",
+        "message": "bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:237",
+        "message": "bpy.ops.object.editmode_toggle: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.editmode_toggle for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:244",
+        "message": "bmesh.from_edit_mesh: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bmesh.ops. Use mesh.from_pydata for explicit topology; editable UV/custom layers and unlisted operators are unavailable."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:264",
+        "message": "bpy.types.Material.color_ramp.elements.new: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.color_ramp.elements.new for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:264",
+        "message": "bpy.types.Material.color_ramp.elements: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.color_ramp.elements for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:264",
+        "message": "bpy.types.ShaderNode.color_ramp.elements.new: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.color_ramp.elements.new for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:264",
+        "message": "bpy.types.ShaderNode.color_ramp.elements: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.color_ramp.elements for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:268",
+        "message": "bpy.types.Material.color_ramp.elements.color: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.color_ramp.elements.color for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:268",
+        "message": "bpy.types.Material.color_ramp.elements: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.color_ramp.elements for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:268",
+        "message": "bpy.types.ShaderNode.color_ramp.elements.color: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.color_ramp.elements.color for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:268",
+        "message": "bpy.types.ShaderNode.color_ramp.elements: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.color_ramp.elements for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:323",
+        "message": "bpy.ops.object.origin_set: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.object.origin_set for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:342",
+        "message": "mathutils.noise.noise: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.noise.noise for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:342",
+        "message": "mathutils.noise: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api mathutils.noise for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:353",
+        "message": "bpy.types.IDData.bevel_mode: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.IDData.bevel_mode for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:354",
+        "message": "bpy.types.IDData.bevel_object: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.IDData.bevel_object for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:389",
+        "message": "bpy.data.curves.new: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.curves.new for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:389",
+        "message": "bpy.data.curves: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.data.curves for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:409",
+        "message": "bpy.types.Object.shape_key_add: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.shape_key_add for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:411",
+        "message": "bpy.types.Object.shape_key_add: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Object.shape_key_add for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:421",
+        "message": "bpy.ops.curve.simple: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.curve.simple for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:421",
+        "message": "bpy.ops.curve: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.ops.curve for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:436",
+        "message": "bpy.types.Material.object: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.object for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:436",
+        "message": "bpy.types.ShaderNode.object: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.object for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:437",
+        "message": "bpy.types.Material.inputs.default_value: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.inputs.default_value for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:437",
+        "message": "bpy.types.Material.inputs: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.inputs for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:438",
+        "message": "bpy.types.Material.color_ramp: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.color_ramp for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:438",
+        "message": "bpy.types.ShaderNode.color_ramp: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.color_ramp for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:485",
+        "message": "bpy.types.Material.node_tree.nodes.remove: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.Material.node_tree.nodes.remove for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:488",
+        "message": "bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:491",
+        "message": "bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:497",
+        "message": "bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:503",
+        "message": "bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:509",
+        "message": "bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:519",
+        "message": "bpy.types.ShaderNode.location: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.types.ShaderNode.location for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:554",
+        "message": "bpy.context.scene.render.image_settings.file_format: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.render.image_settings.file_format for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      },
+      {
+        "code": "UNSUPPORTED_API",
+        "doc": "docs/compatibility.md#unsupported",
+        "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:554",
+        "message": "bpy.context.scene.render.image_settings: This path is outside the tested hb modeling subset.",
+        "suggestion": "Inspect hb api bpy.context.scene.render.image_settings for tested paths and parameter limits; use hb capabilities for supported alternatives."
+      }
+    ],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py",
+    "ok": false,
+    "timing": {
+      "python_init_ms": 25.326291,
+      "total_ms": 52.463791
+    }
+  },
+  "blender_process": {
+    "returncode": 1,
+    "seconds": 0.5883937090111431,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-tg9ygo4d",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-tg9ygo4d\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py"
+    ],
+    "stdout": "Info: Deleted 5 data-block(s)\nCORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py\", \"ok\": false, \"exception\": \"AttributeError\", \"message\": \"'SceneEEVEE' object has no attribute 'use_bloom'\", \"line\": 202}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n",
+    "stderr": "Traceback (most recent call last):\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py\", line 11, in <module>\n    runpy.run_path(source, run_name=\"__main__\")\n  File \"<frozen runpy>\", line 291, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py\", line 593, in <module>\n    main()\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py\", line 588, in main\n    context = setup_scene()\n              ^^^^^^^^^^^^^\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py\", line 565, in setup_scene\n    set_scene_props(fps, loop_sec)\n  File \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py\", line 202, in set_scene_props\n    scene.eevee.use_bloom = True\n    ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SceneEEVEE' object has no attribute 'use_bloom'\n"
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py",
+    "ok": false,
+    "exception": "AttributeError",
+    "message": "'SceneEEVEE' object has no attribute 'use_bloom'",
+    "line": 202
+  },
+  "runtime_process": {
+    "returncode": 1,
+    "seconds": 0.035699083004146814,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-tg9ygo4d\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-tg9ygo4d/scene.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"SCRIPT_ERROR\",\"doc\":\"docs/compatibility.md#errors\",\"frames\":[{\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py\",\"function\":\"<module>\",\"line\":46}],\"location\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:46\",\"message\":\"No module named 'addon_utils'\",\"suggestion\":\"Correct the script and rerun; the scene was not saved.\"},\"ok\":false}\n",
+    "stderr": ""
+  },
+  "runtime": {
+    "error": {
+      "code": "SCRIPT_ERROR",
+      "doc": "docs/compatibility.md#errors",
+      "frames": [
+        {
+          "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py",
+          "function": "<module>",
+          "line": 46
+        }
+      ],
+      "location": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py:46",
+      "message": "No module named 'addon_utils'",
+      "suggestion": "Correct the script and rerun; the scene was not saved."
+    },
+    "ok": false
+  },
+  "runtime_probe_process": {
+    "returncode": 1,
+    "seconds": 0.03342295900802128,
+    "command": [
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-tg9ygo4d\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/private/tmp/corpus-real-build/release/hb",
+      "run",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-tg9ygo4d/exception_probe.py",
+      "--scene",
+      "/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-tg9ygo4d/probe.hb"
+    ],
+    "stdout": "{\"error\":{\"code\":\"SCRIPT_ERROR\",\"doc\":\"docs/compatibility.md#errors\",\"frames\":[{\"file\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-tg9ygo4d/exception_probe.py\",\"function\":\"<module>\",\"line\":6}],\"location\":\"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-tg9ygo4d/exception_probe.py:6\",\"message\":\"No module named 'addon_utils'\",\"suggestion\":\"Correct the script and rerun; the scene was not saved.\"},\"ok\":false}\n",
+    "stderr": "CORPUS_HB_EXCEPTION={\"exception\": \"ModuleNotFoundError\", \"message\": \"No module named 'addon_utils'\", \"line\": 46}\n"
+  },
+  "runtime_exception": {
+    "exception": "ModuleNotFoundError",
+    "message": "No module named 'addon_utils'",
+    "line": 46
+  },
+  "error_parity": {
+    "hb_rejected": true,
+    "same_message": false,
+    "same_line": false,
+    "probe_matches_direct_run": true,
+    "same_exception_class": false,
+    "status": "different_error"
+  }
+}

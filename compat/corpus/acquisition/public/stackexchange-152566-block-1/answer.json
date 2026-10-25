@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "account_id": 9430826,
+    "reputation": 13028,
+    "user_id": 31447,
+    "user_type": "registered",
+    "accept_rate": 75,
+    "profile_image": "https://www.gravatar.com/avatar/7e9720798b41ceab22fb4286ddb77f1c?s=256&d=identicon&r=PG",
+    "display_name": "brockmann",
+    "link": "https://blender.stackexchange.com/users/31447/brockmann"
+  },
+  "is_accepted": true,
+  "score": 13,
+  "last_activity_date": 1591782996,
+  "last_edit_date": 1591782996,
+  "creation_date": 1568293794,
+  "answer_id": 152566,
+  "question_id": 152525,
+  "content_license": "CC BY-SA 4.0",
+  "body": "<p>Minor issue: <code>VIEW3D_MT_add_curve</code> doesn't exist, you have to append to <code>VIEW3D_MT_curve_add</code> rather. Further reading: <a href=\"https://docs.blender.org/api/current/bpy.types.Menu.html\" rel=\"noreferrer\">https://docs.blender.org/api/current/bpy.types.Menu.html</a></p>\n\n<p><a href=\"https://i.sstatic.net/KpSVz.png\" rel=\"noreferrer\"><img src=\"https://i.sstatic.net/KpSVz.png\" alt=\"enter image description here\"></a></p>\n\n<pre><code>import bpy\n\nclass MY_MT_CustomMenu(bpy.types.Menu):\n    bl_label = \"First Menu\"\n    bl_idname = \"OBJECT_MT_custom_menu\"\n\n    def draw(self, context):\n        layout = self.layout\n        layout.label(text=\"Hello First Menu!\", icon='WORLD_DATA')\n\n         # call the second custom menu\n        layout.menu(\"OBJECT_MT_sub_menu\", icon=\"COLLAPSEMENU\")\n\n\nclass MY_MT_CustomSubMenu(bpy.types.Menu):\n    bl_label = \"Sub Menu\"\n    bl_idname = \"OBJECT_MT_sub_menu\"\n\n    def draw(self, context):\n        layout = self.layout\n        layout.label(text=\"Hello Second Menu!\", icon='WORLD_DATA')\n\n        # call another predefined menu\n        layout.operator(\"wm.call_menu\", text=\"Unwrap\").name = \"VIEW3D_MT_uv_map\" \n\n\ndef draw_menu(self, context):\n    self.layout.menu(MY_MT_CustomMenu.bl_idname)\n\n\ndef register():\n    bpy.utils.register_class(MY_MT_CustomMenu)\n    bpy.utils.register_class(MY_MT_CustomSubMenu)\n    bpy.types.VIEW3D_MT_curve_add.append(draw_menu)\n\ndef unregister():\n    bpy.types.VIEW3D_MT_curve_add.remove(draw_menu)\n    bpy.utils.unregister_class(MY_MT_CustomSubMenu)\n    bpy.utils.unregister_class(MY_MT_CustomMenu)    \n\n\nif __name__ == \"__main__\":\n    register()\n</code></pre>\n\n<p>Based on: <a href=\"https://blender.stackexchange.com/a/57332/31447\">How to create a custom UI?</a> and <a href=\"https://blender.stackexchange.com/a/56830/31447\">Python: Extend \u201cSelect Similar\u201d menu?</a></p>\n"
+}

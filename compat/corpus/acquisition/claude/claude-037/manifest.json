@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-037.py",
+      "task": "A toaster with two slots and side controls",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "e3d93b9cc71c99ed44d23df2268c4f45dd47bfd0ee530acda2e1aa191b8672fc",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-037/1788912999227070000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 221.35593485832214
+}

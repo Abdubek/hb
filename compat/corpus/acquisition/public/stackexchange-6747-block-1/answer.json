@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 3274879,
+    "reputation": 10011,
+    "user_id": 2271,
+    "user_type": "registered",
+    "profile_image": "https://i.sstatic.net/5SCGc.png?s=256",
+    "display_name": "pink vertex",
+    "link": "https://blender.stackexchange.com/users/2271/pink-vertex"
+  },
+  "is_accepted": true,
+  "score": 5,
+  "last_activity_date": 1391529015,
+  "last_edit_date": 1391529015,
+  "creation_date": 1391523449,
+  "answer_id": 6747,
+  "question_id": 6746,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<pre><code>import bpy\n\nobj=bpy.data.objects['Cube']\nmodifier=obj.modifiers['Dynamic Paint']\ncanvas_surface=modifier.canvas_settings.canvas_surfaces['Surface']\npoint_cache=canvas_surface.point_cache\n\ncontext={}\ncontext['blend_data']=bpy.data\ncontext['scene']=bpy.data.scenes['Scene']\ncontext['active_object']=obj\ncontext['point_cache']=point_cache\n\nbpy.ops.ptcache.bake(context,bake=True)\n</code></pre>\n\n<p>Objects can be both a brush and a canvas. The baking is done by the surfaces of the canvas. So an additional iteration is necessary.</p>\n\n<pre><code>#...\nfor modifier in obj.modifiers:\n    if modifier.type=='DYNAMIC_PAINT':\n        #additional iteration\n        for canvas_surface in modifier.canvas_settings.canvas_surfaces:\n             context['active_object']=obj\n             context['point_cache']=canvas_surface.point_cache\n             bpy.ops.ptcache.bake(context,bake=True)\n</code></pre>\n"
+}

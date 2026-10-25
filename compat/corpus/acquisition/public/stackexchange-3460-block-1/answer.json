@@ -1,0 +1,20 @@
+{
+  "owner": {
+    "account_id": 154984,
+    "reputation": 14580,
+    "user_id": 185,
+    "user_type": "registered",
+    "profile_image": "https://www.gravatar.com/avatar/5a66d70dac9e784226209cf4486a3fa3?s=256&d=identicon&r=PG",
+    "display_name": "Adhi",
+    "link": "https://blender.stackexchange.com/users/185/adhi"
+  },
+  "is_accepted": true,
+  "score": 18,
+  "last_activity_date": 1382568168,
+  "last_edit_date": 1492088258,
+  "creation_date": 1382421016,
+  "answer_id": 3460,
+  "question_id": 3441,
+  "content_license": "CC BY-SA 3.0",
+  "body": "<p>As <a href=\"https://blender.stackexchange.com/questions/3441/setting-objects-into-edit-mode-often-seems-to-fail-in-python-script#comment5884_3441\">mentioned</a> by dimus, your problem is solved by adding keyword to the <a href=\"http://www.blender.org/documentation/blender_python_api_2_69_1/bpy.ops.mesh.html#bpy.ops.mesh.remove_doubles\" rel=\"noreferrer\"><code>mesh.remove_doubles</code></a> operator's first argument, meant as <code>threshold</code> property value. With that little bug fixed, your script works properly.</p>\n\n<p>What causes the error is that, <strong>keyword arguments</strong> are used to set operator properties, and <strong>positional arguments</strong> to set how the operator is called (further explained in the <a href=\"http://www.blender.org/documentation/blender_python_api_2_69_1/bpy.ops.html#keywords-and-positional-arguments\" rel=\"noreferrer\">API docs</a>). By not using a keyword for the first argument, you're turning it into a <em>positional</em> argument, thus interpreted as operator execution context which is an error.</p>\n\n<p><strong>EDIT</strong>: Another possible error is iterating over <a href=\"http://www.blender.org/documentation/blender_python_api_2_69_1/bpy.types.BlendData.html#bpy.types.BlendData.objects\" rel=\"noreferrer\"><code>bpy.data.objects</code></a>, which comprises of all objects <em>in every scene</em> in a file. The script is bound to fail if there's more than one scene in a file containing a <code>MESH</code> object, because it'll try to make object from a different scene the active object of current scene which is contextually incorrect. You should iterate over <a href=\"http://www.blender.org/documentation/blender_python_api_2_69_1/bpy.types.Scene.html#bpy.types.Scene.objects\" rel=\"noreferrer\"><code>bpy.context.scene.objects</code></a> instead.</p>\n\n<p>Here's the amended code, can't see any other bug:</p>\n\n<pre><code>import bpy\n\nscene = bpy.context.scene\nscene.layers = [True] * 20 # Show all layers\n\nfor obj in scene.objects:\n    if obj.type == 'MESH':\n        scene.objects.active = obj\n\n        bpy.ops.object.mode_set(mode='EDIT')\n        bpy.ops.mesh.remove_doubles(threshold=0.0001)\n        bpy.ops.object.mode_set(mode='OBJECT')\n</code></pre>\n"
+}

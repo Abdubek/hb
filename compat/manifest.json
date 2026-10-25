@@ -1,0 +1,2570 @@
+{
+  "blender": "4.5 LTS",
+  "milestone": "Bounded compatibility closure, 0.18 preview",
+  "symbols": {
+    "bmesh.new": {
+      "description": "Create a standalone editable mesh, use_operators=True/False",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.ops.bevel": {
+      "description": "All edges of a closed convex mesh, OFFSET, profile 0.5, 1..8 segments and nonoverlapping width; canonical cuboids retain uniform-face requirements; return beveled faces/all new edges and vertices, invalidate old handles; no-op empty or zero offset",
+      "test": "compat/golden/m3_bmesh_bevel.py"
+    },
+    "bmesh.ops.bisect_plane": {
+      "description": "Finite plane, selected vertices/edges/faces, single-segment polygon cuts, snap-center and clear-inner/outer; preserve surviving handles and return geom/geom_cut; 100,000 vertices/faces",
+      "test": "compat/golden/m3_bisect_plane.py"
+    },
+    "bmesh.ops.create_circle": {
+      "description": "Circle creation with optional 3x3/4x4 matrix; no editable UV layers",
+      "test": "compat/golden/m2_transform_editing.py"
+    },
+    "bmesh.ops.create_cone": {
+      "description": "Cone creation with optional 3x3/4x4 matrix; no editable UV layers",
+      "test": "compat/golden/m2_transform_editing.py"
+    },
+    "bmesh.ops.create_cube": {
+      "description": "Cube creation with optional 3x3/4x4 matrix; no editable UV layers",
+      "test": "compat/golden/m2_transform_editing.py"
+    },
+    "bmesh.ops.create_grid": {
+      "description": "Grid creation with optional 3x3/4x4 matrix; no editable UV layers",
+      "test": "compat/golden/m2_transform_editing.py"
+    },
+    "bmesh.ops.create_uvsphere": {
+      "description": "UV-sphere creation with optional 3x3/4x4 matrix; no editable UV layers",
+      "test": "compat/golden/m2_transform_editing.py"
+    },
+    "bmesh.ops.delete": {
+      "description": "Delete selected VERTS, EDGES, FACES_ONLY geometry",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.ops.extrude_face_region": {
+      "description": "Extrude manifold face regions or mixed vertices/edges/faces, wire edges and isolated vertices with default flags; mixed faces require one connected region and retained attached caps require flat incident faces; use_keep_orig controls attached input cap removal; return duplicated vertices/edges/caps; stable indices and wall order can differ from Blender",
+      "test": "compat/golden/m2_extrude.py"
+    },
+    "bmesh.ops.inset_region": {
+      "description": "Noncollapsing planar manifold face regions, thickness/depth, boundary and even-offset modes; retain input face handles, return rim faces; no relative offset, edge rail or outset",
+      "test": "compat/golden/m3_inset_region.py"
+    },
+    "bmesh.ops.recalc_face_normals": {
+      "description": "Orient selected faces using complete connected manifold components with planar faces; closed components use signed volume, open components use extremal-corner orientation; refresh all normals without topology reordering; degenerate/non-orientable/non-manifold inputs rejected",
+      "test": "compat/golden/m2_normals.py"
+    },
+    "bmesh.ops.remove_doubles": {
+      "description": "Merge selected vertices using Blender-compatible float32 spatial representatives and distance boundaries; remove duplicate/collapsed edges and faces, split repeated-corner polygons, retain target coordinates; returns None",
+      "test": "compat/golden/m3_remove_doubles.py"
+    },
+    "bmesh.ops.rotate": {
+      "description": "Rotate selected editable vertices about a center with 3x3/4x4 matrices and nonsingular space; use_shapekey optionally transforms all shape layers",
+      "test": "compat/golden/m2_transform_editing.py"
+    },
+    "bmesh.ops.scale": {
+      "description": "Scale editable vertices in nonsingular 3x3/4x4 space; returns None",
+      "test": "compat/golden/m2_transform_editing.py"
+    },
+    "bmesh.ops.solidify": {
+      "description": "Finite positive/negative/zero thickness; oriented manifold face shells with miter offsets, edge and vertex selections; retain original handles, return new shell vertices/edges/caps; 100,000 vertices/faces",
+      "test": "compat/golden/m3_bmesh_solidify.py"
+    },
+    "bmesh.ops.subdivide_edges": {
+      "description": "Linear cuts 0..64: complete triangle/quad grids, unfilled whole/one-edge boundaries, adjacent quad corner cuts and wires; preserve original handles and return geom_inner/geom_split/geom; no smoothing/fractal options",
+      "test": "compat/golden/m3_subdivide_edges.py"
+    },
+    "bmesh.ops.transform": {
+      "description": "Apply a 3x3/4x4 affine transform in nonsingular space; use_shapekey optionally transforms all shape layers",
+      "test": "compat/golden/m2_transform_editing.py"
+    },
+    "bmesh.ops.translate": {
+      "description": "Translate editable vertices in nonsingular 3x3/4x4 space; returns None",
+      "test": "compat/golden/m2_transform_editing.py"
+    },
+    "bmesh.ops.triangulate": {
+      "description": "Planar simple faces, up to 2048 corners: BEAUTY/FIXED/ALTERNATE/SHORT_EDGE/LONG_EDGE quads and BEAUTY/EAR_CLIP n-gons; retain original face handle, copy attributes, return edges/faces/face_map/face_map_double; 100,000 faces",
+      "test": "compat/golden/m3_bmesh_triangulate.py"
+    },
+    "bmesh.types.BMEdge.index": {
+      "description": "Read or write a valid edge index; normal repair refreshes sequential indices without reordering edges",
+      "test": "compat/golden/m2_normals.py"
+    },
+    "bmesh.types.BMEdge.is_valid": {
+      "description": "Edge handle validity, including after BMesh.free",
+      "test": "compat/golden/m2_extrude.py"
+    },
+    "bmesh.types.BMEdge.verts": {
+      "description": "The two edge vertices",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMFace.edges": {
+      "description": "Ordered boundary edges",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMFace.index": {
+      "description": "Read or write a valid face index; normal repair refreshes sequential indices without reordering faces",
+      "test": "compat/golden/m2_normals.py"
+    },
+    "bmesh.types.BMFace.is_valid": {
+      "description": "Face handle validity, including after BMesh.free",
+      "test": "compat/golden/m2_extrude.py"
+    },
+    "bmesh.types.BMFace.loops": {
+      "description": "Ordered face corners",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMFace.material_index": {
+      "description": "Material slot index",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMFace.normal": {
+      "description": "Face normal after normal_update",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMFace.smooth": {
+      "description": "Smooth shading flag",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMFace.verts": {
+      "description": "Ordered face vertices",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMLayerCollection.active": {
+      "description": "Read active layer or None",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMLayerCollection.get": {
+      "description": "Find a layer by name with optional default",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMLayerCollection.keys": {
+      "description": "Ordered layer names",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMLayerCollection.new": {
+      "description": "Create a named layer; UV/shape defaults zero, FLOAT_COLOR defaults white; duplicate names rejected",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMLayerCollection.remove": {
+      "description": "Remove this collection layer and invalidate its handle",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMLayerCollection.verify": {
+      "description": "Return active layer or create a default-named layer",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMLayerItem.name": {
+      "description": "Read layer name; reject removed/freed layer handles",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMLoop.edge": {
+      "description": "Corner outgoing edge",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMLoop.face": {
+      "description": "Owning face",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMLoop.vert": {
+      "description": "Corner vertex",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMLoopUV.uv": {
+      "description": "Read/write finite float32 UV pair through loop[layer].uv",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMVert.co": {
+      "description": "Writable Vector coordinate",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMVert.index": {
+      "description": "Mutable index, -1 before index_update",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMVert.is_valid": {
+      "description": "Element validity",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.edges": {
+      "description": "Mutable edge sequence",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.edges.ensure_lookup_table": {
+      "description": "Enable indexed edge access",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.edges.index_update": {
+      "description": "Update edge indices",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.edges.new": {
+      "description": "Add an edge between distinct vertices",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.edges.remove": {
+      "description": "Remove edge and incident faces",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.faces": {
+      "description": "Mutable face sequence",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.faces.ensure_lookup_table": {
+      "description": "Enable indexed face access",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.faces.index_update": {
+      "description": "Update face indices",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.faces.new": {
+      "description": "Add a face using distinct vertices",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.faces.remove": {
+      "description": "Remove face, retaining edges and vertices",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.free": {
+      "description": "Invalidate the editable mesh and its elements",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.from_mesh": {
+      "description": "Append plain geometry; import UV, FLOAT_COLOR, shape and unchanged packed-normal data into an empty BMesh",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.loops.layers.float_color": {
+      "description": "One editable FLOAT_COLOR corner layer",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMesh.loops.layers.uv": {
+      "description": "Up to eight editable corner UV layers",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMesh.normal_update": {
+      "description": "Recalculate vertex and face normals",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.to_mesh": {
+      "description": "Atomically publish geometry and supported editable layers; packed normals require flat faces and unchanged geometry",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.verts": {
+      "description": "Mutable vertex sequence",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.verts.ensure_lookup_table": {
+      "description": "Enable indexed vertex access",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.verts.index_update": {
+      "description": "Update vertex indices",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.verts.layers.shape": {
+      "description": "Up to 64 relative shape layers; mesh key data requires a target with shape keys",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bmesh.types.BMesh.verts.new": {
+      "description": "Add a vertex with a 3D coordinate",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMesh.verts.remove": {
+      "description": "Remove vertex and incident geometry",
+      "test": "compat/golden/m2_bmesh.py"
+    },
+    "bpy.context.active_object": {
+      "description": "Active object or None",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.context.collection.objects": {
+      "description": "Linked collection objects, insertion order",
+      "test": "compat/golden/collections.py"
+    },
+    "bpy.context.collection.objects.get": {
+      "description": "get(name, default=None)",
+      "test": "compat/golden/collections.py"
+    },
+    "bpy.context.collection.objects.link": {
+      "description": "Link an existing object to the active collection",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.context.collection.objects.unlink": {
+      "description": "Unlink from active collection",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.context.mode": {
+      "description": "Transient construction context: OBJECT or EDIT_MESH",
+      "test": "compat/golden/m3_primitive_extensions.py"
+    },
+    "bpy.context.object": {
+      "description": "Active object or None",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.context.scene.camera": {
+      "description": "Active camera object or None",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.context.scene.collection": {
+      "description": "Scene master collection",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.context.scene.cursor": {
+      "description": "Transient construction cursor; initialized at zero each script run",
+      "test": "compat/golden/m3_primitive_extensions.py"
+    },
+    "bpy.context.scene.objects": {
+      "description": "Linked scene objects",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.context.scene.objects.get": {
+      "description": "get(name, default=None)",
+      "test": "compat/golden/collections.py"
+    },
+    "bpy.context.scene.render": {
+      "description": "Scene render output settings",
+      "test": "compat/golden/m1_render_settings.py"
+    },
+    "bpy.context.scene.render.filepath": {
+      "description": "Render output path",
+      "test": "compat/golden/m1_render_settings.py"
+    },
+    "bpy.context.scene.render.pixel_aspect_x": {
+      "description": "Horizontal pixel aspect",
+      "test": "compat/golden/m1_render_settings.py"
+    },
+    "bpy.context.scene.render.pixel_aspect_y": {
+      "description": "Vertical pixel aspect",
+      "test": "compat/golden/m1_render_settings.py"
+    },
+    "bpy.context.scene.render.resolution_percentage": {
+      "description": "Resolution percentage",
+      "test": "compat/golden/m1_render_settings.py"
+    },
+    "bpy.context.scene.render.resolution_x": {
+      "description": "Image width",
+      "test": "compat/golden/m1_render_settings.py"
+    },
+    "bpy.context.scene.render.resolution_y": {
+      "description": "Image height",
+      "test": "compat/golden/m1_render_settings.py"
+    },
+    "bpy.context.scene.world": {
+      "description": "Scene world datablock reference",
+      "test": "compat/golden/m2_world.py"
+    },
+    "bpy.context.selected_objects": {
+      "description": "List of selected, linked objects",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.context.view_layer.objects": {
+      "description": "View-layer objects, insertion order",
+      "test": "compat/golden/collections.py"
+    },
+    "bpy.context.view_layer.objects.active": {
+      "description": "Read/write active linked object",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.context.view_layer.objects.get": {
+      "description": "get(name, default=None)",
+      "test": "compat/golden/collections.py"
+    },
+    "bpy.context.view_layer.update": {
+      "description": "Synchronize evaluated scene state",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.cameras": {
+      "description": "Camera data blocks",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.cameras.get": {
+      "description": "Name lookup with optional fallback",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.data.cameras.new": {
+      "description": "new(name)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.cameras.remove": {
+      "description": "remove(camera, do_unlink=True)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.collections": {
+      "description": "Collections, excluding the scene master collection",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.collections.get": {
+      "description": "Name lookup with optional fallback",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.data.collections.new": {
+      "description": "new(name)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.collections.remove": {
+      "description": "remove(collection, do_unlink=True)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.curves": {
+      "description": "Legacy Curve database distinct from meshes; iteration, integer/name lookup, get/new/remove; data persists with evaluated surface cache",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.data.curves.get": {
+      "description": "get(name, default=None)",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.data.curves.new": {
+      "description": "new(name, type=CURVE or FONT); POLY/BEZIER curves require dimensions=3D; FONT is the explicitly loaded static TrueType text subset",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.data.curves.remove": {
+      "description": "Remove curve data with normal data-user unlink semantics",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.data.fonts.load": {
+      "description": "load(filepath, check_existing=False); static glyf-based TrueType <=4 MiB with Unicode cmap format 4; parsed printable ASCII outlines persist once in the scene; CFF/variable/composite glyphs excluded",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.data.images": {
+      "description": "Image data blocks",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.data.images.get": {
+      "description": "Name lookup with optional fallback",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.data.images.load": {
+      "description": "load(filepath, check_existing=False); PNG and JPEG",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.data.images.new": {
+      "description": "new(name, width, height, alpha=True, float_buffer=False, stereo3d=False, is_data=False, tiled=False); non-tiled mono images",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.data.images.remove": {
+      "description": "remove(image, do_unlink=True)",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.data.lights": {
+      "description": "Light data blocks",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.lights.get": {
+      "description": "Name lookup with optional fallback",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.data.lights.new": {
+      "description": "new(name, type): POINT, SUN, SPOT, AREA",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.lights.remove": {
+      "description": "remove(light, do_unlink=True)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.materials": {
+      "description": "Material data blocks",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.materials.get": {
+      "description": "Name lookup with optional fallback",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.data.materials.new": {
+      "description": "new(name)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.materials.remove": {
+      "description": "remove(material, do_unlink=True)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.meshes": {
+      "description": "Mesh data blocks: iteration, lookup and creation",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.meshes.get": {
+      "description": "Name lookup with optional fallback",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.data.meshes.new": {
+      "description": "new(name) creates an empty mesh",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.meshes.remove": {
+      "description": "remove(mesh, do_unlink=True)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.objects": {
+      "description": "Object database: iteration, length, name/index lookup, get",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.data.objects.get": {
+      "description": "get(name, default=None)",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.data.objects.new": {
+      "description": "new(name, object_data): mesh, camera, light or None",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.objects.remove": {
+      "description": "remove(object, do_unlink=True)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.data.textures.new": {
+      "description": "Create a CLOUDS procedural texture",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.data.textures.remove": {
+      "description": "Remove textures and unlink modifier users",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.data.worlds.get": {
+      "description": "Look up a World by name",
+      "test": "compat/golden/m2_world.py"
+    },
+    "bpy.data.worlds.new": {
+      "description": "Create a named World with constant-color settings",
+      "test": "compat/golden/m2_world.py"
+    },
+    "bpy.data.worlds.remove": {
+      "description": "Remove a World and unlink scene users",
+      "test": "compat/golden/m2_world.py"
+    },
+    "bpy.ops.export_scene.gltf": {
+      "description": "GLB or GLTF_SEPARATE export; selection, applied modifiers, optional cameras/lights; each output file atomically replaced, no cross-file transaction",
+      "test": "compat/golden/m3_export_gltf.py"
+    },
+    "bpy.ops.export_scene.obj": {
+      "description": "Legacy OBJ/MTL mesh export: selection, applied modifiers, normals, UVs, triangulation, signed axis pair and positive scale; scalar Principled factors and base/alpha/normal images; per-file atomic writes",
+      "test": "compat/golden/m3_export_obj.py"
+    },
+    "bpy.ops.import_scene.gltf": {
+      "description": "Import GLB/glTF into the active collection, select imported objects and preserve hierarchy; file vertex indexing, scalar Principled material inputs and native asset bindings; arbitrary generated shader graphs are not reconstructed",
+      "test": "compat/golden/m3_import_gltf.py"
+    },
+    "bpy.ops.import_scene.obj": {
+      "description": "Legacy Blender 3.6 OBJ operator: split named objects, declared forward/up axes, faces, UVs, normals, smoothing and scalar MTL; imported selection retains the previous active object",
+      "test": "compat/golden/m3_import_obj.py"
+    },
+    "bpy.ops.mesh.primitive_circle_add": {
+      "description": "WORLD/CURSOR circle in object or single-mesh EDIT construction; vertices/radius, NOTHING/NGON/TRIFAN; construction scale ignored; zero radius requires calc_uvs=False",
+      "test": "compat/golden/m2_primitives.py"
+    },
+    "bpy.ops.mesh.primitive_cone_add": {
+      "description": "WORLD/CURSOR cone/frustum in object or single-mesh EDIT construction; vertices/radii/depth and caps, finite degenerate wire geometry; explicit positive/zero scale and optional UVs; negative scale requires calc_uvs=False",
+      "test": "compat/golden/m2_round_primitives.py"
+    },
+    "bpy.ops.mesh.primitive_cube_add": {
+      "description": "Keyword-only cube size/location/rotation/scale; WORLD or CURSOR, object or single-mesh EDIT construction; explicit zero size uses unit cube; return to OBJECT before script completion",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.ops.mesh.primitive_cylinder_add": {
+      "description": "WORLD/CURSOR cylinder in object or single-mesh EDIT construction; vertices/radius/depth, NGON/TRIFAN/NOTHING caps, finite degenerate wire geometry; explicit scale including zero; negative scale requires calc_uvs=False",
+      "test": "compat/golden/m2_primitives.py"
+    },
+    "bpy.ops.mesh.primitive_ico_sphere_add": {
+      "description": "WORLD/CURSOR ico sphere in object or single-mesh EDIT construction; subdivisions 1..7, radius including zero, explicit scale including zero, optional seam UVs; equivalent indexed topology",
+      "test": "compat/golden/m3_ico_sphere.py"
+    },
+    "bpy.ops.mesh.primitive_plane_add": {
+      "description": "WORLD/CURSOR plane in object or single-mesh EDIT construction; size including zero, location/rotation, optional UVs; construction scale ignored",
+      "test": "compat/golden/m2_primitives.py"
+    },
+    "bpy.ops.mesh.primitive_torus_add": {
+      "description": "WORLD/CURSOR torus in object or existing single-mesh EDIT context; segments 3..256, MAJOR_MINOR or EXT_INT, 0 <= minor <= major including zero, optional UVs; self-intersecting radii excluded",
+      "test": "compat/golden/m2_torus.py"
+    },
+    "bpy.ops.mesh.primitive_uv_sphere_add": {
+      "description": "WORLD/CURSOR UV sphere in object or single-mesh EDIT construction; segments/rings/radius, explicit scale including zero; zero radius requires calc_uvs=False and keeps an unmerged quad grid; construction limit 100000 vertices",
+      "test": "compat/golden/m2_round_primitives.py"
+    },
+    "bpy.ops.object.camera_add": {
+      "description": "Create a camera in object mode with WORLD alignment; input scale is ignored, matching Blender.",
+      "test": "compat/golden/m2_object_ops.py"
+    },
+    "bpy.ops.object.delete": {
+      "description": "Delete selected objects in the scene; use_global supported",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.ops.object.duplicate": {
+      "description": "Duplicate selected objects with linked=False/True; preserve collection links, copied-data sharing, modifiers and selection, and remap selected parents; default TRANSLATION mode",
+      "test": "compat/golden/m3_duplicate.py"
+    },
+    "bpy.ops.object.empty_add": {
+      "description": "Create non-image empty object display shapes; radius sets display size.",
+      "test": "compat/golden/m2_object_ops.py"
+    },
+    "bpy.ops.object.join": {
+      "description": "Join selected meshes using world transforms, including reflections, shared data and direct hierarchy relations; update all active-data users, detach removed-source children; UV/material slots retained; no modifiers or other indexed custom attributes",
+      "test": "compat/golden/m2_join.py"
+    },
+    "bpy.ops.object.light_add": {
+      "description": "Create POINT/SUN/SPOT/AREA lights; AREA radius sets size, input scale is ignored.",
+      "test": "compat/golden/m2_object_ops.py"
+    },
+    "bpy.ops.object.mode_set": {
+      "description": "Transient OBJECT/EDIT primitive construction on one selected active mesh; toggle=False; return to OBJECT before object operations or script completion; combined edit construction at most 100000 vertices/faces with ordinary geometry/materials/UVs",
+      "test": "compat/golden/m3_primitive_extensions.py"
+    },
+    "bpy.ops.object.modifier_apply": {
+      "description": "Apply the first supported modifier to an active single-user mesh",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.ops.object.origin_set": {
+      "description": "Selected meshes: ORIGIN_GEOMETRY or GEOMETRY_ORIGIN, MEDIAN or BOUNDS center; preserve dependent children for nonsingular transforms; shift shared mesh data once, leaving unselected users' transforms unchanged",
+      "test": "compat/golden/m3_origin_set.py"
+    },
+    "bpy.ops.object.parent_set": {
+      "description": "Parent selected children to the active object; type=OBJECT, keep_transform False/True, inverse-parent compensation and cycle rejection; nonsingular parent transform",
+      "test": "compat/golden/m3_parent_set.py"
+    },
+    "bpy.ops.object.select_all": {
+      "description": "action: SELECT, DESELECT, INVERT or TOGGLE",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.ops.object.shade_flat": {
+      "description": "Set mesh polygons to flat shading",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.ops.object.shade_smooth": {
+      "description": "Set mesh polygons to smooth shading",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.ops.object.text_add": {
+      "description": "Object-mode Text creation; WORLD/CURSOR alignment, location/rotation and unit construction scale; assign an explicit static TrueType font before update/export/script completion; no edit lifecycle",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.ops.object.transform_apply": {
+      "description": "Bake selected TRS mesh transforms with nonzero scales, including reflections and child compensation; isolate_users False/True, transform shared data once when all users selected; shared selected users must be unparented without children; no shape keys or reflected packed normals",
+      "test": "compat/golden/m2_transform_apply.py"
+    },
+    "bpy.ops.render.render": {
+      "description": "Current scene camera CPU raster preview; write_still False/True, resolution percentage and pixel aspect, PNG output up to 2048 pixels per axis. No animation/viewport overrides, Blender pixel parity or persistent Render Result datablock",
+      "test": "compat/golden/m3_render_operator.py"
+    },
+    "bpy.types.ArrayModifier.constant_offset_displace": {
+      "description": "XYZ constant displacement in meters",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.ArrayModifier.count": {
+      "description": "Fixed count, clamped to 1..10000",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.ArrayModifier.end_cap": {
+      "description": "Different evaluated mesh object or None, placed one offset after the last copy; ignores cap object transform and uses source material slots",
+      "test": "compat/golden/m3_array.py"
+    },
+    "bpy.types.ArrayModifier.fit_type": {
+      "description": "FIXED_COUNT only",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.ArrayModifier.merge_threshold": {
+      "description": "Float distance 0..1, default 0.01; at most two million proximity checks and two million evaluated vertices/faces",
+      "test": "compat/golden/m3_array.py"
+    },
+    "bpy.types.ArrayModifier.name": {
+      "description": "Unique modifier name",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.ArrayModifier.offset_object": {
+      "description": "Offset object or None; transforms may rotate, scale or reflect copies",
+      "test": "compat/golden/m3_array.py"
+    },
+    "bpy.types.ArrayModifier.relative_offset_displace": {
+      "description": "XYZ relative displacement",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.ArrayModifier.show_render": {
+      "description": "Enable modifier for CPU preview",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.ArrayModifier.show_viewport": {
+      "description": "Enable modifier for viewport queries",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.ArrayModifier.start_cap": {
+      "description": "Different evaluated mesh object or None, placed one offset before the source; ignores cap object transform and uses source material slots",
+      "test": "compat/golden/m3_array.py"
+    },
+    "bpy.types.ArrayModifier.type": {
+      "description": "ARRAY",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.ArrayModifier.use_constant_offset": {
+      "description": "Enable fixed local displacement",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.ArrayModifier.use_merge_vertices": {
+      "description": "Weld adjacent copies and caps within merge_threshold; retain target coordinates and corner attributes; remove collapsed/duplicate faces",
+      "test": "compat/golden/m3_array.py"
+    },
+    "bpy.types.ArrayModifier.use_merge_vertices_cap": {
+      "description": "Also weld first and last copies when merging is enabled",
+      "test": "compat/golden/m3_array.py"
+    },
+    "bpy.types.ArrayModifier.use_object_offset": {
+      "description": "Compose owner-relative offset object affine transform with relative/constant translation",
+      "test": "compat/golden/m3_array.py"
+    },
+    "bpy.types.ArrayModifier.use_relative_offset": {
+      "description": "Enable offset relative to evaluated mesh bounding box",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.BevelModifier.affect": {
+      "description": "EDGES on closed convex polyhedral meshes; EDGES/VERTICES on canonical cuboids; textured VERTICES requires one or even segments",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.angle_limit": {
+      "description": "Edge angle threshold in radians",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.harden_normals": {
+      "description": "False only",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.limit_method": {
+      "description": "NONE/ANGLE on closed convex polyhedral meshes; coplanar edges remain unchanged",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.loop_slide": {
+      "description": "True only",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.material": {
+      "description": "-1 inherited source face material",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.name": {
+      "description": "Modifier name",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.offset_type": {
+      "description": "OFFSET only",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.profile": {
+      "description": "0.5 circular profile only",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.segments": {
+      "description": "Rounded edge segments 1..8; general convex meshes use sampled fillets and corner patches, with per-face UV projection; canonical cuboids retain reference stencils and their UV restrictions",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.show_render": {
+      "description": "CPU preview visibility",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.show_viewport": {
+      "description": "Viewport visibility",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.type": {
+      "description": "BEVEL",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.use_clamp_overlap": {
+      "description": "True clamps general mesh width before face insets collapse; canonical cuboids retain half-shortest-edge clamping; False rejects overlapping width",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BevelModifier.width": {
+      "description": "Nonnegative OFFSET bevel distance; oversized widths clamp when use_clamp_overlap=True",
+      "test": "compat/golden/m2_bevel.py"
+    },
+    "bpy.types.BezierSplinePoint.co": {
+      "description": "Live three-component coordinate within +/-10000; moving the control point translates both stored handles",
+      "test": "compat/golden/modeling_quality_curves.py"
+    },
+    "bpy.types.BezierSplinePoint.handle_left": {
+      "description": "Live left handle coordinate within +/-10000; FREE/ALIGNED handles are explicit",
+      "test": "compat/golden/modeling_quality_curves.py"
+    },
+    "bpy.types.BezierSplinePoint.handle_left_type": {
+      "description": "FREE, VECTOR, AUTO or ALIGNED; ordinary 3D AUTO uses the neighbor chord bisector and Blender length convention, reference-tested on corner and unequal-spacing cases",
+      "test": "compat/golden/modeling_quality_curves.py"
+    },
+    "bpy.types.BezierSplinePoint.handle_right": {
+      "description": "Live right handle coordinate within +/-10000; FREE/ALIGNED handles are explicit",
+      "test": "compat/golden/modeling_quality_curves.py"
+    },
+    "bpy.types.BezierSplinePoint.handle_right_type": {
+      "description": "FREE, VECTOR, AUTO or ALIGNED; moving a handle aligns its opposite ALIGNED handle unless either handle is FREE",
+      "test": "compat/golden/modeling_quality_curves.py"
+    },
+    "bpy.types.BezierSplinePoint.radius": {
+      "description": "Radius multiplier 0..100, linearly interpolated along each span",
+      "test": "compat/golden/modeling_quality_curves.py"
+    },
+    "bpy.types.BezierSplinePoint.tilt": {
+      "description": "Tilt radians +/-100, linearly interpolated along each span",
+      "test": "compat/golden/modeling_quality_curves.py"
+    },
+    "bpy.types.BooleanModifier.collection": {
+      "description": "Collection operand or None; recursive membership, evaluated in owner local coordinates; removing the collection clears references",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.BooleanModifier.double_threshold": {
+      "description": "Default 1e-6 only; unused by MANIFOLD",
+      "test": "compat/golden/m2_boolean.py"
+    },
+    "bpy.types.BooleanModifier.material_mode": {
+      "description": "INDEX only",
+      "test": "compat/golden/m2_boolean.py"
+    },
+    "bpy.types.BooleanModifier.name": {
+      "description": "Modifier name",
+      "test": "compat/golden/m2_boolean.py"
+    },
+    "bpy.types.BooleanModifier.object": {
+      "description": "Mesh object operand or None; evaluated in owner local coordinates",
+      "test": "compat/golden/m2_boolean.py"
+    },
+    "bpy.types.BooleanModifier.operand_type": {
+      "description": "OBJECT or COLLECTION; at most 64 recursive mesh operands, owner excluded; collection INTERSECT requires EXACT or MANIFOLD",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.BooleanModifier.operation": {
+      "description": "DIFFERENCE, UNION or INTERSECT of closed manifold meshes",
+      "test": "compat/golden/m2_boolean.py"
+    },
+    "bpy.types.BooleanModifier.show_render": {
+      "description": "Preview evaluation flag",
+      "test": "compat/golden/m2_boolean.py"
+    },
+    "bpy.types.BooleanModifier.show_viewport": {
+      "description": "Viewport and glTF evaluation flag",
+      "test": "compat/golden/m2_boolean.py"
+    },
+    "bpy.types.BooleanModifier.solver": {
+      "description": "EXACT, FAST or MANIFOLD on closed oriented solids; shared robust kernel, canonical boundary topology; coplanar partition and collinear vertices may differ; reflected transforms require EXACT/FAST",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.BooleanModifier.type": {
+      "description": "BOOLEAN",
+      "test": "compat/golden/m2_boolean.py"
+    },
+    "bpy.types.BooleanModifier.use_hole_tolerant": {
+      "description": "False only",
+      "test": "compat/golden/m2_boolean.py"
+    },
+    "bpy.types.BooleanModifier.use_self": {
+      "description": "False only",
+      "test": "compat/golden/m2_boolean.py"
+    },
+    "bpy.types.Camera.clip_end": {
+      "description": "Far clipping plane in meters",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.clip_start": {
+      "description": "Near clipping plane in meters",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.lens": {
+      "description": "Focal length in millimeters",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.name": {
+      "description": "Unique camera data name",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.ortho_scale": {
+      "description": "Orthographic view scale",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.sensor_fit": {
+      "description": "AUTO, HORIZONTAL or VERTICAL",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.sensor_height": {
+      "description": "Sensor height in millimeters",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.sensor_width": {
+      "description": "Sensor width in millimeters",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.shift_x": {
+      "description": "Horizontal lens shift",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.shift_y": {
+      "description": "Vertical lens shift",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.type": {
+      "description": "PERSP or ORTHO; panoramic cameras fail explicitly",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Camera.users": {
+      "description": "Referencing objects",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.CloudsTexture.cloud_type": {
+      "description": "GRAYSCALE",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.CloudsTexture.contrast": {
+      "description": "Texture contrast",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.CloudsTexture.evaluate": {
+      "description": "Evaluate cell-noise texture at local coordinates",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.CloudsTexture.intensity": {
+      "description": "Texture brightness",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.CloudsTexture.name": {
+      "description": "Texture data-block name",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.CloudsTexture.noise_basis": {
+      "description": "CELL_NOISE evaluation; BLENDER_ORIGINAL default readable",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.CloudsTexture.noise_depth": {
+      "description": "Noise octaves, 0..30",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.CloudsTexture.noise_scale": {
+      "description": "Procedural noise scale",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.CloudsTexture.noise_type": {
+      "description": "SOFT_NOISE or HARD_NOISE",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.CloudsTexture.type": {
+      "description": "CLOUDS type",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.CloudsTexture.users": {
+      "description": "Texture user count",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.Collection.children": {
+      "description": "Child collections",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Collection.children.link": {
+      "description": "Link child collection",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Collection.children.unlink": {
+      "description": "Unlink child collection",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Collection.name": {
+      "description": "Unique collection name",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Collection.objects": {
+      "description": "Direct object membership",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Collection.objects.link": {
+      "description": "Link object to collection",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Collection.objects.unlink": {
+      "description": "Unlink object from collection",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Collection.users": {
+      "description": "Parent collection references",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.Curve.bevel_depth": {
+      "description": "Finite 0..100; zero depth preserves wire geometry",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.bevel_mode": {
+      "description": "ROUND only",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.bevel_resolution": {
+      "description": "Integer 0..8; 4+2*resolution round-profile vertices",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.copy": {
+      "description": "Independent control data and evaluated geometry copy",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.dimensions": {
+      "description": "Set 3D; 2D fill excluded",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.extrude": {
+      "description": "Zero only; additional profile extrusion excluded",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.fill_mode": {
+      "description": "FULL only",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.materials": {
+      "description": "Material slots: iteration, indexing, assignment, append/clear/pop",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.materials.append": {
+      "description": "Append a material datablock",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.materials.clear": {
+      "description": "Clear slots and reset spline material indices",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.materials.pop": {
+      "description": "pop(index=-1), shifting spline material indices",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.name": {
+      "description": "UTF-8 datablock name, independent mesh/curve namespaces",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.resolution_u": {
+      "description": "Integer 1..1024; samples each curved Bezier span, leaves POLY and VECTOR spans linear",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.splines": {
+      "description": "At most 64 POLY/BEZIER splines; integer indexing and iteration",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.splines.clear": {
+      "description": "Remove all splines",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.splines.new": {
+      "description": "new(type=POLY or BEZIER), initially one point",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.twist_mode": {
+      "description": "MINIMUM only; spatial cyclic paths distribute residual frame twist by arc length",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.use_fill_caps": {
+      "description": "Close open nonzero-radius beveled splines with flat end caps; cyclic splines have no end caps",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Curve.users": {
+      "description": "Object data-user count",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.DisplaceModifier.direction": {
+      "description": "NORMAL, X, Y or Z",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.invert_vertex_group": {
+      "description": "Invert vertex-group influence as 1-weight; ignored when the named group is absent",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.mid_level": {
+      "description": "Neutral intensity",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.name": {
+      "description": "Modifier name",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.show_render": {
+      "description": "Render evaluation flag",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.show_viewport": {
+      "description": "Viewport evaluation flag",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.space": {
+      "description": "LOCAL",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.strength": {
+      "description": "Displacement strength",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.texture": {
+      "description": "Procedural CLOUDS texture or None",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.texture_coords": {
+      "description": "LOCAL",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.type": {
+      "description": "DISPLACE type",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.DisplaceModifier.vertex_group": {
+      "description": "Vertex-group name controlling displacement strength; missing or empty name means full influence",
+      "test": "compat/golden/m2_displace.py"
+    },
+    "bpy.types.FloatAttribute.data": {
+      "description": "Per-element values through index or iteration",
+      "test": "compat/golden/m3_subsurf.py"
+    },
+    "bpy.types.FloatAttribute.data_type": {
+      "description": "FLOAT",
+      "test": "compat/golden/m3_subsurf.py"
+    },
+    "bpy.types.FloatAttribute.domain": {
+      "description": "EDGE or POINT according to the crease attribute",
+      "test": "compat/golden/m3_subsurf.py"
+    },
+    "bpy.types.FloatAttribute.name": {
+      "description": "Read-only crease attribute name",
+      "test": "compat/golden/m3_subsurf.py"
+    },
+    "bpy.types.FloatAttributeValue.value": {
+      "description": "Read/write finite float32 crease value in 0..1",
+      "test": "compat/golden/m3_subsurf.py"
+    },
+    "bpy.types.FloatColorAttribute.data": {
+      "description": "Read/write corner values through index or iteration",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.FloatColorAttribute.data_type": {
+      "description": "FLOAT_COLOR",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.FloatColorAttribute.domain": {
+      "description": "CORNER",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.FloatColorAttribute.name": {
+      "description": "Read-only attribute name",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.FloatColorAttributeValue.color": {
+      "description": "Four finite scene-linear RGBA components; indexed writes and whole-vector assignment",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.Image.colorspace_settings.name": {
+      "description": "sRGB or Non-Color",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Image.filepath": {
+      "description": "Image source path",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Image.name": {
+      "description": "Unique image name",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Image.pixels": {
+      "description": "Flat RGBA sequence supporting whole-property and indexed/slice assignment",
+      "test": "compat/golden/m2_data_access.py"
+    },
+    "bpy.types.Image.size": {
+      "description": "Pixel width and height",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Image.users": {
+      "description": "Referencing texture nodes",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.IntAttribute.data": {
+      "description": "One value per polygon, accessed by index or iteration",
+      "test": "compat/golden/m3_weighted_normals.py"
+    },
+    "bpy.types.IntAttribute.data_type": {
+      "description": "INT",
+      "test": "compat/golden/m3_weighted_normals.py"
+    },
+    "bpy.types.IntAttribute.domain": {
+      "description": "FACE",
+      "test": "compat/golden/m3_weighted_normals.py"
+    },
+    "bpy.types.IntAttribute.name": {
+      "description": "Read-only __mod_weightednormals_faceweight",
+      "test": "compat/golden/m3_weighted_normals.py"
+    },
+    "bpy.types.IntAttributeValue.value": {
+      "description": "Read/write strength 0 (weak), 1 (medium) or 2 (strong)",
+      "test": "compat/golden/m3_weighted_normals.py"
+    },
+    "bpy.types.Key.key_blocks": {
+      "description": "Read ordered shape-key collection by index or name",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bpy.types.Light.color": {
+      "description": "Linear RGB",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Light.energy": {
+      "description": "Blender energy units",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Light.name": {
+      "description": "Unique light name",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Light.shadow_soft_size": {
+      "description": "Point/spot source radius",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Light.shape": {
+      "description": "AREA emitter shape: SQUARE, RECTANGLE, DISK or ELLIPSE",
+      "test": "compat/golden/m2_light_shapes.py"
+    },
+    "bpy.types.Light.size": {
+      "description": "Area source size",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Light.size_y": {
+      "description": "Secondary AREA emitter extent",
+      "test": "compat/golden/m2_light_shapes.py"
+    },
+    "bpy.types.Light.spot_blend": {
+      "description": "Spot cone edge softness",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Light.spot_size": {
+      "description": "Spot cone angle in radians",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Light.type": {
+      "description": "POINT, SUN, SPOT, AREA",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Light.use_shadow": {
+      "description": "Enable or disable shadow casting",
+      "test": "compat/golden/m2_light_shapes.py"
+    },
+    "bpy.types.Light.users": {
+      "description": "Referencing objects",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.Material.diffuse_color": {
+      "description": "Viewport RGBA, independent of node inputs",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Material.metallic": {
+      "description": "Non-node metallic factor",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Material.name": {
+      "description": "Unique material name",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Material.node_tree": {
+      "description": "None until nodes are enabled; retained when disabled",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Material.node_tree.links.new": {
+      "description": "Connect permitted UV/Mapping/Image, Image Color to Principled Base Color or Emission Color, Image Alpha to Alpha, and Principled to output; existing Normal Map chain retained",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Material.node_tree.nodes": {
+      "description": "Single Principled/output, image textures and one UV TexCoord/POINT Mapping chain; existing Normal Map retained",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Material.node_tree.nodes.clear": {
+      "description": "Remove nodes and links",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Material.node_tree.nodes.get": {
+      "description": "Node lookup by name",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Material.node_tree.nodes.new": {
+      "description": "ShaderNodeTexImage, ShaderNodeTexCoord, ShaderNodeMapping; existing ShaderNodeNormalMap retained; Principled/Output after clearing",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Material.roughness": {
+      "description": "Non-node roughness factor",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Material.use_nodes": {
+      "description": "Enable or disable material node tree",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Material.users": {
+      "description": "Number of mesh slots referencing the material",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.Mesh.attributes": {
+      "description": "Bounded crease and face-strength attributes; indexing, iteration and length",
+      "test": "compat/golden/m3_subsurf.py"
+    },
+    "bpy.types.Mesh.attributes.get": {
+      "description": "Find a supported crease or face-strength attribute by name",
+      "test": "compat/golden/m3_subsurf.py"
+    },
+    "bpy.types.Mesh.attributes.new": {
+      "description": "Create crease_edge FLOAT EDGE, crease_vert FLOAT POINT or __mod_weightednormals_faceweight INT FACE, initialized to zero; duplicate names rejected",
+      "test": "compat/golden/m3_subsurf.py"
+    },
+    "bpy.types.Mesh.color_attributes": {
+      "description": "One FLOAT_COLOR CORNER attribute; indexing, iteration and length",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.Mesh.color_attributes.get": {
+      "description": "Find the single corner color attribute by name",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.Mesh.color_attributes.new": {
+      "description": "new(name,type,domain): one FLOAT_COLOR CORNER attribute with a name of 1..63 UTF-8 bytes",
+      "test": "compat/golden/m3_boolean.py"
+    },
+    "bpy.types.Mesh.copy": {
+      "description": "Copy mesh geometry and material references",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.edges": {
+      "description": "Mesh edges with .vertices and .index",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.from_pydata": {
+      "description": "from_pydata(vertices, edges, faces, shade_flat=True)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.has_custom_normals": {
+      "description": "Whether stored custom corner normals are present",
+      "test": "compat/golden/m3_triangulate.py"
+    },
+    "bpy.types.Mesh.materials": {
+      "description": "Material slots: append, clear, pop, indexed access and assignment",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.materials.append": {
+      "description": "Append a material data block",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.materials.clear": {
+      "description": "Remove all material slots",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.materials.pop": {
+      "description": "pop(index=-1)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.name": {
+      "description": "Unique mesh name",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.normals_split_custom_set": {
+      "description": "Assign one finite nonzero three-component normal per corner, normalized; all values validated before mutation",
+      "test": "compat/golden/m3_triangulate.py"
+    },
+    "bpy.types.Mesh.polygons": {
+      "description": "Mesh polygons with .vertices, .index, .material_index, .use_smooth",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.shape_keys": {
+      "description": "Read Key container or None; animation and mixed-key evaluation excluded",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bpy.types.Mesh.update": {
+      "description": "update(calc_edges=False, calc_edges_loose=False)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.users": {
+      "description": "Number of referencing objects",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Mesh.uv_layers": {
+      "description": "UV layers",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Mesh.uv_layers.active": {
+      "description": "Active UV layer",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.Mesh.uv_layers.new": {
+      "description": "new(name=\"UVMap\", do_init=True); initialize triangle/quad/ngon UVs, copy the active layer when present, or zero-fill with do_init=False",
+      "test": "compat/golden/m2_uv_init.py"
+    },
+    "bpy.types.Mesh.vertices": {
+      "description": "Mesh vertices; indexed/iterable with .co and .index",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.MeshEdge.index": {
+      "description": "Zero-based mesh edge index",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.MeshEdge.vertices": {
+      "description": "Two vertex indices",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.MeshPolygon.index": {
+      "description": "Zero-based polygon index",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.MeshPolygon.loop_indices": {
+      "description": "Read-only range of corner indices in this polygon",
+      "test": "compat/golden/m2_bevel_uv.py"
+    },
+    "bpy.types.MeshPolygon.material_index": {
+      "description": "Material slot index",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.MeshPolygon.use_smooth": {
+      "description": "Smooth or flat shading",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.MeshPolygon.vertices": {
+      "description": "Face vertex indices",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.MeshUVLoop.uv": {
+      "description": "UV pair, assignment and indexed access",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.MeshUVLoopLayer.active_render": {
+      "description": "Render UV selection distinct from active editing layer; assigning True selects the layer, False does not unset it. Texture glTF exports use channels 0..7; shared materials with differing render channels require duplication.",
+      "test": "compat/golden/m3_texture_assets.py"
+    },
+    "bpy.types.MeshUVLoopLayer.data": {
+      "description": "Loop UV values",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.MeshUVLoopLayer.name": {
+      "description": "UV layer name",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.MeshVertex.co": {
+      "description": "XYZ coordinate; assignment and indexed access",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.MeshVertex.groups": {
+      "description": "Read-only membership sequence",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MeshVertex.index": {
+      "description": "Zero-based vertex index",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.MirrorModifier.bisect_threshold": {
+      "description": "0..1; snap vertices near the bisect plane, default 0.001",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MirrorModifier.merge_threshold": {
+      "description": "Mirror seam distance threshold",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.MirrorModifier.mirror_object": {
+      "description": "Object defining affine mirror planes, or None for local axes",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MirrorModifier.mirror_offset_u": {
+      "description": "-1..1 additional offset when U reflection is enabled",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MirrorModifier.mirror_offset_v": {
+      "description": "-1..1 additional offset when V reflection is enabled",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MirrorModifier.name": {
+      "description": "Modifier name",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.MirrorModifier.offset_u": {
+      "description": "-1..1 offset for copied U coordinates",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MirrorModifier.offset_v": {
+      "description": "-1..1 offset for copied V coordinates",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MirrorModifier.show_render": {
+      "description": "CPU preview evaluation flag",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.MirrorModifier.show_viewport": {
+      "description": "Viewport evaluation flag",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.MirrorModifier.type": {
+      "description": "MIRROR",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.MirrorModifier.use_axis": {
+      "description": "X/Y/Z axis flags; axes applied in order",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.MirrorModifier.use_bisect_axis": {
+      "description": "Three boolean flags: trim the negative half before mirroring that enabled axis",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MirrorModifier.use_bisect_flip_axis": {
+      "description": "Three boolean flags: keep the negative half instead",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MirrorModifier.use_clip": {
+      "description": "Edit-mode clipping flag; no effect on object-mode evaluation",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.MirrorModifier.use_mirror_merge": {
+      "description": "Merge matching vertices across the mirror plane",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.MirrorModifier.use_mirror_u": {
+      "description": "Reflect copied U coordinates",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MirrorModifier.use_mirror_v": {
+      "description": "Reflect copied V coordinates",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.MirrorModifier.use_mirror_vertex_groups": {
+      "description": "Swap matching side names and average seam weights, default True",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.NodeLink.from_node": {
+      "description": "Linked output node",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.NodeLink.from_socket": {
+      "description": "Linked output socket",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.NodeLink.to_node": {
+      "description": "Linked input node",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.NodeLink.to_socket": {
+      "description": "Linked input socket",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.NodeSocket.default_value": {
+      "description": "Named Blender 4.5 default-mode Principled scalar/color/radius inputs, including IOR and Transmission Weight: float32 storage, unclamped scalar values, nonnegative RGBA colors. Normal/Tangent/Coat Normal are read-only; hidden Weight/Subsurface IOR excluded. Background color/strength, planar Mapping Location/Rotation/Scale and existing Normal Map strength. Extra scattering inputs persist in hb/glTF extras; fixed preview shading is unchanged.",
+      "test": "compat/golden/m3_materials.py"
+    },
+    "bpy.types.NodeSocket.name": {
+      "description": "Socket name",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.Object.children": {
+      "description": "Immediate child objects",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Object.copy": {
+      "description": "Copy object, sharing its data and retaining transforms",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Object.data": {
+      "description": "Shared mesh, camera or light data block; None for an empty",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Object.dimensions": {
+      "description": "Evaluated local bounding-box dimensions multiplied by world-axis scale; assignment preserves scale signs.",
+      "test": "compat/golden/m2_object_ops.py"
+    },
+    "bpy.types.Object.empty_display_size": {
+      "description": "Persistent empty display radius, clamped at 0.0001.",
+      "test": "compat/golden/m2_object_ops.py"
+    },
+    "bpy.types.Object.empty_display_type": {
+      "description": "Persistent empty display shape, excluding image empties.",
+      "test": "compat/golden/m2_object_ops.py"
+    },
+    "bpy.types.Object.hide_render": {
+      "description": "Exclude object from renders",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Object.location": {
+      "description": "XYZ float32 transform; assignment, indexed read/write, iteration",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.types.Object.location.x": {
+      "description": "Component access on transform views (see type deviation)",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Object.matrix_world": {
+      "description": "Read a 4x4 world-matrix snapshot; assign affine matrices with finite input/basis components within 1e6 through parent-inverse and TRS decomposition; six Euler orders or quaternion; nonsingular effective parent required; nested snapshot mutation does not write the object",
+      "test": "compat/golden/m3_matrix_world.py"
+    },
+    "bpy.types.Object.mode": {
+      "description": "Read OBJECT or EDIT for the transient single edit object",
+      "test": "compat/golden/m3_primitive_extensions.py"
+    },
+    "bpy.types.Object.modifiers": {
+      "description": "Ordered non-destructive stack; ARRAY/MIRROR/SOLIDIFY/TRIANGULATE and bounded BEVEL subsets",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.Object.modifiers.clear": {
+      "description": "Remove all modifiers",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.Object.modifiers.new": {
+      "description": "new(name, type): ARRAY, MIRROR, SOLIDIFY, TRIANGULATE, restricted WELD or restricted BEVEL",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.Object.modifiers.remove": {
+      "description": "Remove a modifier from this object",
+      "test": "compat/golden/m2_array.py"
+    },
+    "bpy.types.Object.name": {
+      "description": "Read/write unique name",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.types.Object.parent": {
+      "description": "Object parent; local transforms retained",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Object.rotation_euler": {
+      "description": "Euler radians in Object.rotation_mode order; assignment, indexed read/write, iteration",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.types.Object.rotation_euler.order": {
+      "description": "Read the object Euler order; XYZ while QUATERNION is active; change order through Object.rotation_mode",
+      "test": "compat/golden/m3_object_euler.py"
+    },
+    "bpy.types.Object.rotation_euler.to_matrix": {
+      "description": "Object rotation matrix",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "bpy.types.Object.rotation_euler.to_quaternion": {
+      "description": "Object rotation quaternion",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "bpy.types.Object.rotation_euler.x": {
+      "description": "Mutable X Euler angle",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "bpy.types.Object.rotation_euler.y": {
+      "description": "Mutable Y Euler angle",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "bpy.types.Object.rotation_euler.z": {
+      "description": "Mutable Z Euler angle",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "bpy.types.Object.rotation_mode": {
+      "description": "Six Euler orders and QUATERNION; Euler order changes retain angles, Euler/quaternion transitions convert orientation",
+      "test": "compat/golden/m3_import_gltf.py"
+    },
+    "bpy.types.Object.rotation_quaternion": {
+      "description": "Mutable WXYZ quaternion view; used for object transforms in QUATERNION mode",
+      "test": "compat/golden/m3_import_gltf.py"
+    },
+    "bpy.types.Object.scale": {
+      "description": "XYZ float32 scale; assignment, indexed read/write, iteration",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.types.Object.select_get": {
+      "description": "select_get() returns bool",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.types.Object.select_set": {
+      "description": "select_set(state)",
+      "test": "compat/golden/m0.py"
+    },
+    "bpy.types.Object.shape_key_add": {
+      "description": "Create a relative zero-influence mesh shape key from current geometry, at most 64; name/from_mix keyword arguments",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bpy.types.Object.type": {
+      "description": "MESH, CAMERA, LIGHT or EMPTY according to data block",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Object.users": {
+      "description": "Number of collection memberships (parent and scene-camera pointers do not increment ID users)",
+      "test": "compat/golden/m1_databases.py"
+    },
+    "bpy.types.Object.users_collection": {
+      "description": "Collections containing the object",
+      "test": "compat/golden/m1_assembly.py"
+    },
+    "bpy.types.Object.vertex_groups": {
+      "description": "Named vertex groups on a mesh object; at most 1024 groups",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.Object.vertex_groups.clear": {
+      "description": "Remove all groups and weights",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.Object.vertex_groups.get": {
+      "description": "Lookup a group by name with an optional fallback",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.Object.vertex_groups.new": {
+      "description": "new(name=Group), unique UTF-8 names with Blender numeric suffixes",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.Object.vertex_groups.remove": {
+      "description": "Remove one group and reindex mesh deform memberships",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.ShaderNode.bl_idname": {
+      "description": "Read-only Blender node identifier",
+      "test": "compat/golden/m2_data_access.py"
+    },
+    "bpy.types.ShaderNode.extension": {
+      "description": "Image Texture REPEAT, EXTEND (clamp) and MIRROR; preserved in glTF samplers. CLIP excluded. Advanced texture bindings are asset-only: fixed preview/OBJ/USDZ reject them with a glTF export suggestion.",
+      "test": "compat/golden/m3_texture_assets.py"
+    },
+    "bpy.types.ShaderNode.from_instancer": {
+      "description": "Texture Coordinate read-only default False",
+      "test": "compat/golden/m3_materials.py"
+    },
+    "bpy.types.ShaderNode.image": {
+      "description": "Image Texture or World Environment Texture image datablock",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.ShaderNode.inputs": {
+      "description": "Supported named input sockets",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.ShaderNode.interpolation": {
+      "description": "Image and Environment Texture: Linear only",
+      "test": "compat/golden/m3_world_background.py"
+    },
+    "bpy.types.ShaderNode.name": {
+      "description": "Unique node name",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.ShaderNode.object": {
+      "description": "Texture Coordinate read-only default None; object coordinates are outside the UV chain",
+      "test": "compat/golden/m3_materials.py"
+    },
+    "bpy.types.ShaderNode.outputs": {
+      "description": "Supported named output sockets",
+      "test": "compat/golden/m1_material.py"
+    },
+    "bpy.types.ShaderNode.projection": {
+      "description": "Environment Texture EQUIRECTANGULAR or Image Texture FLAT only",
+      "test": "compat/golden/m3_world_background.py"
+    },
+    "bpy.types.ShaderNode.type": {
+      "description": "Read-only node enum for the supported Principled/output/image/normal-map nodes",
+      "test": "compat/golden/m2_data_access.py"
+    },
+    "bpy.types.ShaderNode.vector_type": {
+      "description": "Mapping POINT only; one UV chain with XY location/scale and Z rotation, scale Z=1",
+      "test": "compat/golden/m3_materials.py"
+    },
+    "bpy.types.ShapeKey.data": {
+      "description": "Per-vertex shape coordinates",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bpy.types.ShapeKey.name": {
+      "description": "Read shape-key name",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bpy.types.ShapeKeyPoint.co": {
+      "description": "Read/write finite float32 3D shape coordinate and components",
+      "test": "compat/golden/m3_bmesh_data.py"
+    },
+    "bpy.types.SolidifyModifier.invert_vertex_group": {
+      "description": "Invert thickness influence weights",
+      "test": "compat/golden/m3_solidify.py"
+    },
+    "bpy.types.SolidifyModifier.material_offset": {
+      "description": "Inner shell material offset",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.SolidifyModifier.material_offset_rim": {
+      "description": "Rim material offset",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.SolidifyModifier.name": {
+      "description": "Modifier name",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.SolidifyModifier.offset": {
+      "description": "Thickness offset -1..1",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.SolidifyModifier.rim_vertex_group": {
+      "description": "Existing group receiving boundary rim memberships at weight one",
+      "test": "compat/golden/m3_solidify.py"
+    },
+    "bpy.types.SolidifyModifier.shell_vertex_group": {
+      "description": "Existing group receiving generated inner-shell memberships at weight one",
+      "test": "compat/golden/m3_solidify.py"
+    },
+    "bpy.types.SolidifyModifier.show_render": {
+      "description": "CPU preview evaluation flag",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.SolidifyModifier.show_viewport": {
+      "description": "Viewport evaluation flag",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.SolidifyModifier.solidify_mode": {
+      "description": "EXTRUDE oriented manifold shells or NON_MANIFOLD radial face fans with consistent plane constraints; planar non-degenerate faces and no loose geometry",
+      "test": "compat/golden/m3_solidify.py"
+    },
+    "bpy.types.SolidifyModifier.thickness": {
+      "description": "Signed shell thickness",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.SolidifyModifier.thickness_clamp": {
+      "description": "0..100 edge-length offset clamp, zero disables clamping",
+      "test": "compat/golden/m3_solidify.py"
+    },
+    "bpy.types.SolidifyModifier.thickness_vertex_group": {
+      "description": "Minimum thickness factor 0..1, blended with the group weight",
+      "test": "compat/golden/m3_solidify.py"
+    },
+    "bpy.types.SolidifyModifier.type": {
+      "description": "SOLIDIFY",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.SolidifyModifier.use_even_offset": {
+      "description": "Angle-weighted shell correction in EXTRUDE; NON_MANIFOLD solves offset planes",
+      "test": "compat/golden/m3_solidify.py"
+    },
+    "bpy.types.SolidifyModifier.use_quality_normals": {
+      "description": "Edge-angle weighted normals in EXTRUDE; NON_MANIFOLD uses face planes",
+      "test": "compat/golden/m3_solidify.py"
+    },
+    "bpy.types.SolidifyModifier.use_rim": {
+      "description": "Generate boundary walls",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.SolidifyModifier.use_rim_only": {
+      "description": "Keep original surface and boundary walls; omit the inner shell",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.SolidifyModifier.vertex_group": {
+      "description": "Thickness influence group name or empty; missing groups leave full thickness",
+      "test": "compat/golden/m3_solidify.py"
+    },
+    "bpy.types.Spline.bezier_points": {
+      "description": "BEZIER control points; indexing/iteration, at most 4096 points",
+      "test": "compat/golden/modeling_quality_curves.py"
+    },
+    "bpy.types.Spline.bezier_points.add": {
+      "description": "add(count); nonnegative control-point count",
+      "test": "compat/golden/modeling_quality_curves.py"
+    },
+    "bpy.types.Spline.material_index": {
+      "description": "Material slot index 0..32767",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Spline.points": {
+      "description": "Indexing/iteration of at most 4096 points; at most 100000 evaluated vertices/faces per curve",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Spline.points.add": {
+      "description": "add(count), nonnegative count; assign coordinates before update or script completion",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Spline.type": {
+      "description": "Read-only POLY or BEZIER",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Spline.use_cyclic_u": {
+      "description": "Open or cyclic; cyclic requires at least three points; spatial round bevel uses distributed closure twist",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.Spline.use_smooth": {
+      "description": "Per-spline smooth face shading",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.SplinePoint.co": {
+      "description": "Live four-component coordinate; finite components within +/-10000; POLY ignores W; adjacent separation >=1e-6",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.SplinePoint.radius": {
+      "description": "Finite bevel radius multiplier 0..100",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.SplinePoint.tilt": {
+      "description": "Finite rotation about tangent in radians, +/-100; reversing cusps and opposite tangents excluded",
+      "test": "compat/golden/m3_curves.py"
+    },
+    "bpy.types.SubsurfModifier.boundary_smooth": {
+      "description": "ALL or PRESERVE_CORNERS",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.levels": {
+      "description": "Viewport subdivision levels 0..6; two-million evaluated vertex/face limit",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.name": {
+      "description": "Modifier name",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.quality": {
+      "description": "Default quality 3",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.render_levels": {
+      "description": "Render subdivision levels 0..6; two-million evaluated vertex/face limit",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.show_only_control_edges": {
+      "description": "Control edge display flag; does not change exported surface",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.show_render": {
+      "description": "Preview evaluation flag",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.show_viewport": {
+      "description": "Viewport and glTF evaluation flag",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.subdivision_type": {
+      "description": "CATMULL_CLARK or SIMPLE",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.type": {
+      "description": "SUBSURF",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.use_creases": {
+      "description": "Use edge/vertex creases for geometry; retain crease attributes in either mode",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.use_custom_normals": {
+      "description": "True preserves quantized custom normals on flat input faces at levels 1..2; False recomputes geometric normals at all supported levels",
+      "test": "compat/golden/m3_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.use_limit_surface": {
+      "description": "Evaluate the limit surface or finite refinement",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.SubsurfModifier.uv_smooth": {
+      "description": "PRESERVE_BOUNDARIES",
+      "test": "compat/golden/m2_subsurf.py"
+    },
+    "bpy.types.TextCurve.align_x": {
+      "description": "LEFT, CENTER or RIGHT using full line advance",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.align_y": {
+      "description": "TOP_BASELINE only",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.bevel_depth": {
+      "description": "0 only; text bevel excluded",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.body": {
+      "description": "At most 256 printable ASCII characters and newlines; nonempty text requires an explicitly loaded font; default Bfont rendering excluded",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.extrude": {
+      "description": "Finite 0..100 extrusion on each side of Z=0; total thickness 2*extrude independent of size; closed caps and hole walls; zero preserves flat geometry",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.font": {
+      "description": "Assign loaded VectorFont; geometry persists without the source font file",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.materials": {
+      "description": "Material slots; text caps and extrusion walls use slot zero",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.materials.append": {
+      "description": "Append a material",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.materials.clear": {
+      "description": "Clear text material slots",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.materials.pop": {
+      "description": "pop(index=-1), returning removed material",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.offset": {
+      "description": "0 only; glyph offset excluded",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.resolution_u": {
+      "description": "Quadratic outline sampling resolution 1..32; linear contour edges stay linear",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.size": {
+      "description": "Finite 0.0001..100 font size, normalized by font bounding-box height",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.space_character": {
+      "description": "1 only; custom character spacing excluded",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.space_line": {
+      "description": "Finite 0..10 baseline spacing multiplier",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TextCurve.space_word": {
+      "description": "1 only; custom word spacing excluded",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.TriangulateModifier.keep_custom_normals": {
+      "description": "True preserves corner normals; False remaps encoded corner normals on flat planar faces; smooth custom normals require True",
+      "test": "compat/golden/m3_triangulate.py"
+    },
+    "bpy.types.TriangulateModifier.min_vertices": {
+      "description": "Minimum face vertex count",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.TriangulateModifier.name": {
+      "description": "Modifier name",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.TriangulateModifier.ngon_method": {
+      "description": "BEAUTY or CLIP on planar simple n-gons with 3..2048 corners",
+      "test": "compat/golden/m3_triangulate.py"
+    },
+    "bpy.types.TriangulateModifier.quad_method": {
+      "description": "BEAUTY, FIXED, FIXED_ALTERNATE, SHORTEST_DIAGONAL, LONGEST_DIAGONAL; BEAUTY requires planar simple faces",
+      "test": "compat/golden/m3_triangulate.py"
+    },
+    "bpy.types.TriangulateModifier.show_render": {
+      "description": "CPU preview evaluation flag",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.TriangulateModifier.show_viewport": {
+      "description": "Viewport evaluation flag",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.TriangulateModifier.type": {
+      "description": "TRIANGULATE",
+      "test": "compat/golden/m2_topology.py"
+    },
+    "bpy.types.VectorFont.name": {
+      "description": "Loaded font family/style name with ordinary unique datablock suffixes; default unbundled font name Bfont",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.VectorFont.users": {
+      "description": "Number of FONT curve datablocks referencing the loaded font",
+      "test": "compat/golden/m3_text.py"
+    },
+    "bpy.types.VertexGroup.add": {
+      "description": "Assign valid vertex indices with REPLACE/ADD/SUBTRACT, weights clamped to 0..1",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.VertexGroup.index": {
+      "description": "Current group index",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.VertexGroup.name": {
+      "description": "Unique mutable group name",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.VertexGroup.remove": {
+      "description": "Remove memberships from valid vertex indices",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.VertexGroup.weight": {
+      "description": "Read a vertex weight; RuntimeError for a vertex outside this group",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.VertexGroupElement.group": {
+      "description": "Membership group index",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.VertexGroupElement.weight": {
+      "description": "Read-only membership weight",
+      "test": "compat/golden/m3_mirror.py"
+    },
+    "bpy.types.View3DCursor.location": {
+      "description": "Three finite float32 cursor coordinates; default location for primitive construction",
+      "test": "compat/golden/m3_primitive_extensions.py"
+    },
+    "bpy.types.View3DCursor.rotation_euler": {
+      "description": "Three finite XYZ cursor Euler angles; default rotation for CURSOR alignment",
+      "test": "compat/golden/m3_primitive_extensions.py"
+    },
+    "bpy.types.WeightedNormalModifier.invert_vertex_group": {
+      "description": "Invert membership filtering; weight magnitude does not scale normals",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeightedNormalModifier.keep_sharp": {
+      "description": "Keep separate smooth fans at flat/smooth and nonmanifold boundaries",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeightedNormalModifier.mode": {
+      "description": "FACE_AREA, CORNER_ANGLE or FACE_AREA_WITH_ANGLE",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeightedNormalModifier.name": {
+      "description": "Modifier name",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeightedNormalModifier.show_render": {
+      "description": "Preview modifier visibility",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeightedNormalModifier.show_viewport": {
+      "description": "Viewport and glTF modifier visibility",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeightedNormalModifier.thresh": {
+      "description": "Finite grouping threshold 0..10, default 0.01",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeightedNormalModifier.type": {
+      "description": "WEIGHTED_NORMAL",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeightedNormalModifier.use_face_influence": {
+      "description": "Use strongest adjacent faces from __mod_weightednormals_faceweight INT FACE (0/1/2)",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeightedNormalModifier.vertex_group": {
+      "description": "Named membership filter, including zero-weight members; missing group leaves all vertices selected",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeightedNormalModifier.weight": {
+      "description": "Integer contrast 1..100, default 50",
+      "test": "compat/golden/m2_weighted_normals.py"
+    },
+    "bpy.types.WeldModifier.invert_vertex_group": {
+      "description": "Select zero or missing group weights; merged memberships are averaged and zero merged memberships removed",
+      "test": "compat/golden/m3_weld.py"
+    },
+    "bpy.types.WeldModifier.loose_edges": {
+      "description": "In CONNECTED mode restrict collapse to edges unused by faces; ignored in ALL mode",
+      "test": "compat/golden/m3_weld.py"
+    },
+    "bpy.types.WeldModifier.merge_threshold": {
+      "description": "Local float32 distance; ALL uses strict spatial-partition bounds and zero is a no-op; CONNECTED includes equality and coincident vertices at zero",
+      "test": "compat/golden/m3_weld.py"
+    },
+    "bpy.types.WeldModifier.mode": {
+      "description": "ALL greedy proximity groups or CONNECTED edge collapse with updated cluster centers; averaged positions and collapsed/pinched/duplicate-face cleanup",
+      "test": "compat/golden/m3_weld.py"
+    },
+    "bpy.types.WeldModifier.name": {
+      "description": "Modifier name",
+      "test": "compat/golden/m2_weld.py"
+    },
+    "bpy.types.WeldModifier.show_render": {
+      "description": "CPU preview evaluation flag",
+      "test": "compat/golden/m2_weld.py"
+    },
+    "bpy.types.WeldModifier.show_viewport": {
+      "description": "Viewport query and glTF export evaluation flag",
+      "test": "compat/golden/m2_weld.py"
+    },
+    "bpy.types.WeldModifier.type": {
+      "description": "WELD",
+      "test": "compat/golden/m2_weld.py"
+    },
+    "bpy.types.WeldModifier.vertex_group": {
+      "description": "Select vertices with nonzero group weight; missing/empty group means all vertices; weights do not scale distance",
+      "test": "compat/golden/m3_weld.py"
+    },
+    "bpy.types.World.color": {
+      "description": "Persistent RGB world color",
+      "test": "compat/golden/m2_world.py"
+    },
+    "bpy.types.World.copy": {
+      "description": "Copy persistent World color, nodes and links; image datablocks remain shared",
+      "test": "compat/golden/m3_world_background.py"
+    },
+    "bpy.types.World.name": {
+      "description": "World datablock name",
+      "test": "compat/golden/m2_world.py"
+    },
+    "bpy.types.World.node_tree": {
+      "description": "Persistent Background color/strength and one EQUIRECTANGULAR/Linear Environment Texture; existing World Output wiring. Preview uses constant illumination and the environment solid-angle mean; no directional environment shading.",
+      "test": "compat/golden/m3_world_background.py"
+    },
+    "bpy.types.World.node_tree.links.new": {
+      "description": "Environment Color to Background Color; Background to World Output Surface; replaces the input's prior link",
+      "test": "compat/golden/m3_world_background.py"
+    },
+    "bpy.types.World.node_tree.nodes": {
+      "description": "Named World node lookup, iteration and length",
+      "test": "compat/golden/m3_world_background.py"
+    },
+    "bpy.types.World.node_tree.nodes.clear": {
+      "description": "Clear World nodes and links",
+      "test": "compat/golden/m3_world_background.py"
+    },
+    "bpy.types.World.node_tree.nodes.get": {
+      "description": "Look up a World node by name",
+      "test": "compat/golden/m3_world_background.py"
+    },
+    "bpy.types.World.node_tree.nodes.new": {
+      "description": "One each: ShaderNodeBackground, ShaderNodeOutputWorld, ShaderNodeTexEnvironment; other World nodes raise UnsupportedError",
+      "test": "compat/golden/m3_world_background.py"
+    },
+    "bpy.types.World.use_nodes": {
+      "description": "Read/write node usage; first enable creates Background from world.color; disabling retains nodes and selects constant-color lighting",
+      "test": "compat/golden/m2_world.py"
+    },
+    "bpy.types.World.users": {
+      "description": "World scene user count",
+      "test": "compat/golden/m2_world.py"
+    },
+    "hb.export.obj": {
+      "description": "CLI hb export and run --out .obj: evaluated linked meshes in Z-up meters, reflected winding, UV/normal corner indices, scalar MTL and PNG image companions; per-file atomic output, preserve revision",
+      "test": "compat/golden/m3_format_obj.py"
+    },
+    "hb.export.usdz": {
+      "description": "CLI USDZ: aligned uncompressed USDA/PNG archive, evaluated linked meshes, hierarchy, face materials, UVs/normals/colors, perspective and standard-unit orthographic cameras (warns about Blender 4.5 10x ortho import); POINT/SPOT/SUN/AREA lights; generated float images use 16-bit PNG, byte images 8-bit; warns that World environments are omitted",
+      "test": "compat/golden/m3_format_usdz.py"
+    },
+    "hb.import.meshopt": {
+      "description": "EXT_meshopt_compression for glTF/GLB import: ATTRIBUTES/TRIANGLES/INDICES and NONE/OCTAHEDRAL/QUATERNION/EXPONENTIAL; standard 0xa0/0xe1/0xd1 streams, tagged or untagged required fallback buffers; parent/source layout validation; 32 MiB per compressed/decoded view and 64 MiB decoded total; no encoding, COLOR filter or additional geometry/animation parity",
+      "test": "compat/meshopt_check.py"
+    },
+    "hb.import.ply": {
+      "description": "CLI PLY 1.0 ASCII/little-endian/big-endian: standard 8/16/32-bit integer and float32/64 scalar/list types, XYZ vertices, polygon faces, loose edges, vertex s/t UVs, nonzero normals and uchar/float RGB(A) sRGB conversion; bounded cleanup, warns for ignored attributes; 32 MiB, 100,000 rows/element, 2048 corners/face, four million scalar values",
+      "test": "compat/fixtures/ply/ascii.ply"
+    },
+    "hb.import.stl": {
+      "description": "CLI ASCII and little-endian binary STL: exact-length binary detection including solid headers, finite float32 XYZ in Z-up meters, geometric normals, exact-coordinate welding and duplicate/repeated-vertex triangle cleanup; 100,000 triangles/vertices, 32 MiB input; no facet-normal override or nonstandard facet colors",
+      "test": "compat/fixtures/stl/triangles-ascii.stl"
+    },
+    "mathutils.Color": {
+      "description": "Float32 RGB sequence with Color arithmetic and scalar multiply/divide; default black",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.b": {
+      "description": "Mutable blue channel",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.copy": {
+      "description": "Independent mutable copy",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.freeze": {
+      "description": "Freeze an unwrapped Color and return itself",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.from_aces_to_scene_linear": {
+      "description": "ACES AP0 to factory scene-linear RGB",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.from_rec709_linear_to_scene_linear": {
+      "description": "Linear Rec.709 to factory scene-linear RGB",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.from_scene_linear_to_aces": {
+      "description": "Factory scene-linear RGB to ACES AP0",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.from_scene_linear_to_rec709_linear": {
+      "description": "Factory scene-linear RGB to linear Rec.709",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.from_scene_linear_to_srgb": {
+      "description": "Factory scene-linear matrix plus measured fast sRGB transfer behavior; positive linear components up to 1e10",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.from_scene_linear_to_xyz_d65": {
+      "description": "Factory scene-linear RGB to CIE XYZ D65",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.from_srgb_to_scene_linear": {
+      "description": "sRGB transfer decoding plus factory scene-linear matrix",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.from_xyz_d65_to_scene_linear": {
+      "description": "CIE XYZ D65 to factory scene-linear RGB",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.g": {
+      "description": "Mutable green channel",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.h": {
+      "description": "HSV hue; assignments clamp to 0..1",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.hsv": {
+      "description": "HSV tuple; assignments clamp all three components to 0..1",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.is_frozen": {
+      "description": "Read-only immutability flag",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.is_valid": {
+      "description": "Read-only validity flag",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.is_wrapped": {
+      "description": "Read-only ownership flag",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.owner": {
+      "description": "Owning RNA value or None for standalone colors",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.r": {
+      "description": "Mutable red channel",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.s": {
+      "description": "HSV saturation; assignments clamp to 0..1",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Color.v": {
+      "description": "HSV value; assignments clamp to 0..1",
+      "test": "compat/golden/m2_colors.py"
+    },
+    "mathutils.Euler": {
+      "description": "Mutable float32 Euler angles, six rotation orders",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Euler.copy": {
+      "description": "Independent copy",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Euler.order": {
+      "description": "Rotation order",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Euler.to_matrix": {
+      "description": "Rotation matrix",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Euler.to_quaternion": {
+      "description": "Rotation quaternion",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Euler.x": {
+      "description": "X angle",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Euler.y": {
+      "description": "Y angle",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Euler.z": {
+      "description": "Z angle",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Euler.zero": {
+      "description": "Zero angles",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix": {
+      "description": "Float32 storage with 2..4 rows and 2..4 columns; row read/write, copies, resizing and dimension-compatible Matrix/Vector multiplication. 2x4 @ 3D is excluded (undefined Blender result): use a four-component vector. Nonsquare determinant/inversion/transpose raise ValueError.",
+      "test": "compat/golden/m3_mathutils.py"
+    },
+    "mathutils.Matrix.Diagonal": {
+      "description": "Diagonal matrix",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.Identity": {
+      "description": "Identity matrix",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.Rotation": {
+      "description": "Axis-angle rotation matrix",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.Scale": {
+      "description": "Uniform or directional scaling matrix",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.Translation": {
+      "description": "Homogeneous translation matrix",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.copy": {
+      "description": "Independent copy",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.decompose": {
+      "description": "4x4 finite components up to magnitude 1e6: location Vector, quaternion and signed scale Vector, including shears, reflections and zero-scale columns. Blender column normalization and quaternion pivot semantics; 2e-6 differential tolerance.",
+      "test": "compat/golden/m3_mathutils.py"
+    },
+    "mathutils.Matrix.determinant": {
+      "description": "Matrix determinant",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.invert": {
+      "description": "In-place inverse",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.inverted": {
+      "description": "Inverse with optional fallback",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.to_3x3": {
+      "description": "Resize to 3x3",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.to_4x4": {
+      "description": "Resize to 4x4",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.to_euler": {
+      "description": "Euler rotation from a matrix",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.to_quaternion": {
+      "description": "Rotation quaternion from a matrix",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.translation": {
+      "description": "Mutable homogeneous translation vector",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.transpose": {
+      "description": "In-place transpose",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Matrix.transposed": {
+      "description": "Transposed copy",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion": {
+      "description": "Float32 quaternion from components or axis and angle",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.conjugate": {
+      "description": "Conjugate in place",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.conjugated": {
+      "description": "Conjugated copy",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.copy": {
+      "description": "Independent copy",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.dot": {
+      "description": "Quaternion dot product",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.invert": {
+      "description": "Invert in place",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.inverted": {
+      "description": "Inverted copy",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.magnitude": {
+      "description": "Quaternion norm",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.normalize": {
+      "description": "Normalize in place",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.normalized": {
+      "description": "Normalized copy",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.slerp": {
+      "description": "Quaternion and factor in [0,1]; finite components up to magnitude 1e6. Blender shortest-arc sign convention, no implicit operand/result normalization; zero and nonunit inputs tested.",
+      "test": "compat/golden/m3_mathutils.py"
+    },
+    "mathutils.Quaternion.to_euler": {
+      "description": "Euler conversion in six orders",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.to_matrix": {
+      "description": "3x3 rotation matrix",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.w": {
+      "description": "Scalar component",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.x": {
+      "description": "X component",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.y": {
+      "description": "Y component",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Quaternion.z": {
+      "description": "Z component",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Vector": {
+      "description": "Mutable 2D/3D/4D float32 vector; default is zero 3D",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.angle": {
+      "description": "Angle in radians, with optional fallback for zero vectors",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.copy": {
+      "description": "Independent vector copy",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.cross": {
+      "description": "3D cross product",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.dot": {
+      "description": "Dot product of equal-sized vectors",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.length": {
+      "description": "Euclidean length, assignable",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.length_squared": {
+      "description": "Squared Euclidean length",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.lerp": {
+      "description": "Linear interpolation",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.negate": {
+      "description": "Negate in place",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.normalize": {
+      "description": "Normalize in place; zero vector remains zero",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.normalized": {
+      "description": "Normalized copy",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.project": {
+      "description": "Projection onto a vector",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.reflect": {
+      "description": "Reflection across a normal",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.to_2d": {
+      "description": "Copy as 2D",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.to_3d": {
+      "description": "Copy as 3D",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.to_4d": {
+      "description": "Copy as homogeneous 4D",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.to_track_quat": {
+      "description": "Track signed local axis toward vector with world Z as up; quaternion signs are rotation-equivalent",
+      "test": "compat/golden/m2_mathutils.py"
+    },
+    "mathutils.Vector.w": {
+      "description": "W component",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.x": {
+      "description": "X component",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.xy": {
+      "description": "Two-component swizzle",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.xyz": {
+      "description": "Three-component swizzle",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.y": {
+      "description": "Y component",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.yxz": {
+      "description": "Swizzle assignment",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.z": {
+      "description": "Z component",
+      "test": "compat/golden/m2_vectors.py"
+    },
+    "mathutils.Vector.zero": {
+      "description": "Set all components to zero",
+      "test": "compat/golden/m2_vectors.py"
+    }
+  }
+}

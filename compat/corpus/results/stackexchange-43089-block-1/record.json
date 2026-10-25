@@ -1,0 +1,56 @@
+{
+  "file": "stackexchange-43089-block-1.py",
+  "source_sha256": "26c6ec1fe086d52dc1935a900322357fb169e9736ab6f2294b500b403112b236",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd",
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "reference": "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+  "check_process": {
+    "returncode": 0,
+    "seconds": 0.02639566600555554,
+    "command": [
+      "/private/tmp/corpus-real-build/release/hb",
+      "check",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-43089-block-1.py"
+    ],
+    "stdout": "{\"errors\":[],\"file\":\"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-43089-block-1.py\",\"ok\":true,\"timing\":{\"python_init_ms\":11.824917000000001,\"total_ms\":13.299958}}\n",
+    "stderr": ""
+  },
+  "check": {
+    "errors": [],
+    "file": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-43089-block-1.py",
+    "ok": true,
+    "timing": {
+      "python_init_ms": 11.824917000000001,
+      "total_ms": 13.299958
+    }
+  },
+  "blender_process": {
+    "returncode": 0,
+    "seconds": 0.4974048750009388,
+    "command": [
+      "env",
+      "TMPDIR=/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dbcfosmb",
+      "sandbox-exec",
+      "-p",
+      "(version 1)(allow default)(deny network*)(deny file-write*)(allow file-write* (subpath \"/private/var/folders/p4/s1_1rvys5y94xglqy6_kjnr80000gn/T/corpus-check-dbcfosmb\") (literal \"/dev/null\") (literal \"/dev/dtracehelper\"))",
+      "/tmp/corpus-blender-mount/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--factory-startup",
+      "-t",
+      "1",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/tools/blender_reference.py",
+      "--",
+      "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-43089-block-1.py"
+    ],
+    "stdout": "CORPUS_RESULT={\"blender_version\": \"4.5.9 LTS\", \"source\": \"/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-43089-block-1.py\", \"ok\": true}\nBlender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)\n\nBlender quit\n",
+    "stderr": ""
+  },
+  "blender": {
+    "blender_version": "4.5.9 LTS",
+    "source": "/user-home/.codex/worktrees/a873/vide-hb/compat/corpus/stackexchange-43089-block-1.py",
+    "ok": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-130.py",
+      "task": "A modular communication tower with platforms, antenna panels, braces and cable ladders",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "0db24880ea5b14d1aaf835112b63faa142daf77484b64f6f6c7935aed5f28b27",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-130/1788913899020362000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 290.7449269294739
+}

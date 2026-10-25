@@ -1,0 +1,22 @@
+{
+  "scripts": [
+    {
+      "file": "stackexchange-7455-block-5.py",
+      "provider": "blender-stackexchange",
+      "source_url": "https://blender.stackexchange.com/a/7455",
+      "author": "ideasman42",
+      "author_url": "https://blender.stackexchange.com/users/55/ideasman42",
+      "license": "CC BY-SA 3.0",
+      "answer_id": 7455,
+      "code_block": 5,
+      "sha256": "45070da5cde6891c44a3b6ec1f05fd3e1837a8cc82d2a747407f32f7c4de887f",
+      "source_transform": "HTML entity decoding only; one unchanged code block",
+      "creation_date": 1393732551,
+      "last_edit_date": 1393733629,
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "revision_url": "https://blender.stackexchange.com/posts/7455/revisions",
+      "source_snapshot": "acquisition/public/stackexchange-7455-block-5/answer.json",
+      "license_scope": "This source and its answer snapshot retain the original CC BY-SA license; no MIT relicensing."
+    }
+  ]
+}

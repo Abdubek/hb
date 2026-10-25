@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+gpt6-096: A kitchen range with burners, knobs and oven door
+gpt6-097: A refrigerator with shelves and open door
+gpt6-098: A washbasin with faucet, drain and pedestal
+gpt6-099: A traditional mailbox on a post with flag
+gpt6-100: A small pedestrian station platform with canopy and benches

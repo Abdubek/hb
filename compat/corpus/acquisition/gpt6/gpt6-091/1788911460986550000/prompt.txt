@@ -1,0 +1,14 @@
+Write independent complete Python scripts for Blender 4.5 LTS for the following tasks.
+Use normal Blender bpy, bmesh and mathutils idioms as appropriate. Each script must
+construct its scene headlessly from Blender's factory startup, using no external
+assets or addons. Include materials, lighting and cameras appropriate to the task.
+Model the requested forms with useful detail and sensible geometry counts.
+Only construct the scene: do not render images or save files. Return one complete
+self-contained source string per task id in the requested JSON. Do not use tools,
+read files, execute or test your code. Return your first solution as text.
+
+gpt6-091: A row of cinema seats on a stepped platform
+gpt6-092: A lecture podium with microphone and reading surface
+gpt6-093: A museum display case with pedestal and glass enclosure
+gpt6-094: A wall-mounted control panel with switches and gauges
+gpt6-095: A freestanding coat rack with multiple hooks

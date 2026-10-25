@@ -1,0 +1,9 @@
+stackexchange-221496-block-1.py
+
+Author: scurest
+Answer: https://blender.stackexchange.com/a/221496
+Revision history: https://blender.stackexchange.com/posts/221496/revisions
+License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+
+One original code block, HTML-decoded. No repairs, added imports, or combined blocks.
+The licensed answer snapshot is retained in answer.json.

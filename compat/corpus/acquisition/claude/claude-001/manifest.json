@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "claude-001.py",
+      "task": "A two-seat park bench with slatted back and seat",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "8f5ac7df181cbca47e5404f23091a2da43345fe87d955b990883633a93b9f113",
+      "response": "acquisition/claude/claude-001/1788910564132172000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-002.py",
+      "task": "A dining table and four matching chairs",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "a86bd760fd54df679da11c283d95fb26803e22a94fb9c331f868bbf10972197b",
+      "response": "acquisition/claude/claude-001/1788910564132172000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-003.py",
+      "task": "A six-wheel rover with chassis, wheels and sensor mast",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "2de52611c5ba6c93f20eae6e8c75959a9c4ecc2cc2a3882b725bb9571f765a5a",
+      "response": "acquisition/claude/claude-001/1788910564132172000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-004.py",
+      "task": "A compact handheld game console with buttons and screen",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "825290961f1390fa291dea40860527105e577d4849d200ce9127d00ca671142f",
+      "response": "acquisition/claude/claude-001/1788910564132172000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-005.py",
+      "task": "A desktop speaker with two circular drivers",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "6a2394d7ae9df03f8a01724baa975cc8dff225bcb3fd4436fe5b6613e34afe21",
+      "response": "acquisition/claude/claude-001/1788910564132172000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 446.83509397506714
+}

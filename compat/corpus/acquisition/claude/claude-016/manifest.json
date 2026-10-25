@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "claude-016.py",
+      "task": "A bus shelter with roof, bench and transparent side panels",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "625f4906d8de44477f75ad6919753fd960cd1ad44515ab756fe6e5835ed825f3",
+      "response": "acquisition/claude/claude-016/1788910891241893000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-017.py",
+      "task": "A shop counter with display shelves and products",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "2d35927b21f89f4441be5520a9b31392458e8e7750f39c840d196dacd6677c7e",
+      "response": "acquisition/claude/claude-016/1788910891241893000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-018.py",
+      "task": "A laptop with open screen, keyboard and trackpad",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "dcbe6bf21e17cf16d195d707d53b02e243a22dcae65e8b0fdb2b2c7ba8d8517f",
+      "response": "acquisition/claude/claude-016/1788910891241893000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-019.py",
+      "task": "A pair of over-ear headphones on a stand",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "f55fea05a32cd9d40e1a15d7e684dd25de4037bfbea8f47eadc703b9f95f73c2",
+      "response": "acquisition/claude/claude-016/1788910891241893000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-020.py",
+      "task": "A four-legged robot dog with simple jointed limbs",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "d57395c2051feafb6ec184bc23c4641c2c279f525e575b622882d0a7647171fb",
+      "response": "acquisition/claude/claude-016/1788910891241893000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 891.3076369762421
+}

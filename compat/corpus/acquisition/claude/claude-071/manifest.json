@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "claude-071.py",
+      "task": "A picnic table with attached benches",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "8e673197e1b70f5a3c1b0383ccd3be217b796fdcd09265b1bab8cd0b9d344141",
+      "response": "acquisition/claude/claude-071/1788912843154551000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-072.py",
+      "task": "A basketball hoop on a support pole and backboard",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "334b1750620182b009ebf90419319e93d62f2175b950ec9b5181940318195ab4",
+      "response": "acquisition/claude/claude-071/1788912843154551000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-073.py",
+      "task": "A tennis court with net and perimeter posts",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "f812314dbe3fc4859b050e59847de2e1f938d552cbd9819c628d242592998357",
+      "response": "acquisition/claude/claude-071/1788912843154551000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-074.py",
+      "task": "A row of three beach umbrellas with lounge chairs",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "55998a947f55fba31c5dabcec679cd38ce8cffef3ed2556a7637d7260ed7fde6",
+      "response": "acquisition/claude/claude-071/1788912843154551000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "claude-075.py",
+      "task": "A rooftop HVAC unit with fan grilles and ducts",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "f81a1cda8344bc167c5721603579749dbb8c15763e19825ea261af9f1042e199",
+      "response": "acquisition/claude/claude-071/1788912843154551000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 847.8960809707642
+}

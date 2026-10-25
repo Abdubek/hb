@@ -1,0 +1,65 @@
+{
+  "scripts": [
+    {
+      "file": "gpt6-086.py",
+      "task": "A wristwatch with round case, hands and segmented strap",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "b91a4486455934fb83dfb26bba0a57c01c0ad6cf69249702341a2dfed212faf4",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-086/1788911460976212000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-087.py",
+      "task": "A folding camping chair with tubular frame",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "db1f0acfae2ae31ecb9b7ed7dab32d2b859eeed4aa510ae30891cbb3b7c3ab26",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-086/1788911460976212000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-088.py",
+      "task": "A utility trailer with bed, axle and hitch",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "b264d193f13da878efebac955f1e45b02e0e2247794568de748810e7fc8a237c",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-086/1788911460976212000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-089.py",
+      "task": "A small delivery van with windows, doors and wheels",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "1efd2530010ee42377e13d4bd4c7b1f58c4faa9a4bb5e6372176e0ad25221337",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-086/1788911460976212000",
+      "source_transform": "JSON decode only"
+    },
+    {
+      "file": "gpt6-090.py",
+      "task": "A tractor with large rear wheels and simple engine hood",
+      "provider": "gpt6",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "sha256": "da89ffa27e635db83421dfae545e1ccd7c95c7d3899f95c905b5afa676dabefd",
+      "requested_model": "gpt-6-astra",
+      "response": "acquisition/gpt6/gpt6-086/1788911460976212000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 531.9697642326355
+}

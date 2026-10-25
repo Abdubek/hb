@@ -1,0 +1,18 @@
+{
+  "scripts": [
+    {
+      "file": "claude-129.py",
+      "task": "A construction excavator with articulated boom, bucket, tracks and operator cab",
+      "provider": "claude",
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "sha256": "30957e4553c8e169e72b4c65ad2034f0b88ca38dea8d371593874a5fafcdfcce",
+      "requested_model": "claude-opus-5",
+      "response": "acquisition/claude/claude-129/1788913879520381000",
+      "source_transform": "JSON decode only"
+    }
+  ],
+  "elapsed_seconds": 436.3743243217468
+}

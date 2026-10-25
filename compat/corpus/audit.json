@@ -1,0 +1,20 @@
+{
+  "integrity_pass": true,
+  "scripts": 400,
+  "unique_sources": 400,
+  "model_sources_match_raw_responses": 300,
+  "public_sources_with_license_records": 100,
+  "all_blender_outcomes_resolved": true,
+  "same_runner_and_reference": true,
+  "invalid_same_error": 6,
+  "invalid_different_error": 96,
+  "error_parity_pass": false,
+  "changed_paths_within_scope": true,
+  "authorized_paths": [
+    "compat/corpus/",
+    "compat/COVERAGE.md",
+    "docs/DECISIONS.md"
+  ],
+  "runner_sha256": "df552bcfa924eeb3ad07458e1346330a93a8dc2f729c654b2eb3dde67cc34d68",
+  "engine_sha256": "d8f46caabedba0a8e53aa08226004bd7f0858218f038d13ea4b7b60aaecfd0cd"
+}
