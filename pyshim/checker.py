@@ -300,6 +300,13 @@ def _check_tree(tree,filename,functions):
             return path.split(':',2)[1] in ('get','pop','setdefault','copy','values','keys','items','clear','update','popitem')
         if path.startswith('@listmethod:'):
             return path.split(':',2)[1] in ('append','extend','clear','copy','pop','insert','remove','reverse','sort','count','index')
+        if path.startswith('@tuple:'):
+            # Monotone inference can retain tuple positions from plain Python
+            # inputs after Vector conversion. They carry no API provenance.
+            # API-bearing tuple members must still be checked conservatively.
+            element=path
+            while element.startswith('@tuple:'):element=element.split(':',3)[3]
+            return element.startswith('#')
         if path.startswith('#'):return True
         if path in allowed:return True
         if path.startswith('bmesh.types.BMElement.'):

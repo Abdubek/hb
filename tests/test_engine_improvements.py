@@ -9,6 +9,48 @@ class EngineImprovements(unittest.TestCase):
     hb=test_cli.CLI.hb
     script=test_cli.CLI.script
 
+    def test_checker_accepts_vector_conversion_of_python_tuple_coordinates(self):
+        source='''import bpy
+from mathutils import Vector
+
+def direction(start, end):
+    start, end = Vector(start), Vector(end)
+    delta = end - start
+    assert delta.length == 1
+    return delta.normalized()
+
+for x in [0, 1]:
+    vector = direction((x, 0, 0), (x + 1, 0, 0))
+    assert tuple(vector) == (1, 0, 0)
+    bpy.ops.mesh.primitive_cube_add(location=vector * x)
+assert len(bpy.data.objects) == 2
+'''
+        script=self.script(source)
+        self.hb('check',script)
+        self.hb('run',script,'--out','converted.glb')
+        self.assertEqual(self.hb('query','stats')['result']['objects'],2)
+        self.assertEqual((self.path/'converted.glb').read_bytes()[:4],b'glTF')
+
+    def test_checker_preserves_api_errors_alongside_python_tuple_values(self):
+        cases=[
+            ('''from mathutils import Vector
+def direction(start, end):
+    start, end = Vector(start), Vector(end)
+    delta = end - start
+    delta.unsupported_magic()
+for x in [0, 1]:
+    direction((x, 0, 0), (x + 1, 0, 0))
+''','mathutils.Vector.unsupported_magic'),
+            ('import bpy\nobjects=(bpy.context.object,)\nobjects.location',
+             'bpy.context.object.location'),
+            ('import bpy\nobjects=(bpy.context.object,)\nobjects[0].unsupported_magic()',
+             'bpy.types.Object.unsupported_magic'),
+        ]
+        for source,expected in cases:
+            with self.subTest(expected=expected):
+                errors=self.hb('check',self.script(source),ok=False)['errors']
+                self.assertTrue(any(expected in error['message'] for error in errors),errors)
+
     def test_list_methods_do_not_become_object_methods(self):
         for operation in [
             'parts=[bpy.context.object]\nparts.clear()',

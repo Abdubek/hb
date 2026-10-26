@@ -1,11 +1,11 @@
 {
   "kind": "Static checker acceptance only; no runtime, geometry, render or Blender error-parity claim",
-  "measured_at_utc": "2026-10-25T20:50:46Z",
+  "measured_at_utc": "2026-10-26T05:06:21Z",
   "hb_version": "0.18.0",
-  "binary_sha256": "2fdbe07d7f52e0f22b9f8eb77d4e452b87cbd95deca4a1fe9ca586ecbfbe30e4",
+  "binary_sha256": "b27f58b3996103e7535381d7753711d5851bb288b48fc1c97954720b59440cdf",
   "corpus_index_sha256": "26164577251d57e643a48dc1c8e52c8b15c13ea23388492f49cb417b73299d7a",
   "scripts": 400,
-  "preflight_accepted": 8,
+  "preflight_accepted": 11,
   "by_origin": {
     "blender-stackexchange": {
       "scripts": 92,
@@ -21,7 +21,7 @@
     },
     "gpt6": {
       "scripts": 150,
-      "preflight_accepted": 1
+      "preflight_accepted": 4
     }
   },
   "results": [
@@ -275,7 +275,7 @@
       "file": "claude-042.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 9
+      "errors": 6
     },
     {
       "file": "claude-043.py",
@@ -299,7 +299,7 @@
       "file": "claude-046.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 27
+      "errors": 18
     },
     {
       "file": "claude-047.py",
@@ -317,7 +317,7 @@
       "file": "claude-049.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 19
+      "errors": 16
     },
     {
       "file": "claude-050.py",
@@ -335,7 +335,7 @@
       "file": "claude-052.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 11
+      "errors": 9
     },
     {
       "file": "claude-053.py",
@@ -359,7 +359,7 @@
       "file": "claude-056.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 23
+      "errors": 17
     },
     {
       "file": "claude-057.py",
@@ -479,7 +479,7 @@
       "file": "claude-076.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 13
+      "errors": 10
     },
     {
       "file": "claude-077.py",
@@ -509,7 +509,7 @@
       "file": "claude-081.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 12
+      "errors": 10
     },
     {
       "file": "claude-082.py",
@@ -521,7 +521,7 @@
       "file": "claude-083.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 13
+      "errors": 11
     },
     {
       "file": "claude-084.py",
@@ -533,7 +533,7 @@
       "file": "claude-085.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 29
+      "errors": 27
     },
     {
       "file": "claude-086.py",
@@ -683,7 +683,7 @@
       "file": "claude-110.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 32
+      "errors": 28
     },
     {
       "file": "claude-111.py",
@@ -719,7 +719,7 @@
       "file": "claude-116.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 19
+      "errors": 13
     },
     {
       "file": "claude-117.py",
@@ -785,7 +785,7 @@
       "file": "claude-127.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 216
+      "errors": 156
     },
     {
       "file": "invalid/claude-128.py",
@@ -815,7 +815,7 @@
       "file": "claude-132.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 72
+      "errors": 66
     },
     {
       "file": "claude-133.py",
@@ -869,7 +869,7 @@
       "file": "claude-141.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 58
+      "errors": 54
     },
     {
       "file": "claude-142.py",
@@ -911,19 +911,19 @@
       "file": "claude-148.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 12
+      "errors": 8
     },
     {
       "file": "claude-149.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 16
+      "errors": 12
     },
     {
       "file": "claude-150.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 7
+      "errors": 5
     },
     {
       "file": "gpt6-001.py",
@@ -959,7 +959,7 @@
       "file": "invalid/gpt6-006.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 8
+      "errors": 4
     },
     {
       "file": "invalid/gpt6-007.py",
@@ -971,13 +971,13 @@
       "file": "invalid/gpt6-008.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 15
+      "errors": 9
     },
     {
       "file": "invalid/gpt6-009.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 10
+      "errors": 4
     },
     {
       "file": "invalid/gpt6-010.py",
@@ -1013,13 +1013,13 @@
       "file": "gpt6-015.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 8
+      "errors": 4
     },
     {
       "file": "invalid/gpt6-016.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 15
+      "errors": 11
     },
     {
       "file": "invalid/gpt6-017.py",
@@ -1037,19 +1037,19 @@
       "file": "invalid/gpt6-019.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 11
+      "errors": 7
     },
     {
       "file": "invalid/gpt6-020.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 17
+      "errors": 7
     },
     {
       "file": "gpt6-021.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 8
+      "errors": 4
     },
     {
       "file": "invalid/gpt6-022.py",
@@ -1061,13 +1061,13 @@
       "file": "gpt6-023.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 16
+      "errors": 4
     },
     {
       "file": "gpt6-024.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 8
+      "errors": 6
     },
     {
       "file": "gpt6-025.py",
@@ -1085,25 +1085,25 @@
       "file": "gpt6-027.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 6
+      "errors": 3
     },
     {
       "file": "gpt6-028.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 11
+      "errors": 8
     },
     {
       "file": "gpt6-029.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 3
     },
     {
       "file": "gpt6-030.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 19
+      "errors": 13
     },
     {
       "file": "gpt6-031.py",
@@ -1139,25 +1139,25 @@
       "file": "gpt6-036.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 3
+      "errors": 1
     },
     {
       "file": "gpt6-037.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 3
+      "errors": 1
     },
     {
       "file": "gpt6-038.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 5
+      "errors": 3
     },
     {
       "file": "gpt6-039.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 3
+      "errors": 1
     },
     {
       "file": "invalid/gpt6-040.py",
@@ -1229,7 +1229,7 @@
       "file": "invalid/gpt6-051.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 7
+      "errors": 3
     },
     {
       "file": "invalid/gpt6-052.py",
@@ -1241,13 +1241,13 @@
       "file": "invalid/gpt6-053.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 7
+      "errors": 3
     },
     {
       "file": "invalid/gpt6-054.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 7
+      "errors": 5
     },
     {
       "file": "invalid/gpt6-055.py",
@@ -1289,13 +1289,13 @@
       "file": "gpt6-061.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 5
     },
     {
       "file": "gpt6-062.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 28
+      "errors": 22
     },
     {
       "file": "gpt6-063.py",
@@ -1318,20 +1318,20 @@
     {
       "file": "gpt6-066.py",
       "origin": "gpt6",
-      "accepted": false,
-      "errors": 4
+      "accepted": true,
+      "errors": 0
     },
     {
       "file": "gpt6-067.py",
       "origin": "gpt6",
-      "accepted": false,
-      "errors": 4
+      "accepted": true,
+      "errors": 0
     },
     {
       "file": "gpt6-068.py",
       "origin": "gpt6",
-      "accepted": false,
-      "errors": 6
+      "accepted": true,
+      "errors": 0
     },
     {
       "file": "gpt6-069.py",
@@ -1361,7 +1361,7 @@
       "file": "gpt6-073.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 10
+      "errors": 6
     },
     {
       "file": "gpt6-074.py",
@@ -1409,13 +1409,13 @@
       "file": "gpt6-081.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 14
+      "errors": 8
     },
     {
       "file": "gpt6-082.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 14
+      "errors": 8
     },
     {
       "file": "gpt6-083.py",
@@ -1439,31 +1439,31 @@
       "file": "gpt6-086.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 5
+      "errors": 1
     },
     {
       "file": "gpt6-087.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 7
+      "errors": 1
     },
     {
       "file": "gpt6-088.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 1
     },
     {
       "file": "gpt6-089.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 5
+      "errors": 1
     },
     {
       "file": "gpt6-090.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 11
+      "errors": 3
     },
     {
       "file": "invalid/gpt6-091.py",
@@ -1487,13 +1487,13 @@
       "file": "invalid/gpt6-094.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 7
+      "errors": 3
     },
     {
       "file": "invalid/gpt6-095.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 16
+      "errors": 10
     },
     {
       "file": "gpt6-096.py",
@@ -1535,7 +1535,7 @@
       "file": "invalid/gpt6-102.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 40
+      "errors": 26
     },
     {
       "file": "invalid/gpt6-103.py",
@@ -1559,13 +1559,13 @@
       "file": "gpt6-106.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 5
     },
     {
       "file": "gpt6-107.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 10
+      "errors": 6
     },
     {
       "file": "gpt6-108.py",
@@ -1613,7 +1613,7 @@
       "file": "invalid/gpt6-115.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 17
+      "errors": 13
     },
     {
       "file": "gpt6-116.py",
@@ -1631,7 +1631,7 @@
       "file": "gpt6-118.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 15
+      "errors": 5
     },
     {
       "file": "gpt6-119.py",
@@ -1649,13 +1649,13 @@
       "file": "invalid/gpt6-121.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 7
+      "errors": 5
     },
     {
       "file": "invalid/gpt6-122.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 5
     },
     {
       "file": "invalid/gpt6-123.py",
@@ -1739,31 +1739,31 @@
       "file": "gpt6-136.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 5
     },
     {
       "file": "gpt6-137.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 5
     },
     {
       "file": "gpt6-138.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 5
     },
     {
       "file": "gpt6-139.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 11
+      "errors": 5
     },
     {
       "file": "gpt6-140.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 5
     },
     {
       "file": "invalid/gpt6-141.py",
@@ -1817,7 +1817,7 @@
       "file": "gpt6-149.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 10
+      "errors": 4
     },
     {
       "file": "gpt6-150.py",

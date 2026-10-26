@@ -92,8 +92,8 @@ of Blender's API. The subset covers the modeling workflow above. The retained
 comparisons for an earlier, selected regression suite against Blender 4.5.9 LTS.
 
 **Existing Blender scripts often need adaptation.** A fresh static-only check
-with HB 0.18.0 accepted **8 of 400 unchanged external/model-authored scripts
-(2%)** in the [retained corpus](compat/corpus/README.md).
+with HB 0.18.0 accepted **11 of 400 unchanged external/model-authored scripts
+(2.75%)** in the [retained corpus](compat/corpus/README.md).
 [Per-script results](docs/benchmarks/corpus-preflight.json) include every source,
 including scripts previously found invalid in Blender. This is checker
 acceptance, not execution, geometry, rendering, or error-equivalence coverage.

@@ -34,6 +34,11 @@ containers and container append/extend. Dynamic API attribute names and
 unsupported literal ARRAY types/settings are rejected. Inference is bounded to
 64 passes and reports an unresolved error if it does not converge.
 
+Plain Python tuple-coordinate inputs can be converted to `mathutils.Vector` in
+helpers without the checker treating retained tuple-position metadata as an API
+path. Tuple members carrying `bpy`, `bmesh` or `mathutils` provenance still undergo
+API validation. This does not validate arbitrary Python attribute access.
+
 This is still **not a sound verifier for arbitrary Python**. Higher-order calls,
 classes, closures, complex destructuring and dynamically reconstructed objects
 can evade inference; union types can cause false positives. Property-specific
