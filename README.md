@@ -166,6 +166,12 @@ and `hb_api`. See the [modeling workflow](docs/AGENT-QUALITY.md) and
 [workflow tips](docs/AGENT-TIPS.md). Embedded Python executes local scripts; isolate
 untrusted scripts in the calling application.
 
+Both stdio servers accept one JSON message per line, up to 16 MiB including the
+newline. HB bounds the input buffer while reading and discards oversized lines
+without executing them. It returns JSON-RPC error `-32600` with a null ID, then
+continues with the next line. This limits request buffering, not script memory
+or execution time.
+
 ## Development
 
 ```sh

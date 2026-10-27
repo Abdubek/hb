@@ -65,7 +65,30 @@ fn operation(command: &str, params: &Value) -> Result<Value, Value> {
     result
 }
 
-use std::io::{BufRead, BufReader};
+use std::io::{BufRead, BufReader, Read};
+
+const MAX_REQUEST_BYTES: u64 = 16 * 1024 * 1024;
+
+#[derive(Debug, PartialEq)]
+enum RequestLine {
+    Json(Vec<u8>),
+    TooLarge,
+}
+
+fn read_request(reader: &mut impl BufRead, limit: u64) -> std::io::Result<Option<RequestLine>> {
+    let mut line = Vec::new();
+    // Limit allocation before reading, including when no newline has arrived yet.
+    (&mut *reader).take(limit).read_until(b'\n', &mut line)?;
+    if line.is_empty() {
+        return Ok(None);
+    }
+    if line.len() as u64 == limit && line.last() != Some(&b'\n') && !reader.fill_buf()?.is_empty() {
+        // Discard without retaining the tail; the next request starts after its newline.
+        reader.skip_until(b'\n')?;
+        return Ok(Some(RequestLine::TooLarge));
+    }
+    Ok(Some(RequestLine::Json(line)))
+}
 
 fn has_command(name: &str) -> bool {
     guidance::COMMANDS
@@ -205,40 +228,41 @@ pub fn serve(mcp: bool) -> Result<(), String> {
         initialized: false,
         ready: false,
     };
-    loop {
-        let mut line = String::new();
-        if reader.read_line(&mut line).map_err(|e| e.to_string())? == 0 {
-            break;
-        }
-        if line.trim().is_empty() {
-            continue;
-        }
-        let response = if line.len() > 16 * 1024 * 1024 {
-            Some(error(Value::Null, -32600, "Request exceeds 16 MB", None))
-        } else {
-            match serde_json::from_str::<Value>(&line) {
-                Err(_) => Some(error(Value::Null, -32700, "Parse error", None)),
-                Ok(Value::Array(batch)) => {
-                    if mcp || batch.is_empty() {
-                        Some(error(
-                            Value::Null,
-                            -32600,
-                            "Batch unsupported in MCP; JSON-RPC batches must not be empty",
-                            None,
-                        ))
-                    } else {
-                        let responses: Vec<_> = batch
-                            .into_iter()
-                            .filter_map(|r| server.message(r))
-                            .collect();
-                        if responses.is_empty() {
-                            None
+    while let Some(line) =
+        read_request(&mut reader, MAX_REQUEST_BYTES).map_err(|e| e.to_string())?
+    {
+        let response = match line {
+            RequestLine::TooLarge => {
+                Some(error(Value::Null, -32600, "Request exceeds 16 MB", None))
+            }
+            RequestLine::Json(line) => {
+                if line.iter().all(u8::is_ascii_whitespace) {
+                    continue;
+                }
+                match serde_json::from_slice::<Value>(&line) {
+                    Err(_) => Some(error(Value::Null, -32700, "Parse error", None)),
+                    Ok(Value::Array(batch)) => {
+                        if mcp || batch.is_empty() {
+                            Some(error(
+                                Value::Null,
+                                -32600,
+                                "Batch unsupported in MCP; JSON-RPC batches must not be empty",
+                                None,
+                            ))
                         } else {
-                            Some(json!(responses))
+                            let responses: Vec<_> = batch
+                                .into_iter()
+                                .filter_map(|r| server.message(r))
+                                .collect();
+                            if responses.is_empty() {
+                                None
+                            } else {
+                                Some(json!(responses))
+                            }
                         }
                     }
+                    Ok(v) => server.message(v),
                 }
-                Ok(v) => server.message(v),
             }
         };
         if let Some(response) = response {
@@ -247,4 +271,49 @@ pub fn serve(mcp: bool) -> Result<(), String> {
         }
     }
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::io::Cursor;
+
+    #[test]
+    fn request_limit_includes_newline_and_accepts_eof() {
+        for input in [b"{} \n".as_slice(), b"null", b"{}", b"\n"] {
+            let mut reader = Cursor::new(input);
+            assert_eq!(
+                read_request(&mut reader, 4).unwrap(),
+                Some(RequestLine::Json(input.to_vec()))
+            );
+            assert_eq!(read_request(&mut reader, 4).unwrap(), None);
+        }
+    }
+
+    #[test]
+    fn oversized_request_is_drained_before_next_line() {
+        // A one-byte input buffer also exercises delimiters at buffer boundaries.
+        let mut reader = BufReader::with_capacity(1, Cursor::new(b"null\n123456789\n{}\n"));
+        for _ in 0..2 {
+            assert_eq!(
+                read_request(&mut reader, 4).unwrap(),
+                Some(RequestLine::TooLarge)
+            );
+        }
+        assert_eq!(
+            read_request(&mut reader, 4).unwrap(),
+            Some(RequestLine::Json(b"{}\n".to_vec()))
+        );
+        assert_eq!(read_request(&mut reader, 4).unwrap(), None);
+    }
+
+    #[test]
+    fn oversized_request_without_newline_is_drained_to_eof() {
+        let mut reader = Cursor::new(b"123456789");
+        assert_eq!(
+            read_request(&mut reader, 4).unwrap(),
+            Some(RequestLine::TooLarge)
+        );
+        assert_eq!(read_request(&mut reader, 4).unwrap(), None);
+    }
 }

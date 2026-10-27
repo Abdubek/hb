@@ -83,6 +83,37 @@ class Server(unittest.TestCase):
             for reply in replies[2:]:
                 self.assertEqual(reply["error"]["data"]["code"], "INVALID_PARAMS")
 
+    def test_request_size_limit_and_recovery(self):
+        limit = 16 * 1024 * 1024
+        for mode, method in [("--mcp", "ping"), ("--jsonrpc", "capabilities")]:
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as directory:
+                valid = json.dumps(request(1, method)).encode()
+                # Whitespace is valid JSON padding. Include the newline in the byte limit.
+                boundary = valid + b" " * (limit - len(valid) - 1) + b"\n"
+                oversized = boundary[:-1] + b" \n"
+                with tempfile.TemporaryFile() as data:
+                    data.write(boundary)
+                    data.write(oversized)
+                    # An oversized whitespace-only line must also respect the limit.
+                    data.write(b" " * limit + b"\n")
+                    data.write(json.dumps(request(2, method)).encode() + b"\n")
+                    data.seek(0)
+                    process = subprocess.run(
+                        [str(HB), "serve", mode], stdin=data, capture_output=True,
+                        cwd=directory, timeout=30,
+                    )
+                self.assertEqual(process.returncode, 0, process.stderr)
+                replies = [json.loads(line) for line in process.stdout.splitlines()]
+                self.assertEqual(len(replies), 4, replies)
+                self.assertEqual(replies[0]["id"], 1)
+                self.assertIn("result", replies[0])
+                for reply in replies[1:3]:
+                    self.assertIsNone(reply["id"])
+                    self.assertEqual(reply["error"]["code"], -32600)
+                    self.assertEqual(reply["error"]["message"], "Request exceeds 16 MB")
+                self.assertEqual(replies[3]["id"], 2)
+                self.assertIn("result", replies[3])
+
 
 if __name__ == "__main__":
     unittest.main()
