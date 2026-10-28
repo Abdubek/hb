@@ -385,6 +385,9 @@ def _check_tree(tree,filename,functions):
                     value=next((k.value for k in node.keywords if k.arg=='type'),node.args[1] if len(node.args)>1 else None)
                     if not isinstance(value,ast.Constant):error(path+'(type=<dynamic>)',node,True)
                     elif value.value not in ('ARRAY','MIRROR','TRIANGULATE','SOLIDIFY','BEVEL','WELD','BOOLEAN','SUBSURF','DISPLACE','WEIGHTED_NORMAL'):error(path+'(type='+repr(value.value)+')',node)
+                if path=='bpy.ops.object.editmode_toggle':
+                    if node.args:error(path+'(no arguments accepted)',node)
+                    for kw in node.keywords:error(path+'('+str(kw.arg)+'=...)',node,kw.arg is None)
                 if path in ('bpy.ops.object.camera_add','bpy.ops.object.light_add','bpy.ops.object.empty_add'):
                     valid={'align','location','rotation','scale'}|({'enter_editmode'} if path.endswith('camera_add') else {'type','radius'})
                     if node.args:error(path+'(keyword arguments required)',node)

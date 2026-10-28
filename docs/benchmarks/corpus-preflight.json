@@ -1,8 +1,8 @@
 {
   "kind": "Static checker acceptance only; no runtime, geometry, render or Blender error-parity claim",
-  "measured_at_utc": "2026-10-26T05:06:21Z",
+  "measured_at_utc": "2026-10-28T05:05:46Z",
   "hb_version": "0.18.0",
-  "binary_sha256": "b27f58b3996103e7535381d7753711d5851bb288b48fc1c97954720b59440cdf",
+  "binary_sha256": "253b488525aa7c2f450d9e446921a0c39f3defc454095a703af4c357ed7052ec",
   "corpus_index_sha256": "26164577251d57e643a48dc1c8e52c8b15c13ea23388492f49cb417b73299d7a",
   "scripts": 400,
   "preflight_accepted": 11,
@@ -1829,49 +1829,49 @@
       "file": "gist-10db13a3319a3c6d1f42a64b40163ffe-BP_triangles_p2_s1.py",
       "origin": "github-gist",
       "accepted": false,
-      "errors": 6
+      "errors": 5
     },
     {
       "file": "invalid/gist-2616614d00583e121c0bbddb10cf3e52-day324.py",
       "origin": "github-gist",
       "accepted": false,
-      "errors": 70
+      "errors": 67
     },
     {
       "file": "gist-358c86435101d8c67ba92327bbb7ef2a-BP_triangles_p3_i1.py",
       "origin": "github-gist",
       "accepted": false,
-      "errors": 15
+      "errors": 10
     },
     {
       "file": "gist-3842f9f62b3426d07636a7cf273a875f-BP_triangles_p2_s2.py",
       "origin": "github-gist",
       "accepted": false,
-      "errors": 10
+      "errors": 7
     },
     {
       "file": "gist-72bd31e11a9921ef7e976d4815d6d6df-BP_triangles_p2_s0.py",
       "origin": "github-gist",
       "accepted": false,
-      "errors": 6
+      "errors": 5
     },
     {
       "file": "gist-8259636fa827e9c83c8119e2dd692f40-BP_triangles_p2_s3.py",
       "origin": "github-gist",
       "accepted": false,
-      "errors": 15
+      "errors": 10
     },
     {
       "file": "gist-9be9e2a0241bfb2f154d1eef6623b369-BP_triangles_p3_i3.py",
       "origin": "github-gist",
       "accepted": false,
-      "errors": 15
+      "errors": 10
     },
     {
       "file": "gist-dc0a619801458cb0aa421fc0a92c8423-BP_triangles_p3_i2.py",
       "origin": "github-gist",
       "accepted": false,
-      "errors": 14
+      "errors": 9
     },
     {
       "file": "stackexchange-107470-block-1.py",
@@ -2291,7 +2291,7 @@
       "file": "invalid/stackexchange-43076-block-1.py",
       "origin": "blender-stackexchange",
       "accepted": false,
-      "errors": 10
+      "errors": 9
     },
     {
       "file": "stackexchange-43089-block-1.py",

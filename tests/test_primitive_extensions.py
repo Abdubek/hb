@@ -50,3 +50,50 @@ class PrimitiveExtensions(unittest.TestCase):
             self.assertEqual(result['error']['code'],'UNSUPPORTED_API')
             self.assertEqual((self.path/'scene.hb').read_bytes(),before)
         self.hb('run',self.script("import bpy\nassert tuple(bpy.context.scene.cursor.location)==(0,0,0)\nassert bpy.context.mode=='OBJECT'"),'--scene','context.hb')
+
+    def test_editmode_toggle_matches_explicit_mode_geometry(self):
+        source=(test_cli.ROOT/'compat/golden/m3_editmode_toggle.py').read_text()
+        script=self.script(source)
+        self.hb('check',script)
+        self.hb('run',script,'--scene','toggle.hb','--out','toggle.glb')
+        explicit=source
+        for mode in ('EDIT','OBJECT','EDIT','OBJECT'):
+            explicit=explicit.replace('bpy.ops.object.editmode_toggle()',
+                                      "bpy.ops.object.mode_set(mode='"+mode+"')",1)
+        self.hb('run',self.script(explicit,'explicit.py'),
+                '--scene','explicit.hb','--out','explicit.glb')
+        self.assertEqual((self.path/'toggle.glb').read_bytes(),
+                         (self.path/'explicit.glb').read_bytes())
+
+    def test_editmode_toggle_invalid_contexts_and_rollback(self):
+        self.hb('run',self.script('''import bpy
+try:bpy.ops.object.editmode_toggle()
+except RuntimeError:pass
+else:raise AssertionError('Missing active mesh accepted')
+assert bpy.context.mode=='OBJECT'
+bpy.ops.object.camera_add()
+try:bpy.ops.object.editmode_toggle()
+except RuntimeError:pass
+else:raise AssertionError('Camera edit mode accepted')
+assert bpy.context.mode=='OBJECT'
+bpy.ops.mesh.primitive_cube_add()
+bpy.ops.object.select_all(action='SELECT')
+try:bpy.ops.object.editmode_toggle()
+except Exception as error:assert 'Only one selected mesh' in str(error)
+else:raise AssertionError('Multi-object edit mode accepted')
+assert bpy.context.mode=='OBJECT'
+'''))
+        before=(self.path/'scene.hb').read_bytes()
+        invalid=(
+            "bpy.ops.object.editmode_toggle()",
+            "bpy.ops.object.select_all(action='DESELECT');bpy.context.object.select_set(True);bpy.ops.object.editmode_toggle()",
+            "bpy.ops.object.editmode_toggle(mode='EDIT')",
+            "bpy.ops.object.editmode_toggle('EXEC_DEFAULT')",
+        )
+        for call in invalid:
+            with self.subTest(call=call):
+                self.hb('run',self.script('import bpy\n'+call),ok=False)
+                self.assertEqual((self.path/'scene.hb').read_bytes(),before)
+        for call in invalid[2:]:
+            errors=self.hb('check',self.script('import bpy\n'+call),ok=False)['errors']
+            self.assertTrue(any('editmode_toggle(' in error['message'] for error in errors),errors)

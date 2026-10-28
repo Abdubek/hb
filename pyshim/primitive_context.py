@@ -32,6 +32,10 @@ def mode_set(*,mode='OBJECT',toggle=False):
     _EDIT_OBJECT=obj._id;return {'FINISHED'}
 bpy.ops.object._values['mode_set']=mode_set
 
+def editmode_toggle():
+    return mode_set(mode='OBJECT' if _edit_object() is not None else 'EDIT')
+bpy.ops.object._values['editmode_toggle']=editmode_toggle
+
 def _append_primitive(target,source):
     old=target.data._get();new=source.data._get()
     offset=len(old['vertices']);old_loops=sum(map(len,old['faces']));new_loops=sum(map(len,new['faces']))
@@ -101,4 +105,4 @@ def _object_mode_operation(name,operation):
         return operation(*args,**kwargs)
     return call
 for _name,_operation in list(bpy.ops.object._values.items()):
-    if _name!='mode_set':bpy.ops.object._values[_name]=_object_mode_operation(_name,_operation)
+    if _name not in ('mode_set','editmode_toggle'):bpy.ops.object._values[_name]=_object_mode_operation(_name,_operation)

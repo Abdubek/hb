@@ -573,6 +573,9 @@ zero on each script run. WORLD uses the cursor's location when location is omitt
 CURSOR also uses its rotation when rotation is omitted. Explicit transforms win.
 Use `object.mode_set(mode='EDIT')` or `enter_editmode=True` on operators exposing
 that keyword, then return to OBJECT before object operations or script completion.
+`object.editmode_toggle()` takes no arguments and switches between OBJECT and EDIT
+with the same single-mesh construction limits. It returns `{'FINISHED'}`; an active
+mesh is required to enter EDIT, and unsupported contexts fail before changing mode.
 Edit insertion requires an invertible object transform and at most 100,000 combined
 vertices/faces, with ordinary geometry, materials and UV layers. Multi-object or
 viewport editing, arbitrary edit-mode RNA/BMesh lifecycle and other custom-layer

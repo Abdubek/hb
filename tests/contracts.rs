@@ -1640,6 +1640,14 @@ fn golden_primitive_extensions() {
     golden("compat/golden/m3_primitive_extensions.py");
 }
 
+#[doc = "hb:test=compat/golden/m3_editmode_toggle.py"]
+#[doc = "hb:symbol=bpy.ops.object.editmode_toggle"]
+#[doc = "No arguments; toggle OBJECT/EDIT primitive construction on one selected active mesh, returning FINISHED; same geometry/context limits as mode_set; finish in OBJECT mode"]
+#[test]
+fn golden_editmode_toggle() {
+    golden("compat/golden/m3_editmode_toggle.py");
+}
+
 #[doc = "hb:test=compat/golden/m3_curves.py"]
 #[doc = "hb:symbol=bpy.data.curves"]
 #[doc = "Legacy Curve database distinct from meshes; iteration, integer/name lookup, get/new/remove; data persists with evaluated surface cache"]

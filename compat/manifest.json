@@ -586,6 +586,10 @@
       "description": "Duplicate selected objects with linked=False/True; preserve collection links, copied-data sharing, modifiers and selection, and remap selected parents; default TRANSLATION mode",
       "test": "compat/golden/m3_duplicate.py"
     },
+    "bpy.ops.object.editmode_toggle": {
+      "description": "No arguments; toggle OBJECT/EDIT primitive construction on one selected active mesh, returning FINISHED; same geometry/context limits as mode_set; finish in OBJECT mode",
+      "test": "compat/golden/m3_editmode_toggle.py"
+    },
     "bpy.ops.object.empty_add": {
       "description": "Create non-image empty object display shapes; radius sets display size.",
       "test": "compat/golden/m2_object_ops.py"
