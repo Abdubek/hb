@@ -1648,6 +1648,18 @@ fn golden_editmode_toggle() {
     golden("compat/golden/m3_editmode_toggle.py");
 }
 
+#[doc = "hb:test=compat/golden/m3_bmesh_adjacency.py"]
+#[doc = "hb:symbol=bmesh.types.BMVert.link_edges"]
+#[doc = "Read-only live adjacent-edge view: iteration, length, membership, integer indexing and slices without steps; iteration order is not Blender disk-cycle order; invalidated owners raise ReferenceError"]
+#[doc = "hb:symbol=bmesh.types.BMVert.link_faces"]
+#[doc = "Read-only live adjacent-face view with iteration, length, membership, integer indexing and slices without steps; no Blender radial/disk ordering guarantee; invalidated owners raise ReferenceError"]
+#[doc = "hb:symbol=bmesh.types.BMEdge.link_faces"]
+#[doc = "Read-only live radial-face membership, including wire/boundary/nonmanifold edges; iteration, length, membership, integer indexing and slices without steps; no Blender radial ordering guarantee; invalidated owners raise ReferenceError"]
+#[test]
+fn golden_bmesh_adjacency() {
+    golden("compat/golden/m3_bmesh_adjacency.py");
+}
+
 #[doc = "hb:test=compat/golden/m3_curves.py"]
 #[doc = "hb:symbol=bpy.data.curves"]
 #[doc = "Legacy Curve database distinct from meshes; iteration, integer/name lookup, get/new/remove; data persists with evaluated surface cache"]

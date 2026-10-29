@@ -9,6 +9,24 @@ class BMElement(Strict):
     def index(self):self._check();return self._index
     @index.setter
     def index(self,value):self._check();self._index=int(value)
+
+class _BMAdjacency(Strict):
+    def __init__(self,owner,kind):
+        self._owner,self._kind=owner,kind
+        self._path=owner._path+'.link_'+kind
+    def _items(self):
+        self._owner._check()
+        field='verts' if isinstance(self._owner,BMVert) else 'edges'
+        return [item for item in getattr(self._owner._bm,self._kind) if self._owner in getattr(item,field)]
+    def __len__(self):return len(self._items())
+    def __iter__(self):return iter(self._items())
+    def __contains__(self,value):return value in self._items()
+    def __getitem__(self,key):
+        items=self._items()
+        if isinstance(key,slice) and key.step is not None:raise TypeError('BMesh adjacency slices do not support a step')
+        if not isinstance(key,(int,slice)):raise AttributeError('BMesh adjacency expects an integer or slice')
+        return items[key]
+
 class BMVert(BMElement):
     _path='bmesh.types.BMVert'
     def __init__(self,bm,co):super().__init__(bm);self._co=Vector(co);self._normal=Vector()
@@ -27,11 +45,17 @@ class BMVert(BMElement):
         _bm_layer_value(self,layer)
         return VectorView(lambda:_bm_layer_value(self,layer),lambda v:_bm_layer_value(self,layer,v),self._path+'.shape')
     def __setitem__(self,layer,value):_bm_layer_value(self,layer,value)
+    @property
+    def link_edges(self):self._check();return _BMAdjacency(self,'edges')
+    @property
+    def link_faces(self):self._check();return _BMAdjacency(self,'faces')
 class BMEdge(BMElement):
     _path='bmesh.types.BMEdge'
     def __init__(self,bm,verts):super().__init__(bm);self._verts=tuple(verts)
     @property
     def verts(self):self._check();return self._verts
+    @property
+    def link_faces(self):self._check();return _BMAdjacency(self,'faces')
 class BMFace(BMElement):
     _path='bmesh.types.BMFace'
     def __init__(self,bm,verts,edges):

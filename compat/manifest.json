@@ -90,6 +90,10 @@
       "description": "Edge handle validity, including after BMesh.free",
       "test": "compat/golden/m2_extrude.py"
     },
+    "bmesh.types.BMEdge.link_faces": {
+      "description": "Read-only live radial-face membership, including wire/boundary/nonmanifold edges; iteration, length, membership, integer indexing and slices without steps; no Blender radial ordering guarantee; invalidated owners raise ReferenceError",
+      "test": "compat/golden/m3_bmesh_adjacency.py"
+    },
     "bmesh.types.BMEdge.verts": {
       "description": "The two edge vertices",
       "test": "compat/golden/m2_bmesh.py"
@@ -181,6 +185,14 @@
     "bmesh.types.BMVert.is_valid": {
       "description": "Element validity",
       "test": "compat/golden/m2_bmesh.py"
+    },
+    "bmesh.types.BMVert.link_edges": {
+      "description": "Read-only live adjacent-edge view: iteration, length, membership, integer indexing and slices without steps; iteration order is not Blender disk-cycle order; invalidated owners raise ReferenceError",
+      "test": "compat/golden/m3_bmesh_adjacency.py"
+    },
+    "bmesh.types.BMVert.link_faces": {
+      "description": "Read-only live adjacent-face view with iteration, length, membership, integer indexing and slices without steps; no Blender radial/disk ordering guarantee; invalidated owners raise ReferenceError",
+      "test": "compat/golden/m3_bmesh_adjacency.py"
     },
     "bmesh.types.BMesh.edges": {
       "description": "Mutable edge sequence",

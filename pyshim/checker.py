@@ -128,6 +128,8 @@ def _check_tree(tree,filename,functions):
         if base=='bmesh.types.BMLayerCollection':return 'bmesh.types.BMLayerItem'
         if base in ('bmesh.types.BMFace.verts','bmesh.types.BMEdge.verts'):return 'bmesh.types.BMVert'
         if base=='bmesh.types.BMFace.edges':return 'bmesh.types.BMEdge'
+        if base=='bmesh.types.BMVert.link_edges':return 'bmesh.types.BMEdge'
+        if base in ('bmesh.types.BMVert.link_faces','bmesh.types.BMEdge.link_faces'):return 'bmesh.types.BMFace'
         if base.endswith('.vertices') and base.startswith('bpy.types.'):return 'bpy.types.MeshVertex'
         if base.endswith('.polygons'):return 'bpy.types.MeshPolygon'
         if base.endswith('.edges') and base.startswith('bpy.types.'):return 'bpy.types.MeshEdge'

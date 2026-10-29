@@ -4,6 +4,50 @@ from normalize import revision
 
 class Topology(unittest.TestCase):
     setUp=test_cli.CLI.setUp;tearDown=test_cli.CLI.tearDown;hb=test_cli.CLI.hb;script=test_cli.CLI.script
+    def test_bmesh_adjacency_checker_preserves_element_types(self):
+        source=(test_cli.ROOT/'compat/golden/m3_bmesh_adjacency.py').read_text()
+        self.hb('check',self.script(source))
+        for expression,expected in (
+            ('vertex.link_edges[0].unsupported_magic()', 'bmesh.types.BMEdge.unsupported_magic'),
+            ('vertex.link_faces[0].unsupported_magic()', 'bmesh.types.BMFace.unsupported_magic'),
+            ('edge.link_faces[0].unsupported_magic()', 'bmesh.types.BMFace.unsupported_magic'),
+            ('vertex.link_faces.clear()', 'bmesh.types.BMVert.link_faces.clear'),
+        ):
+            with self.subTest(expression=expression):
+                script=self.script('import bmesh\nbm=bmesh.new()\nvertex=bm.verts.new((0,0,0))\nedge=bm.edges.new((vertex,bm.verts.new((1,0,0))))\n'+expression)
+                errors=self.hb('check',script,ok=False)['errors']
+                self.assertTrue(any(expected in error['message'] for error in errors),errors)
+
+    def test_bmesh_adjacency_views_are_readonly_and_invalidate(self):
+        self.hb('run',self.script('''import bmesh
+bm=bmesh.new();a=bm.verts.new((0,0,0));b=bm.verts.new((1,0,0));c=bm.verts.new((0,1,0))
+face=bm.faces.new((a,b,c));edge=next(e for e in bm.edges if set(e.verts)=={a,b})
+vertex_edges=a.link_edges;vertex_faces=a.link_faces;edge_faces=edge.link_faces
+try:vertex_faces[0]=face
+except TypeError:pass
+else:raise AssertionError('Adjacency item assignment accepted')
+assert len(vertex_faces)==1
+for view in (vertex_edges,vertex_faces,edge_faces):
+    try:view[100]
+    except IndexError:pass
+    else:raise AssertionError('Invalid adjacency index accepted')
+bm.edges.remove(edge)
+try:len(edge_faces)
+except ReferenceError:pass
+else:raise AssertionError('Removed edge view accepted')
+bm.verts.remove(a)
+for view in (vertex_edges,vertex_faces):
+    for read in (lambda:len(view),lambda:list(view),lambda:view[:],lambda:face in view):
+        try:read()
+        except ReferenceError:pass
+        else:raise AssertionError('Removed vertex view accepted')
+held=b.link_edges
+bm.free()
+try:len(held)
+except ReferenceError:pass
+else:raise AssertionError('Freed BMesh view accepted')
+'''))
+
     def test_stack_evaluation_apply_and_restore(self):
         first=self.hb('run',self.script('''import bpy,bmesh
 bm=bmesh.new();result=bmesh.ops.create_grid(bm,x_segments=1,y_segments=1,size=1)

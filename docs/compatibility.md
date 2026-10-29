@@ -61,6 +61,12 @@ before execution, but the calling application must still isolate untrusted scrip
   Operators include translate, scale, rotate and transform, plus delete with
   VERTS/EDGES/FACES_ONLY contexts. Transforms accept nonsingular space matrices,
   validate vertex selections before editing and return None.
+  `BMVert.link_edges`, `BMVert.link_faces` and `BMEdge.link_faces` expose read-only
+  live adjacency views. Iteration, length, membership, integer indexing and slices
+  without steps reflect topology additions/removals, including loose edges and
+  nonmanifold fans. Iteration order follows HB topology storage; Blender's disk/radial
+  ordering is not reproduced. HB raises `ReferenceError` when a view's owner is
+  removed or its BMesh is freed. Other `BMElemSeq` methods are outside this subset.
   Editable loop layers support up to eight UV layers and one FLOAT_COLOR layer;
   vertex shape layers support up to 64 relative keys. `Object.shape_key_add`,
   `Mesh.shape_keys.key_blocks` and key point coordinates provide the corresponding
