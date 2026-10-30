@@ -147,6 +147,11 @@ Keep `cube.hb` and `cube.hb.revisions/` together: the head file points to snapsh
 in that directory. Runs edit the existing scene; `undo`, `checkout`, `log`, and
 `diff` provide revision history.
 
+The explicit output paths of `render`, `export`, and `run --out` cannot target
+the scene head or anything inside its revision directory, including through
+absolute paths, `..`, or symlink aliases. OBJ's companion MTL path is checked too.
+A conflicting destination returns `USAGE` before those outputs are written.
+
 Import GLB/glTF, OBJ, STL, or PLY; export GLB/glTF, OBJ, or USDZ. Renders are CPU
 previews. See the [quickstart](docs/QUICKSTART.md) and
 [compatibility contract](docs/compatibility.md) for supported features and limits.

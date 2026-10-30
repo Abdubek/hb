@@ -240,7 +240,11 @@ fn required(path: &Path) -> Result<Revision, Value> {
         )
     })
 }
-fn export(s: &Scene, out: &Path) -> Result<Vec<String>, Value> {
+fn export(s: &Scene, out: &Path, scene_path: &Path) -> Result<Vec<String>, Value> {
+    quality::protect(out, scene_path, &[])?;
+    if out.extension().is_some_and(|e| e == "obj") {
+        quality::protect(&out.with_extension("mtl"), scene_path, &[])?;
+    }
     match out.extension().and_then(|x| x.to_str()) {
         Some("glb") => {
             let (bytes, warnings) = core::io::glb(s).map_err(|e| err("EXPORT_ERROR", &e))?;
@@ -361,14 +365,8 @@ fn dispatch(mut args: Vec<String>) -> Result<Value, Value> {
                 ws.extend(operation_warnings.iter().cloned());
             }
             if let Some(out) = &out {
-                if Path::new(out) == path {
-                    return Err(err(
-                        "USAGE",
-                        "Export output cannot overwrite the scene head",
-                    ));
-                }
                 ws.extend(
-                    export(&after, Path::new(out))?
+                    export(&after, Path::new(out), &path)?
                         .into_iter()
                         .map(Value::String),
                 );
@@ -430,11 +428,9 @@ fn dispatch(mut args: Vec<String>) -> Result<Value, Value> {
                     "hb export output.glb/.gltf/.obj/.usdz [--scene scene.hb]",
                 ));
             }
-            if Path::new(&args[0]) == path {
-                return Err(err("USAGE", "Export cannot overwrite scene head"));
-            }
+            quality::protect(Path::new(&args[0]), &path, &[])?;
             let r = required(&path)?;
-            let ws = export(&r.state.scene, Path::new(&args[0]))?;
+            let ws = export(&r.state.scene, Path::new(&args[0]), &path)?;
             Ok(json!({"ok":true,"output":args[0],"revision":r.id,"warnings":ws}))
         }
         "query" => {
@@ -458,9 +454,7 @@ fn dispatch(mut args: Vec<String>) -> Result<Value, Value> {
             if !args.is_empty() {
                 return Err(err("USAGE", "Unknown render argument"));
             }
-            if Path::new(&out) == path {
-                return Err(err("USAGE", "Render cannot overwrite scene head"));
-            }
+            quality::protect(Path::new(&out), &path, &[])?;
             let r = required(&path)?;
             let (bytes, info) = if quality == "draft" {
                 core::render::render(

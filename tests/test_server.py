@@ -83,6 +83,25 @@ class Server(unittest.TestCase):
             for reply in replies[2:]:
                 self.assertEqual(reply["error"]["data"]["code"], "INVALID_PARAMS")
 
+    def test_mcp_render_cannot_overwrite_scene_through_absolute_path(self):
+        with tempfile.TemporaryDirectory() as directory:
+            replies = self.exchange('--mcp', [
+                request(1, 'initialize', {'protocolVersion': '2025-11-25',
+                                        'clientInfo': {}, 'capabilities': {}}),
+                {'jsonrpc': '2.0', 'method': 'notifications/initialized'},
+                request(2, 'tools/call', {'name': 'hb_run', 'arguments': {
+                    'code': 'import bpy\nbpy.ops.mesh.primitive_cube_add()'}}),
+                request(3, 'tools/call', {'name': 'hb_render', 'arguments': {
+                    'args': ['--size', '32', '--out', str(Path(directory) / 'scene.hb')]}}),
+                request(4, 'tools/call', {'name': 'hb_query', 'arguments': {'args': ['stats']}}),
+            ], directory)
+            self.assertTrue(replies[1]['result']['structuredContent']['ok'])
+            rejected = replies[2]['result']
+            self.assertTrue(rejected['isError'])
+            self.assertEqual(rejected['structuredContent']['error']['code'], 'USAGE')
+            self.assertEqual(len(rejected['content']), 1)
+            self.assertEqual(replies[3]['result']['structuredContent']['result']['objects'], 1)
+
     def test_request_size_limit_and_recovery(self):
         limit = 16 * 1024 * 1024
         for mode, method in [("--mcp", "ping"), ("--jsonrpc", "capabilities")]:

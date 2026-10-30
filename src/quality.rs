@@ -245,7 +245,7 @@ fn resolved(path: &Path) -> Result<PathBuf, Value> {
             .ok_or_else(|| err("USAGE", "Expected output filename"))?,
     ))
 }
-fn protect(output: &Path, scene: &Path, other: &[&Path]) -> Result<(), Value> {
+pub(super) fn protect(output: &Path, scene: &Path, other: &[&Path]) -> Result<(), Value> {
     let output = resolved(output)?;
     if output == resolved(scene)?
         || output.starts_with(resolved(&store::history(scene))?)
@@ -458,7 +458,7 @@ pub fn command(command: &str, mut args: Vec<String>, path: &Path) -> Result<Valu
     {
         protect(&out.with_extension("mtl"), path, &protected)?;
     }
-    let ws = export(&r.state.scene, &out)?;
+    let ws = export(&r.state.scene, &out, path)?;
     let delivery = json!({"ok":true,"revision":r.id,"output":out,"output_sha256":hash(&fs::read(&out).map_err(ioerr)?),"review":review,"image":image,"assessment":assessment_value,"diagnostics":diagnostics,"warnings":ws,"scope":"Review freshness and explicit agent assessment verified; artistic quality is not mechanically proven."});
     atomic_write(
         &report,
