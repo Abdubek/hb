@@ -9,6 +9,40 @@ class EngineImprovements(unittest.TestCase):
     hb=test_cli.CLI.hb
     script=test_cli.CLI.script
 
+    def test_checker_isolates_comprehension_bindings(self):
+        source=test_cli.ROOT/'compat/golden/m3_checker_comprehensions.py'
+        self.hb('check',source)
+        self.hb('run',source,'--out','comprehensions.glb')
+        self.assertEqual(self.hb('query','stats')['result']['objects'],1)
+        self.assertEqual((self.path/'comprehensions.glb').read_bytes()[:4],b'glTF')
+
+    def test_checker_preserves_api_errors_across_comprehension_scopes(self):
+        setup='''import bpy
+bpy.ops.mesh.primitive_cube_add()
+obj=bpy.context.object
+material=bpy.data.materials.new('Paint');material.use_nodes=True
+p=material.node_tree.nodes['Principled BSDF']
+'''
+        for expression,expected in (
+            ('[p.unsupported_magic() for p in obj.data.polygons]','bpy.types.MeshPolygon.unsupported_magic'),
+            ('{p.unsupported_magic() for p in obj.data.polygons}','bpy.types.MeshPolygon.unsupported_magic'),
+            ('{p.index:p.unsupported_magic() for p in obj.data.polygons}','bpy.types.MeshPolygon.unsupported_magic'),
+            ('any(p.unsupported_magic() for p in obj.data.polygons)','bpy.types.MeshPolygon.unsupported_magic'),
+            ('[p for p in obj.data.polygons]\np.use_smooth=True','bpy.types.ShaderNode.use_smooth'),
+            ('faces=[p for p in obj.data.polygons]\nfaces[0].unsupported_magic()','bpy.types.MeshPolygon.unsupported_magic'),
+            ('faces={p for p in obj.data.polygons}\nfor face in faces:face.unsupported_magic()','bpy.types.MeshPolygon.unsupported_magic'),
+            ('faces={p for p in obj.data.polygons}\nfaces.copy().pop().unsupported_magic()','bpy.types.MeshPolygon.unsupported_magic'),
+            ('faces={p.index:p for p in obj.data.polygons}\nfaces[0].unsupported_magic()','bpy.types.MeshPolygon.unsupported_magic'),
+            ('faces=(p for p in obj.data.polygons)\nfor face in faces:face.unsupported_magic()','bpy.types.MeshPolygon.unsupported_magic'),
+            ('faces=(p for p in obj.data.polygons)\nnext(faces).unsupported_magic()','bpy.types.MeshPolygon.unsupported_magic'),
+            ('faces=(p for p in obj.data.polygons)\nnext(faces,bpy.context.object).unsupported_magic()','bpy.types.Object.unsupported_magic'),
+            ('[p for p in p.unsupported_magic()]','bpy.types.ShaderNode.unsupported_magic'),
+            ('for p in obj.data.polygons:pass\np.inputs','bpy.types.MeshPolygon.inputs'),
+        ):
+            with self.subTest(expression=expression):
+                errors=self.hb('check',self.script(setup+expression),ok=False)['errors']
+                self.assertTrue(any(expected in error['message'] for error in errors),errors)
+
     def test_checker_accepts_vector_conversion_of_python_tuple_coordinates(self):
         source='''import bpy
 from mathutils import Vector

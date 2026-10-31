@@ -6,7 +6,7 @@ import subprocess
 import tempfile
 import unittest
 
-from test_cli import HB
+from test_cli import HB, ROOT
 
 
 def request(identifier, method, params=None):
@@ -41,6 +41,20 @@ class Server(unittest.TestCase):
             self.assertEqual(replies[3]["result"]["revision"], first["revision"])
             self.assertTrue(replies[4][0]["result"]["ok"])
             self.assertEqual(replies[4][1]["result"]["name"], "hb")
+
+    def test_mcp_run_accepts_comprehension_shadowing(self):
+        source=(ROOT/'compat/golden/m3_checker_comprehensions.py').read_text()
+        with tempfile.TemporaryDirectory() as directory:
+            replies=self.exchange('--mcp',[
+                request(1,'initialize',{'protocolVersion':'2025-11-25',
+                                      'clientInfo':{},'capabilities':{}}),
+                {'jsonrpc':'2.0','method':'notifications/initialized'},
+                request(2,'tools/call',{'name':'hb_run','arguments':{'code':source}}),
+                request(3,'tools/call',{'name':'hb_query','arguments':{'args':['stats']}}),
+            ],directory)
+            self.assertFalse(replies[1]['result']['isError'])
+            self.assertTrue(replies[1]['result']['structuredContent']['ok'])
+            self.assertEqual(replies[2]['result']['structuredContent']['result']['objects'],1)
 
     def test_mcp_handshake_tools_and_render_content(self):
         with tempfile.TemporaryDirectory() as directory:

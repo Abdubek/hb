@@ -34,6 +34,13 @@ containers and container append/extend. Dynamic API attribute names and
 unsupported literal ARRAY types/settings are rejected. Inference is bounded to
 64 passes and reports an unresolved error if it does not converge.
 
+List, set and dict comprehensions and generator expressions keep their iteration
+bindings separate from enclosing functions and other comprehensions. The leftmost
+iterable uses the enclosing scope, following
+[Python's comprehension scopes](https://docs.python.org/3.13/reference/expressions.html#displays-for-lists-sets-and-dictionaries).
+API values inside the comprehension, in its result and extracted by `next` remain
+checked. `next` also retains API provenance from an explicit fallback value.
+
 Plain Python tuple-coordinate inputs can be converted to `mathutils.Vector` in
 helpers without the checker treating retained tuple-position metadata as an API
 path. Tuple members carrying `bpy`, `bmesh` or `mathutils` provenance still undergo

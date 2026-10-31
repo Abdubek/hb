@@ -37,6 +37,15 @@ def check(source,filename):
                     for a in n.names:child.names.setdefault(a.asname or a.name.split('.')[0],prefix+(a.asname or a.name.split('.')[0]))
                 def visit_ImportFrom(s,n):
                     for a in n.names:child.names.setdefault(a.asname or a.name,prefix+(a.asname or a.name))
+                def visit_ListComp(s,n):
+                    # Iteration targets belong to the comprehension. Still visit
+                    # its expressions, including enclosing-scope walrus bindings.
+                    for generator in n.generators:
+                        s.visit(generator.iter)
+                        for condition in generator.ifs:s.visit(condition)
+                    for field in ('elt','key','value'):
+                        if hasattr(n,field):s.visit(getattr(n,field))
+                visit_SetComp=visit_DictComp=visit_GeneratorExp=visit_ListComp
             for arg in node.args.posonlyargs+node.args.args+node.args.kwonlyargs:child.names[arg.arg]=prefix+arg.arg
             for stmt in node.body:Bindings().visit(stmt)
             for arg in node.args.posonlyargs+node.args.args+node.args.kwonlyargs:arg.arg=child.find(arg.arg)
@@ -53,6 +62,22 @@ def check(source,filename):
         def visit_ImportFrom(self,node):
             for alias in node.names:alias.asname=self.find(alias.asname or alias.name)
             return node
+        def visit_ListComp(self,node):
+            child=Scope(self);counter[0]+=1;prefix=f'_hb_scope_{counter[0]}_'
+            for generator in node.generators:
+                for target in ast.walk(generator.target):
+                    if isinstance(target,ast.Name) and isinstance(target.ctx,ast.Store):
+                        child.names.setdefault(target.id,prefix+target.id)
+            # Python evaluates the first iterable outside the implicit scope.
+            node.generators[0].iter=self.visit(node.generators[0].iter)
+            for index,generator in enumerate(node.generators):
+                if index:generator.iter=child.visit(generator.iter)
+                generator.target=child.visit(generator.target)
+                generator.ifs=[child.visit(condition) for condition in generator.ifs]
+            for field in ('elt','key','value'):
+                if hasattr(node,field):setattr(node,field,child.visit(getattr(node,field)))
+            return node
+        visit_SetComp=visit_DictComp=visit_GeneratorExp=visit_ListComp
         def visit_Lambda(self,node):
             # Dynamic closures are handled conservatively below.
             return self.generic_visit(node)
@@ -89,6 +114,7 @@ def _check_tree(tree,filename,functions):
         # Container methods belong to the Python list, never to its elements.
         if base.startswith('[list]'):return '@listmethod:'+name+':'+base[6:]
         if base.startswith('[dict]'):return '@dictmethod:'+name+':'+base[6:]
+        if base.startswith('[iter]'):return '@itermethod:'+name+':'+base[6:]
         base=norm(base)
         if base=='bpy.types.Object' and name=='data':return 'bpy.types.IDData'
         if base=='bpy.types.Object' and name=='parent':return 'bpy.types.Object'
@@ -100,7 +126,7 @@ def _check_tree(tree,filename,functions):
         if base.endswith('.splines'):return 'bpy.types.Spline'
         if base=='bpy.types.Spline.points':return 'bpy.types.SplinePoint'
         if base=='bpy.types.Spline.bezier_points':return 'bpy.types.BezierSplinePoint'
-        if base.startswith(('[list]','[dict]')):return base[6:]
+        if base.startswith(('[list]','[dict]','[iter]')):return base[6:]
         if base.startswith('[]'):return base[2:]
         if base in ('bpy.data.objects','bpy.context.scene.objects','bpy.context.selected_objects','bpy.types.Collection.objects','bpy.context.view_layer.objects','bpy.types.Object.children'):return 'bpy.types.Object'
         for kind,cls in [('curves','Curve'),('meshes','Mesh'),('materials','Material'),('cameras','Camera'),('lights','Light'),('collections','Collection'),('images','Image'),('textures','CloudsTexture'),('worlds','World')]:
@@ -139,6 +165,11 @@ def _check_tree(tree,filename,functions):
         if base.startswith('mathutils.Vector') or base.endswith(('.location','.rotation_euler','.scale','.co','.normal','.dimensions','.uv','.handle_left','.handle_right')):return '#number'
         return base
     def result(base):
+        if base.startswith('@itermethod:'):
+            _,method,element=base.split(':',2)
+            if method in ('pop','__next__','send','throw'):return element
+            if method in ('copy','union','intersection','difference','symmetric_difference','__iter__'):return '[iter]'+element
+            return None
         if base.startswith('@dictmethod:'):
             _,method,element=base.split(':',2)
             if method in ('get','pop','setdefault'):return element
@@ -188,7 +219,7 @@ def _check_tree(tree,filename,functions):
         # container marker rather than growing the fixed point forever. API-bearing
         # element paths remain precise at every depth.
         leaf=element
-        while leaf.startswith(('[list]','[dict]','[]')):
+        while leaf.startswith(('[list]','[dict]','[iter]','[]')):
             leaf=leaf[2:] if leaf.startswith('[]') else leaf[6:]
         return prefix+('#python' if leaf=='#python' else element)
     def resolve(node):
@@ -216,6 +247,7 @@ def _check_tree(tree,filename,functions):
             if isinstance(node.func,ast.Name):
                 if node.func.id in functions:return returns.get(node.func.id,set())
                 if node.func.id in ('list','sorted'):return {'[list]'+item(p) for p in resolve(node.args[0])} if node.args else {'[list]#python'}
+                if node.func.id=='next' and node.args:return {item(p) for p in resolve(node.args[0])}|(resolve(node.args[1]) if len(node.args)>1 else set())
                 if node.func.id in ('tuple','set','iter','reversed') and node.args:return resolve(node.args[0])
                 if node.func.id=='getattr' and len(node.args)>1 and isinstance(node.args[1],ast.Constant) and isinstance(node.args[1].value,str):return {member(p,node.args[1].value) for p in resolve(node.args[0])}
             paths=resolve(node.func)
@@ -225,6 +257,8 @@ def _check_tree(tree,filename,functions):
                 if isinstance(kind,ast.Constant) and kind.value in ('WEIGHTED_NORMAL','SOLIDIFY','WELD','BOOLEAN','DISPLACE'):return {'bpy.types.'+{'WEIGHTED_NORMAL':'WeightedNormalModifier','SOLIDIFY':'SolidifyModifier','WELD':'WeldModifier','BOOLEAN':'BooleanModifier','DISPLACE':'DisplaceModifier'}[kind.value]}
             return {r for p in paths if (r:=result(p))}
         if isinstance(node,ast.ListComp):return {container_path('[list]',p) for p in resolve(node.elt)} or {'[list]#python'}
+        if isinstance(node,(ast.SetComp,ast.GeneratorExp)):return {container_path('[iter]',p) for p in resolve(node.elt)} or {'[iter]#python'}
+        if isinstance(node,ast.DictComp):return {container_path('[dict]',p) for p in resolve(node.value)} or {'[dict]#python'}
         if isinstance(node,(ast.SetComp,ast.GeneratorExp)):return {'[]'+p for p in resolve(node.elt)}
         return set()
     def bind(target,paths):
@@ -298,6 +332,8 @@ def _check_tree(tree,filename,functions):
         if repr((env,returns))==before:break
     else:error('<API inference did not converge>',tree.body[0],True)
     def supported(path):
+        # A Python iterable's own methods are not Blender API members.
+        if path.startswith('@itermethod:'):return True
         if path.startswith('@dictmethod:'):
             return path.split(':',2)[1] in ('get','pop','setdefault','copy','values','keys','items','clear','update','popitem')
         if path.startswith('@listmethod:'):

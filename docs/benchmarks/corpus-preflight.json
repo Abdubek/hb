@@ -1,8 +1,8 @@
 {
   "kind": "Static checker acceptance only; no runtime, geometry, render or Blender error-parity claim",
-  "measured_at_utc": "2026-10-29T05:05:38Z",
+  "measured_at_utc": "2026-10-31T05:25:30Z",
   "hb_version": "0.18.0",
-  "binary_sha256": "d532e1e3e2e2781ac6feb3fa3dbf43f49bd51db1db62951a19db52bc2c59fb28",
+  "binary_sha256": "44ce17136c887b1113d781fbf0763dcc70fc668f293570a00032aa8b1175400b",
   "corpus_index_sha256": "26164577251d57e643a48dc1c8e52c8b15c13ea23388492f49cb417b73299d7a",
   "scripts": 400,
   "preflight_accepted": 11,
@@ -779,7 +779,7 @@
       "file": "claude-126.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 441
+      "errors": 19
     },
     {
       "file": "claude-127.py",
@@ -833,7 +833,7 @@
       "file": "claude-135.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 14
+      "errors": 12
     },
     {
       "file": "claude-136.py",
@@ -857,7 +857,7 @@
       "file": "claude-139.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 75
+      "errors": 74
     },
     {
       "file": "claude-140.py",
@@ -2081,7 +2081,7 @@
       "file": "stackexchange-221496-block-1.py",
       "origin": "blender-stackexchange",
       "accepted": false,
-      "errors": 6
+      "errors": 5
     },
     {
       "file": "stackexchange-221511-block-1.py",
@@ -2279,7 +2279,7 @@
       "file": "invalid/stackexchange-39675-block-1.py",
       "origin": "blender-stackexchange",
       "accepted": false,
-      "errors": 141
+      "errors": 14
     },
     {
       "file": "invalid/stackexchange-40979-block-1.py",
