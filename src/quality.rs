@@ -452,13 +452,8 @@ pub fn command(command: &str, mut args: Vec<String>, path: &Path) -> Result<Valu
     protect(&out, path, &protected)?;
     protect(&report, path, &protected)?;
     protect(&out, path, &[&report])?;
-    if out
-        .extension()
-        .is_some_and(|e| e.eq_ignore_ascii_case("obj"))
-    {
-        protect(&out.with_extension("mtl"), path, &protected)?;
-    }
-    let ws = export(&r.state.scene, &out, path)?;
+    protected.push(&report);
+    let ws = export(&r.state.scene, &out, path, &protected)?;
     let delivery = json!({"ok":true,"revision":r.id,"output":out,"output_sha256":hash(&fs::read(&out).map_err(ioerr)?),"review":review,"image":image,"assessment":assessment_value,"diagnostics":diagnostics,"warnings":ws,"scope":"Review freshness and explicit agent assessment verified; artistic quality is not mechanically proven."});
     atomic_write(
         &report,

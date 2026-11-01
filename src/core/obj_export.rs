@@ -27,7 +27,31 @@ fn name(value: &str) -> String {
         .collect()
 }
 
+pub struct Prepared {
+    outputs: Vec<(PathBuf, Vec<u8>)>,
+    warnings: Vec<String>,
+}
+
+impl Prepared {
+    pub fn paths(&self) -> impl Iterator<Item = &Path> {
+        self.outputs.iter().map(|(path, _)| path.as_path())
+    }
+
+    pub fn write(self) -> Result<Vec<String>, String> {
+        for (path, bytes) in self.outputs {
+            crate::cli::atomic_write(&path, &bytes)
+                .map_err(|e| format!("{}: {e}", path.display()))?;
+        }
+        Ok(self.warnings)
+    }
+}
+
 pub fn export(source: &Scene, path: &Path, options: &Value) -> Result<Vec<String>, String> {
+    prepare(source, path, options)?.write()
+}
+
+/// Build every companion before callers validate destinations and write any file.
+pub fn prepare(source: &Scene, path: &Path, options: &Value) -> Result<Prepared, String> {
     let mut scene = source.clone();
     if options["apply"] == true {
         if let Some(evaluated) = super::modeling::for_export(&scene)? {
@@ -242,8 +266,5 @@ pub fn export(source: &Scene, path: &Path, options: &Value) -> Result<Vec<String
         outputs.push((mtl_path, mtl.into_bytes()));
     }
     outputs.push((path, obj.into_bytes()));
-    for (path, bytes) in outputs {
-        crate::cli::atomic_write(&path, &bytes).map_err(|e| format!("{}: {e}", path.display()))?;
-    }
-    Ok(warnings)
+    Ok(Prepared { outputs, warnings })
 }

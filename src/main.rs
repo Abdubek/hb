@@ -240,11 +240,13 @@ fn required(path: &Path) -> Result<Revision, Value> {
         )
     })
 }
-fn export(s: &Scene, out: &Path, scene_path: &Path) -> Result<Vec<String>, Value> {
-    quality::protect(out, scene_path, &[])?;
-    if out.extension().is_some_and(|e| e == "obj") {
-        quality::protect(&out.with_extension("mtl"), scene_path, &[])?;
-    }
+fn export(
+    s: &Scene,
+    out: &Path,
+    scene_path: &Path,
+    protected: &[&Path],
+) -> Result<Vec<String>, Value> {
+    quality::protect(out, scene_path, protected)?;
     match out.extension().and_then(|x| x.to_str()) {
         Some("glb") => {
             let (bytes, warnings) = core::io::glb(s).map_err(|e| err("EXPORT_ERROR", &e))?;
@@ -256,12 +258,18 @@ fn export(s: &Scene, out: &Path, scene_path: &Path) -> Result<Vec<String>, Value
             atomic_write(out, &bytes)?;
             Ok(warnings)
         }
-        Some("obj") => core::obj_export::export(
-            s,
-            out,
-            &json!({"apply":true,"matrix":core::math::flat(core::math::IDENTITY)}),
-        )
-        .map_err(|e| err("EXPORT_ERROR", &e)),
+        Some("obj") => {
+            let prepared = core::obj_export::prepare(
+                s,
+                out,
+                &json!({"apply":true,"matrix":core::math::flat(core::math::IDENTITY)}),
+            )
+            .map_err(|e| err("EXPORT_ERROR", &e))?;
+            for path in prepared.paths() {
+                quality::protect(path, scene_path, protected)?;
+            }
+            prepared.write().map_err(|e| err("EXPORT_ERROR", &e))
+        }
         Some("gltf") => {
             let (mut doc, bin, warnings) =
                 core::io::gltf(s).map_err(|e| err("EXPORT_ERROR", &e))?;
@@ -366,7 +374,7 @@ fn dispatch(mut args: Vec<String>) -> Result<Value, Value> {
             }
             if let Some(out) = &out {
                 ws.extend(
-                    export(&after, Path::new(out), &path)?
+                    export(&after, Path::new(out), &path, &[])?
                         .into_iter()
                         .map(Value::String),
                 );
@@ -430,7 +438,7 @@ fn dispatch(mut args: Vec<String>) -> Result<Value, Value> {
             }
             quality::protect(Path::new(&args[0]), &path, &[])?;
             let r = required(&path)?;
-            let ws = export(&r.state.scene, Path::new(&args[0]), &path)?;
+            let ws = export(&r.state.scene, Path::new(&args[0]), &path, &[])?;
             Ok(json!({"ok":true,"output":args[0],"revision":r.id,"warnings":ws}))
         }
         "query" => {

@@ -149,8 +149,10 @@ in that directory. Runs edit the existing scene; `undo`, `checkout`, `log`, and
 
 The explicit output paths of `render`, `export`, and `run --out` cannot target
 the scene head or anything inside its revision directory, including through
-absolute paths, `..`, or symlink aliases. OBJ's companion MTL path is checked too.
-A conflicting destination returns `USAGE` before those outputs are written.
+absolute paths, `..`, or symlink aliases. OBJ's companion MTL and generated PNG
+texture paths are all checked before any export file is written. `deliver` also
+protects its review, image, assessment, and delivery report from OBJ companions.
+A conflicting destination returns `USAGE` and leaves existing files unchanged.
 
 Import GLB/glTF, OBJ, STL, or PLY; export GLB/glTF, OBJ, or USDZ. Renders are CPU
 previews. See the [quickstart](docs/QUICKSTART.md) and
