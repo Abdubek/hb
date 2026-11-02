@@ -1852,6 +1852,16 @@ fn golden_mathutils_lane2() {
     golden("compat/golden/m3_mathutils.py");
 }
 
+#[doc = "hb:test=compat/golden/m3_matrix_normalize.py"]
+#[doc = "hb:symbol=mathutils.Matrix.normalize"]
+#[doc = "In-place column normalization of 3x3/4x4 matrices with finite components up to magnitude 1e6; returns None. 4x4 translation is untouched; the bottom row follows Blender's column scale. Zero/tiny columns, shear and reflection tested against 40 Blender 5.2.3 cases at 2e-6 tolerance. Other dimensions raise ValueError."]
+#[doc = "hb:symbol=mathutils.Matrix.normalized"]
+#[doc = "Independent normalized copy; same dimensions, finite-component limits and column semantics as normalize(), preserving the source matrix."]
+#[test]
+fn golden_matrix_normalize() {
+    golden("compat/golden/m3_matrix_normalize.py");
+}
+
 #[doc = "hb:test=compat/golden/m3_texture_assets.py"]
 #[doc = "hb:symbol=bpy.types.ShaderNode.extension"]
 #[doc = "Image Texture REPEAT, EXTEND (clamp) and MIRROR; preserved in glTF samplers. CLIP excluded. Advanced texture bindings are asset-only: fixed preview/OBJ/USDZ reject them with a glTF export suggestion."]

@@ -185,6 +185,19 @@ class Matrix(Strict):
         raise TypeError('Matrix multiplication expects Matrix or Vector')
     def _square_required(self):
         if len(self)!=len(self._rows[0]):raise ValueError('This Matrix operation requires a square matrix')
+    def normalize(self):
+        self._square_required()
+        if len(self) not in (3,4):raise ValueError('Matrix normalization requires a 3x3 or 4x4 matrix')
+        if any(not math.isfinite(x) or abs(x)>1e6 for row in self._rows for x in row):raise UnsupportedError(self._path+'.normalize','Use finite matrix components with magnitude at most 1e6.')
+        for column in range(3):
+            squared=0.
+            for row in self._rows[:3]:squared=f32(squared+f32(row[column]*row[column]))
+            if squared>1e-35:
+                factor=f32(1/f32(math.sqrt(squared)))
+                for row in self._rows:row[column]=f32(row[column]*factor)
+            else:
+                for row in self._rows[:3]:row[column]=0.
+    def normalized(self):m=self.copy();m.normalize();return m
     def transposed(self):self._square_required();return Matrix(zip(*self._rows))
     def transpose(self):self._rows=self.transposed()._rows
     def determinant(self):

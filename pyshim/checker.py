@@ -201,7 +201,7 @@ def _check_tree(tree,filename,functions):
         if base.endswith('.to_track_quat') or base.endswith('.to_quaternion'):return 'mathutils.Quaternion'
         if base.endswith('.to_euler'):return 'mathutils.Euler'
         if base.endswith('.to_matrix'):return 'mathutils.Matrix'
-        if base.startswith('mathutils.Matrix.') and base.rsplit('.',1)[1] in ('Identity','Translation','Rotation','Scale','Diagonal','inverted','transposed','to_3x3','to_4x4'):return 'mathutils.Matrix'
+        if base.startswith('mathutils.Matrix.') and base.rsplit('.',1)[1] in ('Identity','Translation','Rotation','Scale','Diagonal','inverted','normalized','transposed','to_3x3','to_4x4'):return 'mathutils.Matrix'
         if base.startswith('mathutils.Quaternion.') and base.rsplit('.',1)[1] in ('normalized','conjugated','inverted','slerp'):return 'mathutils.Quaternion'
         for kind,cls in [('curves','Curve'),('objects','Object'),('meshes','Mesh'),('materials','Material'),('cameras','Camera'),('lights','Light'),('collections','Collection'),('images','Image'),('textures','CloudsTexture'),('worlds','World')]:
             if base in ('bpy.data.'+kind+'.new','bpy.data.'+kind+'.get','bpy.data.'+kind+'.load'):return 'bpy.types.'+cls
@@ -241,7 +241,14 @@ def _check_tree(tree,filename,functions):
         if isinstance(node,ast.Set):return {'[]'+p for e in node.elts for p in resolve(e)}
         if isinstance(node,ast.Dict):return {container_path('[dict]',p) for e in node.values if e for p in resolve(e)} or {'[dict]#python'}
         if isinstance(node,ast.IfExp):return resolve(node.body)|resolve(node.orelse)
-        if isinstance(node,ast.BinOp):return resolve(node.left)|resolve(node.right)
+        if isinstance(node,ast.BinOp):
+            left,right=resolve(node.left),resolve(node.right)
+            # A normalized matrix applied to a known vector produces a vector,
+            # not a union retaining the matrix operand's methods/properties.
+            if isinstance(node.op,ast.MatMult) and left and right:
+                return {p for a in left for b in right for p in
+                        ({norm(b)} if norm(a)=='mathutils.Matrix' and norm(b) in ('mathutils.Matrix','mathutils.Vector') else {a,b})}
+            return left|right
         if isinstance(node,ast.UnaryOp):return resolve(node.operand)
         if isinstance(node,ast.Call):
             if isinstance(node.func,ast.Name):

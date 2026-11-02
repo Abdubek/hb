@@ -2386,6 +2386,14 @@
       "description": "Inverse with optional fallback",
       "test": "compat/golden/m2_mathutils.py"
     },
+    "mathutils.Matrix.normalize": {
+      "description": "In-place column normalization of 3x3/4x4 matrices with finite components up to magnitude 1e6; returns None. 4x4 translation is untouched; the bottom row follows Blender's column scale. Zero/tiny columns, shear and reflection tested against 40 Blender 5.2.3 cases at 2e-6 tolerance. Other dimensions raise ValueError.",
+      "test": "compat/golden/m3_matrix_normalize.py"
+    },
+    "mathutils.Matrix.normalized": {
+      "description": "Independent normalized copy; same dimensions, finite-component limits and column semantics as normalize(), preserving the source matrix.",
+      "test": "compat/golden/m3_matrix_normalize.py"
+    },
     "mathutils.Matrix.to_3x3": {
       "description": "Resize to 3x3",
       "test": "compat/golden/m2_mathutils.py"

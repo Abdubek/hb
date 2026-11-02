@@ -456,7 +456,20 @@ for the composed-bevel tolerance.
 
 Matrix supports square 2x2/3x3/4x4 values, row mutation, matrix/vector products,
 identity/translation/rotation/scaling/diagonal construction, inverse, transpose,
-determinant, resizing and rotation conversions. Euler supports six orders;
+determinant, resizing and rotation conversions. `Matrix.normalize()` mutates a
+3x3/4x4 matrix and returns None; `normalized()` returns an independent copy.
+Both follow [Blender's column normalization](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Matrix.normalize),
+leaving the fourth column unchanged. They use the first three components for
+column length and apply the scale to the fourth row too; a zero/tiny column's
+first three components become zero while its fourth component is retained.
+Shear is not orthogonalized and reflections remain. HB accepts finite components
+up to magnitude 1e6 and rejects other dimensions with ValueError; Blender 5.2's
+SystemError for 2x2 is not reproduced. Forty captured Blender 5.2.3 cases cover
+both forms at absolute/relative tolerance 2e-6, including non-affine bottom rows.
+Regenerate with `compat/matrix_normalization_reference.py` inside Blender.
+The checker retains Matrix results from `normalized()` and known Matrix/Matrix
+products, and Vector results from known Matrix/Vector products.
+Euler supports six orders;
 object Euler views follow `Object.rotation_mode` (XYZ while quaternion mode is
 active). Changing Euler order keeps the stored angles; crossing the Euler/quaternion
 boundary converts orientation and normalizes the quaternion on exit. Set the object
