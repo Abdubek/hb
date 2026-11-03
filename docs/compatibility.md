@@ -25,6 +25,17 @@ feed Base Color, Alpha, or a tangent-space Normal Map. Principled scalar/color
 inputs support metallic, roughness, emission and alpha. Other nodes/connections
 fail. Connected texture nodes must have an assigned image before preview/export. Cube UVs and explicit UV loops are supported; automatic unwrapping is not.
 
+## Embedded Python text I/O
+
+HB enables [Python UTF-8 Mode](https://docs.python.org/3.13/library/os.html#python-utf-8-mode)
+in its isolated interpreter. Text files opened without an explicit encoding,
+`io.TextIOWrapper`, filesystem names and standard streams use UTF-8 regardless
+of the host locale or Python environment variables. Explicit encodings such as
+`encoding='latin-1'` still apply; binary I/O is unchanged. Default text reads
+reject invalid UTF-8 bytes. Script `print()` output goes to stderr so stdout
+remains the CLI/MCP/JSON-RPC protocol stream. This applies to repeated interpreter
+initializations in one server process too.
+
 ## Static checker
 
 `hb check` parses without executing. Lexical function bindings are separated,

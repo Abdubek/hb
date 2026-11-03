@@ -147,6 +147,9 @@ Keep `cube.hb` and `cube.hb.revisions/` together: the head file points to snapsh
 in that directory. Runs edit the existing scene; `undo`, `checkout`, `log`, and
 `diff` provide revision history.
 
+Embedded Python defaults to UTF-8 for text files and streams, including under
+ASCII locales. Specify `encoding=` when reading or writing another encoding.
+
 The explicit output paths of `render`, `export`, and `run --out` cannot target
 the scene head or anything inside its revision directory, including through
 absolute paths, `..`, or symlink aliases. OBJ's companion MTL and generated PNG

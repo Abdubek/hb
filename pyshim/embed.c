@@ -33,6 +33,12 @@ static struct PyModuleDef module = {PyModuleDef_HEAD_INIT, "_hb", NULL, -1, meth
 static PyObject *init_hb(void) { return PyModule_Create(&module); }
 int hb_python_init(void) {
     hb_set_frozen();
+    /* Keep text I/O deterministic without changing the host process locale. */
+    PyPreConfig preconfig;
+    PyPreConfig_InitIsolatedConfig(&preconfig);
+    preconfig.utf8_mode = 1;
+    PyStatus status = Py_PreInitialize(&preconfig);
+    if (PyStatus_Exception(status)) { fprintf(stderr, "%s\n", status.err_msg); return -1; }
     static int registered = 0;
     if (!registered) {
         if (PyImport_AppendInittab("_hb", init_hb) == -1) return -1;
@@ -46,7 +52,7 @@ int hb_python_init(void) {
     config.install_signal_handlers = 0;
     config.use_hash_seed = 1;
     config.hash_seed = 0;
-    PyStatus status = Py_InitializeFromConfig(&config);
+    status = Py_InitializeFromConfig(&config);
     PyConfig_Clear(&config);
     if (PyStatus_Exception(status)) { fprintf(stderr, "%s\n", status.err_msg); return -1; }
     return 0;
