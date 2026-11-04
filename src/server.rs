@@ -1,4 +1,46 @@
 use super::*;
+use std::sync::atomic::{AtomicU64, Ordering};
+
+struct TempScript {
+    path: PathBuf,
+}
+impl TempScript {
+    fn create(code: &str) -> Result<Self, Value> {
+        static NEXT: AtomicU64 = AtomicU64::new(0);
+        for _ in 0..128 {
+            let path = std::env::temp_dir().join(format!(
+                "hb-rpc-{}-{}.py",
+                std::process::id(),
+                NEXT.fetch_add(1, Ordering::Relaxed)
+            ));
+            let mut options = fs::OpenOptions::new();
+            options.write(true).create_new(true);
+            #[cfg(unix)]
+            {
+                use std::os::unix::fs::OpenOptionsExt;
+                options.mode(0o600);
+            }
+            match options.open(&path) {
+                Ok(mut file) => {
+                    let script = Self { path };
+                    let result = file.write_all(code.as_bytes()).map_err(ioerr);
+                    drop(file);
+                    result?;
+                    return Ok(script);
+                }
+                Err(e) if e.kind() == std::io::ErrorKind::AlreadyExists => continue,
+                Err(e) => return Err(ioerr(e)),
+            }
+        }
+        Err(err("IO_ERROR", "Could not reserve a temporary script file"))
+    }
+}
+impl Drop for TempScript {
+    fn drop(&mut self) {
+        let _ = fs::remove_file(&self.path);
+    }
+}
+
 fn schema() -> Value {
     json!({"type":"object","properties":{"args":{"type":"array","items":{"type":"string"},"description":"Arguments exactly as for hb <operation>, including flags. Do not include the command itself."},"scene":{"type":"string","description":"Scene file path; defaults to scene.hb"},"code":{"type":"string","description":"Python source for run/check, instead of a file argument"}},"additionalProperties":false})
 }
@@ -49,19 +91,16 @@ fn operation(command: &str, params: &Value) -> Result<Value, Value> {
         if !["run", "check"].contains(&command) {
             return Err(err("INVALID_PARAMS", "code is only valid for run/check"));
         }
-        let path = std::env::temp_dir().join(format!("hb-rpc-{}.py", std::process::id()));
-        atomic_write(&path, code.as_bytes())?;
-        args.insert(0, path.to_string_lossy().into_owned());
-        script = Some(path);
+        let temporary = TempScript::create(code)?;
+        args.insert(0, temporary.path.to_string_lossy().into_owned());
+        script = Some(temporary);
     }
     let result = {
         let mut all = vec![command.into()];
         all.extend(args);
         dispatch(all)
     };
-    if let Some(path) = script {
-        let _ = fs::remove_file(path);
-    }
+    drop(script);
     result
 }
 

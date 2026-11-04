@@ -182,6 +182,10 @@ without executing them. It returns JSON-RPC error `-32600` with a null ID, then
 continues with the next line. This limits request buffering, not script memory
 or execution time.
 
+Inline `code` requests reserve a separate temporary script for each check/run,
+with owner-only permissions on Unix. Existing files are never reused. HB removes
+each script when the operation returns, including precheck and execution errors.
+
 ## Development
 
 ```sh

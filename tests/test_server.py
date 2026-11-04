@@ -1,6 +1,7 @@
 """Exercise HB's stdio protocols through the packaged executable."""
 import base64
 import json
+import os
 from pathlib import Path
 import subprocess
 import tempfile
@@ -22,6 +23,77 @@ class Server(unittest.TestCase):
         )
         self.assertEqual(process.returncode, 0, process.stderr)
         return [json.loads(line) for line in process.stdout.splitlines()]
+
+    def test_inline_code_preserves_existing_temp_files_and_cleans_up(self):
+        for mode in ('--jsonrpc', '--mcp'):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                temporary = root / 'temporary'
+                temporary.mkdir()
+                process = subprocess.Popen(
+                    [str(HB), 'serve', mode], cwd=root,
+                    env={**os.environ, 'TMPDIR': str(temporary)},
+                    stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                    text=True,
+                )
+                # Preserve both the legacy name and an occupied new-style candidate.
+                legacy = temporary / f'hb-rpc-{process.pid}.py'
+                collision = temporary / f'hb-rpc-{process.pid}-0.py'
+                protected = {legacy: b'existing user source\n', collision: b'occupied candidate\n'}
+                for path, data in protected.items():
+                    path.write_bytes(data)
+                link = temporary / f'hb-rpc-{process.pid}-1.py'
+                link.symlink_to(legacy)
+                protected[link] = protected[legacy]
+                source = '''import bpy,json,os
+bpy.ops.mesh.primitive_cube_add()
+json.dump({'path':__file__,'mode':os.stat(__file__).st_mode & 0o777},open('observed.json','w'))
+'''
+                operations = [('run', {'code': source}),
+                              ('run', {'code': 'import bpy\nbpy.ops.wm.save_as_mainfile(filepath="x.blend")'}),
+                              ('run', {'code': 'raise RuntimeError("intentional failure")'}),
+                              ('query', {'args': ['stats']})]
+                messages = []
+                if mode == '--mcp':
+                    messages = [request(0, 'initialize', {'protocolVersion': '2025-11-25',
+                                                         'clientInfo': {}, 'capabilities': {}}),
+                                {'jsonrpc': '2.0', 'method': 'notifications/initialized'}]
+                for identifier, (command, arguments) in enumerate(operations, 1):
+                    if mode == '--mcp':
+                        messages.append(request(identifier, 'tools/call', {
+                            'name': 'hb_' + command, 'arguments': arguments}))
+                    else:
+                        messages.append(request(identifier, command, arguments))
+                try:
+                    stdout, stderr = process.communicate(
+                        ''.join(json.dumps(m) + '\n' for m in messages), timeout=30)
+                finally:
+                    if process.poll() is None:
+                        process.kill()
+                        process.communicate()
+                self.assertEqual(process.returncode, 0, stderr)
+                for path, data in protected.items():
+                    self.assertTrue(path.exists(), f'Existing file removed: {path}')
+                    self.assertEqual(path.read_bytes(), data)
+                self.assertTrue(link.is_symlink())
+                self.assertEqual(link.readlink(), legacy)
+                self.assertEqual(set(temporary.iterdir()), set(protected))
+                replies = [json.loads(line) for line in stdout.splitlines()]
+                if mode == '--mcp':
+                    replies = [reply['result']['structuredContent'] for reply in replies[1:]]
+                else:
+                    replies = [reply['result'] for reply in replies]
+                self.assertTrue(replies[0]['ok'])
+                rejected = replies[1]
+                code = rejected['errors'][0]['code'] if mode == '--mcp' else rejected['error']['code']
+                self.assertEqual(code, 'UNSUPPORTED_API')
+                self.assertEqual(replies[2]['error']['code'], 'SCRIPT_ERROR')
+                self.assertEqual(replies[-1]['result']['objects'], 1)
+                observed = json.loads((root / 'observed.json').read_text())
+                self.assertNotIn(Path(observed['path']), protected)
+                self.assertEqual(Path(observed['path']).parent.resolve(), temporary.resolve())
+                if os.name == 'posix':
+                    self.assertEqual(observed['mode'], 0o600)
 
     def test_jsonrpc_scene_history_and_batch(self):
         with tempfile.TemporaryDirectory() as directory:
