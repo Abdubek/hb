@@ -1862,6 +1862,14 @@ fn golden_matrix_normalize() {
     golden("compat/golden/m3_matrix_normalize.py");
 }
 
+#[doc = "hb:test=compat/golden/m3_vector_rotation_difference.py"]
+#[doc = "hb:symbol=mathutils.Vector.rotation_difference"]
+#[doc = "rotation_difference(other, /): Quaternion aligning XYZ directions of 3D/4D vectors; other is Vector, tuple or list. W is ignored; all components must be finite and at most 1e6 in magnitude. Inputs and views remain unchanged. Blender's parallel, antiparallel and zero/tiny-vector fallbacks are captured in 128 cases; full quaternion/rotation matrices use 2e-6 tolerance. 2D inputs raise ValueError."]
+#[test]
+fn golden_vector_rotation_difference() {
+    golden("compat/golden/m3_vector_rotation_difference.py");
+}
+
 #[doc = "hb:test=compat/golden/m3_texture_assets.py"]
 #[doc = "hb:symbol=bpy.types.ShaderNode.extension"]
 #[doc = "Image Texture REPEAT, EXTEND (clamp) and MIRROR; preserved in glTF samplers. CLIP excluded. Advanced texture bindings are asset-only: fixed preview/OBJ/USDZ reject them with a glTF export suggestion."]

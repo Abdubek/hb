@@ -2542,6 +2542,10 @@
       "description": "Reflection across a normal",
       "test": "compat/golden/m2_vectors.py"
     },
+    "mathutils.Vector.rotation_difference": {
+      "description": "rotation_difference(other, /): Quaternion aligning XYZ directions of 3D/4D vectors; other is Vector, tuple or list. W is ignored; all components must be finite and at most 1e6 in magnitude. Inputs and views remain unchanged. Blender's parallel, antiparallel and zero/tiny-vector fallbacks are captured in 128 cases; full quaternion/rotation matrices use 2e-6 tolerance. 2D inputs raise ValueError.",
+      "test": "compat/golden/m3_vector_rotation_difference.py"
+    },
     "mathutils.Vector.to_2d": {
       "description": "Copy as 2D",
       "test": "compat/golden/m2_vectors.py"

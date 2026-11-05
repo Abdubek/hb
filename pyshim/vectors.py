@@ -91,6 +91,29 @@ class Vector(Strict):
         self._write_values(values)
     def normalized(self):
         v=self.copy();v.normalize();return v
+    def rotation_difference(self,other,/):
+        if not isinstance(other,(Vector,tuple,list)):raise TypeError('Expected a Vector or coordinate sequence')
+        other=Vector(other)
+        if len(self) not in (3,4) or len(other) not in (3,4):raise ValueError('rotation_difference requires 3D or 4D vectors')
+        if any(not math.isfinite(x) or abs(x)>1e6 for x in (*self,*other)):raise UnsupportedError(self._path+'.rotation_difference','Use finite vector components with magnitude at most 1e6.')
+        a=Vector(tuple(self)[:3]).normalized();b=Vector(tuple(other)[:3]).normalized()
+        axis=a.cross(b)
+        # Float32 epsilon separates real rotations from parallel fallbacks.
+        if axis.length>2**-23:
+            positive=a.dot(b)>=0
+            # The shorter chord avoids acos cancellation near zero and pi.
+            chord=a-b if positive else a+b
+            squared=0.
+            for x in chord:squared=f32(squared+f32(x*x))
+            angle=f32(2*math.asin(min(1.,f32(f32(math.sqrt(squared))*.5))))
+            if not positive:angle=f32(f32(math.pi)-angle)
+            return Quaternion(axis,angle)
+        if a.dot(b)>0:return Quaternion()
+        # Preserve the measured antiparallel roll, including dominant-axis ties.
+        index=max(range(3),key=lambda i:(abs(a[i]),i))
+        values=[a[index]]*3
+        values[index]=-f32(a[(index+1)%3]+a[(index+2)%3])
+        return Quaternion(values,f32(math.pi))
     def negate(self):self._write_values(-self)
     def zero(self):self._write_values([0.]*len(self))
     def lerp(self,other,factor):

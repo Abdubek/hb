@@ -489,6 +489,20 @@ Quaternion supports components/axis-angle,
 normalization, conjugation, inverse, products and matrix/Euler conversion.
 Vector tracking is available. Not all Blender mathutils methods exist.
 
+`Vector.rotation_difference(other)` returns the
+[Blender-style rotation Quaternion](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.rotation_difference)
+from one XYZ direction to another, without mutating either operand. Source
+vectors may be 3D or 4D; `other` may also be a 3/4-component tuple or list. W is
+ignored, with all components restricted to finite values of magnitude at most
+1e6. 2D inputs raise ValueError. Parallel directions return identity; opposite
+directions use a deterministic perpendicular axis matching the captured Blender
+roll. Zero/tiny source directions return identity, while a zero/tiny target uses
+the opposite-direction fallback. Tiny means squared XYZ length at most 1e-35.
+The 128 captured Blender 5.2.3 cases compare whole quaternions (up to global sign)
+and full rotation matrices at 2e-6 tolerance, including near-degenerate directions.
+Regenerate with `compat/vector_rotation_reference.py` inside Blender. The checker
+retains Quaternion results and Vector results of known Quaternion/Vector products.
+
 Standalone Color supports float32 RGB/HSV, arithmetic, freezing and eight
 factory-space conversions. RGB RNA properties remain restricted numeric views;
 custom OCIO working spaces are unsupported. Positive scene-linear components

@@ -198,7 +198,7 @@ def _check_tree(tree,filename,functions):
         if base in ('mathutils.Vector','mathutils.Matrix','mathutils.Euler','mathutils.Quaternion','mathutils.Color'):return base
         if base.startswith('mathutils.Color.from_') or base in ('mathutils.Color.copy','mathutils.Color.freeze'):return 'mathutils.Color'
         if base=='bmesh.new':return 'bmesh.types.BMesh'
-        if base.endswith('.to_track_quat') or base.endswith('.to_quaternion'):return 'mathutils.Quaternion'
+        if base.endswith(('.to_track_quat','.to_quaternion','.rotation_difference')):return 'mathutils.Quaternion'
         if base.endswith('.to_euler'):return 'mathutils.Euler'
         if base.endswith('.to_matrix'):return 'mathutils.Matrix'
         if base.startswith('mathutils.Matrix.') and base.rsplit('.',1)[1] in ('Identity','Translation','Rotation','Scale','Diagonal','inverted','normalized','transposed','to_3x3','to_4x4'):return 'mathutils.Matrix'
@@ -243,11 +243,12 @@ def _check_tree(tree,filename,functions):
         if isinstance(node,ast.IfExp):return resolve(node.body)|resolve(node.orelse)
         if isinstance(node,ast.BinOp):
             left,right=resolve(node.left),resolve(node.right)
-            # A normalized matrix applied to a known vector produces a vector,
-            # not a union retaining the matrix operand's methods/properties.
+            # Known matrix/quaternion products retain their actual result type.
             if isinstance(node.op,ast.MatMult) and left and right:
                 return {p for a in left for b in right for p in
-                        ({norm(b)} if norm(a)=='mathutils.Matrix' and norm(b) in ('mathutils.Matrix','mathutils.Vector') else {a,b})}
+                        ({norm(b)} if (norm(a),norm(b)) in (
+                            ('mathutils.Matrix','mathutils.Matrix'),('mathutils.Matrix','mathutils.Vector'),
+                            ('mathutils.Quaternion','mathutils.Quaternion'),('mathutils.Quaternion','mathutils.Vector')) else {a,b})}
             return left|right
         if isinstance(node,ast.UnaryOp):return resolve(node.operand)
         if isinstance(node,ast.Call):
