@@ -85,11 +85,17 @@ fn manifest() -> &'static crate::manifest::Manifest {
 }
 struct Python;
 impl Python {
-    fn start(seed: u64) -> Result<Self, Value> {
+    fn start(seed: u64, protocol_stdin: bool) -> Result<Self, Value> {
         if unsafe { hb_python_init() } != 0 {
             return Err(err("PYTHON_INIT", "Could not initialize embedded CPython"));
         }
         let p = Python;
+        if protocol_stdin {
+            // Scripts must not block on or consume the server's request stream.
+            py(
+                "import io, sys\nsys.stdin = sys.__stdin__ = io.TextIOWrapper(io.BytesIO(), encoding='utf-8')",
+            )?;
+        }
         py(&format!(
             "SEED = {seed}\nimport json, _hb\nfrom _hb_runtime import check, execute"
         ))?;
@@ -288,7 +294,7 @@ fn export(
         )),
     }
 }
-fn dispatch(mut args: Vec<String>) -> Result<Value, Value> {
+fn dispatch(mut args: Vec<String>, protocol_stdin: bool) -> Result<Value, Value> {
     let start = Instant::now();
     if args.is_empty() {
         args.push("capabilities".into());
@@ -348,7 +354,7 @@ fn dispatch(mut args: Vec<String>) -> Result<Value, Value> {
             *scene().lock().unwrap() = before.clone();
             *result().lock().unwrap() = Value::Null;
             let init = Instant::now();
-            let _python = Python::start(seed)?;
+            let _python = Python::start(seed, protocol_stdin)?;
             let python_ms = init.elapsed().as_secs_f64() * 1000.;
             if command == "check" {
                 py(&format!(
@@ -523,7 +529,7 @@ fn main() {
         return;
     }
     let json_mode = std::env::args().any(|a| a == "--json");
-    let code = cli::emit(dispatch(args), json_mode, human);
+    let code = cli::emit(dispatch(args, false), json_mode, human);
     if code != 0 {
         std::process::exit(code);
     }

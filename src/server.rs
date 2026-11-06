@@ -98,7 +98,7 @@ fn operation(command: &str, params: &Value) -> Result<Value, Value> {
     let result = {
         let mut all = vec![command.into()];
         all.extend(args);
-        dispatch(all)
+        dispatch(all, true)
     };
     drop(script);
     result

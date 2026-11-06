@@ -36,6 +36,15 @@ reject invalid UTF-8 bytes. Script `print()` output goes to stderr so stdout
 remains the CLI/MCP/JSON-RPC protocol stream. This applies to repeated interpreter
 initializations in one server process too.
 
+In `hb serve --mcp` and `hb serve --jsonrpc`, script `sys.stdin` and
+`sys.__stdin__` refer to an empty UTF-8 stream, including its binary `.buffer`.
+Reads return EOF immediately; `input()` raises EOFError and the scene changes
+are not saved. This keeps scripts from waiting for, or consuming, the next
+protocol request. Each request gets a fresh stream. Supply server script data
+through inline code or files. Ordinary `hb run` retains its process stdin, so
+piped script input remains available. This stream separation does not sandbox
+scripts or restrict direct access to OS file descriptors.
+
 ## Static checker
 
 `hb check` parses without executing. Lexical function bindings are separated,
