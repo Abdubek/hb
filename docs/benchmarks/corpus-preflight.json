@@ -1,8 +1,8 @@
 {
   "kind": "Static checker acceptance only; no runtime, geometry, render or Blender error-parity claim",
-  "measured_at_utc": "2026-11-05T05:11:35Z",
+  "measured_at_utc": "2026-11-07T05:10:08Z",
   "hb_version": "0.18.0",
-  "binary_sha256": "6e2ceee5ed7fe3847f71efe3025cb94a236e11d7f88ab194140fa09d04bbbf3d",
+  "binary_sha256": "c4a02373c973dc8b5ceba65d40f679b8fdf59f1b0b20e379ac53f9ead3315d53",
   "corpus_index_sha256": "26164577251d57e643a48dc1c8e52c8b15c13ea23388492f49cb417b73299d7a",
   "scripts": 400,
   "preflight_accepted": 11,
@@ -299,7 +299,7 @@
       "file": "claude-046.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 18
+      "errors": 6
     },
     {
       "file": "claude-047.py",
@@ -317,7 +317,7 @@
       "file": "claude-049.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 16
+      "errors": 10
     },
     {
       "file": "claude-050.py",
@@ -479,7 +479,7 @@
       "file": "claude-076.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 10
+      "errors": 4
     },
     {
       "file": "claude-077.py",
@@ -719,7 +719,7 @@
       "file": "claude-116.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 8
+      "errors": 6
     },
     {
       "file": "claude-117.py",
@@ -761,7 +761,7 @@
       "file": "invalid/claude-123.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 14
+      "errors": 11
     },
     {
       "file": "claude-124.py",
@@ -779,13 +779,13 @@
       "file": "claude-126.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 19
+      "errors": 14
     },
     {
       "file": "claude-127.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 89
+      "errors": 21
     },
     {
       "file": "invalid/claude-128.py",
@@ -797,13 +797,13 @@
       "file": "claude-129.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 10
+      "errors": 8
     },
     {
       "file": "claude-130.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 53
+      "errors": 21
     },
     {
       "file": "claude-131.py",
@@ -869,19 +869,19 @@
       "file": "claude-141.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 54
+      "errors": 51
     },
     {
       "file": "claude-142.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 15
+      "errors": 11
     },
     {
       "file": "claude-143.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 214
+      "errors": 76
     },
     {
       "file": "claude-144.py",
@@ -917,7 +917,7 @@
       "file": "claude-149.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 12
+      "errors": 8
     },
     {
       "file": "claude-150.py",
@@ -1217,7 +1217,7 @@
       "file": "invalid/gpt6-049.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 10
+      "errors": 6
     },
     {
       "file": "invalid/gpt6-050.py",
@@ -1421,7 +1421,7 @@
       "file": "gpt6-083.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 11
+      "errors": 7
     },
     {
       "file": "gpt6-084.py",
@@ -1613,7 +1613,7 @@
       "file": "invalid/gpt6-115.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 13
+      "errors": 3
     },
     {
       "file": "gpt6-116.py",
@@ -1631,7 +1631,7 @@
       "file": "gpt6-118.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 5
+      "errors": 1
     },
     {
       "file": "gpt6-119.py",
@@ -1667,13 +1667,13 @@
       "file": "invalid/gpt6-124.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 5
     },
     {
       "file": "invalid/gpt6-125.py",
       "origin": "gpt6",
       "accepted": false,
-      "errors": 9
+      "errors": 5
     },
     {
       "file": "gpt6-126.py",

@@ -9,6 +9,41 @@ class EngineImprovements(unittest.TestCase):
     hb=test_cli.CLI.hb
     script=test_cli.CLI.script
 
+    def test_checker_accepts_vector_scalars_in_coordinate_helpers(self):
+        source=test_cli.ROOT/'compat/golden/m3_checker_vector_scalars.py'
+        self.hb('check',source)
+        self.hb('run',source,'--out','scalars.glb')
+        self.assertEqual(self.hb('query','stats')['result']['objects'],2)
+        control=self.script('''import bpy
+for offset in (0,5):
+    bpy.ops.mesh.primitive_cube_add(size=5,location=(offset,0,0))
+''')
+        self.hb('run',control,'--scene','control.hb','--out','control.glb')
+        self.assertEqual((self.path/'scalars.glb').read_bytes(),
+                         (self.path/'control.glb').read_bytes())
+
+    def test_checker_preserves_api_errors_around_vector_scalars(self):
+        setup='''import bpy
+from mathutils import Vector
+v=Vector((1,2,3))
+'''
+        for expression,expected in (
+            ('v.unsupported_magic','mathutils.Vector.unsupported_magic'),
+            ('getattr(v,"unsupported_magic")','mathutils.Vector.unsupported_magic'),
+            ('v.xyz.unsupported_magic()','mathutils.Vector.xyz.unsupported_magic'),
+            ('values=(v.x,bpy.context.object)\nvalues[-1].unsupported_magic()',
+             'bpy.types.Object.unsupported_magic'),
+            ('values=[v.length,bpy.context.object]\nvalues[-1].unsupported_magic()',
+             'bpy.types.Object.unsupported_magic'),
+            ('def inspect(values):\n    values=Vector(values)\n    values.unsupported_magic()\ninspect((v.x,v.y,v.z))',
+             'mathutils.Vector.unsupported_magic'),
+            ('def inspect(value):\n    value.inputs\ninspect(v.length_squared)\ninspect(bpy.context.object)',
+             'bpy.types.Object.inputs'),
+        ):
+            with self.subTest(expression=expression):
+                errors=self.hb('check',self.script(setup+expression),ok=False)['errors']
+                self.assertTrue(any(expected in e['message'] for e in errors),errors)
+
     def test_checker_isolates_comprehension_bindings(self):
         source=test_cli.ROOT/'compat/golden/m3_checker_comprehensions.py'
         self.hb('check',source)

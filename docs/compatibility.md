@@ -66,6 +66,13 @@ helpers without the checker treating retained tuple-position metadata as an API
 path. Tuple members carrying `bpy`, `bmesh` or `mathutils` provenance still undergo
 API validation. This does not validate arbitrary Python attribute access.
 
+Known Vector scalar properties (`x`, `y`, `z`, `w`, `length`, `length_squared`)
+carry numeric value types through coordinate tuples, containers and helper calls,
+including literal `getattr` access. For example, a helper can convert
+`(point.x, point.y, point.z)` to Vector and read its length. The original scalar
+member access is still validated. Multi-component swizzles and API objects
+embedded alongside numbers retain their API provenance.
+
 This is still **not a sound verifier for arbitrary Python**. Higher-order calls,
 classes, closures, complex destructuring and dynamically reconstructed objects
 can evade inference; union types can cause false positives. Property-specific

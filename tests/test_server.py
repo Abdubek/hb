@@ -25,6 +25,22 @@ class Server(unittest.TestCase):
         self.assertEqual(process.returncode, 0, process.stderr)
         return [json.loads(line) for line in process.stdout.splitlines()]
 
+    def test_mcp_run_accepts_vector_scalar_coordinate_helpers(self):
+        source=(ROOT/'compat/golden/m3_checker_vector_scalars.py').read_text()
+        with tempfile.TemporaryDirectory() as directory:
+            replies=self.exchange('--mcp',[
+                request(0,'initialize',{'protocolVersion':'2025-11-25',
+                                      'clientInfo':{},'capabilities':{}}),
+                {'jsonrpc':'2.0','method':'notifications/initialized'},
+                request(1,'tools/call',{'name':'hb_run','arguments':{
+                    'code':source,'args':['--out','scalars.glb']}}),
+                request(2,'tools/call',{'name':'hb_query','arguments':{'args':['stats']}}),
+            ],directory)
+            self.assertFalse(replies[1]['result']['isError'])
+            self.assertTrue(replies[1]['result']['structuredContent']['ok'])
+            self.assertEqual(replies[2]['result']['structuredContent']['result']['objects'],2)
+            self.assertEqual((Path(directory)/'scalars.glb').read_bytes()[:4],b'glTF')
+
     def test_scripts_cannot_read_server_transport_stdin(self):
         for mode in ('--jsonrpc', '--mcp'):
             with self.subTest(mode=mode), tempfile.TemporaryDirectory() as directory:

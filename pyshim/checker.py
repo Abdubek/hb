@@ -120,6 +120,11 @@ def _check_tree(tree,filename,functions):
         if base=='bpy.types.Object' and name=='parent':return 'bpy.types.Object'
         if base.endswith('.uv_layers') and name=='active':return 'bpy.types.MeshUVLoopLayer'
         return base+'.'+name
+    def value_type(path):
+        # Scalar components can enter coordinate tuples and helper arguments.
+        # Attribute validation below still checks the original API member path.
+        if path.startswith('mathutils.Vector.') and path.removeprefix('mathutils.Vector.') in ('x','y','z','w','length','length_squared'):return '#number'
+        return path
     def item(base):
         base=norm(base)
         if base.startswith('@tuple:'):return base.split(':',3)[3]
@@ -229,7 +234,7 @@ def _check_tree(tree,filename,functions):
             # union contract instead of inventing Solidify-only restrictions.
             if 'bpy.types.Modifier' in paths:paths=paths-{'bpy.types.SolidifyModifier','bpy.types.WeldModifier','bpy.types.BooleanModifier','bpy.types.DisplaceModifier'}
             return paths
-        if isinstance(node,ast.Attribute):return {member(p,node.attr) for p in resolve(node.value)}
+        if isinstance(node,ast.Attribute):return {value_type(member(p,node.attr)) for p in resolve(node.value)}
         if isinstance(node,ast.Subscript):
             paths=resolve(node.value)
             if isinstance(node.slice,ast.Slice):return paths
@@ -257,7 +262,7 @@ def _check_tree(tree,filename,functions):
                 if node.func.id in ('list','sorted'):return {'[list]'+item(p) for p in resolve(node.args[0])} if node.args else {'[list]#python'}
                 if node.func.id=='next' and node.args:return {item(p) for p in resolve(node.args[0])}|(resolve(node.args[1]) if len(node.args)>1 else set())
                 if node.func.id in ('tuple','set','iter','reversed') and node.args:return resolve(node.args[0])
-                if node.func.id=='getattr' and len(node.args)>1 and isinstance(node.args[1],ast.Constant) and isinstance(node.args[1].value,str):return {member(p,node.args[1].value) for p in resolve(node.args[0])}
+                if node.func.id=='getattr' and len(node.args)>1 and isinstance(node.args[1],ast.Constant) and isinstance(node.args[1].value,str):return {value_type(member(p,node.args[1].value)) for p in resolve(node.args[0])}
             paths=resolve(node.func)
             if any(p.endswith('.attributes.new') for p in paths) and any(kw.arg=='type' and isinstance(kw.value,ast.Constant) and kw.value.value=='INT' for kw in node.keywords):return {'bpy.types.IntAttribute'}
             if 'bpy.types.Object.modifiers.new' in paths:
@@ -380,7 +385,8 @@ def _check_tree(tree,filename,functions):
                 path=node.module+'.'+alias.name
                 if path not in allowed or path.startswith('bpy.types'):error(path,node)
         if isinstance(node,ast.Attribute):
-            for path in resolve(node):
+            for base in resolve(node.value):
+                path=member(base,node.attr)
                 if not supported(path):error(path,node)
         if isinstance(node,(ast.Assign,ast.AnnAssign)):
             for target in node.targets if isinstance(node,ast.Assign) else [node.target]:
