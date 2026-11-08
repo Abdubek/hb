@@ -39,11 +39,18 @@ fn uri(base: &Path, s: &str) -> Result<Vec<u8>, String> {
     }
     let mut decoded = vec![];
     let bytes = s.as_bytes();
+    let hex = |digit: u8| match digit {
+        b'0'..=b'9' => Ok(digit - b'0'),
+        b'a'..=b'f' => Ok(digit - b'a' + 10),
+        b'A'..=b'F' => Ok(digit - b'A' + 10),
+        _ => Err("Invalid URI escape"),
+    };
     let mut i = 0;
     while i < bytes.len() {
-        if bytes[i] == b'%' && i + 2 < bytes.len() {
-            decoded
-                .push(u8::from_str_radix(&s[i + 1..i + 3], 16).map_err(|_| "Invalid URI escape")?);
+        if bytes[i] == b'%' {
+            // Work in bytes: malformed escapes can split a UTF-8 character.
+            let pair = bytes.get(i + 1..i + 3).ok_or("Invalid URI escape")?;
+            decoded.push((hex(pair[0])? << 4) | hex(pair[1])?);
             i += 3;
         } else {
             decoded.push(bytes[i]);
@@ -53,6 +60,7 @@ fn uri(base: &Path, s: &str) -> Result<Vec<u8>, String> {
     let path = String::from_utf8(decoded).map_err(|_| "Invalid URI UTF-8")?;
     read(&base.join(path))
 }
+
 struct Gltf {
     doc: Value,
     buffers: Vec<Vec<u8>>,
@@ -1724,4 +1732,31 @@ pub fn glb(scene: &Scene) -> Result<(Vec<u8>, Vec<String>), String> {
         out.extend(bin);
     }
     Ok((out, warnings))
+}
+
+#[cfg(test)]
+mod uri_tests {
+    use super::uri;
+    use std::path::Path;
+
+    #[test]
+    fn malformed_resource_escapes_return_errors() {
+        for value in [
+            "%模型.bin",
+            "%A模型.bin",
+            "%🙂.png",
+            "%",
+            "%A",
+            "%GG",
+            "%+A",
+        ] {
+            assert_eq!(
+                uri(Path::new("."), value).unwrap_err(),
+                "Invalid URI escape"
+            );
+        }
+        for value in ["%FF", "%80", "%C0%AF", "%ED%A0%80"] {
+            assert_eq!(uri(Path::new("."), value).unwrap_err(), "Invalid URI UTF-8");
+        }
+    }
 }

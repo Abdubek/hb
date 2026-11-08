@@ -346,6 +346,11 @@ files and the scene revision are not a single atomic transaction.
 - GLB and glTF 2.0, external/data-URI buffers, byte strides, sparse and normalized
   accessors, triangles/strips/fans, mesh instances, parent hierarchies, multiple
   material primitives, embedded/external PNG and JPEG, normals, up to eight UV layers and colors.
+  Buffer/image paths support literal Unicode and percent-encoded UTF-8, following
+  [glTF resource paths](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#uris).
+  Each `%` requires two ASCII hex digits; malformed/truncated escapes or decoded
+  invalid UTF-8 return an import error. Rejected imports preserve the saved scene
+  and release its writer lock; MCP/JSON-RPC can process the next request.
 - Base color, metallic/roughness and normal textures; emissive factors and
   KHR_materials_emissive_strength. KHR_lights_punctual and mesh quantization.
 - Repeat wrapping and bilinear preview sampling. Clamp/mirror wrapping, textures referencing nonzero UV
