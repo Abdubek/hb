@@ -1660,6 +1660,14 @@ fn golden_bmesh_adjacency() {
     golden("compat/golden/m3_bmesh_adjacency.py");
 }
 
+#[doc = "hb:test=compat/golden/m3_bmesh_edge_angle.py"]
+#[doc = "hb:symbol=bmesh.types.BMEdge.calc_face_angle"]
+#[doc = "calc_face_angle(fallback, /): unsigned radians from two cached finite face normals; call normal_update after coordinate edits. Omitted fallback raises ValueError for wire, boundary or nonmanifold edges; an explicit fallback (including None) is returned unchanged. Removed/freed edges raise ReferenceError. Captured Blender 5.2.3 results include zero/degenerate normals; angle tolerance 2e-6 radians."]
+#[test]
+fn golden_bmesh_edge_angle() {
+    golden("compat/golden/m3_bmesh_edge_angle.py");
+}
+
 #[doc = "hb:test=compat/golden/m3_curves.py"]
 #[doc = "hb:symbol=bpy.data.curves"]
 #[doc = "Legacy Curve database distinct from meshes; iteration, integer/name lookup, get/new/remove; data persists with evaluated surface cache"]

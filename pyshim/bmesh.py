@@ -56,6 +56,20 @@ class BMEdge(BMElement):
     def verts(self):self._check();return self._verts
     @property
     def link_faces(self):self._check();return _BMAdjacency(self,'faces')
+    def calc_face_angle(self,fallback=_UNSET,/):
+        self._check();faces=list(self.link_faces)
+        if len(faces)!=2:
+            if fallback is not _UNSET:return fallback
+            raise ValueError("BMEdge.calc_face_angle(): edge doesn't use 2 faces")
+        a,b=(face._normal for face in faces)
+        if any(not math.isfinite(x) for x in (*a,*b)):raise UnsupportedError(self._path+'.calc_face_angle','Cached face normals must be finite.')
+        positive=a.dot(b)>=0
+        # Shorter-chord angles preserve precision near both zero and pi.
+        chord=a-b if positive else a+b
+        squared=0.
+        for x in chord:squared=f32(squared+f32(x*x))
+        angle=f32(2*math.asin(min(1.,f32(f32(math.sqrt(squared))*.5))))
+        return angle if positive else f32(f32(math.pi)-angle)
 class BMFace(BMElement):
     _path='bmesh.types.BMFace'
     def __init__(self,bm,verts,edges):

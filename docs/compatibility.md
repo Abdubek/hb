@@ -101,6 +101,16 @@ before execution, but the calling application must still isolate untrusted scrip
   nonmanifold fans. Iteration order follows HB topology storage; Blender's disk/radial
   ordering is not reproduced. HB raises `ReferenceError` when a view's owner is
   removed or its BMesh is freed. Other `BMElemSeq` methods are outside this subset.
+  `BMEdge.calc_face_angle([fallback], /)` returns unsigned radians from two cached,
+  finite face normals, following the measured
+  [Blender edge-angle API](https://docs.blender.org/api/5.2/bmesh.types.html#bmesh.types.BMEdge.calc_face_angle).
+  Call `normal_update()` after coordinate edits; angle queries do not refresh
+  normals. Wire, boundary and nonmanifold edges return an explicitly supplied
+  fallback unchanged (including None), or raise ValueError if omitted. Invalidated
+  edges raise ReferenceError. The 48 captured Blender 5.2.3 cases include angles
+  near zero/pi, reversed winding, rotated/scaled faces and zero/degenerate normals,
+  compared at 2e-6 radians. `compat/bmesh_edge_angle_reference.py` regenerates them.
+  Signed angles and edge smooth flags remain outside this method's contract.
   Editable loop layers support up to eight UV layers and one FLOAT_COLOR layer;
   vertex shape layers support up to 64 relative keys. `Object.shape_key_add`,
   `Mesh.shape_keys.key_blocks` and key point coordinates provide the corresponding

@@ -82,6 +82,10 @@
       "description": "Planar simple faces, up to 2048 corners: BEAUTY/FIXED/ALTERNATE/SHORT_EDGE/LONG_EDGE quads and BEAUTY/EAR_CLIP n-gons; retain original face handle, copy attributes, return edges/faces/face_map/face_map_double; 100,000 faces",
       "test": "compat/golden/m3_bmesh_triangulate.py"
     },
+    "bmesh.types.BMEdge.calc_face_angle": {
+      "description": "calc_face_angle(fallback, /): unsigned radians from two cached finite face normals; call normal_update after coordinate edits. Omitted fallback raises ValueError for wire, boundary or nonmanifold edges; an explicit fallback (including None) is returned unchanged. Removed/freed edges raise ReferenceError. Captured Blender 5.2.3 results include zero/degenerate normals; angle tolerance 2e-6 radians.",
+      "test": "compat/golden/m3_bmesh_edge_angle.py"
+    },
     "bmesh.types.BMEdge.index": {
       "description": "Read or write a valid edge index; normal repair refreshes sequential indices without reordering edges",
       "test": "compat/golden/m2_normals.py"

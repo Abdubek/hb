@@ -203,6 +203,7 @@ def _check_tree(tree,filename,functions):
         if base in ('mathutils.Vector','mathutils.Matrix','mathutils.Euler','mathutils.Quaternion','mathutils.Color'):return base
         if base.startswith('mathutils.Color.from_') or base in ('mathutils.Color.copy','mathutils.Color.freeze'):return 'mathutils.Color'
         if base=='bmesh.new':return 'bmesh.types.BMesh'
+        if base=='bmesh.types.BMEdge.calc_face_angle':return '#number'
         if base.endswith(('.to_track_quat','.to_quaternion','.rotation_difference')):return 'mathutils.Quaternion'
         if base.endswith('.to_euler'):return 'mathutils.Euler'
         if base.endswith('.to_matrix'):return 'mathutils.Matrix'
@@ -268,7 +269,9 @@ def _check_tree(tree,filename,functions):
             if 'bpy.types.Object.modifiers.new' in paths:
                 kind=next((kw.value for kw in node.keywords if kw.arg=='type'),node.args[1] if len(node.args)>1 else None)
                 if isinstance(kind,ast.Constant) and kind.value in ('WEIGHTED_NORMAL','SOLIDIFY','WELD','BOOLEAN','DISPLACE'):return {'bpy.types.'+{'WEIGHTED_NORMAL':'WeightedNormalModifier','SOLIDIFY':'SolidifyModifier','WELD':'WeldModifier','BOOLEAN':'BooleanModifier','DISPLACE':'DisplaceModifier'}[kind.value]}
-            return {r for p in paths if (r:=result(p))}
+            values={r for p in paths if (r:=result(p))}
+            if 'bmesh.types.BMEdge.calc_face_angle' in paths and node.args:values.update(resolve(node.args[0]))
+            return values
         if isinstance(node,ast.ListComp):return {container_path('[list]',p) for p in resolve(node.elt)} or {'[list]#python'}
         if isinstance(node,(ast.SetComp,ast.GeneratorExp)):return {container_path('[iter]',p) for p in resolve(node.elt)} or {'[iter]#python'}
         if isinstance(node,ast.DictComp):return {container_path('[dict]',p) for p in resolve(node.value)} or {'[dict]#python'}
@@ -420,6 +423,9 @@ def _check_tree(tree,filename,functions):
                         if not supported(path):error(path,node)
                     else:error(base+'.<dynamic>',node,True)
             for path in resolve(node.func):
+                if path=='bmesh.types.BMEdge.calc_face_angle':
+                    if len(node.args)>1:error(path+'(at most one fallback argument)',node)
+                    for kw in node.keywords:error(path+'('+str(kw.arg)+'=...)',node,kw.arg is None)
                 if path=='bmesh.ops.recalc_face_normals':
                     if len(node.args)!=1:error(path+'(expected one BMesh positional argument)',node)
                     for kw in node.keywords:
