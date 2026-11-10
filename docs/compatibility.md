@@ -27,6 +27,14 @@ fail. Connected texture nodes must have an assigned image before preview/export.
 
 ## Embedded Python text I/O
 
+`hb check` and `hb run`, including server file arguments and inline `code`,
+parse UTF-8 source bytes with Python's native parser. A single initial UTF-8 BOM
+is accepted, with or without a UTF-8 encoding declaration; conflicting declarations
+are syntax errors, following [Python's source encoding rules](https://docs.python.org/3.13/reference/lexical_analysis.html#encoding-declarations).
+Source files must still be valid UTF-8. Saved revision scripts retain the exact
+source text, including the BOM and line endings. BOM characters inside literals
+or ordinary text data files are preserved.
+
 HB enables [Python UTF-8 Mode](https://docs.python.org/3.13/library/os.html#python-utf-8-mode)
 in its isolated interpreter. Text files opened without an explicit encoding,
 `io.TextIOWrapper`, filesystem names and standard streams use UTF-8 regardless

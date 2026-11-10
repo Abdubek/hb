@@ -358,7 +358,7 @@ fn dispatch(mut args: Vec<String>, protocol_stdin: bool) -> Result<Value, Value>
             let python_ms = init.elapsed().as_secs_f64() * 1000.;
             if command == "check" {
                 py(&format!(
-                    "_hb.request(json.dumps({{'op':'execution_result','value':{{'errors':check({}, {})}}}}))",
+                    "_hb.request(json.dumps({{'op':'execution_result','value':{{'errors':check({}.encode('utf-8'), {})}}}}))",
                     json!(source),
                     json!(filename)
                 ))?;
@@ -367,7 +367,11 @@ fn dispatch(mut args: Vec<String>, protocol_stdin: bool) -> Result<Value, Value>
                     json!({"ok":errors.as_array().unwrap().is_empty(),"errors":errors,"file":filename,"timing":{"python_init_ms":python_ms,"total_ms":start.elapsed().as_secs_f64()*1000.}}),
                 );
             }
-            py(&format!("execute({}, {})", json!(source), json!(filename)))?;
+            py(&format!(
+                "execute({}.encode('utf-8'), {})",
+                json!(source),
+                json!(filename)
+            ))?;
             let outcome = result().lock().unwrap().clone();
             if outcome["ok"] != true {
                 return Ok(outcome);

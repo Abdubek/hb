@@ -1,4 +1,5 @@
 """Embedded Python text I/O must work without the host's locale or Python settings."""
+import codecs
 import json
 import os
 import subprocess
@@ -118,3 +119,111 @@ bpy.ops.mesh.primitive_cube_add()
                     'import bpy\nbpy.context.object.location.x=9\n' + expression), ok=False)
                 self.assertEqual(json.loads(result.stdout)['error']['code'], 'SCRIPT_ERROR')
                 self.assertEqual((self.path / 'scene.hb').read_bytes(), before)
+
+    def test_utf8_bom_scripts_match_plain_scripts_and_preserve_source(self):
+        # Only the source signature is consumed; BOMs inside literals/data stay intact.
+        (self.path / 'data.txt').write_bytes(codecs.BOM_UTF8 + b'data')
+        body = ("import bpy\nassert open('data.txt').read()=='\ufeffdata'\n"
+                "bpy.ops.mesh.primitive_cube_add(location=(1,2,3))\n"
+                "bpy.context.object.name=%r\n" % TEXT)
+        for index, source in enumerate((body, '# coding: utf-8\n' + body,
+                                       ('#!/usr/bin/env python3\n# coding: utf-8\n' + body)
+                                       .replace('\n', '\r\n'))):
+            with self.subTest(index=index):
+                records = []
+                exports = []
+                for kind, prefix in (('plain', b''), ('bom', codecs.BOM_UTF8)):
+                    stem = kind + str(index)
+                    raw = prefix + source.encode('utf-8')
+                    script = self.path / (stem + '.py')
+                    script.write_bytes(raw)
+                    self.assertTrue(json.loads(self.invoke('check', script).stdout)['ok'])
+                    result = json.loads(self.invoke('run', script, '--scene', stem + '.hb',
+                                                    '--out', stem + '.glb').stdout)
+                    self.assertEqual(result['objects']['created'], [TEXT])
+                    record = test_cli.revision(self.path / (stem + '.hb'))
+                    self.assertEqual(record['script'], raw.decode('utf-8'))
+                    records.append(record['scene'])
+                    exports.append((self.path / (stem + '.glb')).read_bytes())
+                self.assertEqual(records[0], records[1])
+                self.assertEqual(exports[0], exports[1])
+
+    def test_invalid_source_boms_and_encodings_leave_scene_unchanged(self):
+        self.invoke('run', self.script('import bpy\nbpy.ops.mesh.primitive_cube_add()'))
+        before = (self.path / 'scene.hb').read_bytes()
+        history = set((self.path / 'scene.hb.revisions').iterdir())
+        cases = [
+            (codecs.BOM_UTF8 + b'import bpy\nif:\n', 2),
+            (codecs.BOM_UTF8 * 2 + b'import bpy\n', 1),
+            (b'import bpy\n' + codecs.BOM_UTF8 + b'pass\n', 2),
+            (codecs.BOM_UTF8 + b'# coding: latin-1\npass\n', None),
+            (codecs.BOM_UTF8 + b'# coding: ascii\npass\n', None),
+        ]
+        for index, (raw, line) in enumerate(cases):
+            with self.subTest(index=index):
+                script = self.path / 'invalid.py'
+                script.write_bytes(raw)
+                checked = json.loads(self.invoke('check', script, ok=False).stdout)
+                executed = json.loads(self.invoke('run', script, ok=False).stdout)
+                self.assertEqual(checked['errors'][0]['code'], 'SYNTAX_ERROR')
+                self.assertEqual(executed['error']['code'], 'SCRIPT_ERROR')
+                if line is not None:
+                    self.assertEqual(checked['errors'][0]['location'], f'{script}:{line}')
+                    self.assertEqual(executed['error']['location'], f'{script}:{line}')
+                else:
+                    self.assertIn('encoding', checked['errors'][0]['message'])
+                    self.assertIn('encoding', executed['error']['message'])
+                self.assertEqual((self.path / 'scene.hb').read_bytes(), before)
+                self.assertEqual(set((self.path / 'scene.hb.revisions').iterdir()), history)
+                self.assertFalse((self.path / 'scene.hb.lock').exists())
+        script.write_bytes(codecs.BOM_UTF8 + b'# invalid UTF-8: \xff\n')
+        for command in ('check', 'run'):
+            response = json.loads(self.invoke(command, script, ok=False).stdout)
+            self.assertEqual(response['error']['code'], 'IO_ERROR')
+        self.assertEqual((self.path / 'scene.hb').read_bytes(), before)
+        self.assertEqual(set((self.path / 'scene.hb.revisions').iterdir()), history)
+
+    def test_servers_accept_utf8_bom_files_and_inline_code(self):
+        source = ('import bpy\nbpy.ops.mesh.primitive_cube_add(location=(1,2,3))\n'
+                  'bpy.context.object.name=%r\n' % TEXT)
+        script = self.path / 'bom.py'
+        script.write_bytes(codecs.BOM_UTF8 + source.encode('utf-8'))
+        self.invoke('run', self.script(source), '--scene', 'control.hb', '--out', 'control.glb')
+        for mode in ('--jsonrpc', '--mcp'):
+            with self.subTest(mode=mode):
+                stem = mode[2:]
+                inline = '\ufeffimport bpy\nbpy.context.object.location.x=4\n'
+                operations = [('check', {'args': [str(script)]}),
+                              ('run', {'args': [str(script), '--out', stem + '.glb']}),
+                              ('check', {'code': inline}), ('run', {'code': inline}),
+                              ('query', {'args': ['stats']})]
+                messages = []
+                if mode == '--mcp':
+                    messages = [request(0, 'initialize', {'protocolVersion': '2025-11-25',
+                                                         'clientInfo': {}, 'capabilities': {}}),
+                                {'jsonrpc': '2.0', 'method': 'notifications/initialized'}]
+                for identifier, (command, arguments) in enumerate(operations, 1):
+                    arguments = {**arguments, 'scene': stem + '.hb'}
+                    if mode == '--mcp':
+                        messages.append(request(identifier, 'tools/call', {
+                            'name': 'hb_' + command, 'arguments': arguments}))
+                    else:
+                        messages.append(request(identifier, command, arguments))
+                output = self.invoke('serve', mode, messages=messages)
+                replies = [json.loads(line) for line in output.stdout.splitlines()]
+                for reply in replies:
+                    self.assertIn('result', reply, reply)
+                if mode == '--mcp':
+                    replies = replies[1:]
+                    for reply in replies:
+                        self.assertFalse(reply['result']['isError'], reply)
+                    replies = [reply['result']['structuredContent'] for reply in replies]
+                else:
+                    replies = [reply['result'] for reply in replies]
+                self.assertTrue(all(reply['ok'] for reply in replies), replies)
+                self.assertEqual(replies[-1]['result']['objects'], 1)
+                record = test_cli.revision(self.path / (stem + '.hb'))
+                self.assertEqual(record['script'], inline)
+                self.assertEqual(record['scene']['objects'][0]['location'], [4, 2, 3])
+                self.assertEqual((self.path / (stem + '.glb')).read_bytes(),
+                                 (self.path / 'control.glb').read_bytes())
