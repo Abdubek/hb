@@ -7,7 +7,7 @@ HB_SYMBOLS = {
 'mathutils.Vector.length':'Euclidean length, assignable', 'mathutils.Vector.length_squared':'Squared Euclidean length',
 'mathutils.Vector.dot':'Dot product of equal-sized vectors', 'mathutils.Vector.cross':'3D cross product',
 'mathutils.Vector.normalize':'Normalize in place; zero vector remains zero', 'mathutils.Vector.normalized':'Normalized copy',
-'mathutils.Vector.lerp':'Linear interpolation', 'mathutils.Vector.angle':'Angle in radians, with optional fallback for zero vectors',
+'mathutils.Vector.lerp':'Linear interpolation',
 'mathutils.Vector.negate':'Negate in place', 'mathutils.Vector.zero':'Set all components to zero',
 'mathutils.Vector.to_2d':'Copy as 2D', 'mathutils.Vector.to_3d':'Copy as 3D', 'mathutils.Vector.to_4d':'Copy as homogeneous 4D',
 'mathutils.Vector.project':'Projection onto a vector', 'mathutils.Vector.reflect':'Reflection across a normal',

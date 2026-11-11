@@ -981,8 +981,6 @@ fn golden_027() {
 #[doc = "hb:test=compat/golden/m2_vectors.py"]
 #[doc = "hb:symbol=mathutils.Vector"]
 #[doc = "Mutable 2D/3D/4D float32 vector; default is zero 3D"]
-#[doc = "hb:symbol=mathutils.Vector.angle"]
-#[doc = "Angle in radians, with optional fallback for zero vectors"]
 #[doc = "hb:symbol=mathutils.Vector.copy"]
 #[doc = "Independent vector copy"]
 #[doc = "hb:symbol=mathutils.Vector.cross"]
@@ -1922,4 +1920,12 @@ fn golden_quality_bevel() {
 #[test]
 fn golden_quality_text() {
     golden("compat/golden/modeling_quality_text.py");
+}
+
+#[doc = "hb:test=compat/golden/m3_vector_angle.py"]
+#[doc = "hb:symbol=mathutils.Vector.angle"]
+#[doc = "angle(other, fallback, /): angle in radians between equal-sized 2D/3D/4D vectors, with optional fallback returned by identity for zero directions. Other may be Vector, tuple or list. W is ignored; finite float32 directions use double normalization and float32 cosine/result. 155 captured Blender 5.2.3 cases use 5e-7 radian tolerance. Inputs and views remain unchanged."]
+#[test]
+fn golden_vector_angle() {
+    golden("compat/golden/m3_vector_angle.py");
 }

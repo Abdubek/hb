@@ -119,14 +119,23 @@ class Vector(Strict):
     def lerp(self,other,factor):
         t=f32(factor);u=f32(1-t)
         return Vector(f32(f32(u*a)+f32(t*b)) for a,b in self._pair(other))
-    def angle(self,other,*fallback):
+    def angle(self,other,/,*fallback):
         if len(fallback)>1:raise TypeError('angle expects one optional fallback')
-        self._pair(other)
-        a=self.normalized();b=other.normalized()
-        if self.length==0 or other.length==0:
+        if not isinstance(other,(Vector,tuple,list)):raise TypeError('Expected a Vector or coordinate sequence')
+        if len(self)!=len(other):raise ValueError('Vector dimensions must match')
+        try:other=Vector(other)
+        except (TypeError,ValueError):raise TypeError('Expected numeric vector components') from None
+        # Angle uses XYZ for 4D inputs. Double intermediates also retain tiny
+        # directions that Vector.normalized() deliberately treats as zero.
+        a=list(self)[:3];b=list(other)[:3]
+        lengths=[math.sqrt(sum(x*x for x in v)) for v in (a,b)]
+        if 0 in lengths:
             if fallback:return fallback[0]
             raise ValueError('Vector.angle: zero length vectors have no valid angle')
-        return f32(math.acos(max(-1.,min(1.,a.dot(b)))))
+        a,b=[[x/length for x in v] for v,length in zip((a,b),lengths)]
+        cosine=f32(sum(x*y for x,y in zip(a,b)))
+        if math.isnan(cosine):return cosine
+        return f32(math.acos(max(-1.,min(1.,cosine))))
     def project(self,other):
         return other*(self.dot(other)/other.length_squared) if other.length_squared else Vector([float('nan')]*len(self))
     def reflect(self,normal):return self-normal.normalized()*f32(2*self.dot(normal.normalized()))

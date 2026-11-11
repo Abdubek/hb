@@ -271,6 +271,7 @@ def _check_tree(tree,filename,functions):
                 if isinstance(kind,ast.Constant) and kind.value in ('WEIGHTED_NORMAL','SOLIDIFY','WELD','BOOLEAN','DISPLACE'):return {'bpy.types.'+{'WEIGHTED_NORMAL':'WeightedNormalModifier','SOLIDIFY':'SolidifyModifier','WELD':'WeldModifier','BOOLEAN':'BooleanModifier','DISPLACE':'DisplaceModifier'}[kind.value]}
             values={r for p in paths if (r:=result(p))}
             if 'bmesh.types.BMEdge.calc_face_angle' in paths and node.args:values.update(resolve(node.args[0]))
+            if 'mathutils.Vector.angle' in paths and len(node.args)>1:values.update(resolve(node.args[1]))
             return values
         if isinstance(node,ast.ListComp):return {container_path('[list]',p) for p in resolve(node.elt)} or {'[list]#python'}
         if isinstance(node,(ast.SetComp,ast.GeneratorExp)):return {container_path('[iter]',p) for p in resolve(node.elt)} or {'[iter]#python'}
@@ -423,6 +424,9 @@ def _check_tree(tree,filename,functions):
                         if not supported(path):error(path,node)
                     else:error(base+'.<dynamic>',node,True)
             for path in resolve(node.func):
+                if path=='mathutils.Vector.angle':
+                    if not 1<=len(node.args)<=2:error(path+'(expected other and optional fallback)',node)
+                    for kw in node.keywords:error(path+'('+str(kw.arg)+'=...)',node,kw.arg is None)
                 if path=='bmesh.types.BMEdge.calc_face_angle':
                     if len(node.args)>1:error(path+'(at most one fallback argument)',node)
                     for kw in node.keywords:error(path+'('+str(kw.arg)+'=...)',node,kw.arg is None)

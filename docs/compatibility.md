@@ -528,6 +528,22 @@ Quaternion supports components/axis-angle,
 normalization, conjugation, inverse, products and matrix/Euler conversion.
 Vector tracking is available. Not all Blender mathutils methods exist.
 
+`Vector.angle(other, fallback, /)` returns the
+[angle in radians](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.angle)
+between equal-sized 2D, 3D or 4D vectors. `other` may be a Vector, tuple or list;
+the fallback is optional and both arguments are positional. For 4D inputs only
+XYZ contributes, including the zero-direction test. Finite float32 directions
+are normalized with double intermediates, then the cosine and result are rounded
+to float32. Tiny nonzero directions remain valid. A zero direction raises
+ValueError unless a fallback is supplied, in which case that exact object is
+returned, including explicit None. Neither operand nor its backing view is
+changed. Nonfinite active components produce NaN; W is ignored even when nonfinite.
+The checker preserves API provenance from the fallback and validates the argument
+count and positional-only calling convention. The 155 captured Blender 5.2.3
+cases cover 2D/3D/4D, coincident/opposite and nearly parallel directions, zeros,
+and component magnitudes from float32 subnormals to 1e38, at absolute tolerance
+5e-7 radians. Regenerate with `compat/vector_angle_reference.py` inside Blender.
+
 `Vector.rotation_difference(other)` returns the
 [Blender-style rotation Quaternion](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.rotation_difference)
 from one XYZ direction to another, without mutating either operand. Source

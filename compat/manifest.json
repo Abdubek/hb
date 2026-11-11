@@ -2499,8 +2499,8 @@
       "test": "compat/golden/m2_vectors.py"
     },
     "mathutils.Vector.angle": {
-      "description": "Angle in radians, with optional fallback for zero vectors",
-      "test": "compat/golden/m2_vectors.py"
+      "description": "angle(other, fallback, /): angle in radians between equal-sized 2D/3D/4D vectors, with optional fallback returned by identity for zero directions. Other may be Vector, tuple or list. W is ignored; finite float32 directions use double normalization and float32 cosine/result. 155 captured Blender 5.2.3 cases use 5e-7 radian tolerance. Inputs and views remain unchanged.",
+      "test": "compat/golden/m3_vector_angle.py"
     },
     "mathutils.Vector.copy": {
       "description": "Independent vector copy",
