@@ -369,6 +369,13 @@ files and the scene revision are not a single atomic transaction.
   Each `%` requires two ASCII hex digits; malformed/truncated escapes or decoded
   invalid UTF-8 return an import error. Rejected imports preserve the saved scene
   and release its writer lock; MCP/JSON-RPC can process the next request.
+  Dense accessor byte ranges, sparse index/value ranges and sparse index bounds
+  are checked before allocating decoded rows. Range arithmetic rejects overflow;
+  strided data only needs the final element's bytes, with no trailing stride padding,
+  following [glTF accessor bounds](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#data-alignment).
+  Packed, strided, normalized, sparse-only zero bases and sparse overlays retain
+  their decoding behavior. The existing 20-million-element accessor limit remains;
+  valid large assets still require memory for their decoded data.
 - Base color, metallic/roughness and normal textures; emissive factors and
   KHR_materials_emissive_strength. KHR_lights_punctual and mesh quantization.
 - Repeat wrapping and bilinear preview sampling. Clamp/mirror wrapping, textures referencing nonzero UV

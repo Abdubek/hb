@@ -66,6 +66,27 @@ struct Gltf {
     buffers: Vec<Vec<u8>>,
     decoded: BTreeMap<usize, Vec<u8>>,
 }
+
+fn accessor_bytes<'a>(
+    data: &'a [u8],
+    offset: usize,
+    count: usize,
+    stride: usize,
+    element_size: usize,
+    message: &str,
+) -> Result<&'a [u8], String> {
+    if count == 0 {
+        return Ok(&[]);
+    }
+    // The final element needs its own bytes, not a full trailing stride.
+    let end = (count - 1)
+        .checked_mul(stride)
+        .and_then(|n| offset.checked_add(n))
+        .and_then(|n| n.checked_add(element_size))
+        .ok_or("Accessor overflow")?;
+    data.get(offset..end).ok_or_else(|| message.into())
+}
+
 impl Gltf {
     fn load(path: &Path) -> Result<Self, String> {
         let bytes = read(path)?;
@@ -269,8 +290,9 @@ impl Gltf {
                 _ => unreachable!(),
             }
         };
-        let mut out = vec![vec![0.; n]; count];
-        if let Some(view) = a["bufferView"].as_u64() {
+        // Validate source spans before allocating count decoded rows. Tiny malformed
+        // assets can otherwise reserve hundreds of megabytes just to report a bound error.
+        let dense = if let Some(view) = a["bufferView"].as_u64() {
             let data = self.view(view as usize)?;
             let stride = self.doc["bufferViews"][view as usize]["byteStride"]
                 .as_u64()
@@ -279,20 +301,26 @@ impl Gltf {
                 return Err("Accessor byte stride too small".into());
             }
             let offset = a["byteOffset"].as_u64().unwrap_or(0) as usize;
-            for (i, row) in out.iter_mut().enumerate() {
-                for (j, v) in row.iter_mut().enumerate() {
-                    let at = offset
-                        .checked_add(i.checked_mul(stride).ok_or("Accessor overflow")?)
-                        .and_then(|x| x.checked_add(j * width))
-                        .ok_or("Accessor overflow")?;
-                    *v = decode(
-                        data.get(at..at + width)
-                            .ok_or("Accessor exceeds buffer view")?,
-                    );
-                }
-            }
-        }
-        if let Some(s) = a.get("sparse") {
+            Some((
+                accessor_bytes(
+                    data,
+                    offset,
+                    count,
+                    stride,
+                    n * width,
+                    "Accessor exceeds buffer view",
+                )?,
+                stride,
+            ))
+        } else {
+            None
+        };
+        let sparse_index = |b: &[u8]| match b.len() {
+            1 => b[0] as usize,
+            2 => u16::from_le_bytes(b.try_into().unwrap()) as usize,
+            _ => u32::from_le_bytes(b.try_into().unwrap()) as usize,
+        };
+        let sparse = if let Some(s) = a.get("sparse") {
             let nc = index(&s["count"])?;
             if nc > count {
                 return Err("Sparse count exceeds accessor".into());
@@ -308,19 +336,37 @@ impl Gltf {
             };
             let io = s["indices"]["byteOffset"].as_u64().unwrap_or(0) as usize;
             let vo = s["values"]["byteOffset"].as_u64().unwrap_or(0) as usize;
-            for i in 0..nc {
-                let b = ids
-                    .get(io + i * iw..io + (i + 1) * iw)
-                    .ok_or("Truncated sparse indices")?;
-                let k = match iw {
-                    1 => b[0] as usize,
-                    2 => u16::from_le_bytes(b.try_into().unwrap()) as usize,
-                    _ => u32::from_le_bytes(b.try_into().unwrap()) as usize,
-                };
-                let row = out.get_mut(k).ok_or("Sparse index out of bounds")?;
+            let ids = accessor_bytes(ids, io, nc, iw, iw, "Truncated sparse indices")?;
+            let vals = accessor_bytes(
+                vals,
+                vo,
+                nc,
+                n * width,
+                n * width,
+                "Truncated sparse values",
+            )?;
+            if ids.chunks_exact(iw).any(|b| sparse_index(b) >= count) {
+                return Err("Sparse index out of bounds".into());
+            }
+            Some((ids, vals, iw))
+        } else {
+            None
+        };
+        let mut out = vec![vec![0.; n]; count];
+        if let Some((data, stride)) = dense {
+            for (i, row) in out.iter_mut().enumerate() {
                 for (j, v) in row.iter_mut().enumerate() {
-                    let at = vo + (i * n + j) * width;
-                    *v = decode(vals.get(at..at + width).ok_or("Truncated sparse values")?);
+                    let at = i * stride + j * width;
+                    *v = decode(&data[at..at + width]);
+                }
+            }
+        }
+        if let Some((ids, vals, iw)) = sparse {
+            for (i, b) in ids.chunks_exact(iw).enumerate() {
+                let row = &mut out[sparse_index(b)];
+                for (j, v) in row.iter_mut().enumerate() {
+                    let at = (i * n + j) * width;
+                    *v = decode(&vals[at..at + width]);
                 }
             }
         }
@@ -1736,7 +1782,7 @@ pub fn glb(scene: &Scene) -> Result<(Vec<u8>, Vec<String>), String> {
 
 #[cfg(test)]
 mod uri_tests {
-    use super::uri;
+    use super::{accessor_bytes, uri};
     use std::path::Path;
 
     #[test]
@@ -1758,5 +1804,35 @@ mod uri_tests {
         for value in ["%FF", "%80", "%C0%AF", "%ED%A0%80"] {
             assert_eq!(uri(Path::new("."), value).unwrap_err(), "Invalid URI UTF-8");
         }
+    }
+
+    #[test]
+    fn accessor_spans_check_last_element_and_overflow() {
+        let bytes = [0; 48];
+        assert_eq!(
+            accessor_bytes(&bytes, 4, 3, 16, 12, "short").unwrap().len(),
+            44
+        );
+        assert_eq!(
+            accessor_bytes(&bytes[..47], 4, 3, 16, 12, "short").unwrap_err(),
+            "short"
+        );
+        assert_eq!(
+            accessor_bytes(&bytes, usize::MAX, 1, 12, 12, "short").unwrap_err(),
+            "Accessor overflow"
+        );
+        assert_eq!(
+            accessor_bytes(&bytes, 0, 3, usize::MAX, 12, "short").unwrap_err(),
+            "Accessor overflow"
+        );
+        assert_eq!(
+            accessor_bytes(&bytes, 0, usize::MAX, 16, 12, "short").unwrap_err(),
+            "Accessor overflow"
+        );
+        assert!(
+            accessor_bytes(&bytes, usize::MAX, 0, 16, 12, "short")
+                .unwrap()
+                .is_empty()
+        );
     }
 }
