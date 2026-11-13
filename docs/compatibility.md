@@ -62,6 +62,15 @@ containers and container append/extend. Dynamic API attribute names and
 unsupported literal ARRAY types/settings are rejected. Inference is bounded to
 64 passes and reports an unresolved error if it does not converge.
 
+Function-local `except ... as name` and `except* ... as name` bindings follow
+[Python's exception target scope](https://docs.python.org/3.13/reference/compound_stmts.html#except-clause),
+including nested helpers that read the target inside its handler. They do not
+inherit an unrelated global API object or imported module with the same name.
+`global` and `nonlocal` declarations still apply. Actual API values assigned to
+the same binding retain their provenance and undergo API validation. The checker
+remains a conservative API preflight; it does not prove Python name lifetimes or
+general program correctness.
+
 List, set and dict comprehensions and generator expressions keep their iteration
 bindings separate from enclosing functions and other comprehensions. The leftmost
 iterable uses the enclosing scope, following

@@ -23,6 +23,9 @@ def check(source,filename):
         def visit_Nonlocal(self,node):
             for name in node.names:self.names[name]=self.parent.find(name) if self.parent else name
             return node
+        def visit_ExceptHandler(self,node):
+            if node.name:node.name=self.find(node.name)
+            return self.generic_visit(node)
         def visit_FunctionDef(self,node):
             original=node.name;node.name=self.find(original)
             child=Scope(self);counter[0]+=1;prefix=f'_hb_scope_{counter[0]}_'
@@ -37,6 +40,10 @@ def check(source,filename):
                     for a in n.names:child.names.setdefault(a.asname or a.name.split('.')[0],prefix+(a.asname or a.name.split('.')[0]))
                 def visit_ImportFrom(s,n):
                     for a in n.names:child.names.setdefault(a.asname or a.name,prefix+(a.asname or a.name))
+                def visit_ExceptHandler(s,n):
+                    # AST stores "as target" as a string, not a Store Name.
+                    if n.name:child.names.setdefault(n.name,prefix+n.name)
+                    s.generic_visit(n)
                 def visit_ListComp(s,n):
                     # Iteration targets belong to the comprehension. Still visit
                     # its expressions, including enclosing-scope walrus bindings.
