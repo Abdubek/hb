@@ -62,6 +62,15 @@ containers and container append/extend. Dynamic API attribute names and
 unsupported literal ARRAY types/settings are rejected. Inference is bounded to
 64 passes and reports an unresolved error if it does not converge.
 
+Direct named helper calls also retain API provenance from omitted positional,
+positional-only and keyword-only defaults, including list aliases. Default
+expressions use the [defining Python scope](https://docs.python.org/3.13/tutorial/controlflow.html#default-argument-values).
+An explicit argument replaces that call's default; types observed across multiple
+calls still form a conservative union. For example, `def f(v=Vector((1,2,3))):
+return v.to_tuple()` is rejected when called as `f()`, because `Vector.to_tuple`
+is outside HB's subset. Higher-order calls and dynamic argument unpacking remain
+outside this inference guarantee.
+
 Function-local `except ... as name` and `except* ... as name` bindings follow
 [Python's exception target scope](https://docs.python.org/3.13/reference/compound_stmts.html#except-clause),
 including nested helpers that read the target inside its handler. They do not

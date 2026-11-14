@@ -28,6 +28,9 @@ def check(source,filename):
             return self.generic_visit(node)
         def visit_FunctionDef(self,node):
             original=node.name;node.name=self.find(original)
+            # Defaults are evaluated in the defining scope, not the new function.
+            node.args.defaults=[self.visit(value) for value in node.args.defaults]
+            node.args.kw_defaults=[self.visit(value) if value is not None else None for value in node.args.kw_defaults]
             child=Scope(self);counter[0]+=1;prefix=f'_hb_scope_{counter[0]}_'
             # Collect only bindings in this function, excluding nested scopes.
             class Bindings(ast.NodeVisitor):
@@ -314,6 +317,20 @@ def _check_tree(tree,filename,functions):
         for stmt in fn.body:visitor.visit(stmt)
         return found
     return_nodes={name:function_returns(fn) for name,fn in functions.items()}
+    def call_bindings(node):
+        fn=functions[node.func.id];args=fn.args.posonlyargs+fn.args.args;supplied=set()
+        for arg,value in zip(args,node.args):
+            supplied.add(arg.arg)
+            yield arg,value
+        for kw in node.keywords:
+            for arg in fn.args.args+fn.args.kwonlyargs:
+                if arg.arg.rsplit('_hb_scope_',1)[-1].split('_',1)[-1]==kw.arg:
+                    supplied.add(arg.arg)
+                    yield arg,kw.value
+        defaults=list(zip(args[len(args)-len(fn.args.defaults):],fn.args.defaults))
+        defaults+=list(zip(fn.args.kwonlyargs,fn.args.kw_defaults))
+        for arg,value in defaults:
+            if arg.arg not in supplied and value is not None:yield arg,value
     # Monotone fixed point propagates all observed API types across branches,
     # container aliases, helper arguments and return values. No last-write wins.
     for iteration in range(64):
@@ -323,11 +340,7 @@ def _check_tree(tree,filename,functions):
                 for target in node.targets if isinstance(node,ast.Assign) else [node.target]:bind(target,resolve(node.value))
             elif isinstance(node,(ast.For,ast.comprehension)):bind(node.target,{item(p) for p in resolve(node.iter)})
             elif isinstance(node,ast.Call) and isinstance(node.func,ast.Name) and node.func.id in functions:
-                fn=functions[node.func.id];args=fn.args.posonlyargs+fn.args.args
-                for arg,val in zip(args,node.args):env.setdefault(arg.arg,set()).update(resolve(val))
-                for kw in node.keywords:
-                    for arg in args+fn.args.kwonlyargs:
-                        if arg.arg.rsplit('_hb_scope_',1)[-1].split('_',1)[-1]==kw.arg:env.setdefault(arg.arg,set()).update(resolve(kw.value))
+                for arg,value in call_bindings(node):env.setdefault(arg.arg,set()).update(resolve(value))
             elif isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute) and node.func.attr in ('append','extend') and isinstance(node.func.value,ast.Name) and node.args:
                 paths=resolve(node.args[0]);container=resolve(node.func.value);prefix='[list]' if any(p.startswith('[list]') for p in container) else '[]'
                 env.setdefault(node.func.value.id,set()).update({prefix+p for p in paths} if node.func.attr=='append' else {prefix+item(p) for p in paths})
@@ -343,14 +356,10 @@ def _check_tree(tree,filename,functions):
             if isinstance(node,ast.Assign):
                 for target in node.targets:alias(target,node.value)
             elif isinstance(node,ast.Call) and isinstance(node.func,ast.Name) and node.func.id in functions:
-                fn=functions[node.func.id]
-                for arg,value in zip(fn.args.posonlyargs+fn.args.args,node.args):
+                for arg,value in call_bindings(node):
                     # A helper may be called with both lists and API values.
                     # Only actual list arguments share mutable list storage.
                     if any(p.startswith('[list]') for p in resolve(value)):alias(ast.Name(id=arg.arg),value)
-                for kw in node.keywords:
-                    for arg in fn.args.posonlyargs+fn.args.args+fn.args.kwonlyargs:
-                        if arg.arg.rsplit('_hb_scope_',1)[-1].split('_',1)[-1]==kw.arg and any(p.startswith('[list]') for p in resolve(kw.value)):alias(ast.Name(id=arg.arg),kw.value)
         for name,nodes in return_nodes.items():
             for node in nodes:returns.setdefault(name,set()).update(resolve(node.value))
         if repr((env,returns))==before:break
