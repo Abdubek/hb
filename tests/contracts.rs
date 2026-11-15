@@ -986,7 +986,7 @@ fn golden_027() {
 #[doc = "hb:symbol=mathutils.Vector.cross"]
 #[doc = "3D cross product"]
 #[doc = "hb:symbol=mathutils.Vector.dot"]
-#[doc = "Dot product of equal-sized vectors"]
+#[doc = "dot(other, /); numeric iterable with at least the receiver dimensions; uses the leading components"]
 #[doc = "hb:symbol=mathutils.Vector.length"]
 #[doc = "Euclidean length, assignable"]
 #[doc = "hb:symbol=mathutils.Vector.length_squared"]

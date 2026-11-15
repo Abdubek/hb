@@ -59,15 +59,22 @@ class Vector(Strict):
         inv=f32(1/s);return Vector(f32(a*inv) for a in self)
     def __neg__(self):return Vector(-a for a in self)
     def __pos__(self):return self.copy()
-    def __matmul__(self,other):return self.dot(other)
+    def __matmul__(self,other):return sum(f32(a*b) for a,b in self._pair(other))
     def __eq__(self,other):
         if not isinstance(other,Vector) or len(self)!=len(other):return False
         def ordered(v):
             bits=struct.unpack('i',struct.pack('f',v))[0]
             return -2147483648-bits if bits<0 else bits
         return all(a==b or (math.isfinite(a) and math.isfinite(b) and abs(ordered(a)-ordered(b))<=1) for a,b in zip(self,other))
-    def dot(self,other):
-        return sum(f32(a*b) for a,b in self._pair(other))
+    def dot(self,other,/):
+        values=list(other)
+        if len(values)<len(self):raise ValueError('Vector.dot requires at least '+str(len(self))+' components')
+        try:
+            # Unlike float(), packing rejects strings. Parse even surplus values,
+            # then use the receiver's dimensions, as observed in Blender.
+            values=[struct.unpack('f',struct.pack('f',x))[0] for x in values]
+        except (TypeError,struct.error):raise TypeError('Vector.dot requires numeric components') from None
+        return sum(f32(a*b) for a,b in zip(self,values))
     def cross(self,other):
         if len(self)!=3 or len(other)!=3:raise ValueError('cross requires two 3D vectors')
         return Vector(f32(f32(self[(i+1)%3]*other[(i+2)%3])-f32(self[(i+2)%3]*other[(i+1)%3])) for i in range(3))

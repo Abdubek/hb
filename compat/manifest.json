@@ -2511,7 +2511,7 @@
       "test": "compat/golden/m2_vectors.py"
     },
     "mathutils.Vector.dot": {
-      "description": "Dot product of equal-sized vectors",
+      "description": "dot(other, /); numeric iterable with at least the receiver dimensions; uses the leading components",
       "test": "compat/golden/m2_vectors.py"
     },
     "mathutils.Vector.length": {

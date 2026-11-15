@@ -5,7 +5,7 @@ HB_SYMBOLS = {
 'mathutils.Vector.x':'X component', 'mathutils.Vector.y':'Y component', 'mathutils.Vector.z':'Z component', 'mathutils.Vector.w':'W component',
 'mathutils.Vector.xy':'Two-component swizzle','mathutils.Vector.xyz':'Three-component swizzle','mathutils.Vector.yxz':'Swizzle assignment',
 'mathutils.Vector.length':'Euclidean length, assignable', 'mathutils.Vector.length_squared':'Squared Euclidean length',
-'mathutils.Vector.dot':'Dot product of equal-sized vectors', 'mathutils.Vector.cross':'3D cross product',
+'mathutils.Vector.dot':'dot(other, /); numeric iterable with at least the receiver dimensions; uses the leading components', 'mathutils.Vector.cross':'3D cross product',
 'mathutils.Vector.normalize':'Normalize in place; zero vector remains zero', 'mathutils.Vector.normalized':'Normalized copy',
 'mathutils.Vector.lerp':'Linear interpolation',
 'mathutils.Vector.negate':'Negate in place', 'mathutils.Vector.zero':'Set all components to zero',
@@ -19,6 +19,19 @@ assert tuple(v+w)==(4,4,4) and tuple(v-w)==(-2,0,2)
 assert tuple(v*2)==(2,4,6) and tuple(2*v)==(2,4,6)
 assert tuple(v/2)==(.5,1,1.5) and tuple(-v)==(-1,-2,-3)
 assert v@w==10 and v.dot(w)==10 and tuple(v.cross(w))==(-4,8,-4)
+# Dot accepts coordinate iterables, while @ retains vector-only equal dimensions.
+for dimension in (2,3,4):
+    a=Vector(range(1,dimension+1));values=list(range(2,2*dimension+1,2))
+    before=(tuple(a),values[:])
+    expected=2*sum(x*x for x in range(1,dimension+1))
+    for other in (Vector(values),tuple(values),values,iter(values),range(2,2*dimension+1,2),values+[99,100]):
+        assert a.dot(other)==expected
+    assert (tuple(a),values)==before
+assert Vector((1,2)).dot(Vector((3,4,100,200)))==11
+assert Vector((1,2)).dot({3:8,4:9})==11
+assert Vector((1,2)).dot(b'34')==155
+assert Vector((1,2)).dot([1.1,2.2])==5.5000001192092896
+assert Vector((1e10,1,1e10)).dot((1,1,-1))==1
 assert abs(v.length-math.sqrt(14))<1e-6 and v.length_squared==14
 assert tuple(v.xy)==(1,2) and tuple(v.xyz)==(1,2,3)
 v.yxz=(4,5,6);assert tuple(v)==(5,4,6)

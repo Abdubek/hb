@@ -116,6 +116,13 @@ before execution, but the calling application must still isolate untrusted scrip
   differential test is Vector-only, with absolute tolerance 1e-5 or relative
   tolerance 1e-6. Matrix, Euler, Quaternion and standalone Color are implemented with the
   limits below; this is not full mathutils parity.
+  `Vector.dot(other, /)` accepts numeric iterables (including tuples, lists,
+  ranges, generators and Vector views) with at least the receiver's dimensions.
+  All elements are validated and converted to float32; only the first N enter
+  the existing float32-product/double-sum calculation. Short inputs raise
+  `ValueError`, nonnumeric elements and keyword arguments raise `TypeError`.
+  This behavior is exercised against Blender 5.2.3 by the Vector contract;
+  `Vector @ Vector` still requires equal dimensions and a Vector operand.
 - `bmesh.new`: standalone editable vertices, edges and faces, creation/removal,
   lookup tables/indices, from/to mesh, normal update and invalidation on free.
   Operators include translate, scale, rotate and transform, plus delete with
