@@ -182,9 +182,13 @@ impl Lock {
     pub fn acquire(scene: &Path) -> Result<Self, Value> {
         let path = PathBuf::from(format!("{}.lock", scene.display()));
         let mut f=fs::OpenOptions::new().write(true).create_new(true).open(&path).map_err(|e|if e.kind()==std::io::ErrorKind::AlreadyExists{err("SCENE_BUSY","Scene has a writer lock; retry after it completes. Remove a stale .lock only after confirming its recorded PID is no longer running.")}else{ioerr(e)})?;
-        f.write_all(std::process::id().to_string().as_bytes())
-            .map_err(ioerr)?;
-        Ok(Self { path })
+        let lock = Self { path };
+        let result = f
+            .write_all(std::process::id().to_string().as_bytes())
+            .map_err(ioerr);
+        drop(f);
+        result?;
+        Ok(lock)
     }
 }
 impl Drop for Lock {

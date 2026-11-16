@@ -485,8 +485,12 @@ and objects outside the active camera's square preview frustum.
 Script failures never commit a new scene head. Scene JSON/float parsing is exact
 round-trip so snapshot hashes remain stable. Snapshots use `HBR1` + zlib; the
 `.hb` file contains a `hb-head-v1` pointer. Save the sidecar with the head. Unknown
-or corrupted revisions fail validation. A crashed writer may leave a `.lock`;
-check its PID before deleting that stale lock. Export/render output is atomic,
+or corrupted revisions fail validation. If recording the writer PID fails, HB
+closes and removes its newly created `.lock` before returning the original
+`IO_ERROR`, so a retry can proceed once the write failure is resolved. Existing
+lock files and symlinks remain untouched when acquisition fails. A crashed writer
+may still leave a `.lock`; check its PID before deleting that stale lock.
+Export/render output is atomic,
 but a run's optional export and head update are not a cross-file atomic transaction.
 
 - SUBSURF evaluates CATMULL_CLARK or SIMPLE at viewport/render levels 0..6.
