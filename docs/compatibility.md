@@ -62,6 +62,14 @@ containers and container append/extend. Dynamic API attribute names and
 unsupported literal ARRAY types/settings are rejected. Inference is bounded to
 64 passes and reports an unresolved error if it does not converge.
 
+`and` and `or` carry a conservative union of their operands' API types through
+assignments, helpers and containers. This includes get-or-create expressions such
+as `bpy.data.worlds.get(name) or bpy.data.worlds.new(name)`. Python's
+[`not` operator](https://docs.python.org/3.13/reference/expressions.html#boolean-operations)
+produces a plain bool; API accesses inside its operand remain checked. Preflight
+audits every operand and retains every candidate type without proving truthiness
+or short-circuit reachability, so unreachable types can cause false positives.
+
 Direct named helper calls also retain API provenance from omitted positional,
 positional-only and keyword-only defaults, including list aliases. Default
 expressions use the [defining Python scope](https://docs.python.org/3.13/tutorial/controlflow.html#default-argument-values).

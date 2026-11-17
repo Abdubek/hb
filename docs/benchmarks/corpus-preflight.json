@@ -1,8 +1,8 @@
 {
   "kind": "Static checker acceptance only; no runtime, geometry, render or Blender error-parity claim",
-  "measured_at_utc": "2026-11-09T08:38:58Z",
+  "measured_at_utc": "2026-11-17T05:11:00Z",
   "hb_version": "0.18.0",
-  "binary_sha256": "b963b21b122d8f75ab9c439084f4c578be15aa644863f6bcdf5db40dbca81ee8",
+  "binary_sha256": "32eb4b0b07c327cc1b78091bb0405a41fc50ea3a2f026261bf3b7d1131ae2048",
   "corpus_index_sha256": "26164577251d57e643a48dc1c8e52c8b15c13ea23388492f49cb417b73299d7a",
   "scripts": 400,
   "preflight_accepted": 11,
@@ -857,7 +857,7 @@
       "file": "claude-139.py",
       "origin": "claude",
       "accepted": false,
-      "errors": 73
+      "errors": 93
     },
     {
       "file": "claude-140.py",

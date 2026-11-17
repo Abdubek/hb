@@ -257,6 +257,7 @@ def _check_tree(tree,filename,functions):
         if isinstance(node,ast.Set):return {'[]'+p for e in node.elts for p in resolve(e)}
         if isinstance(node,ast.Dict):return {container_path('[dict]',p) for e in node.values if e for p in resolve(e)} or {'[dict]#python'}
         if isinstance(node,ast.IfExp):return resolve(node.body)|resolve(node.orelse)
+        if isinstance(node,ast.BoolOp):return {p for value in node.values for p in resolve(value)}
         if isinstance(node,ast.BinOp):
             left,right=resolve(node.left),resolve(node.right)
             # Known matrix/quaternion products retain their actual result type.
@@ -266,7 +267,7 @@ def _check_tree(tree,filename,functions):
                             ('mathutils.Matrix','mathutils.Matrix'),('mathutils.Matrix','mathutils.Vector'),
                             ('mathutils.Quaternion','mathutils.Quaternion'),('mathutils.Quaternion','mathutils.Vector')) else {a,b})}
             return left|right
-        if isinstance(node,ast.UnaryOp):return resolve(node.operand)
+        if isinstance(node,ast.UnaryOp):return {'#python'} if isinstance(node.op,ast.Not) else resolve(node.operand)
         if isinstance(node,ast.Call):
             if isinstance(node.func,ast.Name):
                 if node.func.id in functions:return returns.get(node.func.id,set())
