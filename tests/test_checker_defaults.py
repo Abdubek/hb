@@ -15,31 +15,31 @@ class CheckerDefaults(unittest.TestCase):
     def test_omitted_defaults_retain_api_types(self):
         setup = 'import bpy\nfrom mathutils import Vector, Matrix\n'
         cases = [
-            ('def f(v=Vector((1,2,3))):\n    return v.to_tuple()\nf()',
-             'mathutils.Vector.to_tuple'),
-            ('def f(v=Vector((1,2,3)), /):\n    return v.to_tuple()\nf()',
-             'mathutils.Vector.to_tuple'),
+            ('def f(v=Vector((1,2,3))):\n    return v.freeze()\nf()',
+             'mathutils.Vector.freeze'),
+            ('def f(v=Vector((1,2,3)), /):\n    return v.freeze()\nf()',
+             'mathutils.Vector.freeze'),
             ('def f(*, obj=bpy.context.object):\n    return obj.unsupported_magic()\nf()',
              'bpy.types.Object.unsupported_magic'),
-            ('def f(required, v=Vector((1,2,3)), *, flag):\n    return v.to_tuple()\n'
-             'f(1, flag=True)', 'mathutils.Vector.to_tuple'),
+            ('def f(required, v=Vector((1,2,3)), *, flag):\n    return v.freeze()\n'
+             'f(1, flag=True)', 'mathutils.Vector.freeze'),
             ('value=(1,2,3)\ndef outer():\n    value=Vector((1,2,3))\n'
-             '    def f(value=value):\n        return value.to_tuple()\n'
-             '    return f()\nouter()', 'mathutils.Vector.to_tuple'),
+             '    def f(value=value):\n        return value.freeze()\n'
+             '    return f()\nouter()', 'mathutils.Vector.freeze'),
             ('def make():return Matrix.Identity(3)\n'
              'def f(matrix=make()):return matrix.unsupported_magic()\nf()',
              'mathutils.Matrix.unsupported_magic'),
-            ('def f(v=[Vector((1,2,3))]):return v\nf()[0].to_tuple()',
-             'mathutils.Vector.to_tuple'),
+            ('def f(v=[Vector((1,2,3))]):return v\nf()[0].freeze()',
+             'mathutils.Vector.freeze'),
             ('points=[]\ndef f(values=points):values.append(Vector((1,2,3)))\n'
-             'f()\npoints[0].to_tuple()', 'mathutils.Vector.to_tuple'),
+             'f()\npoints[0].freeze()', 'mathutils.Vector.freeze'),
             # Defaults still execute when the caller supplies an override.
             ('def outer():\n    import bpy as local\n'
              '    def f(v=local.unsupported_magic):return v\n'
              '    return f(1)\nouter()', 'bpy.unsupported_magic'),
             # A positional-only name in **kwargs does not override its default.
-            ('def f(v=Vector((1,2,3)), /, **kwargs):return v.to_tuple()\nf(v=1)',
-             'mathutils.Vector.to_tuple'),
+            ('def f(v=Vector((1,2,3)), /, **kwargs):return v.freeze()\nf(v=1)',
+             'mathutils.Vector.freeze'),
         ]
         for source, expected in cases:
             with self.subTest(source=source):
@@ -61,18 +61,18 @@ bpy.context.object.scale=(2,2,2)
 
     def test_defaults_and_explicit_arguments_are_both_checked(self):
         source = '''from mathutils import Vector
-def f(point=Vector((1,2,3))):return point.to_tuple()
+def f(point=Vector((1,2,3))):return point.freeze()
 f((1,2,3))
 f()
 '''
         errors = self.hb('check', self.script(source), ok=False)['errors']
         self.assertEqual(len(errors), 1, errors)
-        self.assertIn('mathutils.Vector.to_tuple', errors[0]['message'])
+        self.assertIn('mathutils.Vector.freeze', errors[0]['message'])
 
     def test_mcp_checks_defaults_before_executing_and_recovers(self):
         source = '''from mathutils import Vector
 open('executed', 'w').write('preflight was bypassed')
-def coordinates(point=Vector((1,2,3))):return point.to_tuple()
+def coordinates(point=Vector((1,2,3))):return point.freeze()
 coordinates()
 '''
         replies = self.exchange('--mcp', [
@@ -89,7 +89,7 @@ coordinates()
         ], self.path)
         self.assertTrue(replies[1]['result']['isError'])
         errors = replies[1]['result']['structuredContent']['errors']
-        self.assertTrue(any('mathutils.Vector.to_tuple' in e['message'] for e in errors))
+        self.assertTrue(any('mathutils.Vector.freeze' in e['message'] for e in errors))
         self.assertFalse((self.path / 'executed').exists())
         self.assertFalse(replies[2]['result']['isError'], replies[2])
         self.assertEqual(replies[3]['result']['structuredContent']['result']['objects'], 1)

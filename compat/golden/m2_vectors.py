@@ -10,6 +10,7 @@ HB_SYMBOLS = {
 'mathutils.Vector.lerp':'Linear interpolation',
 'mathutils.Vector.negate':'Negate in place', 'mathutils.Vector.zero':'Set all components to zero',
 'mathutils.Vector.to_2d':'Copy as 2D', 'mathutils.Vector.to_3d':'Copy as 3D', 'mathutils.Vector.to_4d':'Copy as homogeneous 4D',
+'mathutils.Vector.to_tuple':'to_tuple(precision=-1, /); independent float tuple; -1 preserves float32 components, 0..22 rounds decimal places to nearest even',
 'mathutils.Vector.project':'Projection onto a vector', 'mathutils.Vector.reflect':'Reflection across a normal',
 }
 from mathutils import Vector
@@ -66,3 +67,15 @@ assert Vector((1,2))!=Vector((1,2,0))
 p=o.location;p+=Vector((1,0,0));assert tuple(o.location)==(5,2,3)
 p*=2;assert tuple(o.location)==(10,4,6)
 p/=2;p-=Vector((1,0,0));assert tuple(o.location)==(4,2,3)
+
+# Exact Python float results (including signed zero) captured in Blender 5.2.3.
+import json,os
+with open(os.path.join(os.path.dirname(__file__),'../fixtures/vector-tuple-reference.json')) as source:
+    reference=json.load(source)
+for row in reference['cases']:
+    vector=Vector(float.fromhex(x) for x in row['values'])
+    before=[x.hex() for x in vector]
+    result=vector.to_tuple(*row['args'])
+    assert type(result) is tuple and all(type(x) is float for x in result)
+    assert [x.hex() for x in result]==row['result'],row
+    assert [x.hex() for x in vector]==before

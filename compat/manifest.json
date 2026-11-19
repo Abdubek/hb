@@ -2566,6 +2566,10 @@
       "description": "Track signed local axis toward vector with world Z as up; quaternion signs are rotation-equivalent",
       "test": "compat/golden/m2_mathutils.py"
     },
+    "mathutils.Vector.to_tuple": {
+      "description": "to_tuple(precision=-1, /); independent float tuple; -1 preserves float32 components, 0..22 rounds decimal places to nearest even",
+      "test": "compat/golden/m2_vectors.py"
+    },
     "mathutils.Vector.w": {
       "description": "W component",
       "test": "compat/golden/m2_vectors.py"

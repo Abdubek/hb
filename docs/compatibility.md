@@ -75,7 +75,7 @@ positional-only and keyword-only defaults, including list aliases. Default
 expressions use the [defining Python scope](https://docs.python.org/3.13/tutorial/controlflow.html#default-argument-values).
 An explicit argument replaces that call's default; types observed across multiple
 calls still form a conservative union. For example, `def f(v=Vector((1,2,3))):
-return v.to_tuple()` is rejected when called as `f()`, because `Vector.to_tuple`
+return v.freeze()` is rejected when called as `f()`, because `Vector.freeze`
 is outside HB's subset. Higher-order calls and dynamic argument unpacking remain
 outside this inference guarantee.
 
@@ -131,6 +131,18 @@ before execution, but the calling application must still isolate untrusted scrip
   `ValueError`, nonnumeric elements and keyword arguments raise `TypeError`.
   This behavior is exercised against Blender 5.2.3 by the Vector contract;
   `Vector @ Vector` still requires equal dimensions and a Vector operand.
+  [`Vector.to_tuple(precision=-1, /)`](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.to_tuple)
+  returns an independent tuple of Python floats, including from live coordinate,
+  UV and matrix-row views. Omitted precision or -1 preserves the stored float32
+  values. Precision 0..22 rounds a double-scaled value to nearest even, then
+  unscales it; results are not rounded back to float32. Signed zero and nonfinite
+  components are retained. The upper bound 22 follows observed Blender 5.2.3
+  behavior, despite its documentation listing 21. Precision uses the integer
+  index protocol with signed 32-bit bounds: wrong types raise TypeError,
+  overflow raises OverflowError and out-of-range integers raise ValueError.
+  The Vector contract checks 175 captured Blender results exactly, including
+  float32 quantization, decimal ties and all supported precisions. Regenerate
+  them with `compat/vector_tuple_reference.py` inside Blender.
 - `bmesh.new`: standalone editable vertices, edges and faces, creation/removal,
   lookup tables/indices, from/to mesh, normal update and invalidation on free.
   Operators include translate, scale, rotate and transform, plus delete with

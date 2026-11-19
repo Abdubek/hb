@@ -1009,6 +1009,8 @@ fn golden_027() {
 #[doc = "Copy as 3D"]
 #[doc = "hb:symbol=mathutils.Vector.to_4d"]
 #[doc = "Copy as homogeneous 4D"]
+#[doc = "hb:symbol=mathutils.Vector.to_tuple"]
+#[doc = "to_tuple(precision=-1, /); independent float tuple; -1 preserves float32 components, 0..22 rounds decimal places to nearest even"]
 #[doc = "hb:symbol=mathutils.Vector.w"]
 #[doc = "W component"]
 #[doc = "hb:symbol=mathutils.Vector.x"]

@@ -214,6 +214,7 @@ def _check_tree(tree,filename,functions):
         if base.startswith('mathutils.Color.from_') or base in ('mathutils.Color.copy','mathutils.Color.freeze'):return 'mathutils.Color'
         if base=='bmesh.new':return 'bmesh.types.BMesh'
         if base=='bmesh.types.BMEdge.calc_face_angle':return '#number'
+        if base=='mathutils.Vector.to_tuple':return '[]#number'
         if base.endswith(('.to_track_quat','.to_quaternion','.rotation_difference')):return 'mathutils.Quaternion'
         if base.endswith('.to_euler'):return 'mathutils.Euler'
         if base.endswith('.to_matrix'):return 'mathutils.Matrix'

@@ -1,5 +1,6 @@
 """Independent float32 Vector implementation. No Blender source is embedded."""
 import math
+import _operator
 
 class Vector(Strict):
     _path='mathutils.Vector'
@@ -149,6 +150,15 @@ class Vector(Strict):
     def to_2d(self):return Vector(tuple(self)[:2])
     def to_3d(self):return Vector((tuple(self)+(0.,))[:3])
     def to_4d(self):return Vector((tuple(self)+(0.,)*(3-len(self))+(1.,))[:4])
+    def to_tuple(self,precision=-1,/):
+        precision=_operator.index(precision)
+        if not -2147483648<=precision<=2147483647:raise OverflowError('Precision exceeds a signed 32-bit integer')
+        if not -1<=precision<=22:raise ValueError('Vector.to_tuple precision must be between -1 and 22')
+        if precision==-1:return tuple(self)
+        factor=10.**precision
+        # Round the scaled double to nearest even, then unscale. round(x, n)
+        # can differ by one double ULP from Blender's observed operation order.
+        return tuple(math.copysign(round(abs(x)*factor)/factor,x) if math.isfinite(x) else x for x in self)
 
 class VectorView(Vector):
     def __init__(self,get,set,path):self._get,self._set,self._path=get,set,path
