@@ -206,7 +206,9 @@ def _check_tree(tree,filename,functions):
         if base in ('bpy.types.Mesh.color_attributes.new','bpy.types.Mesh.color_attributes.get','bpy.types.IDData.color_attributes.new','bpy.types.IDData.color_attributes.get'):return 'bpy.types.FloatColorAttribute'
         if base in ('bpy.types.Object.vertex_groups.new','bpy.types.Object.vertex_groups.get'):return 'bpy.types.VertexGroup'
         if base=='bmesh.ops.inset_region':return '[][]bmesh.types.BMFace'
-        if base in ('bmesh.ops.create_cube','bmesh.ops.create_grid','bmesh.ops.create_uvsphere','bmesh.ops.create_cone','bmesh.ops.create_circle'):return '[][]bmesh.types.BMVert'
+        # Primitive operators return {'verts': list[BMVert]}, so dict methods
+        # belong to the output container while extracted vertices keep API types.
+        if base in ('bmesh.ops.create_cube','bmesh.ops.create_grid','bmesh.ops.create_uvsphere','bmesh.ops.create_cone','bmesh.ops.create_circle'):return '[dict][list]bmesh.types.BMVert'
         if base in ('bmesh.ops.extrude_face_region','bmesh.ops.bevel','bmesh.ops.triangulate','bmesh.ops.solidify','bmesh.ops.bisect_plane','bmesh.ops.subdivide_edges'):return '[][]bmesh.types.BMElement'
         if base=='bpy.types.CloudsTexture.evaluate':return 'mathutils.Vector'
         if base=='bpy.types.Object.modifiers.new':return 'bpy.types.Modifier'

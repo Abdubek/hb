@@ -62,6 +62,16 @@ containers and container append/extend. Dynamic API attribute names and
 unsupported literal ARRAY types/settings are rejected. Inference is bounded to
 64 passes and reports an unresolved error if it does not converge.
 
+Results from `bmesh.ops.create_cube`, `create_grid`, `create_uvsphere`,
+`create_cone` and `create_circle` are modeled as dictionaries containing a
+`verts` list, following their [BMesh operator return shape](https://docs.blender.org/api/5.2/bmesh.ops.html#bmesh.ops.create_cube).
+Dictionary methods such as `get`, `copy`, `values` and `items` belong to the
+Python container. Vertices extracted through them or direct indexing retain
+BMVert API provenance through helpers and nested containers. For example,
+`result.get('verts', ())` is accepted while unsupported methods on its vertices
+are still rejected. This does not prove dictionary key existence or arbitrary
+Python mutation behavior.
+
 `and` and `or` carry a conservative union of their operands' API types through
 assignments, helpers and containers. This includes get-or-create expressions such
 as `bpy.data.worlds.get(name) or bpy.data.worlds.new(name)`. Python's
