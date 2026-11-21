@@ -84,7 +84,7 @@ Omit `--blender` to measure HB alone.
 
 ## Blender compatibility
 
-The manifest currently declares **650 tested API entries** across `bpy`,
+The manifest currently declares **651 tested API entries** across `bpy`,
 `bmesh`, and `mathutils`, with **85 executable Rust contract tests**. Entries
 include operators, types, properties, and methods; this count is not a percentage
 of Blender's API. The subset covers the modeling workflow above. The retained

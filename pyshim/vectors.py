@@ -147,6 +147,32 @@ class Vector(Strict):
     def project(self,other):
         return other*(self.dot(other)/other.length_squared) if other.length_squared else Vector([float('nan')]*len(self))
     def reflect(self,normal):return self-normal.normalized()*f32(2*self.dot(normal.normalized()))
+    def rotate(self,other,/):
+        values=self._read_values();size=min(3,len(values))
+        if size==2 and not isinstance(other,Matrix):raise TypeError('2D Vector.rotate requires a Matrix')
+        if isinstance(other,Matrix):
+            if (size==2 and (len(other)!=2 or len(other[0])!=2)) or (size==3 and (len(other)<3 or len(other[0])<3)):
+                raise ValueError('Vector.rotate matrix dimensions do not match')
+            rows=[list(row)[:size] for row in other][:size]
+            components=[x for row in rows for x in row]
+        elif isinstance(other,(Euler,Quaternion)):components=list(other)
+        else:raise TypeError('Vector.rotate expects Euler, Quaternion or Matrix')
+        if any(not math.isfinite(x) or abs(x)>1e6 for x in values[:size]+components):
+            raise UnsupportedError(self._path+'.rotate','Use finite active vector/rotation components with magnitude at most 1e6.')
+        if isinstance(other,Matrix):
+            # Rotation matrices contribute normalized columns of the active
+            # block; translation and other rows/columns do not participate.
+            columns=[Vector(row[j] for row in rows).normalized() for j in range(size)]
+            rows=list(zip(*columns))
+        else:rows=(other.normalized() if isinstance(other,Quaternion) else other).to_matrix()
+        result=[]
+        for row in rows:
+            total=0.
+            for a,b in zip(row,values[:size]):total=f32(total+f32(a*b))
+            result.append(total)
+        # Read/validate all inputs before writing, even when a Matrix row is
+        # rotated by that same Matrix. A fourth vector component is retained.
+        self._write_values(result+values[size:])
     def to_2d(self):return Vector(tuple(self)[:2])
     def to_3d(self):return Vector((tuple(self)+(0.,))[:3])
     def to_4d(self):return Vector((tuple(self)+(0.,)*(3-len(self))+(1.,))[:4])

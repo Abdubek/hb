@@ -11,6 +11,7 @@ HB_SYMBOLS = {
 'mathutils.Vector.negate':'Negate in place', 'mathutils.Vector.zero':'Set all components to zero',
 'mathutils.Vector.to_2d':'Copy as 2D', 'mathutils.Vector.to_3d':'Copy as 3D', 'mathutils.Vector.to_4d':'Copy as homogeneous 4D',
 'mathutils.Vector.to_tuple':'to_tuple(precision=-1, /); independent float tuple; -1 preserves float32 components, 0..22 rounds decimal places to nearest even',
+'mathutils.Vector.rotate':'rotate(other, /); mutate 2D with 2x2 Matrix or XYZ with Euler/normalized Quaternion/column-normalized Matrix; preserve W; finite active components up to magnitude 1e6',
 'mathutils.Vector.project':'Projection onto a vector', 'mathutils.Vector.reflect':'Reflection across a normal',
 }
 from mathutils import Vector
@@ -79,3 +80,22 @@ for row in reference['cases']:
     assert type(result) is tuple and all(type(x) is float for x in result)
     assert [x.hex() for x in result]==row['result'],row
     assert [x.hex() for x in vector]==before
+
+# Captured rotation values, dimension/type errors and non-mutating inputs.
+from mathutils import Matrix,Quaternion,Euler
+with open(os.path.join(os.path.dirname(__file__),'../fixtures/vector-rotate-reference.json')) as source:
+    reference=json.load(source)
+for row in reference['cases']:
+    vector=Vector(row['vector']);data=row['rotation'];kind=data['kind']
+    rotation=Matrix(data['value']) if kind=='matrix' else Quaternion(data['value']) if kind=='quaternion' else Euler(data['value'],data.get('order','XYZ'))
+    before=[list(value) for value in rotation] if kind=='matrix' else list(rotation)
+    try:
+        assert vector.rotate(rotation) is None
+    except (TypeError,ValueError) as error:
+        assert type(error).__name__==row.get('error'),(row,error)
+        assert tuple(vector)==tuple(row['vector'])
+    else:
+        assert 'error' not in row,row
+        assert len(vector)==len(row['vector']),row
+        assert all(math.isclose(a,b,abs_tol=2e-6,rel_tol=2e-6) for a,b in zip(vector,row['result'])),(row,tuple(vector))
+    assert before==([list(value) for value in rotation] if kind=='matrix' else list(rotation))

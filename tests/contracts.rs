@@ -1003,6 +1003,8 @@ fn golden_027() {
 #[doc = "Projection onto a vector"]
 #[doc = "hb:symbol=mathutils.Vector.reflect"]
 #[doc = "Reflection across a normal"]
+#[doc = "hb:symbol=mathutils.Vector.rotate"]
+#[doc = "rotate(other, /); mutate 2D with 2x2 Matrix or XYZ with Euler/normalized Quaternion/column-normalized Matrix; preserve W; finite active components up to magnitude 1e6"]
 #[doc = "hb:symbol=mathutils.Vector.to_2d"]
 #[doc = "Copy as 2D"]
 #[doc = "hb:symbol=mathutils.Vector.to_3d"]

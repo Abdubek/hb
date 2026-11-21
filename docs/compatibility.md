@@ -153,6 +153,19 @@ before execution, but the calling application must still isolate untrusted scrip
   The Vector contract checks 175 captured Blender results exactly, including
   float32 quantization, decimal ties and all supported precisions. Regenerate
   them with `compat/vector_tuple_reference.py` inside Blender.
+  [`Vector.rotate(other, /)`](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.rotate)
+  mutates a vector or its live coordinate/UV/matrix-row view and returns None.
+  A 2D vector requires a 2x2 Matrix. For 3D/4D vectors, Euler, Quaternion and
+  matrices with at least a 3x3 block are accepted. Matrix columns in the active
+  block are normalized independently; this removes their scale but preserves
+  shear/reflection. Quaternion inputs are normalized, including Blender's
+  zero-quaternion fallback. Matrix translation and other rows/columns are ignored,
+  and 4D W is retained. Rotation inputs are not normalized in place. Active
+  components are read and validated before writing, including when a Matrix row
+  is rotated by its own Matrix. HB accepts finite active vector/rotation components up to magnitude
+  1e6; other values fail explicitly before mutation. The Vector contract compares
+  105 captured Blender 5.2.3 values/exception classes at absolute/relative
+  tolerance 2e-6. Regenerate with `compat/vector_rotate_reference.py` inside Blender.
 - `bmesh.new`: standalone editable vertices, edges and faces, creation/removal,
   lookup tables/indices, from/to mesh, normal update and invalidation on free.
   Operators include translate, scale, rotate and transform, plus delete with
