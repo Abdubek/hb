@@ -285,6 +285,8 @@ def _check_tree(tree,filename,functions):
                 kind=next((kw.value for kw in node.keywords if kw.arg=='type'),node.args[1] if len(node.args)>1 else None)
                 if isinstance(kind,ast.Constant) and kind.value in ('WEIGHTED_NORMAL','SOLIDIFY','WELD','BOOLEAN','DISPLACE'):return {'bpy.types.'+{'WEIGHTED_NORMAL':'WeightedNormalModifier','SOLIDIFY':'SolidifyModifier','WELD':'WeldModifier','BOOLEAN':'BooleanModifier','DISPLACE':'DisplaceModifier'}[kind.value]}
             values={r for p in paths if (r:=result(p))}
+            if len(node.args)>1 and any(p.startswith(('@dictmethod:get:','@dictmethod:pop:')) for p in paths):
+                values.update(resolve(node.args[1]))
             if 'bmesh.types.BMEdge.calc_face_angle' in paths and node.args:values.update(resolve(node.args[0]))
             if 'mathutils.Vector.angle' in paths and len(node.args)>1:values.update(resolve(node.args[1]))
             return values

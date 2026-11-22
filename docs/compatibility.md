@@ -72,6 +72,16 @@ BMVert API provenance through helpers and nested containers. For example,
 are still rejected. This does not prove dictionary key existence or arbitrary
 Python mutation behavior.
 
+For known dictionary receivers, [`dict.get`](https://docs.python.org/3.13/library/stdtypes.html#dict.get)
+and [`dict.pop`](https://docs.python.org/3.13/library/stdtypes.html#dict.pop) retain
+API provenance from an explicit positional default, including method aliases,
+helper returns and nested containers. For example,
+`{}.get('world', bpy.data.worlds.new('Fallback'))` retains the World type, so
+unsupported operations on that World are rejected before MCP execution. Stored
+values and defaults form a conservative union without proving whether the key
+exists; unused candidate types can therefore cause false positives. This does
+not add inference for arbitrary dictionary constructors or mutations.
+
 `and` and `or` carry a conservative union of their operands' API types through
 assignments, helpers and containers. This includes get-or-create expressions such
 as `bpy.data.worlds.get(name) or bpy.data.worlds.new(name)`. Python's
