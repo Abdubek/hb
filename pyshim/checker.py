@@ -243,6 +243,7 @@ def _check_tree(tree,filename,functions):
             leaf=leaf[2:] if leaf.startswith('[]') else leaf[6:]
         return prefix+('#python' if leaf=='#python' else element)
     def resolve(node):
+        if isinstance(node,ast.NamedExpr):return resolve(node.value)
         if isinstance(node,ast.Name):
             paths=env.get(node.id,set())
             # A binding reused for other modifier types retains the generic
@@ -345,6 +346,7 @@ def _check_tree(tree,filename,functions):
         for node in ast.walk(tree):
             if isinstance(node,(ast.Assign,ast.AnnAssign)):
                 for target in node.targets if isinstance(node,ast.Assign) else [node.target]:bind(target,resolve(node.value))
+            elif isinstance(node,ast.NamedExpr):bind(node.target,resolve(node.value))
             elif isinstance(node,(ast.For,ast.comprehension)):bind(node.target,{item(p) for p in resolve(node.iter)})
             elif isinstance(node,ast.Call) and isinstance(node.func,ast.Name) and node.func.id in functions:
                 for arg,value in call_bindings(node):env.setdefault(arg.arg,set()).update(resolve(value))
@@ -354,14 +356,15 @@ def _check_tree(tree,filename,functions):
         # Lists alias mutable containers, including helper parameters. Propagate
         # observed element types back to every alias without forgetting old types.
         def alias(a,b):
+            if isinstance(b,ast.NamedExpr):b=b.target
             if isinstance(a,ast.Name) and isinstance(b,ast.Name):
                 paths=env.get(a.id,set())|env.get(b.id,set())
                 lists={p for p in paths if p.startswith('[list]')}
                 if lists:
                     env.setdefault(a.id,set()).update(lists);env.setdefault(b.id,set()).update(lists)
         for node in ast.walk(tree):
-            if isinstance(node,ast.Assign):
-                for target in node.targets:alias(target,node.value)
+            if isinstance(node,(ast.Assign,ast.NamedExpr)):
+                for target in node.targets if isinstance(node,ast.Assign) else [node.target]:alias(target,node.value)
             elif isinstance(node,ast.Call) and isinstance(node.func,ast.Name) and node.func.id in functions:
                 for arg,value in call_bindings(node):
                     # A helper may be called with both lists and API values.

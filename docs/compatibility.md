@@ -62,6 +62,18 @@ containers and container append/extend. Dynamic API attribute names and
 unsupported literal ARRAY types/settings are rejected. Inference is bounded to
 64 passes and reports an unresolved error if it does not converge.
 
+Python [assignment expressions (`:=`)](https://docs.python.org/3.13/reference/expressions.html#assignment-expressions)
+retain API provenance in both their expression result and bound name, including
+simple list aliases and direct helper arguments/returns. Targets inside
+comprehensions bind in the containing scope; named helper functions keep their
+own local bindings, honoring declared `global` and `nonlocal` names, following
+[PEP 572](https://peps.python.org/pep-0572/#scope-of-the-target). For example, after
+`if (world := bpy.data.worlds.get('World')) is not None:`, unsupported operations
+on `world` are still rejected before MCP execution. Types from different writes
+form a conservative union; this does not prove branch reachability or whether a
+comprehension/generator actually executes. Dynamic closures and arbitrary mutable
+aliasing remain outside the inference guarantee.
+
 Results from `bmesh.ops.create_cube`, `create_grid`, `create_uvsphere`,
 `create_cone` and `create_circle` are modeled as dictionaries containing a
 `verts` list, following their [BMesh operator return shape](https://docs.blender.org/api/5.2/bmesh.ops.html#bmesh.ops.create_cube).
