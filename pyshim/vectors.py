@@ -124,9 +124,17 @@ class Vector(Strict):
         return Quaternion(values,f32(math.pi))
     def negate(self):self._write_values(-self)
     def zero(self):self._write_values([0.]*len(self))
-    def lerp(self,other,factor):
-        t=f32(factor);u=f32(1-t)
-        return Vector(f32(f32(u*a)+f32(t*b)) for a,b in self._pair(other))
+    def lerp(self,other,factor,/):
+        try:t=struct.unpack('f',struct.pack('f',factor))[0]
+        except (TypeError,struct.error):raise TypeError('Vector.lerp requires a numeric factor') from None
+        values=list(other)
+        if len(values)<len(self):raise ValueError('Vector.lerp requires at least '+str(len(self))+' components')
+        try:
+            # Validate surplus elements too, before using the leading N values.
+            values=[struct.unpack('f',struct.pack('f',x))[0] for x in values]
+        except (TypeError,struct.error):raise TypeError('Vector.lerp requires numeric components') from None
+        u=f32(1-t)
+        return Vector(f32(f32(u*a)+f32(t*b)) for a,b in zip(self,values))
     def angle(self,other,/,*fallback):
         if len(fallback)>1:raise TypeError('angle expects one optional fallback')
         if not isinstance(other,(Vector,tuple,list)):raise TypeError('Expected a Vector or coordinate sequence')

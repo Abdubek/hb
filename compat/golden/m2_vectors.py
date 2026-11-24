@@ -7,7 +7,7 @@ HB_SYMBOLS = {
 'mathutils.Vector.length':'Euclidean length, assignable', 'mathutils.Vector.length_squared':'Squared Euclidean length',
 'mathutils.Vector.dot':'dot(other, /); numeric iterable with at least the receiver dimensions; uses the leading components', 'mathutils.Vector.cross':'3D cross product',
 'mathutils.Vector.normalize':'Normalize in place; zero vector remains zero', 'mathutils.Vector.normalized':'Normalized copy',
-'mathutils.Vector.lerp':'Linear interpolation',
+'mathutils.Vector.lerp':'lerp(other, factor, /); nonmutating float32 interpolation with numeric iterable of at least the receiver dimensions; validates all and uses leading components',
 'mathutils.Vector.negate':'Negate in place', 'mathutils.Vector.zero':'Set all components to zero',
 'mathutils.Vector.to_2d':'Copy as 2D', 'mathutils.Vector.to_3d':'Copy as 3D', 'mathutils.Vector.to_4d':'Copy as homogeneous 4D',
 'mathutils.Vector.to_tuple':'to_tuple(precision=-1, /); independent float tuple; -1 preserves float32 components, 0..22 rounds decimal places to nearest even',
@@ -43,6 +43,7 @@ assert tuple(Vector((1,2)).to_3d())==(1,2,0)
 assert tuple(v.to_4d())==(1,2,3,1) and v.to_4d().w==1
 assert tuple(v.to_2d())==(1,2)
 assert tuple(v.lerp(w,.25))==(1.5,2,2.5)
+assert tuple(v.lerp((3,2,1),.25))==(1.5,2,2.5)
 assert abs(Vector((1,0,0)).angle(Vector((0,1,0)))-math.pi/2)<1e-6
 assert Vector().angle(v,7)==7
 assert tuple(v.project(Vector((0,1,0))))==(0,2,0)
@@ -99,3 +100,31 @@ for row in reference['cases']:
         assert len(vector)==len(row['vector']),row
         assert all(math.isclose(a,b,abs_tol=2e-6,rel_tol=2e-6) for a,b in zip(vector,row['result'])),(row,tuple(vector))
     assert before==([list(value) for value in rotation] if kind=='matrix' else list(rotation))
+
+# Numeric iterables, surplus coordinates, extrapolation and native error classes.
+def lerp_endpoint(kind,values):
+    if kind=='vector':return Vector(values)
+    if kind=='tuple':return tuple(values)
+    if kind=='iterator':return iter(values)
+    if kind=='generator':return (x for x in values)
+    if kind=='range':return range(*values)
+    if kind=='dict':return {x:None for x in values}
+    if kind=='bytes':return bytes(values)
+    return values
+
+with open(os.path.join(os.path.dirname(__file__),'../fixtures/vector-lerp-reference.json')) as source:
+    reference=json.load(source)
+for row in reference['cases']:
+    vector=Vector(row['a']);other=lerp_endpoint(row['kind'],row['other'])
+    before=[x.hex() for x in vector]
+    other_before=list(other) if isinstance(other,(Vector,list,tuple)) else None
+    try:result=vector.lerp(other,row['factor'])
+    except (TypeError,ValueError) as error:
+        assert type(error).__name__==row.get('error'),(row,error)
+    else:
+        assert 'error' not in row and type(result) is Vector and result is not vector,row
+        assert len(result)==len(vector),row
+        assert all(math.isclose(a,b,abs_tol=1e-30,rel_tol=2e-6)
+                   for a,b in zip(result,row['result'])),(row,list(result))
+    assert [x.hex() for x in vector]==before
+    if other_before is not None:assert list(other)==other_before

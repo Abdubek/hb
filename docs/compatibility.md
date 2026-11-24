@@ -163,6 +163,18 @@ before execution, but the calling application must still isolate untrusted scrip
   `ValueError`, nonnumeric elements and keyword arguments raise `TypeError`.
   This behavior is exercised against Blender 5.2.3 by the Vector contract;
   `Vector @ Vector` still requires equal dimensions and a Vector operand.
+  [`Vector.lerp(other, factor, /)`](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.lerp)
+  returns an independent float32 Vector. Numeric iterable endpoints need at least
+  the receiver's dimensions; every element is validated, including surplus
+  coordinates, then only the first N contribute. This includes tuple/list,
+  iterator/generator and Vector/view inputs. Negative or above-one factors
+  extrapolate, as observed in Blender 5.2.3. Short endpoints raise ValueError;
+  nonnumeric coordinates/factors and keyword arguments raise TypeError. Neither
+  the receiver nor the endpoint is mutated (iterators are consumed). The Vector
+  contract checks 156 captured Blender cases, including 33 error outcomes, at
+  relative tolerance 2e-6 and absolute tolerance 1e-30. Regenerate them with
+  `compat/vector_lerp_reference.py` inside Blender. Existing Vector arithmetic
+  operators retain their operand requirements.
   [`Vector.to_tuple(precision=-1, /)`](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.to_tuple)
   returns an independent tuple of Python floats, including from live coordinate,
   UV and matrix-row views. Omitted precision or -1 preserves the stored float32

@@ -992,7 +992,7 @@ fn golden_027() {
 #[doc = "hb:symbol=mathutils.Vector.length_squared"]
 #[doc = "Squared Euclidean length"]
 #[doc = "hb:symbol=mathutils.Vector.lerp"]
-#[doc = "Linear interpolation"]
+#[doc = "lerp(other, factor, /); nonmutating float32 interpolation with numeric iterable of at least the receiver dimensions; validates all and uses leading components"]
 #[doc = "hb:symbol=mathutils.Vector.negate"]
 #[doc = "Negate in place"]
 #[doc = "hb:symbol=mathutils.Vector.normalize"]
