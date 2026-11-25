@@ -133,7 +133,9 @@ def _check_tree(tree,filename,functions):
     def value_type(path):
         # Scalar components can enter coordinate tuples and helper arguments.
         # Attribute validation below still checks the original API member path.
-        if path.startswith('mathutils.Vector.') and path.removeprefix('mathutils.Vector.') in ('x','y','z','w','length','length_squared'):return '#number'
+        base,_,name=path.rpartition('.')
+        vector=base=='mathutils.Vector' or (base.startswith(('bpy.','bmesh.','mathutils.')) and base.endswith(('.location','.scale','.co','.normal','.dimensions','.translation','.uv','.handle_left','.handle_right')))
+        if vector and name in ('x','y','z','w','length','length_squared'):return '#number'
         return path
     def item(base):
         base=norm(base)

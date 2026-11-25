@@ -136,8 +136,12 @@ Known Vector scalar properties (`x`, `y`, `z`, `w`, `length`, `length_squared`)
 carry numeric value types through coordinate tuples, containers and helper calls,
 including literal `getattr` access. For example, a helper can convert
 `(point.x, point.y, point.z)` to Vector and read its length. The original scalar
-member access is still validated. Multi-component swizzles and API objects
-embedded alongside numbers retain their API provenance.
+member access is still validated. This also applies to supported Vector properties
+such as Object location/scale/dimensions, Mesh/BMesh coordinates, BMesh face normals,
+UV coordinates, spline/shape-key points, cursor location and Matrix translation.
+For example, `(obj.location.x, obj.location.y, obj.location.z)` can pass through
+the same helper. Multi-component swizzles, actual API objects embedded alongside
+numbers and tuples containing whole Vector views retain their API provenance.
 
 This is still **not a sound verifier for arbitrary Python**. Higher-order calls,
 classes, closures, complex destructuring and dynamically reconstructed objects
