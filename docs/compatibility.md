@@ -167,6 +167,19 @@ before execution, but the calling application must still isolate untrusted scrip
   `ValueError`, nonnumeric elements and keyword arguments raise `TypeError`.
   This behavior is exercised against Blender 5.2.3 by the Vector contract;
   `Vector @ Vector` still requires equal dimensions and a Vector operand.
+  [`Vector.cross(other, /)`](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.cross)
+  returns a signed scalar determinant for 2D vectors (useful for UV orientation
+  and area) or an independent 3D Vector. Numeric iterable operands must have
+  exactly matching dimensions. Coordinates and products are rounded to float32
+  before subtraction; neither input is mutated. Iterators are consumed, except
+  that a 4D receiver raises ValueError before reading the operand. Dimension
+  mismatches raise ValueError; nonnumeric components and keyword arguments raise
+  TypeError. The Vector contract checks 112 captured Blender 5.2.3 outcomes
+  exactly, including cancellation and exception classes. Regenerate with
+  `compat/vector_cross_reference.py` inside Blender. Preflight retains a
+  conservative Vector result candidate: it does not prove the input dimensions
+  or the scalar return type and can reject float-specific member access on a
+  2D cross result. Runtime computes the dimension-dependent return value.
   [`Vector.lerp(other, factor, /)`](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.lerp)
   returns an independent float32 Vector. Numeric iterable endpoints need at least
   the receiver's dimensions; every element is validated, including surplus

@@ -76,9 +76,16 @@ class Vector(Strict):
             values=[struct.unpack('f',struct.pack('f',x))[0] for x in values]
         except (TypeError,struct.error):raise TypeError('Vector.dot requires numeric components') from None
         return sum(f32(a*b) for a,b in zip(self,values))
-    def cross(self,other):
-        if len(self)!=3 or len(other)!=3:raise ValueError('cross requires two 3D vectors')
-        return Vector(f32(f32(self[(i+1)%3]*other[(i+2)%3])-f32(self[(i+2)%3]*other[(i+1)%3])) for i in range(3))
+    def cross(self,other,/):
+        size=len(self)
+        if size not in (2,3):raise ValueError('Vector.cross requires 2D or 3D vectors')
+        values=list(other)
+        if len(values)!=size:raise ValueError('Vector.cross dimensions must match')
+        try:values=[struct.unpack('f',struct.pack('f',x))[0] for x in values]
+        except (TypeError,struct.error):raise TypeError('Vector.cross requires numeric components') from None
+        # Both dimensions use rounded float32 products, including cancellation.
+        if size==2:return f32(f32(self[0]*values[1])-f32(self[1]*values[0]))
+        return Vector(f32(f32(self[(i+1)%3]*values[(i+2)%3])-f32(self[(i+2)%3]*values[(i+1)%3])) for i in range(3))
     @property
     def length_squared(self):return self.dot(self)
     @property

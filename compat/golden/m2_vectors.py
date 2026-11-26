@@ -5,7 +5,7 @@ HB_SYMBOLS = {
 'mathutils.Vector.x':'X component', 'mathutils.Vector.y':'Y component', 'mathutils.Vector.z':'Z component', 'mathutils.Vector.w':'W component',
 'mathutils.Vector.xy':'Two-component swizzle','mathutils.Vector.xyz':'Three-component swizzle','mathutils.Vector.yxz':'Swizzle assignment',
 'mathutils.Vector.length':'Euclidean length, assignable', 'mathutils.Vector.length_squared':'Squared Euclidean length',
-'mathutils.Vector.dot':'dot(other, /); numeric iterable with at least the receiver dimensions; uses the leading components', 'mathutils.Vector.cross':'3D cross product',
+'mathutils.Vector.dot':'dot(other, /); numeric iterable with at least the receiver dimensions; uses the leading components', 'mathutils.Vector.cross':'cross(other, /); nonmutating 2D scalar or independent 3D Vector; numeric iterable with exactly matching dimensions',
 'mathutils.Vector.normalize':'Normalize in place; zero vector remains zero', 'mathutils.Vector.normalized':'Normalized copy',
 'mathutils.Vector.lerp':'lerp(other, factor, /); nonmutating float32 interpolation with numeric iterable of at least the receiver dimensions; validates all and uses leading components',
 'mathutils.Vector.negate':'Negate in place', 'mathutils.Vector.zero':'Set all components to zero',
@@ -126,5 +126,24 @@ for row in reference['cases']:
         assert len(result)==len(vector),row
         assert all(math.isclose(a,b,abs_tol=1e-30,rel_tol=2e-6)
                    for a,b in zip(result,row['result'])),(row,list(result))
+    assert [x.hex() for x in vector]==before
+    if other_before is not None:assert list(other)==other_before
+
+# Signed 2D area, independent 3D normals and native dimensional/type errors.
+with open(os.path.join(os.path.dirname(__file__),'../fixtures/vector-cross-reference.json')) as source:
+    reference=json.load(source)
+for row in reference['cases']:
+    vector=Vector(row['a']);other=lerp_endpoint(row['kind'],row['b'])
+    before=[x.hex() for x in vector]
+    other_before=list(other) if isinstance(other,(Vector,list,tuple)) else None
+    try:result=vector.cross(other)
+    except (TypeError,ValueError) as error:
+        assert type(error).__name__==row.get('error'),(row,error)
+    else:
+        assert 'error' not in row and type(result).__name__==row['type'],row
+        if isinstance(result,Vector):
+            assert result is not vector and result is not other and len(result)==3,row
+            result=list(result)
+        assert result==row['result'],(row,result)
     assert [x.hex() for x in vector]==before
     if other_before is not None:assert list(other)==other_before

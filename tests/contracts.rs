@@ -984,7 +984,7 @@ fn golden_027() {
 #[doc = "hb:symbol=mathutils.Vector.copy"]
 #[doc = "Independent vector copy"]
 #[doc = "hb:symbol=mathutils.Vector.cross"]
-#[doc = "3D cross product"]
+#[doc = "cross(other, /); nonmutating 2D scalar or independent 3D Vector; numeric iterable with exactly matching dimensions"]
 #[doc = "hb:symbol=mathutils.Vector.dot"]
 #[doc = "dot(other, /); numeric iterable with at least the receiver dimensions; uses the leading components"]
 #[doc = "hb:symbol=mathutils.Vector.length"]
