@@ -1000,7 +1000,7 @@ fn golden_027() {
 #[doc = "hb:symbol=mathutils.Vector.normalized"]
 #[doc = "Normalized copy"]
 #[doc = "hb:symbol=mathutils.Vector.project"]
-#[doc = "Projection onto a vector"]
+#[doc = "project(other, /); independent 2D/3D/4D Vector; numeric iterable with at least the receiver dimensions; validates all and uses leading components"]
 #[doc = "hb:symbol=mathutils.Vector.reflect"]
 #[doc = "Reflection across a normal"]
 #[doc = "hb:symbol=mathutils.Vector.rotate"]

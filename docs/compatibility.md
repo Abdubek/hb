@@ -180,6 +180,19 @@ before execution, but the calling application must still isolate untrusted scrip
   conservative Vector result candidate: it does not prove the input dimensions
   or the scalar return type and can reject float-specific member access on a
   2D cross result. Runtime computes the dimension-dependent return value.
+  [`Vector.project(other, /)`](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.project)
+  accepts numeric iterable axes (including tuple/list, iterator/generator and
+  Vector/view inputs) with at least the receiver's dimensions. All coordinates
+  are validated as float32, including surplus values; only the leading N enter
+  the projection. The result is an independent 2D/3D/4D Vector of the receiver's
+  size. Neither stored operand is mutated; iterators are consumed. Short axes
+  raise ValueError; nonnumeric coordinates and keyword arguments raise TypeError.
+  Products round to float32, sums use double precision, and the quotient rounds
+  to float32 before scaling the axis. Zero axes produce NaNs; squared-length
+  underflow can produce signed infinities/NaNs, as observed in Blender. These
+  nonfinite results cannot be stored as scene coordinates. The Vector contract
+  checks 158 captured Blender 5.2.3 outcomes exactly, including float hex values
+  and exception classes. Regenerate with `compat/vector_project_reference.py`.
   [`Vector.lerp(other, factor, /)`](https://docs.blender.org/api/5.2/mathutils.html#mathutils.Vector.lerp)
   returns an independent float32 Vector. Numeric iterable endpoints need at least
   the receiver's dimensions; every element is validated, including surplus

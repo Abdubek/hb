@@ -2539,7 +2539,7 @@
       "test": "compat/golden/m2_vectors.py"
     },
     "mathutils.Vector.project": {
-      "description": "Projection onto a vector",
+      "description": "project(other, /); independent 2D/3D/4D Vector; numeric iterable with at least the receiver dimensions; validates all and uses leading components",
       "test": "compat/golden/m2_vectors.py"
     },
     "mathutils.Vector.reflect": {

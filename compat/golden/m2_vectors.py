@@ -12,7 +12,7 @@ HB_SYMBOLS = {
 'mathutils.Vector.to_2d':'Copy as 2D', 'mathutils.Vector.to_3d':'Copy as 3D', 'mathutils.Vector.to_4d':'Copy as homogeneous 4D',
 'mathutils.Vector.to_tuple':'to_tuple(precision=-1, /); independent float tuple; -1 preserves float32 components, 0..22 rounds decimal places to nearest even',
 'mathutils.Vector.rotate':'rotate(other, /); mutate 2D with 2x2 Matrix or XYZ with Euler/normalized Quaternion/column-normalized Matrix; preserve W; finite active components up to magnitude 1e6',
-'mathutils.Vector.project':'Projection onto a vector', 'mathutils.Vector.reflect':'Reflection across a normal',
+'mathutils.Vector.project':'project(other, /); independent 2D/3D/4D Vector; numeric iterable with at least the receiver dimensions; validates all and uses leading components', 'mathutils.Vector.reflect':'Reflection across a normal',
 }
 from mathutils import Vector
 import math
@@ -126,6 +126,24 @@ for row in reference['cases']:
         assert len(result)==len(vector),row
         assert all(math.isclose(a,b,abs_tol=1e-30,rel_tol=2e-6)
                    for a,b in zip(result,row['result'])),(row,list(result))
+    assert [x.hex() for x in vector]==before
+    if other_before is not None:assert list(other)==other_before
+
+# Projection axes use leading coordinates, with independent same-size results.
+# Hex floats also retain signed zero and native NaN/infinity outcomes.
+with open(os.path.join(os.path.dirname(__file__),'../fixtures/vector-project-reference.json')) as source:
+    reference=json.load(source)
+for row in reference['cases']:
+    vector=Vector(row['a']);other=lerp_endpoint(row['kind'],row['other'])
+    before=[x.hex() for x in vector]
+    other_before=list(other) if isinstance(other,(Vector,list,tuple)) else None
+    try:result=vector.project(other)
+    except (TypeError,ValueError) as error:
+        assert type(error).__name__==row.get('error'),(row,error)
+    else:
+        assert 'error' not in row and type(result) is Vector,row
+        assert result is not vector and result is not other and len(result)==len(vector),row
+        assert [float(x).hex() for x in result]==row['result'],(row,list(result))
     assert [x.hex() for x in vector]==before
     if other_before is not None:assert list(other)==other_before
 

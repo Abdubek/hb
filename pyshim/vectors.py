@@ -159,8 +159,16 @@ class Vector(Strict):
         cosine=f32(sum(x*y for x,y in zip(a,b)))
         if math.isnan(cosine):return cosine
         return f32(math.acos(max(-1.,min(1.,cosine))))
-    def project(self,other):
-        return other*(self.dot(other)/other.length_squared) if other.length_squared else Vector([float('nan')]*len(self))
+    def project(self,other,/):
+        size=len(self);values=list(other)
+        if len(values)<size:raise ValueError('Vector.project requires at least '+str(size)+' components')
+        try:values=[struct.unpack('f',struct.pack('f',x))[0] for x in values]
+        except (TypeError,struct.error):raise TypeError('Vector.project requires numeric components') from None
+        # Validate surplus coordinates, then project using only the leading N.
+        axis=Vector(values[:size]);numerator=self.dot(axis);denominator=axis.length_squared
+        # Match IEEE division when the squared axis length underflows to zero.
+        factor=numerator/denominator if denominator else math.copysign(float('inf'),numerator) if numerator else float('nan')
+        return axis*factor
     def reflect(self,normal):return self-normal.normalized()*f32(2*self.dot(normal.normalized()))
     def rotate(self,other,/):
         values=self._read_values();size=min(3,len(values))
